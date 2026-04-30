@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>美股盘前投资策略日报</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.8;
+  padding: 16px;
+  max-width: 100%;
+}
+.header {
+  background: linear-gradient(135deg, #0d1b3e 0%, #1a365d 100%);
+  color: white;
+  padding: 20px 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.header h1 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.header .date { font-size: 13px; opacity: 0.85; }
+.section {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.section h2 {
+  font-size: 16px;
+  color: #0d1b3e;
+  border-left: 3px solid #c9a84c;
+  padding-left: 10px;
+  margin-bottom: 12px;
+}
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.data-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+.data-card .label { font-size: 12px; color: #666; margin-bottom: 4px; }
+.data-card .value { font-size: 16px; font-weight: 700; }
+.up { color: #e74c3c; }
+.down { color: #2ecc71; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 13px;
+}
+th {
+  background: #0d1b3e;
+  color: white;
+  padding: 8px;
+  text-align: left;
+  font-weight: 600;
+}
+td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+tr:nth-child(even) { background: #f8f9fa; }
+.news-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 13px;
+}
+.news-source { color: #c9a84c; font-weight: 600; font-size: 12px; }
+.news-time { color: #999; font-size: 11px; margin-left: 8px; }
+.footer {
+  text-align: center;
+  font-size: 11px;
+  color: #999;
+  padding: 16px 0;
+}
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+  margin: 12px 0;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 美股盘前投资策略日报</h1>
+  <div class="date">{DATE}</div>
+</div>
+
+<div class="section">
+  <h2>一、全球市场概览</h2>
+  <div class="data-grid">
+    <div class="data-card"><div class="label">标普500</div><div class="value up">{SP500}</div></div>
+    <div class="data-card"><div class="label">纳斯达克</div><div class="value down">{NASDAQ}</div></div>
+    <div class="data-card"><div class="label">道琼斯</div><div class="value up}{DOW_CLASS}">{DOW}</div></div>
+    <div class="data-card"><div class="label">VIX恐慌指数</div><div class="value">{VIX}</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>二、盘前要闻</h2>
+  {NEWS_ITEMS}
+</div>
+
+<div class="section">
+  <h2>三、重点个股与板块</h2>
+  <table>
+    <tr><th>个股</th><th>价格</th><th>涨跌幅</th><th>评级</th></tr>
+    {STOCK_TABLE}
+  </table>
+</div>
+
+<div class="section">
+  <h2>四、技术面分析</h2>
+  <table>
+    <tr><th>指数</th><th>支撑位</th><th>阻力位</th><th>趋势</th></tr>
+    {TECH_TABLE}
+  </table>
+</div>
+
+<div class="section">
+  <h2>五、风险提示与操作建议</h2>
+  <p>{STRATEGY}</p>
+</div>
+
+<div class="footer">
+  本报告仅供参考，不构成投资建议。<br>{DATE}
+</div>
+
+</body>
+</html>
