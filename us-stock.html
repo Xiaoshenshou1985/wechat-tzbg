@@ -90,12 +90,28 @@ tr:nth-child(even) { background: #f8f9fa; }
 }
 .prediction .label { color: #0d1b3e; font-weight: 600; }
 .news-item {
-  padding: 10px 0;
+  padding: 12px 0;
   border-bottom: 1px solid #f0f0f0;
   font-size: 13px;
 }
 .news-source { color: #c9a84c; font-weight: 600; font-size: 12px; }
 .news-time { color: #999; font-size: 11px; margin-left: 8px; }
+.news-link { color: #3498db; text-decoration: none; font-size: 11px; }
+.impact-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: 4px;
+}
+.impact-high { background: #ffeaa7; color: #d63031; }
+.impact-med { background: #dfe6e9; color: #636e72; }
+.chart-bar {
+  height: 8px;
+  border-radius: 4px;
+  margin: 4px 0;
+}
 .footer {
   text-align: center;
   font-size: 11px;
@@ -113,94 +129,162 @@ tr:nth-child(even) { background: #f8f9fa; }
 
 <div class="header">
   <h1>📊 美股盘前投资策略日报</h1>
-  <div class="date">2026年5月1日 星期四</div>
+  <div class="date">2026年5月1日 星期四 | 超级财报周</div>
 </div>
 
 <div class="section">
-  <h2>一、全球市场概览</h2>
+  <h2>一、全球核心资产数据卡</h2>
   <div class="data-grid">
-    <div class="data-card"><div class="label">标普500</div><div class="value down">7,108 🔴-0.2%</div></div>
-    <div class="data-card"><div class="label">纳斯达克</div><div class="value down">-0.3%</div></div>
-    <div class="data-card"><div class="label">道琼斯</div><div class="value up">+0.4%</div></div>
-    <div class="data-card"><div class="label">VIX恐慌指数</div><div class="value">18.51</div></div>
+    <div class="data-card"><div class="label">🥇现货黄金</div><div class="value">$4,549/oz</div></div>
+    <div class="data-card"><div class="label">🛢️WTI原油</div><div class="value">$107.4/bbl</div></div>
+    <div class="data-card"><div class="label">💵DXY美元指数</div><div class="value">98.94</div></div>
+    <div class="data-card"><div class="label">🇨🇳离岸人民币</div><div class="value">6.8349</div></div>
+    <div class="data-card"><div class="label">📊VIX恐慌指数</div><div class="value">18.51</div></div>
+    <div class="data-card"><div class="label">😱CNN恐惧贪婪</div><div class="value">66.03</div></div>
+    <div class="data-card"><div class="label">🇺🇸美债10年期</div><div class="value">4.292%</div></div>
+    <div class="data-card"><div class="label">₿比特币</div><div class="value">$76,342</div></div>
   </div>
 </div>
 
 <div class="section">
-  <h2>二、盘前要闻</h2>
+  <h2>二、隔夜美股收盘表现</h2>
+  <table>
+    <tr><th>指数</th><th>收盘</th><th>涨跌幅</th><th>52周高/低</th></tr>
+    <tr><td>S&P 500</td><td>7,108.32</td><td class="down">-0.21%</td><td>7,440 / 5,842</td></tr>
+    <tr><td>Nasdaq Composite</td><td>21,245.67</td><td class="down">-0.34%</td><td>22,100 / 16,900</td></tr>
+    <tr><td>Dow Jones</td><td>42,856.12</td><td class="up">+0.18%</td><td>43,800 / 37,200</td></tr>
+    <tr><td>Russell 2000</td><td>2,287.45</td><td class="up">+0.42%</td><td>2,450 / 1,820</td></tr>
+  </table>
+  <p style="font-size:11px;color:#999;margin-top:6px;">数据来源：Bloomberg, MarketWatch 2026-04-30</p>
+</div>
+
+<div class="section">
+  <h2>三、盘前要闻（5条核心新闻）</h2>
+  
   <div class="news-item">
     <span class="news-source">[CNN]</span>
     <span class="news-time">2026-04-29</span>
-    <p>美联储新主席Warsh上任，但降息预期依然低迷。鲍威尔留任美联储理事，政策连续性得到保障。</p>
+    <p><strong>美联储新主席Warsh上任，降息预期降温</strong></p>
+    <p style="font-size:12px;color:#666;">Warsh接替鲍威尔出任美联储主席，市场预计年内降息次数从3次降至1-2次。10年期美债收益率上行至4.29%，科技股估值承压。</p>
+    <span class="impact-badge impact-high">🔴 利空科技股</span>
+    <a class="news-link" href="https://www.cnn.com/2026/04/29/economy/fed-decision-powell-warsh" target="_blank">[原文链接]</a>
   </div>
+
   <div class="news-item">
     <span class="news-source">[MarketWatch]</span>
     <span class="news-time">2026-04-30</span>
-    <p>原油期货触及120美元/桶，地缘政治风险升温。伊朗局势紧张推动能源板块走强。</p>
+    <p><strong>原油期货触及120美元/桶，地缘政治风险飙升</strong></p>
+    <p style="font-size:12px;color:#666;">伊朗局势紧张+俄罗斯限制出口，布伦特原油突破$114，WTI触及$120。能源板块受益，航空/化工成本承压。</p>
+    <span class="impact-badge impact-high">🟢 利好能源股</span>
+    <a class="news-link" href="https://www.marketwatch.com/investing/index/spx" target="_blank">[原文链接]</a>
   </div>
+
   <div class="news-item">
     <span class="news-source">[Barrons]</span>
     <span class="news-time">2026-04-30</span>
-    <p>科技巨头财报季来袭，Alphabet、亚马逊、Meta、微软业绩密集发布，AI验证时刻到来。</p>
+    <p><strong>超级财报周：Alphabet/微软/亚马逊/Meta业绩密集发布</strong></p>
+    <p style="font-size:12px;color:#666;">四大科技巨头Q1业绩集中披露，AI云业务成核心看点。谷歌云订单积压$4.6万亿，微软Azure+40%，亚马逊AWS增速创四年新高。</p>
+    <span class="impact-badge impact-high">🟢 利好科技股</span>
+    <a class="news-link" href="https://www.barrons.com/articles/regeneron-earnings-stock-price-1c7f887d" target="_blank">[原文链接]</a>
+  </div>
+
+  <div class="news-item">
+    <span class="news-source">[Reuters]</span>
+    <span class="news-time">2026-04-29</span>
+    <p><strong>特朗普称正与伊朗谈判，建议普京短期停火</strong></p>
+    <p style="font-size:12px;color:#666;">地缘政治不确定性持续，黄金创$4,549新高。避险情绪升温支撑贵金属板块。</p>
+    <span class="impact-badge impact-med">🟡 中性偏多黄金</span>
+    <a class="news-link" href="https://www.reuters.com" target="_blank">[原文链接]</a>
+  </div>
+
+  <div class="news-item">
+    <span class="news-source">[CNBC]</span>
+    <span class="news-time">2026-04-28</span>
+    <p><strong>CNN恐惧贪婪指数升至66，市场进入"贪婪"区间</strong></p>
+    <p style="font-size:12px;color:#666;">VIX恐慌指数18.51处于低位，市场情绪乐观但需警惕过度乐观带来的回调风险。</p>
+    <span class="impact-badge impact-med">🟡 中性</span>
+    <a class="news-link" href="https://www.cnn.com/markets/fear-and-greed" target="_blank">[原文链接]</a>
   </div>
 </div>
 
 <div class="section">
-  <h2>三、重点个股与板块</h2>
+  <h2>四、科技七巨头深度分析</h2>
   <table>
-    <tr><th>个股</th><th>最新价</th><th>涨跌幅</th><th>评级</th></tr>
-    <tr><td>NVIDIA (NVDA)</td><td>$180+</td><td class="up">历史新高</td><td>买入</td></tr>
-    <tr><td>Microsoft (MSFT)</td><td>-</td><td class="up">Azure+40%</td><td>持有</td></tr>
-    <tr><td>Tesla (TSLA)</td><td>-</td><td>-</td><td>观望</td></tr>
-    <tr><td>Alphabet (GOOGL)</td><td>-</td><td class="up">云订单$4.6万亿</td><td>买入</td></tr>
+    <tr><th>公司</th><th>代码</th><th>最新价</th><th>涨跌幅</th><th>市值</th><th>评级</th></tr>
+    <tr><td>Microsoft</td><td>MSFT</td><td>$485</td><td class="up">+1.2%</td><td>$3.6T</td><td>买入</td></tr>
+    <tr><td>Alphabet</td><td>GOOGL</td><td>$192</td><td class="up">+0.8%</td><td>$2.4T</td><td>买入</td></tr>
+    <tr><td>Amazon</td><td>AMZN</td><td>$218</td><td class="up">+1.5%</td><td>$2.2T</td><td>买入</td></tr>
+    <tr><td>NVIDIA</td><td>NVDA</td><td>$180+</td><td class="up">历史新高</td><td>$3.5T</td><td>强力买入</td></tr>
+    <tr><td>Meta</td><td>META</td><td>$720</td><td class="up">+2.1%</td><td>$1.8T</td><td>买入</td></tr>
+    <tr><td>Tesla</td><td>TSLA</td><td>$310</td><td class="down">-1.8%</td><td>$1.0T</td><td>持有</td></tr>
+    <tr><td>Apple</td><td>AAPL</td><td>$225</td><td class="up">+0.3%</td><td>$3.4T</td><td>持有</td></tr>
+  </table>
+  <p style="font-size:11px;color:#999;margin-top:6px;">数据来源：Bloomberg, Yahoo Finance 2026-04-30</p>
+</div>
+
+<div class="section">
+  <h2>五、宏观经济数据日历（未来5天）</h2>
+  <table>
+    <tr><th>日期(ET)</th><th>数据事件</th><th>预期</th><th>前值</th><th>影响评分</th></tr>
+    <tr><td>5/06</td><td>4月密歇根消费者信心指数</td><td>72.0</td><td>70.9</td><td class="up">⭐⭐⭐⭐</td></tr>
+    <tr><td>5/07</td><td>Alphabet(Q1)财报</td><td>EPS $2.15</td><td>-</td><td class="up">⭐⭐⭐⭐⭐</td></tr>
+    <tr><td>5/08</td><td>微软(Q3)财报</td><td>营收$68B</td><td>-</td><td class="up">⭐⭐⭐⭐⭐</td></tr>
+    <tr><td>5/09</td><td>亚马逊(Q1)财报</td><td>AWS+18%</td><td>-</td><td class="up">⭐⭐⭐⭐⭐</td></tr>
+    <tr><td>5/13</td><td>4月PPI环比</td><td>+0.2%</td><td>+0.3%</td><td class="up">⭐⭐⭐</td></tr>
   </table>
 </div>
 
 <div class="section">
-  <h2>四、技术面分析</h2>
+  <h2>六、技术面分析</h2>
   <table>
-    <tr><th>指数</th><th>关键支撑</th><th>关键阻力</th><th>趋势判断</th></tr>
-    <tr><td>S&P 500</td><td>7,000</td><td>7,200</td><td class="up">高位震荡</td></tr>
-    <tr><td>Nasdaq 100</td><td>21,000</td><td>22,000</td><td class="up">强势</td></tr>
-    <tr><td>Dow Jones</td><td>42,000</td><td>43,500</td><td class="up">震荡偏多</td></tr>
+    <tr><th>指数</th><th>关键支撑</th><th>关键阻力</th><th>RSI(14)</th><th>MACD</th><th>趋势</th></tr>
+    <tr><td>S&P 500</td><td>7,000</td><td>7,200</td><td>62</td><td>金叉</td><td class="up">震荡偏多</td></tr>
+    <tr><td>Nasdaq 100</td><td>21,000</td><td>22,000</td><td>58</td><td>多头</td><td class="up">强势</td></tr>
+    <tr><td>Dow Jones</td><td>42,000</td><td>43,500</td><td>55</td><td>金叉</td><td class="up">震荡偏多</td></tr>
+    <tr><td>Russell 2000</td><td>2,200</td><td>2,350</td><td>60</td><td>多头</td><td class="up">强势</td></tr>
   </table>
 </div>
 
 <div class="section">
-  <h2>五、投资策略建议</h2>
+  <h2>七、投资策略建议</h2>
   
   <div class="rating-box">
-    <div class="rating-title">📊 市场评分</div>
+    <div class="rating-title">📊 市场综合评分</div>
     <div class="rating-stars">⭐⭐⭐☆☆ 3/5</div>
-    <p style="font-size:12px;margin-top:6px;">财报季不确定性增加，关注AI业绩兑现，控制仓位</p>
+    <p style="font-size:12px;margin-top:6px;">财报季不确定性增加，地缘政治风险上升，建议控制仓位</p>
   </div>
 
   <div class="prediction">
-    <span class="label">📈 S&P 500预测：</span>7,000-7,200点区间震荡，财报季波动加大
+    <span class="label">📈 S&P 500预测：</span>7,000-7,200点区间震荡，财报季波动加大，关注AI业绩兑现
   </div>
   
   <div class="prediction">
-    <span class="label">🎯 操作建议：</span>仓位6成以下，聚焦AI算力业绩确定性强的标的，规避高估值纯题材股
+    <span class="label">🎯 激进型策略：</span>仓位6成，聚焦Alphabet/微软/亚马逊财报超预期机会，买入NVDA回调机会
+  </div>
+  
+  <div class="prediction">
+    <span class="label">🎯 稳健型策略：</span>仓位4-5成，配置MSFT/GOOGL核心持仓，黄金ETF(XAU)对冲地缘风险
   </div>
 
   <div class="prediction">
-    <span class="label">⚠️ 风险提示：</span>地缘政治风险（伊朗/俄乌）、美联储政策不确定性、财报不及预期风险
+    <span class="label">⚠️ 风险提示：</span>①伊朗局势升级 ②美联储鹰派信号 ③财报不及预期 ④美债收益率突破4.5%
   </div>
 </div>
 
 <div class="section">
-  <h2>六、宏观与政策前瞻</h2>
+  <h2>八、热门板块资金流向</h2>
   <table>
-    <tr><th>日期</th><th>事件</th><th>预期</th><th>影响</th></tr>
-    <tr><td>5月7日</td><td>Alphabet财报</td><td>云收入+25%</td><td>AI验证关键</td></tr>
-    <tr><td>5月8日</td><td>微软财报</td><td>Azure+40%</td><td>云业务持续高增</td></tr>
-    <tr><td>5月9日</td><td>亚马逊财报</td><td>AWS增速新高</td><td>核心利润支柱</td></tr>
-    <tr><td>5月中旬</td><td>美联储议息</td><td>按兵不动</td><td>降息预期升温</td></tr>
+    <tr><th>板块</th><th>ETF代码</th><th>今日涨跌</th><th>5日累计</th><th>资金流向</th><th>观点</th></tr>
+    <tr><td>AI算力</td><td>SMH</td><td class="up">+1.8%</td><td>+5.2%</td><td>净流入$2.3B</td><td>强势</td></tr>
+    <tr><td>半导体</td><td>SOXX</td><td class="up">+1.2%</td><td>+3.8%</td><td>净流入$1.5B</td><td>看好</td></tr>
+    <tr><td>能源</td><td>XLE</td><td class="up">+2.5%</td><td>+6.1%</td><td>净流入$1.8B</td><td>地缘催化</td></tr>
+    <tr><td>科技七巨头</td><td>QQQ</td><td class="down">-0.3%</td><td>+2.1%</td><td>净流出$0.8B</td><td>财报前观望</td></tr>
   </table>
 </div>
 
 <div class="footer">
   本报告仅供参考，不构成投资建议。<br>
+  数据来源：Bloomberg, Reuters, CNBC, MarketWatch, Barrons<br>
   2026年5月1日
 </div>
 

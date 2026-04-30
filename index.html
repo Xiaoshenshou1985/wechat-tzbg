@@ -48,7 +48,15 @@ h1 {
 }
 .card .icon { font-size: 32px; margin-bottom: 8px; }
 .card .title { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
-.card .desc { font-size: 12px; opacity: 0.7; }
+.card .desc { font-size: 12px; opacity: 0.7; margin-bottom: 6px; }
+.card .update-time {
+  font-size: 11px;
+  color: #c9a84c;
+  background: rgba(201,168,76,0.15);
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
 .footer {
   color: rgba(255,255,255,0.4);
   font-size: 11px;
@@ -64,16 +72,58 @@ h1 {
   <a href="a-stock.html" class="card">
     <div class="icon">🇨🇳</div>
     <div class="title">A股盘前日报</div>
-    <div class="desc">每日08:30更新 · 宏观/资金/板块/策略</div>
+    <div class="desc">宏观/资金/板块/策略/评分预测</div>
+    <div class="update-time" id="a-stock-time">加载中...</div>
   </a>
   
   <a href="us-stock.html" class="card">
     <div class="icon">🇺🇸</div>
     <div class="title">美股盘前日报</div>
-    <div class="desc">每日18:00更新 · 七巨头/技术面/宏观前瞻</div>
+    <div class="desc">七巨头/宏观数据/新闻/策略</div>
+    <div class="update-time" id="us-stock-time">加载中...</div>
   </a>
   
   <p class="footer">本报告仅供参考，不构成投资建议</p>
 </div>
+
+<script>
+// 获取GitHub仓库最新提交时间
+async function fetchUpdateTime(file) {
+  try {
+    const resp = await fetch(`https://api.github.com/repos/Xiaoshenshou1985/wechat-tzbg/commits?path=${file}&per_page=1`);
+    if (resp.ok) {
+      const data = await resp.json();
+      if (data.length > 0) {
+        const date = new Date(data[0].commit.committer.date);
+        const now = new Date();
+        const diffHours = Math.floor((now - date) / (1000 * 60 * 60));
+        let timeStr;
+        if (diffHours < 1) timeStr = '刚刚更新';
+        else if (diffHours < 24) timeStr = `${diffHours}小时前更新`;
+        else {
+          const days = Math.floor(diffHours / 24);
+          timeStr = `${days}天前更新 (${date.getMonth()+1}/${date.getDate()})`;
+        }
+        return timeStr;
+      }
+    }
+    return '暂无数据';
+  } catch (e) {
+    return '获取失败';
+  }
+}
+
+// 并行获取两个文件的更新时间
+Promise.all([
+  fetchUpdateTime('a-stock.html'),
+  fetchUpdateTime('us-stock.html')
+]).then(([aTime, usTime]) => {
+  document.getElementById('a-stock-time').textContent = `📅 ${aTime}`;
+  document.getElementById('us-stock-time').textContent = `📅 ${usTime}`;
+}).catch(() => {
+  document.getElementById('a-stock-time').textContent = '📅 每日08:30更新';
+  document.getElementById('us-stock-time').textContent = '📅 每日18:00更新';
+});
+</script>
 </body>
 </html>

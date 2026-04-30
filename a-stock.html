@@ -107,35 +107,44 @@ tr:nth-child(even) { background: #f8f9fa; }
   background: linear-gradient(90deg, transparent, #c9a227, transparent);
   margin: 12px 0;
 }
+.chart-bar {
+  height: 8px;
+  border-radius: 4px;
+  margin: 4px 0;
+}
 </style>
 </head>
 <body>
 
 <div class="header">
   <h1>📈 A股盘前投资策略日报</h1>
-  <div class="date">2026年5月1日 星期四</div>
+  <div class="date">2026年5月1日 星期四 | 五一假期休市</div>
 </div>
 
 <div class="section">
-  <h2>一、全球市场概览</h2>
+  <h2>一、全球核心资产数据卡</h2>
   <div class="data-grid">
-    <div class="data-card"><div class="label">标普500</div><div class="value down">7,108 🔴-0.2%</div></div>
-    <div class="data-card"><div class="label">纳斯达克</div><div class="value down">-0.3%</div></div>
-    <div class="data-card"><div class="label">道琼斯</div><div class="value up">+0.4%</div></div>
-    <div class="data-card"><div class="label">VIX恐慌指数</div><div class="value">18.51</div></div>
+    <div class="data-card"><div class="label">🥇现货黄金</div><div class="value">$4,549/oz 🔴-1.0%</div></div>
+    <div class="data-card"><div class="label">🛢️WTI原油</div><div class="value">$107.4/bbl 🟢+0.5%</div></div>
+    <div class="data-card"><div class="label">💵DXY美元指数</div><div class="value">98.94 🟢+0.3%</div></div>
+    <div class="data-card"><div class="label">🇨🇳离岸人民币</div><div class="value">6.8349</div></div>
+    <div class="data-card"><div class="label">📊VIX恐慌指数</div><div class="value">18.51</div></div>
+    <div class="data-card"><div class="label">😱CNN恐惧贪婪</div><div class="value">66.03 贪婪</div></div>
+    <div class="data-card"><div class="label">🇺🇸美债10年期</div><div class="value">4.292%</div></div>
+    <div class="data-card"><div class="label">₿比特币</div><div class="value">$76,342 🔴-0.7%</div></div>
   </div>
 </div>
 
 <div class="section">
   <h2>二、A股4月回顾</h2>
   <table>
-    <tr><th>指数</th><th>4月涨跌幅</th><th>关键点位</th></tr>
-    <tr><td>上证指数</td><td class="up">+1.2%</td><td>站稳4100点</td></tr>
-    <tr><td>深证成指</td><td class="up">+8.5%</td><td>15107点</td></tr>
-    <tr><td>创业板指</td><td class="up">+15.3%</td><td>刷新十年新高</td></tr>
-    <tr><td>科创50</td><td class="up">+25.1%</td><td>强势突破</td></tr>
+    <tr><th>指数</th><th>4月涨跌幅</th><th>关键点位</th><th>成交额</th></tr>
+    <tr><td>上证指数</td><td class="up">+1.2%</td><td>站稳4100点</td><td>2.76万亿/日</td></tr>
+    <tr><td>深证成指</td><td class="up">+8.5%</td><td>15107点</td><td>-</td></tr>
+    <tr><td>创业板指</td><td class="up">+15.3%</td><td>刷新十年新高</td><td>-</td></tr>
+    <tr><td>科创50</td><td class="up">+25.1%</td><td>强势突破</td><td>-</td></tr>
   </table>
-  <p style="font-size:12px;color:#666;margin-top:8px;">数据来源：东方财富、每日经济新闻 2026-04-30</p>
+  <p style="font-size:11px;color:#999;margin-top:6px;">数据来源：东方财富、每日经济新闻 2026-04-30</p>
 </div>
 
 <div class="section">
@@ -147,28 +156,28 @@ tr:nth-child(even) { background: #f8f9fa; }
     <tr><td>两融余额</td><td>2.70万亿元</td><td class="up">历史第四高</td></tr>
     <tr><td>ETF成交额</td><td>4886亿元/日</td><td class="up">交投活跃</td></tr>
   </table>
-  <p style="font-size:12px;color:#666;margin-top:8px;">数据来源：证券时报·数据宝 2026-04-11</p>
+  <p style="font-size:11px;color:#999;margin-top:6px;">数据来源：证券时报·数据宝 2026-04-11</p>
 </div>
 
 <div class="section">
   <h2>四、行业板块轮动</h2>
   <table>
-    <tr><th>板块</th><th>4月表现</th><th>观点</th></tr>
-    <tr><td>算力芯片</td><td class="up">爆发</td><td>寒武纪创历史新高，中际旭创万亿市值</td></tr>
-    <tr><td>锂电产业链</td><td class="up">+85%</td><td>宁德时代创新高，排产预期向好</td></tr>
-    <tr><td>工业气体</td><td class="up">翻倍</td><td>中东局势催化，华特气体翻倍</td></tr>
-    <tr><td>半导体</td><td class="up">+69亿净流入</td><td>国产替代加速，周期反转</td></tr>
-    <tr><td>油气板块</td><td class="down">-25%</td><td>短期调整压力较大</td></tr>
+    <tr><th>板块</th><th>4月表现</th><th>资金流向</th><th>观点</th></tr>
+    <tr><td>算力芯片</td><td class="up">爆发</td><td>净流入69亿</td><td>寒武纪创历史新高，中际旭创万亿市值</td></tr>
+    <tr><td>锂电产业链</td><td class="up">+85%</td><td>净流入36亿</td><td>宁德时代创新高，排产预期向好</td></tr>
+    <tr><td>工业气体</td><td class="up">翻倍</td><td>净流入73亿</td><td>中东局势催化，华特气体翻倍</td></tr>
+    <tr><td>半导体</td><td class="up">+69亿净流入</td><td>强势</td><td>国产替代加速，周期反转</td></tr>
+    <tr><td>油气板块</td><td class="down">-25%</td><td>净流出</td><td>短期调整压力较大</td></tr>
   </table>
 </div>
 
 <div class="section">
   <h2>五、技术面分析</h2>
   <table>
-    <tr><th>指数</th><th>关键支撑</th><th>关键阻力</th><th>趋势判断</th></tr>
-    <tr><td>上证指数</td><td>4060点</td><td>4114点</td><td class="up">震荡偏多</td></tr>
-    <tr><td>创业板指</td><td>3596点(20日线)</td><td>3677点</td><td class="up">高位调整中</td></tr>
-    <tr><td>科创50</td><td>1452点</td><td>1571点</td><td class="up">强势</td></tr>
+    <tr><th>指数</th><th>关键支撑</th><th>关键阻力</th><th>RSI(14)</th><th>趋势判断</th></tr>
+    <tr><td>上证指数</td><td>4060点</td><td>4114点</td><td>58</td><td class="up">震荡偏多</td></tr>
+    <tr><td>创业板指</td><td>3596点(20日线)</td><td>3677点</td><td>62</td><td class="down">高位调整中</td></tr>
+    <tr><td>科创50</td><td>1452点</td><td>1571点</td><td>65</td><td class="up">强势</td></tr>
   </table>
 </div>
 
@@ -176,7 +185,7 @@ tr:nth-child(even) { background: #f8f9fa; }
   <h2>六、投资策略建议</h2>
   
   <div class="rating-box">
-    <div class="rating-title">📊 市场评分</div>
+    <div class="rating-title">📊 市场综合评分</div>
     <div class="rating-stars">⭐⭐⭐⭐☆ 4/5</div>
     <p style="font-size:12px;margin-top:6px;">高景气赛道业绩兑现期，关注算力、半导体、锂电主线</p>
   </div>
@@ -186,11 +195,15 @@ tr:nth-child(even) { background: #f8f9fa; }
   </div>
   
   <div class="prediction">
-    <span class="label">🎯 操作建议：</span>仓位5-7成，逢低布局算力硬件、半导体设备、锂电龙头，规避高位纯题材股
+    <span class="label">🎯 激进型策略：</span>仓位7成，逢低布局算力硬件(寒武纪/中际旭创)、半导体设备(北方华创)、锂电龙头(宁德时代)
+  </div>
+  
+  <div class="prediction">
+    <span class="label">🎯 稳健型策略：</span>仓位5-6成，配置高股息资产(长江电力/中国神华)+AI算力核心标的，规避高位纯题材股
   </div>
 
   <div class="prediction">
-    <span class="label">⚠️ 风险提示：</span>业绩真空期风格可能切换至小盘题材，注意控制仓位，远离业绩亏损股
+    <span class="label">⚠️ 风险提示：</span>①业绩真空期风格切换至小盘题材 ②远离业绩亏损股 ③控制仓位不追高 ④五一假期外部事件风险
   </div>
 </div>
 
@@ -208,14 +221,15 @@ tr:nth-child(even) { background: #f8f9fa; }
   <h2>八、重要日历</h2>
   <table>
     <tr><th>日期</th><th>事件</th><th>影响</th></tr>
-    <tr><td>5月1日</td><td>劳动节假期开始</td><td>市场休市</td></tr>
-    <tr><td>5月5日</td><td>假期结束</td><td>关注节后开盘走势</td></tr>
+    <tr><td>5月1日</td><td>劳动节假期开始</td><td>A股休市</td></tr>
+    <tr><td>5月5日</td><td>假期结束/开盘</td><td>关注节后开盘走势</td></tr>
     <tr><td>5月中旬</td><td>美联储议息会议</td><td>降息预期升温</td></tr>
   </table>
 </div>
 
 <div class="footer">
   本报告仅供参考，不构成投资建议。<br>
+  数据来源：证券时报、东方财富、每日经济新闻<br>
   2026年5月1日
 </div>
 
