@@ -2,142 +2,184 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>美股盘前投资策略日报</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>美股日报 4/30</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-  background: #f5f5f5;
-  color: #333;
-  line-height: 1.8;
-  padding: 16px;
-  max-width: 100%;
-}
-.header {
-  background: linear-gradient(135deg, #0d1b3e 0%, #1a365d 100%);
-  color: white;
-  padding: 20px 16px;
-  border-radius: 12px;
-  margin-bottom: 16px;
-  text-align: center;
-}
-.header h1 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
-.header .date { font-size: 13px; opacity: 0.85; }
-.section {
-  background: white;
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 12px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-}
-.section h2 {
-  font-size: 16px;
-  color: #0d1b3e;
-  border-left: 3px solid #c9a84c;
-  padding-left: 10px;
-  margin-bottom: 12px;
-}
-.data-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-  margin-bottom: 12px;
-}
-.data-card {
-  background: #f8f9fa;
-  border-radius: 8px;
-  padding: 10px;
-  text-align: center;
-}
-.data-card .label { font-size: 12px; color: #666; margin-bottom: 4px; }
-.data-card .value { font-size: 16px; font-weight: 700; }
-.up { color: #e74c3c; }
-.down { color: #2ecc71; }
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 8px 0;
-  font-size: 13px;
-}
-th {
-  background: #0d1b3e;
-  color: white;
-  padding: 8px;
-  text-align: left;
-  font-weight: 600;
-}
-td {
-  padding: 8px;
-  border-bottom: 1px solid #eee;
-}
-tr:nth-child(even) { background: #f8f9fa; }
-.news-item {
-  padding: 10px 0;
-  border-bottom: 1px solid #f0f0f0;
-  font-size: 13px;
-}
-.news-source { color: #c9a84c; font-weight: 600; font-size: 12px; }
-.news-time { color: #999; font-size: 11px; margin-left: 8px; }
-.footer {
-  text-align: center;
-  font-size: 11px;
-  color: #999;
-  padding: 16px 0;
-}
-.divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #c9a84c, transparent);
-  margin: 12px 0;
-}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue',sans-serif;background:#f7f5f0;color:#1a1a2e;margin:0;padding:16px;line-height:1.7;font-size:14px;}
+h1{text-align:center;color:#0d1b3e;font-size:20px;padding:16px 0 4px;border-bottom:2px solid #c9a84c;margin-bottom:4px;}
+.sub{text-align:center;color:#888;font-size:12px;margin-bottom:16px;}
+.sec{margin-bottom:20px;}
+.stitle{font-size:16px;color:#0d1b3e;border-left:3px solid #c9a84c;padding-left:10px;margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+.dv{height:1px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);margin:16px 0;}
+.cg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:10px 0;}
+.cd{background:#fff;border-radius:8px;padding:12px 8px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+.cd .lb{font-size:11px;color:#888;margin-bottom:4px;}
+.cd .vl{font-size:17px;font-weight:bold;color:#0d1b3e;}
+.cd .ch{font-size:12px;margin-top:2px;}
+.up{color:#e74c3c;font-weight:bold;}.dn{color:#2ecc71;font-weight:bold;}.mx{color:#888;}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0;}
+th{background:#0d1b3e;color:#c9a84c;padding:8px 6px;text-align:left;font-weight:normal;font-size:12px;}
+td{padding:7px 6px;border-bottom:1px solid #eee;font-size:12px;}
+.ab{background:linear-gradient(135deg,#0d1b3e,#1a2d5e);color:#e8d5a3;padding:14px;border-radius:10px;margin:10px 0;}
+.ab h3{color:#c9a84c;font-size:14px;margin-bottom:8px;}
+.ab p{font-size:12.5px;margin-bottom:6px;line-height:1.7;}
+.ni{background:#fff;border-left:3px solid #c9a84c;padding:10px 12px;margin:8px 0;border-radius:0 8px 8px 0;box-shadow:0 1px 3px rgba(0,0,0,.04);}
+.ni h4{font-size:13px;color:#0d1b3e;margin-bottom:3px;}
+.ni .src{font-size:11px;color:#aaa;margin-top:4px;}
+.cb{display:flex;align-items:center;gap:6px;margin:5px 0;}
+.cb .bl{width:90px;font-size:11px;text-align:right;color:#333;}
+.cb .bt{flex:1;background:#e8e0d0;border-radius:3px;height:16px;overflow:hidden;}
+.cb .bf{height:100%;border-radius:3px;}
+.cb .bv{width:60px;font-size:11px;color:#333;}
+.fm{background:#f9f6ee;border:1px solid #ddd5c5;padding:12px;border-radius:8px;font-size:11px;color:#888;line-height:1.6;}
+.ft{text-align:center;color:#aaa;font-size:11px;padding:16px 0 8px;}
 </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>📊 美股盘前投资策略日报</h1>
-  <div class="date">{DATE}</div>
+<h1>📊 美股盘前日报</h1>
+<div class="sub">2026年4月30日 | 盘前研判</div>
+
+<div class="sec">
+<div class="stitle">📈 上一交易日收盘</div>
+<p style="font-size:11px;color:#888;margin-bottom:8px;">截至4/29收盘 | 来源：CNBC、Bloomberg</p>
+<div class="cg">
+<div class="cd"><div class="lb">道琼斯</div><div class="vl">48,861.81</div><div class="ch dn">▼ -0.57%</div></div>
+<div class="cd"><div class="lb">标普500</div><div class="vl">7,135.95</div><div class="ch mx">▼ -0.04%</div></div>
+<div class="cd"><div class="lb">纳斯达克</div><div class="vl">24,673.24</div><div class="ch up">▲ +0.04%</div></div>
+</div>
+<p style="font-size:11px;color:#888;margin-top:8px;">道指连跌5日，受能源成本与宏观不确定性拖累。</p>
 </div>
 
-<div class="section">
-  <h2>一、全球市场概览</h2>
-  <div class="data-grid">
-    <div class="data-card"><div class="label">标普500</div><div class="value up">{SP500}</div></div>
-    <div class="data-card"><div class="label">纳斯达克</div><div class="value down">{NASDAQ}</div></div>
-    <div class="data-card"><div class="label">道琼斯</div><div class="value up}{DOW_CLASS}">{DOW}</div></div>
-    <div class="data-card"><div class="label">VIX恐慌指数</div><div class="value">{VIX}</div></div>
-  </div>
+<div class="dv"></div>
+
+<div class="sec">
+<div class="stitle">🛢️ 大宗商品与外汇</div>
+<p style="font-size:11px;color:#888;margin-bottom:8px;">截至4/29 | 来源：AhaSignals、Binance</p>
+<table>
+<tr><th>品种</th><th>价格</th><th>涨跌</th></tr>
+<tr><td>黄金</td><td>$4,606.7</td><td class="dn">▼ 跌$30</td></tr>
+<tr><td>WTI原油</td><td>$107.16</td><td class="up">▲ +7.17%</td></tr>
+<tr><td>布伦特</td><td>$118.80</td><td class="up">▲ +6.78%</td></tr>
+<tr><td>DXY</td><td>98.82</td><td class="up">▲ +20点</td></tr>
+<tr><td>小麦</td><td>$6.595</td><td class="up">▲ +11%</td></tr>
+</table>
+<div class="cb"><span class="bl">WTI ($107)</span><div class="bt"><div class="bf" style="width:90%;background:#e74c3c;"></div></div><span class="bv">+7.17%</span></div>
+<div class="cb"><span class="bl">布伦特 ($118)</span><div class="bt"><div class="bf" style="width:95%;background:#e74c3c;"></div></div><span class="bv">+6.78%</span></div>
+<div class="cb"><span class="bl">黄金 ($4,606)</span><div class="bt"><div class="bf" style="width:75%;background:#c9a84c;"></div></div><span class="bv">-0.65%</span></div>
 </div>
 
-<div class="section">
-  <h2>二、盘前要闻</h2>
-  {NEWS_ITEMS}
+<div class="dv"></div>
+
+<div class="sec">
+<div class="stitle">🏛️ 美联储动态</div>
+<p style="font-size:11px;color:#888;margin-bottom:8px;">来源：Reuters、CNBC、Barron's</p>
+<div class="ab">
+<h3>4月FOMC决议（8-4投票）</h3>
+<p>利率维持 <strong style="color:#c9a84c;">3.50%-3.75%</strong> 不变，2026年第三次。</p>
+<p><strong>关键变化：</strong>4人 dissent（1992年以来首次），Trump提名人Warsh反对。</p>
+<p>10年期美债收益率跳涨至 <strong style="color:#c9a84c;">4.41%</strong></p>
+<p>鲍威尔确认任期结束后继续担任理事；Warsh即将就任，特朗普任命理事仅3/7席。</p>
+</div>
+<table>
+<tr><th>指标</th><th>当前值</th><th>变动</th></tr>
+<tr><td>联邦基金利率</td><td>3.50%-3.75%</td><td class="mx">不变</td></tr>
+<tr><td>10年期美债</td><td>4.41%</td><td class="up">▲ +5bps</td></tr>
+<tr><td>FOMC投票</td><td>8-4</td><td class="mx">4人 dissent</td></tr>
+</table>
 </div>
 
-<div class="section">
-  <h2>三、重点个股与板块</h2>
-  <table>
-    <tr><th>个股</th><th>价格</th><th>涨跌幅</th><th>评级</th></tr>
-    {STOCK_TABLE}
-  </table>
+<div class="dv"></div>
+
+<div class="sec">
+<div class="stitle">📅 本周经济日历</div>
+<p style="font-size:11px;color:#888;margin-bottom:8px;">来源：Equals Money、BLS</p>
+<table>
+<tr><th>日期</th><th>事件</th><th>重要性</th></tr>
+<tr><td>4/30</td><td><strong>苹果AAPL Q2财报</strong></td><td class="up">⭐⭐⭐</td></tr>
+<tr><td>5/1</td><td>初请失业金人数</td><td>常规</td></tr>
+<tr><td>5/1</td><td>密歇根消费者信心</td><td>⭐⭐</td></tr>
+<tr><td>5/4</td><td>ISM服务业PMI</td><td>⭐⭐⭐</td></tr>
+<tr><td>5/5</td><td>PPI月率</td><td>⭐⭐⭐</td></tr>
+<tr><td>5/5</td><td>CPI年率</td><td>⭐⭐⭐⭐</td></tr>
+<tr><td>5/6</td><td>Markit PMI初值</td><td>⭐⭐⭐</td></tr>
+<tr><td>5/13</td><td>FOMC利率决议</td><td>⭐⭐⭐⭐</td></tr>
+</table>
+<p style="font-size:11px;color:#888;">⚠️ 核心焦点：苹果财报(4/30)+下周CPI/PPI</p>
 </div>
 
-<div class="section">
-  <h2>四、技术面分析</h2>
-  <table>
-    <tr><th>指数</th><th>支撑位</th><th>阻力位</th><th>趋势</th></tr>
-    {TECH_TABLE}
-  </table>
+<div class="dv"></div>
+
+<div class="sec">
+<div class="stitle">🏢 重点个股与财报</div>
+<p style="font-size:11px;color:#888;margin-bottom:8px;">来源：Bloomberg、Yahoo Finance、AppleInsider</p>
+<table>
+<tr><th>公司</th><th>代码</th><th>日期</th><th>预期营收</th><th>预期EPS</th></tr>
+<tr><td>微软</td><td>MSFT</td><td>4/29</td><td>待更新</td><td>待更新</td></tr>
+<tr><td>谷歌</td><td>GOOG</td><td>4/29</td><td>待更新</td><td>待更新</td></tr>
+<tr><td>亚马逊</td><td>AMZN</td><td>4/29</td><td>待更新</td><td>待更新</td></tr>
+<tr><td>Meta</td><td>META</td><td>4/29</td><td>待更新</td><td>待更新</td></tr>
+<tr><td style="background:#fff8e1;"><strong>苹果</strong></td><td style="background:#fff8e1;"><strong>AAPL</strong></td><td style="background:#fff8e1;"><strong>4/30</strong></td><td style="background:#fff8e1;">$1,127亿</td><td style="background:#fff8e1;">$2.05</td></tr>
+</table>
+
+<h4 style="font-size:13px;color:#0d1b3e;margin:12px 0 6px;">重点个股行情</h4>
+<table>
+<tr><th>股票</th><th>价格</th><th>涨跌</th><th>动态</th></tr>
+<tr><td>NVDA</td><td>$209.25</td><td class="dn">▼ -1.84%</td><td>AI芯片竞争加剧</td></tr>
+<tr><td>TSLA</td><td>待更新</td><td class="mx">--</td><td>Q1已发布，关注AI5</td></tr>
+<tr><td>STX</td><td>待更新</td><td class="up">▲ +11%+</td><td>超预期，MS上调目标价</td></tr>
+<tr><td>NXPI</td><td>待更新</td><td class="up">▲ +25%</td><td>超预期+指引强劲</td></tr>
+<tr><td>SBUX</td><td>待更新</td><td class="up">▲ +9%</td><td>Q2超预期</td></tr>
+<tr><td>V</td><td>待更新</td><td class="up">▲ +5%</td><td>EPS $3.31超预期</td></tr>
+<tr><td>HOOD</td><td>待更新</td><td class="dn">▼ -9%</td><td>Q1不及预期</td></tr>
+<tr><td>BKNG</td><td>待更新</td><td class="dn">▼ -4.5%</td><td>下调指引</td></tr>
+</table>
+
+<div class="ab">
+<h3>🔥 苹果AAPL Q2前瞻</h3>
+<p>预期营收：$1,127亿 | 预期EPS：$2.05</p>
+<p>• iPhone销量预计$565亿，中国表现关键</p>
+<p>• 服务收入增长持续性</p>
+<p>• Apple Intelligence拉动效应</p>
+<p>• 折叠iPhone产品路线图</p>
+</div>
 </div>
 
-<div class="section">
-  <h2>五、风险提示与操作建议</h2>
-  <p>{STRATEGY}</p>
+<div class="dv"></div>
+
+<div class="sec">
+<div class="stitle">🌍 地缘政治风险</div>
+<div class="ni"><h4>⚔️ 美伊冲突升级</h4><p>特朗普拒绝伊朗开放霍尔木兹海峡，封锁持续至核协议。布伦特$118.80，WTI $107。</p><div class="src">来源：Reuters, 2026-04-29</div></div>
+<div class="ni"><h4>📉 OpenAI不及预期</h4><p>WSJ报道OpenAI收入/用户增长未达标，CFO担忧融资。</p><div class="src">来源：Bloomberg, 2026-04-29</div></div>
+<div class="ni"><h4>🏢 科技裁员潮</h4><p>Meta裁8000人，微软7%员工买断。AI支出成本增加。</p><div class="src">来源：Yahoo Finance, 2026-04-27</div></div>
+<div class="ni"><h4>🇦🇪 阿联酋退出OPEC</h4><p>5/1起退出，原油供应不确定性增加。</p><div class="src">来源：CNBC, 2026-04-29</div></div>
 </div>
 
-<div class="footer">
-  本报告仅供参考，不构成投资建议。<br>{DATE}
+<div class="dv"></div>
+
+<div class="sec">
+<div class="stitle">💡 盘前策略建议</div>
+<div class="ab">
+<h3>🎯 谨慎观望，等待财报落地</h3>
+<p><strong>市场状态：</strong>标普/纳指历史高位，道指连跌5日。伊朗推高能源，通胀升温，美联储鹰派。</p>
+<p style="margin-top:8px;"><strong>短期策略：</strong></p>
+<p>1. 苹果财报前(4/30)：控制仓位，AAPL占S&P权重约7%</p>
+<p>2. 能源板块：WTI $107，XLE短期受益</p>
+<p>3. 科技分化：NVDA $209，关注AI资本支出指引</p>
+<p>4. 防御配置：CPI/PPI前增公用事业/必需消费</p>
+<p style="margin-top:8px;"><strong>关键位：</strong></p>
+<p>• 标普500：支撑7,100 / 阻力7,200</p>
+<p>• 纳指：支撑24,500 / 阻力25,000</p>
+<p>• 道指：支撑48,500 / 阻力49,200</p>
+<p style="margin-top:8px;"><strong>风险：</strong>伊朗升级、OpenAI融资、美联储理事任命。止损不超过仓位2%。</p>
 </div>
+</div>
+
+<div class="fm">
+<strong>免责声明：</strong>本报告基于公开数据整理，仅供参考，不构成投资建议。数据来源：Bloomberg·CNBC·Reuters·Yahoo Finance·AppleInsider。市场有风险，投资需谨慎。
+</div>
+
+<div class="ft">美股盘前日报 | 2026年4月30日</div>
 
 </body>
 </html>
