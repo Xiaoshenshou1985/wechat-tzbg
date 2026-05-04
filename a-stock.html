@@ -3,235 +3,284 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>A股盘前投资策略日报 2026年5月1日</title>
+<title>A股盘前日报 2025.5.4</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-  background: #f5f5f5;
-  color: #333;
-  line-height: 1.8;
-  padding: 16px;
-  max-width: 100%;
-}
-.header {
-  background: linear-gradient(135deg, #1a365d 0%, #2d4a7a 100%);
-  color: white;
-  padding: 20px 16px;
-  border-radius: 12px;
-  margin-bottom: 16px;
-  text-align: center;
-}
-.header h1 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
-.header .date { font-size: 13px; opacity: 0.85; }
-.section {
-  background: white;
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 12px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-}
-.section h2 {
-  font-size: 16px;
-  color: #1a365d;
-  border-left: 3px solid #c9a227;
-  padding-left: 10px;
-  margin-bottom: 12px;
-}
-.data-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-  margin-bottom: 12px;
-}
-.data-card {
-  background: #f8f9fa;
-  border-radius: 8px;
-  padding: 10px;
-  text-align: center;
-}
-.data-card .label { font-size: 12px; color: #666; margin-bottom: 4px; }
-.data-card .value { font-size: 16px; font-weight: 700; }
-.up { color: #e5393e; }
-.down { color: #38a169; }
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 8px 0;
-  font-size: 13px;
-}
-th {
-  background: #1a365d;
-  color: white;
-  padding: 8px;
-  text-align: left;
-  font-weight: 600;
-}
-td {
-  padding: 8px;
-  border-bottom: 1px solid #eee;
-}
-tr:nth-child(even) { background: #f8f9fa; }
-.rating-box {
-  background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
-  border-radius: 10px;
-  padding: 14px;
-  margin: 12px 0;
-  border-left: 4px solid #c9a227;
-}
-.rating-box .rating-title { font-size: 14px; font-weight: 700; color: #1a365d; margin-bottom: 8px; }
-.rating-stars { font-size: 20px; letter-spacing: 2px; }
-.prediction {
-  background: #f0f7ff;
-  border-radius: 8px;
-  padding: 12px;
-  margin: 10px 0;
-  font-size: 13px;
-}
-.prediction .label { color: #1a365d; font-weight: 600; }
-.news-item {
-  padding: 10px 0;
-  border-bottom: 1px solid #f0f0f0;
-  font-size: 13px;
-}
-.news-source { color: #c9a227; font-weight: 600; font-size: 12px; }
-.news-time { color: #999; font-size: 11px; margin-left: 8px; }
-.footer {
-  text-align: center;
-  font-size: 11px;
-  color: #999;
-  padding: 16px 0;
-}
-.divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #c9a227, transparent);
-  margin: 12px 0;
-}
-.chart-bar {
-  height: 8px;
-  border-radius: 4px;
-  margin: 4px 0;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f3ef;color:#333;line-height:1.6;-webkit-text-size-adjust:100%}
+.container{max-width:100%;padding:16px;overflow-x:hidden}
+
+/* Header */
+.header{background:linear-gradient(180deg,#0d2b4a 0%,#1a365d 100%);color:#fff;padding:24px 16px;text-align:center;border-radius:0 0 12px 12px;margin:-16px -16px 16px}
+.header h1{font-size:20px;font-weight:bold;letter-spacing:1px;margin-bottom:6px}
+.header .date{background:#c9a227;color:#1a365d;display:inline-block;padding:4px 14px;border-radius:14px;font-size:12px;font-weight:bold}
+
+/* Section title */
+.section-title{font-size:17px;font-weight:bold;color:#1a365d;border-left:4px solid #c9a227;padding-left:10px;margin:20px 0 12px;position:relative}
+.section-title::after{content:'';position:absolute;bottom:-8px;left:10px;right:10px;height:2px;background:linear-gradient(90deg,#c9a227,transparent)}
+
+/* Gold divider */
+.gold-divider{height:2px;background:linear-gradient(90deg,transparent,#c9a227,#f0e0b0,#c9a227,transparent);margin:18px 0;border-radius:1px}
+
+/* Grid */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}
+
+/* Data card mobile */
+.data-card{background:#fff;border-radius:8px;padding:14px 12px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border-top:3px solid #c9a227}
+.data-card .label{font-size:11px;color:#888;margin-bottom:4px}
+.data-card .value{font-size:20px;font-weight:bold;color:#1a365d;line-height:1.3}
+.data-card .change{font-size:12px;font-weight:bold;margin-top:2px}
+.up{color:#e53935}
+.down{color:#38a169}
+
+/* Table mobile */
+.table-wrapper{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:16px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13px}
+thead th{background:#1a365d;color:#fff;padding:10px 8px;text-align:left;font-weight:bold;font-size:12px;white-space:nowrap}
+tbody td{padding:10px 8px;border-bottom:1px solid #eee;font-size:13px;white-space:nowrap}
+tbody tr:hover{background:#f8f7f4}
+
+/* Summary box */
+.summary-box{background:linear-gradient(135deg,#fff,#faf8f4);border:2px solid #c9a227;border-radius:10px;padding:16px;margin-bottom:16px}
+.summary-box h3{font-size:15px;color:#1a365d;margin-bottom:10px}
+.summary-box ul{list-style:none;padding-left:0}
+.summary-box li{padding:8px 0;border-bottom:1px solid #eee;font-size:13px;position:relative;padding-left:16px}
+.summary-box li::before{content:'▸';color:#c9a227;position:absolute;left:0;font-weight:bold}
+
+/* Source */
+.source-tag{font-size:10px;color:#aaa;margin-left:4px;font-style:italic}
+.timestamp{font-size:10px;color:#c9a227;display:inline-block}
+
+/* Bar chart mobile */
+.bar-container{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.bar-label{min-width:60px;font-size:11px;color:#666}
+.bar-track{flex:1;height:18px;background:#eee;border-radius:9px;overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:9px;display:flex;align-items:center;padding-left:6px;font-size:10px;color:#fff;font-weight:bold;min-width:fit-content}
+.positive{background:linear-gradient(90deg,#e53935,#ff6b64)}
+.negative{background:linear-gradient(90deg,#38a169,#4caf50)}
+
+/* Footer */
+.footer{text-align:center;padding:20px 16px;border-top:2px solid #c9a227;margin-top:20px;color:#999;font-size:11px}
 </style>
 </head>
 <body>
+<div class="container">
 
+<!-- Header -->
 <div class="header">
-  <h1>📈 A股盘前投资策略日报</h1>
-  <div class="date">2026年5月1日 星期四 | 五一假期休市</div>
+<h1>A股盘前日报</h1>
+<div class="date">2025年5月4日（周日）</div>
 </div>
 
-<div class="section">
-  <h2>一、全球核心资产数据卡</h2>
-  <div class="data-grid">
-    <div class="data-card"><div class="label">🥇现货黄金</div><div class="value">$4,549/oz 🔴-1.0%</div></div>
-    <div class="data-card"><div class="label">🛢️WTI原油</div><div class="value">$107.4/bbl 🟢+0.5%</div></div>
-    <div class="data-card"><div class="label">💵DXY美元指数</div><div class="value">98.94 🟢+0.3%</div></div>
-    <div class="data-card"><div class="label">🇨🇳离岸人民币</div><div class="value">6.8349</div></div>
-    <div class="data-card"><div class="label">📊VIX恐慌指数</div><div class="value">18.51</div></div>
-    <div class="data-card"><div class="label">😱CNN恐惧贪婪</div><div class="value">66.03 贪婪</div></div>
-    <div class="data-card"><div class="label">🇺🇸美债10年期</div><div class="value">4.292%</div></div>
-    <div class="data-card"><div class="label">₿比特币</div><div class="value">$76,342 🔴-0.7%</div></div>
-  </div>
+<!-- US Stocks -->
+<h2 class="section-title">🇺🇸 美股上周五收盘 <span class="timestamp">— Fox Business/CNN</span></h2>
+<div class="grid-2">
+<div class="data-card">
+<div class="label">道琼斯</div>
+<div class="value">49,499.27</div>
+<div class="change down">▼ -152.87 (-0.31%)</div>
+</div>
+<div class="data-card">
+<div class="label">纳斯达克</div>
+<div class="value">25,114.44</div>
+<div class="change up">▲ +222.13 (+0.89%)</div>
+</div>
+<div class="data-card">
+<div class="label">标普500</div>
+<div class="value">7,230.12</div>
+<div class="change up">▲ +21.11 (+0.29%)</div>
+</div>
+<div class="data-card">
+<div class="label">VIX恐慌指数</div>
+<div class="value">16.99</div>
+<div class="change up">▲ +0.59% 低波动</div>
+</div>
 </div>
 
-<div class="section">
-  <h2>二、A股4月回顾</h2>
-  <table>
-    <tr><th>指数</th><th>4月涨跌幅</th><th>关键点位</th><th>成交额</th></tr>
-    <tr><td>上证指数</td><td class="up">+1.2%</td><td>站稳4100点</td><td>2.76万亿/日</td></tr>
-    <tr><td>深证成指</td><td class="up">+8.5%</td><td>15107点</td><td>-</td></tr>
-    <tr><td>创业板指</td><td class="up">+15.3%</td><td>刷新十年新高</td><td>-</td></tr>
-    <tr><td>科创50</td><td class="up">+25.1%</td><td>强势突破</td><td>-</td></tr>
-  </table>
-  <p style="font-size:11px;color:#999;margin-top:6px;">数据来源：东方财富、每日经济新闻 2026-04-30</p>
+<div class="gold-divider"></div>
+
+<!-- Commodities -->
+<h2 class="section-title">🛢️ 大宗商品 <span class="timestamp">— EIA/TradingView</span></h2>
+<div class="grid-2">
+<div class="data-card">
+<div class="label">黄金期货</div>
+<div class="value">$3,292.14</div>
+<div class="change down">▼ -0.71%</div>
+</div>
+<div class="data-card">
+<div class="label">WTI原油</div>
+<div class="value">$62.37</div>
+<div class="change down">▼ -3.08%</div>
+</div>
+<div class="data-card">
+<div class="label">布伦特原油</div>
+<div class="value">$63.00</div>
+<div class="change down">▼ -2.76%</div>
+</div>
+<div class="data-card">
+<div class="label">美元指数DXY</div>
+<div class="value">98.211</div>
+<div class="change up">▲ +0.12%</div>
+</div>
 </div>
 
-<div class="section">
-  <h2>三、资金面分析</h2>
-  <table>
-    <tr><th>指标</th><th>数值</th><th>趋势</th></tr>
-    <tr><td>北向资金持股</td><td>1037亿股</td><td class="down">环比-4%</td></tr>
-    <tr><td>北向资金市值</td><td>2.58万亿元</td><td class="down">近3季度新低</td></tr>
-    <tr><td>两融余额</td><td>2.70万亿元</td><td class="up">历史第四高</td></tr>
-    <tr><td>ETF成交额</td><td>4886亿元/日</td><td class="up">交投活跃</td></tr>
-  </table>
-  <p style="font-size:11px;color:#999;margin-top:6px;">数据来源：证券时报·数据宝 2026-04-11</p>
+<div class="gold-divider"></div>
+
+<!-- Macro -->
+<h2 class="section-title">📈 宏观数据 <span class="timestamp">— BLS/NBS</span></h2>
+<div style="margin-bottom:16px">
+<h3 style="font-size:15px;color:#1a365d;margin-bottom:8px">🇺🇸 美国CPI（4月）</h3>
+<div class="table-wrapper"><table>
+<thead><tr><th>指标</th><th>环比</th><th>同比</th></tr></thead>
+<tbody>
+<tr><td>CPI整体</td><td>+0.1%</td><td>+2.4%</td></tr>
+<tr><td>核心CPI</td><td>—</td><td>≈2.9%（预测）</td></tr>
+</tbody>
+</table></div>
+</div>
+<div style="margin-bottom:16px">
+<h3 style="font-size:15px;color:#1a365d;margin-bottom:8px">🇨🇳 中国PMI（4月）</h3>
+<div class="table-wrapper"><table>
+<thead><tr><th>指标</th><th>数值</th><th>变动</th></tr></thead>
+<tbody>
+<tr><td>制造业PMI</td><td>49.5%</td><td>+0.5pct</td></tr>
+<tr><td>非制造PMI</td><td>50.3%</td><td>-0.1pct</td></tr>
+</tbody>
+</table></div>
 </div>
 
-<div class="section">
-  <h2>四、行业板块轮动</h2>
-  <table>
-    <tr><th>板块</th><th>4月表现</th><th>资金流向</th><th>观点</th></tr>
-    <tr><td>算力芯片</td><td class="up">爆发</td><td>净流入69亿</td><td>寒武纪创历史新高，中际旭创万亿市值</td></tr>
-    <tr><td>锂电产业链</td><td class="up">+85%</td><td>净流入36亿</td><td>宁德时代创新高，排产预期向好</td></tr>
-    <tr><td>工业气体</td><td class="up">翻倍</td><td>净流入73亿</td><td>中东局势催化，华特气体翻倍</td></tr>
-    <tr><td>半导体</td><td class="up">+69亿净流入</td><td>强势</td><td>国产替代加速，周期反转</td></tr>
-    <tr><td>油气板块</td><td class="down">-25%</td><td>净流出</td><td>短期调整压力较大</td></tr>
-  </table>
+<div class="gold-divider"></div>
+
+<!-- Fed -->
+<h2 class="section-title">🏦 美联储利率决议 <span class="timestamp">— 新浪财经/工商银行</span></h2>
+<div class="summary-box">
+<h3>6月18日FOMC前瞻</h3>
+<ul>
+<li>当前利率：4.25%-4.50%（维持不变）<span class="source-tag">— 工商银行</span></li>
+<li>降息预期推迟至9月<span class="source-tag">— CNBC</span></li>
+<li>关注点阵图更新与通胀评估</li>
+</ul>
 </div>
 
-<div class="section">
-  <h2>五、技术面分析</h2>
-  <table>
-    <tr><th>指数</th><th>关键支撑</th><th>关键阻力</th><th>RSI(14)</th><th>趋势判断</th></tr>
-    <tr><td>上证指数</td><td>4060点</td><td>4114点</td><td>58</td><td class="up">震荡偏多</td></tr>
-    <tr><td>创业板指</td><td>3596点(20日线)</td><td>3677点</td><td>62</td><td class="down">高位调整中</td></tr>
-    <tr><td>科创50</td><td>1452点</td><td>1571点</td><td>65</td><td class="up">强势</td></tr>
-  </table>
+<div class="gold-divider"></div>
+
+<!-- A-share -->
+<h2 class="section-title">🇨🇳 A股上周收盘 <span class="timestamp">— Wind/东方财富</span></h2>
+<div class="grid-2">
+<div class="data-card">
+<div class="label">上证综指（月累计）</div>
+<div class="value">3,786</div>
+<div class="change down">▼ -1.70%</div>
+</div>
+<div class="data-card">
+<div class="label">深证成指（月累计）</div>
+<div class="value">10,104</div>
+<div class="change down">▼ -5.75%</div>
+</div>
+<div class="data-card">
+<div class="label">创业板指（月累计）</div>
+<div class="value">—</div>
+<div class="change down">▼ -7.40%</div>
+</div>
+<div class="data-card">
+<div class="label">日均成交额</div>
+<div class="value">11,693亿</div>
+<div class="change up">（4月累计）</div>
+</div>
 </div>
 
-<div class="section">
-  <h2>六、投资策略建议</h2>
-  
-  <div class="rating-box">
-    <div class="rating-title">📊 市场综合评分</div>
-    <div class="rating-stars">⭐⭐⭐⭐☆ 4/5</div>
-    <p style="font-size:12px;margin-top:6px;">高景气赛道业绩兑现期，关注算力、半导体、锂电主线</p>
-  </div>
-
-  <div class="prediction">
-    <span class="label">📈 上证指数预测：</span>短期震荡整理，4060-4114点区间运行，节后有望挑战前高
-  </div>
-  
-  <div class="prediction">
-    <span class="label">🎯 激进型策略：</span>仓位7成，逢低布局算力硬件(寒武纪/中际旭创)、半导体设备(北方华创)、锂电龙头(宁德时代)
-  </div>
-  
-  <div class="prediction">
-    <span class="label">🎯 稳健型策略：</span>仓位5-6成，配置高股息资产(长江电力/中国神华)+AI算力核心标的，规避高位纯题材股
-  </div>
-
-  <div class="prediction">
-    <span class="label">⚠️ 风险提示：</span>①业绩真空期风格切换至小盘题材 ②远离业绩亏损股 ③控制仓位不追高 ④五一假期外部事件风险
-  </div>
+<!-- Sector bars -->
+<h3 style="font-size:15px;color:#1a365d;margin:20px 0 12px">📊 板块表现（4月）</h3>
+<div class="table-wrapper" style="max-width:100%">
+<div class="bar-container"><span class="bar-label">银行</span><div class="bar-track"><div class="bar-fill negative" style="width:35%">-3.2%</div></div></div>
+<div class="bar-container"><span class="bar-label">半导体</span><div class="bar-track"><div class="bar-fill positive" style="width:45%;background:linear-gradient(90deg,#2196f3,#42a5f5)">+4.8%</div></div></div>
+<div class="bar-container"><span class="bar-label">AI应用</span><div class="bar-track"><div class="bar-fill positive" style="width:55%;background:linear-gradient(90deg,#7b1fa2,#ba68c8)">+6.2%</div></div></div>
+<div class="bar-container"><span class="bar-label">电力</span><div class="bar-track"><div class="bar-fill negative" style="width:25%">-2.1%</div></div></div>
 </div>
 
-<div class="section">
-  <h2>七、5月三大主线</h2>
-  <table>
-    <tr><th>主线</th><th>核心逻辑</th><th>代表标的</th></tr>
-    <tr><td>AI算力与半导体</td><td>全球需求爆发+国产替代</td><td>寒武纪、中际旭创、北方华创</td></tr>
-    <tr><td>能源金属与资源</td><td>供需紧平衡+货币宽松</td><td>紫金矿业、天齐锂业、山东黄金</td></tr>
-    <tr><td>高端制造出海</td><td>全球产能转移+技术突破</td><td>汇川技术、三一重工、国电南瑞</td></tr>
-  </table>
+<div class="gold-divider"></div>
+
+<!-- Northbound -->
+<h2 class="section-title">💰 北向资金 <span class="timestamp">— AASTOCKS/东方财富</span></h2>
+<div class="table-wrapper"><table>
+<thead><tr><th>日期</th><th>成交额(亿)</th><th>占大市%</th></tr></thead>
+<tbody>
+<tr><td>04-22</td><td>3,064.05</td><td>11.97%</td></tr>
+<tr><td>04-21</td><td>3,010.43</td><td>12.50%</td></tr>
+<tr><td>04-20</td><td>3,106.33</td><td>12.05%</td></tr>
+<tr><td>04-17</td><td>2,980.64</td><td>12.29%</td></tr>
+</tbody>
+</table></div>
+
+<div class="gold-divider"></div>
+
+<!-- Hot Sectors -->
+<h2 class="section-title">🔥 今日热点板块 <span class="timestamp">— 东方财富/新浪财经</span></h2>
+<div class="summary-box">
+<h3>🤖 AI与机器人（强烈关注）</h3>
+<ul>
+<li>阿里发布通义千问Qwen3，成本大幅降低<span class="source-tag">— 东方财富</span></li>
+<li>小米开源Xiaomi MiMo大模型</li>
+<li>工信部支持人形机器人产业发展</li>
+</ul>
+</div>
+<div class="summary-box">
+<h3>🔋 核电与核聚变</h3>
+<ul>
+<li>核电板块共振走强<span class="source-tag">— 东方财富</span></li>
+<li>可控核聚变概念股集体大涨</li>
+<li>宁德时代签署3年60GWh钠离子电池订单</li>
+</ul>
+</div>
+<div class="summary-box">
+<h3>🚗 汽车零部件（关税豁免利好）</h3>
+<ul>
+<li>特朗普签署公告允许零部件进口商获补偿<span class="source-tag">— 东方财富</span></li>
+<li>板块上周五强力拉升</li>
+</ul>
+</div>
+<div class="summary-box">
+<h3>🛡️ 军工与稀土（地缘催化）</h3>
+<ul>
+<li>中东局势推升黄金至两周新高<span class="source-tag">— Moneta Markets</span></li>
+<li>稀土永磁概念股震荡走强</li>
+</ul>
 </div>
 
-<div class="section">
-  <h2>八、重要日历</h2>
-  <table>
-    <tr><th>日期</th><th>事件</th><th>影响</th></tr>
-    <tr><td>5月1日</td><td>劳动节假期开始</td><td>A股休市</td></tr>
-    <tr><td>5月5日</td><td>假期结束/开盘</td><td>关注节后开盘走势</td></tr>
-    <tr><td>5月中旬</td><td>美联储议息会议</td><td>降息预期升温</td></tr>
-  </table>
+<div class="gold-divider"></div>
+
+<!-- Strategy -->
+<h2 class="section-title">🎯 策略建议 <span class="timestamp">— 兴业证券/上海证券</span></h2>
+<div class="summary-box" style="border-color:#1a365d;background:linear-gradient(135deg,#e8f4fd,#fff)">
+<h3>📌 本周核心逻辑</h3>
+<ul>
+<li>政策底信号明确，内需发力确定性高<span class="source-tag">— 东方财富</span></li>
+<li>AI产业趋势确定（Qwen3/MiMo/文心4.5）<span class="source-tag">— 新浪财经</span></li>
+<li>美联储按兵不动+降息预期升温<span class="source-tag">— Wind</span></li>
+<li>黄金避险价值凸显 $3,292高位运行</li>
+</ul>
 </div>
 
-<div class="footer">
-  本报告仅供参考，不构成投资建议。<br>
-  数据来源：证券时报、东方财富、每日经济新闻<br>
-  2026年5月1日
+<div style="margin-top:16px">
+<h3 style="font-size:15px;color:#1a365d;margin-bottom:10px">📋 配置建议</h3>
+<div class="table-wrapper"><table>
+<thead><tr><th>方向</th><th>板块</th></tr></thead>
+<tbody>
+<tr><td>中长期</td><td>消费+AI+新能源（R3-R4）</td></tr>
+<tr><td>短期弹性</td><td>红利+TMT+创新药（R3）</td></tr>
+<tr><td>稳健配置</td><td>TMT内外需兼顾+红利对冲（R2-R3）</td></tr>
+</tbody>
+</table></div>
 </div>
 
+<div class="gold-divider"></div>
+
+<!-- Disclaimer -->
+<div style="background:#f5f5f0;border-left:4px solid #c9a227;padding:14px;margin-top:20px;font-size:11px;color:#888;line-height:1.6">
+<strong>免责声明：</strong>本报告基于公开信息整理，仅供参考，不构成任何投资建议。数据来源：Wind、东方财富、新浪财经、CNN Markets、Fox Business、MarketWatch、BLS、EIA等。生成时间：2025年5月4日。<br>
+<span class="timestamp">最后更新: 2025-05-04 08:30 UTC</span>
+</div>
+
+</div><!-- /container -->
+<div class="footer">A股盘前日报 © 2025 · 自动化生成</div>
 </body>
 </html>
