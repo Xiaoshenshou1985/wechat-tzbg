@@ -3,260 +3,206 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<title>A股盘前日报 20260513</title>
+<title>A股盘前策略日报</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f5f2ec;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#1a365d;line-height:1.7;-webkit-font-smoothing:antialiased;padding:16px}
+.wrap{max-width:100%}
+
+/* Header */
+.hdr{background:linear-gradient(135deg,#1a365d,#0f2744);color:#fff;padding:28px 20px;border-radius:10px;margin-bottom:18px;position:relative;text-align:center}
+.hdr::after{content:'';display:block;width:100%;height:3px;background:linear-gradient(90deg,#c9a227,#e8d5a3,#c9a227);margin-top:16px}
+.hdr h1{font-size:24px;font-weight:700;letter-spacing:2px;margin-bottom:6px}
+.hdr .sub{color:#c9a227;font-size:13px;letter-spacing:1px}
+
+/* Section */
+.stitle{font-size:18px;font-weight:700;color:#1a365d;border-left:4px solid #c9a227;padding:6px 0 6px 12px;margin:24px 0 14px}
+
+/* Card */
+.card{background:#fff;border-radius:8px;padding:16px;margin-bottom:14px;box-shadow:0 2px 6px rgba(26,54,93,.07);border-top:3px solid #c9a227}
+.card h3{font-size:15px;color:#1a365d;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #e8e0d0}
+
+/* Table */
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:7px 8px;text-align:left;border-bottom:1px solid #eee9df}
+th{background:#f7f4ef;color:#6b5d3e;font-weight:600;font-size:12px;letter-spacing:.5px}
+
+.up{color:#c53030;font-weight:700}
+.down{color:#38a169;font-weight:700}
+.flat{color:#888}
+
+/* Grid */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+
+/* Bar chart mobile */
+.bar-row{display:flex;align-items:center;margin-bottom:5px;font-size:12px}
+.bar-lbl{width:72px;text-align:right;padding-right:8px;color:#555;font-size:12px}
+.bar-trk{flex:1;height:20px;background:#f0ece6;border-radius:3px;overflow:hidden}
+.bar-fl{height:100%;border-radius:3px;display:flex;align-items:center;padding-left:6px;color:#fff;font-size:10px;font-weight:600}
+.bar-fl.p{background:linear-gradient(90deg,#c53030,#e25a4f)}
+.bar-fl.n{background:linear-gradient(90deg,#38a169,#5cbf8b)}
+
+/* Sep */
+.sep{height:2px;margin:22px 0;background:linear-gradient(90deg,transparent,#c9a227,#e8d5a3,#c9a227,transparent)}
+
+/* Summary */
+.sbox{background:linear-gradient(135deg,#f7f4ef,#fff);border:2px solid #c9a227;border-radius:8px;padding:16px;margin-top:14px}
+.sbox h3{font-size:16px;color:#1a365d;margin-bottom:10px}
+.sbox li{padding:5px 0;font-size:13px;list-style:none;padding-left:18px;position:relative}
+.sbox li::before{content:'▸';color:#c9a227;position:absolute;left:0}
+
+/* News */
+.ni{padding:10px 0;border-bottom:1px solid #eee8dd;font-size:13px}
+.ns{color:#c9a227;font-weight:600;font-size:11px}
+.nt{color:#999;font-size:11px;margin-left:6px}
+
+/* Tag */
+.tag{display:inline-block;background:#f7f4ef;border:1px solid #d4c9a8;padding:2px 8px;border-radius:3px;font-size:11px;color:#6b5d3e;margin-right:4px}
+
+/* Footer */
+.foot{text-align:center;margin-top:28px;padding:14px;font-size:11px;color:#888}
+
+/* Data card grid */
+.dcard{background:#fff;border-radius:8px;padding:10px;text-align:center;border:1px solid #e8e0d0}
+.dcard .num{font-size:20px;font-weight:700;margin-bottom:2px}
+.dcard .lbl{font-size:11px;color:#6b5d3e}
+
+/* Alert */
+.alert{background:#fff8e1;border-left:4px solid #c9a227;padding:12px 14px;border-radius:0 8px 8px 0;margin-bottom:14px;font-size:13px}
+</style>
 </head>
-<body style="margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:#f5f5f0;color:#2d3748;line-height:1.6">
+<body>
+<div class="wrap">
 
 <!-- Header -->
-<div style="background:linear-gradient(135deg,#0f2440 0%,#1a365d 50%,#234b7e 100%);color:#fff;padding:24px 16px;text-align:center">
-<h1 style="font-size:22px;font-weight:700;letter-spacing:2px;margin-bottom:6px">A股盘前投资策略日报</h1>
-<div style="font-size:13px;color:#e8d48b;opacity:.9">Morning Investment Strategy Briefing</div>
-<div style="display:flex;justify-content:center;gap:12px;margin-top:10px;font-size:11px;color:#a8c0e0">
-<span>📅 2026-05-13（周三）</span><span>|</span><span>🕐 数据截止5/12收盘</span>
-</div>
+<div class="hdr">
+<h1>A股盘前策略日报</h1>
+<div class="sub">2026年5月13日 · 周三</div>
 </div>
 
-<div style="max-width:100%;padding:16px">
-
-<!-- ====== A股指数卡片 ====== -->
-<div style="background:#fff;border-radius:10px;overflow:hidden;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.06)">
-<div style="background:linear-gradient(90deg,#1a365d,#234b7e);color:#fff;padding:12px 16px;display:flex;align-items:center;gap:8px">
-<span style="width:24px;height:24px;border-radius:5px;background:#c9a227;display:inline-flex;align-items:center;justify-content:center;font-size:12px;color:#1a365d;font-weight:700">A1</span>
-<span style="font-size:15px;font-weight:600">A股核心指数（5/12收盘）</span>
-</div>
-<div style="padding:14px 12px">
-<table style="width:100%;border-collapse:collapse;font-size:13px">
-<thead><tr style="background:#faf7f0"><th style="padding:8px;text-align:left;color:#1a365d;border-bottom:2px solid #e8d48b;font-weight:600">指数</th><th style="padding:8px;color:#1a365d;border-bottom:2px solid #e8d48b">收盘</th><th style="padding:8px;color:#1a365d;border-bottom:2px solid #e8d48b">涨跌</th></tr></thead>
-<tbody>
-<tr style="border-bottom:1px solid #eee"><td style="padding:8px 6px">上证指数</td><td style="padding:8px 6px;text-align:center;color:#e5393e;font-weight:700">4,225.02</td><td style="padding:8px 6px;text-align:center;color:#e5393e;font-weight:700">+1.08%</td></tr>
-<tr style="border-bottom:1px solid #eee"><td style="padding:8px 6px">深证成指</td><td style="padding:8px 6px;text-align:center;color:#e5393e;font-weight:700">—</td><td style="padding:8px 6px;text-align:center;color:#e5393e;font-weight:700">+2.16%</td></tr>
-<tr style="border-bottom:1px solid #eee"><td style="padding:8px 6px">创业板指</td><td style="padding:8px 6px;text-align:center;color:#e5393e;font-weight:700">~3,929</td><td style="padding:8px 6px;text-align:center;color:#e5393e;font-weight:700">+3.50%</td></tr>
-<tr><td style="padding:8px 6px">科创50</td><td style="padding:8px 6px;text-align:center;color:#e5393e;font-weight:700">~1,727</td><td style="padding:8px 6px;text-align:center;color:#e5393e;font-weight:700">历史新高</td></tr>
-</tbody>
-</table>
-
-<div style="background:#fffdf5;border-left:3px solid #c9a227;padding:10px 12px;border-radius:0 8px 8px 0;margin-top:10px;font-size:12.5px">
-<p><strong>📊 成交：</strong><span style="color:#e5393e;font-weight:600">3.54万亿</span>元，连续第4天破3万亿</p>
-<p><strong>🔥 涨停：</strong><span style="color:#e5393e;font-weight:600">126只</span></p>
-<p><strong>🎯 意义：</strong>沪指时隔近11年重返4200点，创2015年7月以来新高</p>
-</div>
-
-<div style="text-align:right;font-size:10px;color:#a0aec0;margin-top:8px">📎 新浪财经 · 财新数据通 | 2026-05-12</div>
-</div>
-</div>
-
-<!-- ====== 美股隔夜 ====== -->
-<div style="background:#fff;border-radius:10px;overflow:hidden;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.06)">
-<div style="background:linear-gradient(90deg,#1a365d,#234b7e);color:#fff;padding:12px 16px;display:flex;align-items:center;gap:8px">
-<span style="width:24px;height:24px;border-radius:5px;background:#c9a227;display:inline-flex;align-items:center;justify-content:center;font-size:12px;color:#1a365d;font-weight:700">US</span>
-<span style="font-size:15px;font-weight:600">美股隔夜收盘（5/12）</span>
-</div>
-<div style="padding:14px 12px">
-<table style="width:100%;border-collapse:collapse;font-size:13px">
-<thead><tr style="background:#faf7f0"><th style="padding:8px;text-align:left;color:#1a365d;border-bottom:2px solid #e8d48b;font-weight:600">指数</th><th style="padding:8px;color:#1a365d;border-bottom:2px solid #e8d48b">收盘</th><th style="padding:8px;text-align:right;color:#1a365d;border-bottom:2px solid #e8d48b">涨跌</th></tr></thead>
-<tbody>
-<tr style="border-bottom:1px solid #eee"><td style="padding:8px 6px">标普500</td><td style="padding:8px 6px;text-align:center;color:#e5393e;font-weight:700">~5,844</td><td style="padding:8px 6px;text-align:right;color:#e5393e;font-weight:700">+3.26%</td></tr>
-<tr style="border-bottom:1px solid #eee"><td style="padding:8px 6px">纳斯达克</td><td style="padding:8px 6px;text-align:center;color:#e5393e;font-weight:700">~18,708</td><td style="padding:8px 6px;text-align:right;color:#e5393e;font-weight:700">+4.35%</td></tr>
-<tr><td style="padding:8px 6px">道琼斯</td><td style="padding:8px 6px;text-align:center;color:#e5393e;font-weight:700">~42,410</td><td style="padding:8px 6px;text-align:right;color:#e5393e;font-weight:700">+2.8%</td></tr>
-</tbody>
-</table>
-
-<div style="background:#fff5f5;border-left:3px solid #e5393e;padding:10px 12px;border-radius:0 8px 8px 0;margin-top:10px;font-size:12.5px">
-<p><strong>⚡地缘：</strong>霍尔木兹海峡紧张，伊朗起草交通管理协议。原油自2月底涨逾30%，喷气燃料成本翻倍。</p>
-</div>
-
-<div style="text-align:right;font-size:10px;color:#a0aec0;margin-top:8px">📎 Yahoo Finance · CNBC | 2026-05-13 04:00 EDT</div>
-</div>
-</div>
-
-<!-- ====== 大宗商品 ====== -->
-<div style="background:#fff;border-radius:10px;overflow:hidden;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.06)">
-<div style="background:linear-gradient(90deg,#1a365d,#234b7e);color:#fff;padding:12px 16px;display:flex;align-items:center;gap:8px">
-<span style="width:24px;height:24px;border-radius:5px;background:#c9a227;display:inline-flex;align-items:center;justify-content:center;font-size:12px;color:#1a365d;font-weight:700">🛢️</span>
-<span style="font-size:15px;font-weight:600">大宗商品与外汇</span>
-</div>
-<div style="padding:14px 12px">
-<table style="width:100%;border-collapse:collapse;font-size:13px">
-<thead><tr style="background:#faf7f0"><th style="padding:8px;text-align:left;color:#1a365d;border-bottom:2px solid #e8d48b;font-weight:600">品种</th><th style="padding:8px;color:#1a365d;border-bottom:2px solid #e8d48b">价格</th><th style="padding:8px;text-align:right;color:#1a365d;border-bottom:2px solid #e8d48b">日涨跌</th></tr></thead>
-<tbody>
-<tr style="border-bottom:1px solid #eee"><td style="padding:8px 6px">WTI原油</td><td style="padding:8px 6px;text-align:center;color:#e5393e;font-weight:700">$98.07</td><td style="padding:8px 6px;text-align:right;color:#e5393e">+2.78%</td></tr>
-<tr style="border-bottom:1px solid #eee"><td style="padding:8px 6px">布伦特原油</td><td style="padding:8px 6px;text-align:center;color:#e5393e;font-weight:700">$104.21</td><td style="padding:8px 6px;text-align:right;color:#e5393e">+2.88%</td></tr>
-<tr style="border-bottom:1px solid #eee"><td style="padding:8px 6px">现货黄金</td><td style="padding:8px 6px;text-align:center;color:#38a169;font-weight:700">$5,090</td><td style="padding:8px 6px;text-align:right;color:#38a169">-1.5%</td></tr>
-<tr style="border-bottom:1px solid #eee"><td style="padding:8px 6px">现货白银</td><td style="padding:8px 6px;text-align:center;color:#e5393e;font-weight:700">$86.08</td><td style="padding:8px 6px;text-align:right;color:#e5393e">+7.15%</td></tr>
-<tr><td style="padding:8px 6px">DXY美元指数</td><td style="padding:8px 6px;text-align:center;color:#38a169;font-weight:700">97.96</td><td style="padding:8px 6px;text-align:right;color:#38a169">-0.08%</td></tr>
-</tbody>
-</table>
-
-<div style="text-align:right;font-size:10px;color:#a0aec0;margin-top:8px">📎 Trading Economics · Yahoo Finance | 2026-05-13</div>
-</div>
-</div>
-
-<!-- ====== 宏观数据 ====== -->
-<div style="background:#fff;border-radius:10px;overflow:hidden;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.06)">
-<div style="background:linear-gradient(90deg,#1a365d,#234b7e);color:#fff;padding:12px 16px;display:flex;align-items:center;gap:8px">
-<span style="width:24px;height:24px;border-radius:5px;background:#c9a227;display:inline-flex;align-items:center;justify-content:center;font-size:12px;color:#1a365d;font-weight:700">📊</span>
-<span style="font-size:15px;font-weight:600">宏观数据与政策（今日关注：美国CPI）</span>
-</div>
-<div style="padding:14px 12px">
-
-<!-- 今日重磅 -->
-<div style="background:#fff5f5;border-left:3px solid #e5393e;padding:10px 12px;border-radius:0 8px 8px 0;margin-bottom:10px;font-size:12.5px">
-<p><strong>🔴 今日重磅：4月美国CPI将于北京时间20:30公布</strong></p>
-<p style="margin-top:6px">预计CPI年率3.7%（前值3.3%，2023年9月以来最高），核心CPI 2.7%</p>
-</div>
-
-<table style="width:100%;border-collapse:collapse;font-size:13px">
-<thead><tr style="background:#faf7f0"><th style="padding:8px;text-align:left;color:#1a365d;border-bottom:2px solid #e8d48b;font-weight:600">指标</th><th style="padding:8px;color:#1a365d;border-bottom:2px solid #e8d48b">最新</th><th style="padding:8px;text-align:right;color:#1a365d;border-bottom:2px solid #e8d48b">前值</th></tr></thead>
-<tbody>
-<tr style="border-bottom:1px solid #eee"><td style="padding:8px 6px">CPI年率</td><td style="padding:8px 6px;text-align:center;color:#e5393e;font-weight:700">3.7%</td><td style="padding:8px 6px;text-align:right;color:#718096">3.3%</td></tr>
-<tr style="border-bottom:1px solid #eee"><td style="padding:8px 6px">核心CPI年率</td><td style="padding:8px 6px;text-align:center;color:#e5393e;font-weight:700">2.7%</td><td style="padding:8px 6px;text-align:right;color:#718096">2.6%</td></tr>
-<tr style="border-bottom:1px solid #eee"><td style="padding:8px 6px">制造业PMI（4月）</td><td style="padding:8px 6px;text-align:center;color:#e5393e;font-weight:700">54.5</td><td style="padding:8px 6px;text-align:right;color:#718096">52.3</td></tr>
-<tr style="border-bottom:1px solid #eee"><td style="padding:8px 6px">综合PMI（4月）</td><td style="padding:8px 6px;text-align:center;color:#e5393e;font-weight:700">51.7</td><td style="padding:8px 6px;text-align:right;color:#718096">50.3</td></tr>
-</tbody>
-</table>
-
-<!-- 美联储 -->
-<div style="margin-top:14px">
-<p style="font-size:13px;font-weight:600;color:#1a365d;margin-bottom:8px">🏛️ 美联储动态</p>
-<table style="width:100%;border-collapse:collapse;font-size:12.5px">
-<tr style="border-bottom:1px solid #f0ede4"><td style="padding:6px;color:#718096;width:100px">最新利率</td><td style="padding:6px;font-weight:600;color:#e5393e">3.50-3.75%</td></tr>
-<tr style="border-bottom:1px solid #f0ede4"><td style="padding:6px;color:#718096">决议日期</td><td style="padding:6px">4月29日（维持不变）</td></tr>
-<tr style="border-bottom:1px solid #f0ede4"><td style="padding:6px;color:#718096">分歧票</td><td style="padding:6px">4票 dissent 创纪录</td></tr>
-<tr><td style="padding:6px;color:#718096">下次会议</td><td style="padding:6px">6月18日</td></tr>
+<!-- US Market -->
+<div class="stitle">🇺🇸 隔夜美股收盘（5/9周五）</div>
+<div class="card">
+<h3>三大指数表现</h3>
+<table>
+<tr><th>指数</th><th>收盘</th><th>涨跌</th></tr>
+<tr><td>S&P 500</td><td>7,412.84</td><td class="up">+0.84%</td></tr>
+<tr><td>NASDAQ</td><td>26,274.13</td><td class="up">+1.71%</td></tr>
+<tr><td>Dow Jones</td><td>49,704.47</td><td class="up">+0.19%</td></tr>
 </table>
 </div>
 
-<!-- VIX -->
-<div style="margin-top:14px">
-<p style="font-size:13px;font-weight:600;color:#1a365d;margin-bottom:8px">📈 市场情绪</p>
-<table style="width:100%;border-collapse:collapse;font-size:12.5px">
-<tr style="border-bottom:1px solid #f0ede4"><td style="padding:6px;color:#718096;width:100px">VIX恐慌指数</td><td style="padding:6px;font-weight:600;color:#e5393e">18.93（+2.99%）</td></tr>
-<tr style="border-bottom:1px solid #f0ede4"><td style="padding:6px;color:#718096">A股两融余额</td><td style="padding:6px;font-weight:600;color:#e5393e">28,025亿（历史新高）</td></tr>
-<tr><td style="padding:6px;color:#718096">百亿私募数量</td><td style="padding:6px;font-weight:600;color:#e5393e">136家（创新高）</td></tr>
+<!-- Commodities -->
+<div class="stitle">📊 大宗商品与汇率</div>
+<div class="grid2">
+<div class="dcard"><div class="num up">$4,707</div><div class="lbl">黄金/oz · +0.21%</div></div>
+<div class="dcard"><div class="num up">$102.3</div><div class="lbl">WTI原油 · +3.84%</div></div>
+<div class="dcard"><div class="num flat">97.96</div><div class="lbl">美元指数DXY</div></div>
+<div class="dcard"><div class="num up">17.19</div><div class="lbl">VIX恐慌指数</div></div>
+</div>
+
+<div class="sep"></div>
+
+<!-- A-Share -->
+<div class="stitle">🇨🇳 A股最新行情（5/11收盘）</div>
+<div class="card">
+<h3>三大指数 · 沪指站稳4200点</h3>
+<table>
+<tr><th>指数</th><th>收盘</th><th>涨跌</th></tr>
+<tr><td>上证指数</td><td>4,225.02</td><td class="up">+1.08%</td></tr>
+<tr><td>深证成指</td><td>15,899.30</td><td class="up">+2.16%</td></tr>
+<tr><td>创业板指</td><td>3,928.97</td><td class="up">+3.50%</td></tr>
+</table>
+<div class="alert" style="margin-top:10px;">⚡ 成交额连续4日破3万亿，最新达3.57万亿元；135只个股涨停，超3,100股上涨</div>
+</div>
+
+<!-- Hot Sectors -->
+<div class="stitle">🔥 本周强势板块</div>
+<div class="card">
+<h3>涨幅排行（5/6-5/11）</h3>
+<div style="margin-top:8px;">
+<div class="bar-row"><span class="bar-lbl">存储芯片</span><div class="bar-trk"><div class="bar-fl p" style="width:92%">领涨 · 江波龙20cm涨停</div></div></div>
+<div class="bar-row"><span class="bar-lbl">半导体</span><div class="bar-trk"><div class="bar-fl p" style="width:85%">全线爆发</div></div></div>
+<div class="bar-row"><span class="bar-lbl">CPO光模块</span><div class="bar-trk"><div class="bar-fl p" style="width:78%">东山精密创新高</div></div></div>
+<div class="bar-row"><span class="bar-lbl">算力租赁</span><div class="bar-trk"><div class="bar-fl p" style="width:70%">东阳光160-190亿大单</div></div></div>
+<div class="bar-row"><span class="bar-lbl">商业航天</span><div class="bar-trk"><div class="bar-fl p" style="width:65%">政策催化</div></div></div>
+<div class="bar-row"><span class="bar-lbl">人形机器人</span><div class="bar-trk"><div class="bar-fl p" style="width:58%">特斯拉量产预期</div></div></div>
+<div class="bar-row"><span class="bar-lbl">稀土概念</span><div class="bar-trk"><div class="bar-fl p" style="width:52%">万朗磁塑涨停</div></div></div>
+</div>
+</div>
+
+<!-- Northbound -->
+<div class="stitle">💰 资金流向（龙虎榜）</div>
+<div class="card">
+<h3>北向+机构净买入TOP</h3>
+<table>
+<tr><th>股票</th><th>涨跌</th><th>净买额</th></tr>
+<tr><td>江波龙</td><td class="up">+20%</td><td>+19.35亿</td></tr>
+<tr><td>烽火通信</td><td class="up">涨停</td><td>+16.35亿</td></tr>
+<tr><td>立昂微</td><td class="up">涨停</td><td>+5.83亿</td></tr>
+<tr><td>中国长城</td><td class="up">涨停</td><td>+5.32亿</td></tr>
+<tr><td>中体产业</td><td class="up">+7.54%</td><td>+2.80亿</td></tr>
 </table>
 </div>
 
-<div style="text-align:right;font-size:10px;color:#a0aec0;margin-top:8px">📎 Trading Economics · Investing.com | 2026-05-13</div>
-</div>
-</div>
+<div class="sep"></div>
 
-<!-- ====== A股资金面 ====== -->
-<div style="background:#fff;border-radius:10px;overflow:hidden;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.06)">
-<div style="background:linear-gradient(90deg,#1a365d,#234b7e);color:#fff;padding:12px 16px;display:flex;align-items:center;gap:8px">
-<span style="width:24px;height:24px;border-radius:5px;background:#c9a227;display:inline-flex;align-items:center;justify-content:center;font-size:12px;color:#1a365d;font-weight:700">💰</span>
-<span style="font-size:15px;font-weight:600">A股资金面分析</span>
-</div>
-<div style="padding:14px 12px">
-
-<table style="width:100%;border-collapse:collapse;font-size:13px">
-<thead><tr style="background:#faf7f0"><th style="padding:8px;text-align:left;color:#1a365d;border-bottom:2px solid #e8d48b;font-weight:600;min-width:90px">方向</th><th style="padding:8px;color:#1a365d;border-bottom:2px solid #e8d48b">标的</th><th style="padding:8px;text-align:right;color:#1a365d;border-bottom:2px solid #e8d48b">净买入</th></tr></thead>
-<tbody>
-<tr style="border-bottom:1px solid #eee"><td style="padding:7px 5px;font-size:12px">北向·科技</td><td style="padding:7px 5px;font-size:12px">烽火通信涨停</td><td style="padding:7px 5px;text-align:right;color:#e5393e;font-weight:600;font-size:12px">+16.35亿</td></tr>
-<tr style="border-bottom:1px solid #eee"><td style="padding:7px 5px;font-size:12px">北向·科技</td><td style="padding:7px 5px;font-size:12px">立昂微涨停</td><td style="padding:7px 5px;text-align:right;color:#e5393e;font-weight:600;font-size:12px">+5.83亿</td></tr>
-<tr style="border-bottom:1px solid #eee"><td style="padding:7px 5px;font-size:12px">北向·科技</td><td style="padding:7px 5px;font-size:12px">易点天下</td><td style="padding:7px 5px;text-align:right;color:#e5393e;font-weight:600;font-size:12px">+4.61亿买</td></tr>
-<tr style="border-bottom:1px solid #eee"><td style="padding:7px 5px;font-size:12px">北向·军工</td><td style="padding:7px 5px;font-size:12px">中体产业</td><td style="padding:7px 5px;text-align:right;color:#e5393e;font-weight:600;font-size:12px">+2.80亿</td></tr>
-<tr style="border-bottom:1px solid #eee"><td style="padding:7px 5px;font-size:12px">北向·减持</td><td style="padding:7px 5px;font-size:12px">大族激光涨停</td><td style="padding:7px 5px;text-align:right;color:#38a169;font-weight:600;font-size:12px">-2.61亿</td></tr>
-<tr><td style="padding:7px 5px;font-size:12px">北向·科技</td><td style="padding:7px 5px;font-size:12px">东山精密涨停</td><td style="padding:7px 5px;text-align:right;color:#38a169;font-weight:600;font-size:12px">-0.79亿</td></tr>
-</tbody>
+<!-- Macro -->
+<div class="stitle">📈 宏观与政策</div>
+<div class="grid2">
+<div class="card" style="border-top-color:#1a365d;">
+<h3>中国经济</h3>
+<table>
+<tr><th></th><th></th></tr>
+<tr><td>制造业PMI</td><td>50.1%</td></tr>
+<tr><td>CPI同比</td><td style="color:#888;">待公布(6月)</td></tr>
 </table>
-
-<div style="background:#fffdf5;border-left:3px solid #c9a227;padding:10px 12px;border-radius:0 8px 8px 0;margin-top:12px;font-size:12.5px">
-<p><strong>📌 关键信号：</strong></p>
-<p>• 北向Q末通信持仓714.96亿，同比+103%，占比10.14%创历史新高</p>
-<p>• 两融突破2.8万亿后券商收紧平仓线（115%）</p>
-<p>• 上市公司理财认购规模同比下降约50%</p>
 </div>
-
-<div style="text-align:right;font-size:10px;color:#a0aec0;margin-top:6px">📎 新浪财经龙虎榜 · Wind | 2026-05-13</div>
-</div>
-</div>
-
-<!-- ====== 热点板块 ====== -->
-<div style="background:#fff;border-radius:10px;overflow:hidden;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.06)">
-<div style="background:linear-gradient(90deg,#1a365d,#234b7e);color:#fff;padding:12px 16px;display:flex;align-items:center;gap:8px">
-<span style="width:24px;height:24px;border-radius:5px;background:#c9a227;display:inline-flex;align-items:center;justify-content:center;font-size:12px;color:#1a365d;font-weight:700">🔥</span>
-<span style="font-size:15px;font-weight:600">热点板块与事件驱动</span>
-</div>
-<div style="padding:14px 12px">
-
-<p style="font-size:13px;font-weight:600;color:#1a365d;margin-bottom:8px">领涨板块（5/12）</p>
-<table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px">
-<tr style="border-bottom:1px solid #eee"><td style="padding:6px 4px;width:80px">存储芯片</td><td style="padding:6px;text-align:center;color:#e5393e;font-weight:700">+20% 涨停潮</td></tr>
-<tr style="border-bottom:1px solid #eee"><td style="padding:6px 4px">GPU/CPU</td><td style="padding:6px;text-align:center;color:#e5393e;font-weight:700">+12~15%</td></tr>
-<tr style="border-bottom:1px solid #eee"><td style="padding:6px 4px">光模块CPO</td><td style="padding:6px;text-align:center;color:#dd6b20;font-weight:700">+8~10%</td></tr>
-<tr style="border-bottom:1px solid #eee"><td style="padding:6px 4px">半导体设备</td><td style="padding:6px;text-align:center;color:#d69e2e;font-weight:700">+6~8%</td></tr>
-<tr><td style="padding:6px 4px">MLCC</td><td style="padding:6px;text-align:center;color:#38a169;font-weight:700">多股涨停</td></tr>
+<div class="card" style="border-top-color:#1a365d;">
+<h3>美联储</h3>
+<table>
+<tr><th></th><th></th></tr>
+<tr><td>联邦利率</td><td>3.50-3.75%</td></tr>
+<tr><td>下次会议</td><td>6月17日</td></tr>
+<tr><td>核心通胀</td><td>3.3%</td></tr>
 </table>
-
-<p style="font-size:13px;font-weight:600;color:#1a365d;margin-bottom:8px">📰 今日事件</p>
-<div style="margin-top:8px">
-<div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #f0ede4;font-size:12.5px"><span style="color:#a0aec0;width:64px;flex-shrink:0;text-align:right">20:30</span><span>美国4月CPI公布 — 核心变量！影响全球资产定价</span></div>
-<div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #f0ede4;font-size:12.5px"><span style="color:#a0aec0;width:64px;flex-shrink:0;text-align:right">今日</span><span>限售股解禁46.25亿（曼恩斯特38亿占股本59.77%）</span></div>
-<div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #f0ede4;font-size:12.5px"><span style="color:#a0aec0;width:64px;flex-shrink:0;text-align:right">今日</span><span>17股股权登记（福耀玻璃每10股派12元）</span></div>
-<div style="display:flex;gap:8px;padding:6px 0;font-size:12.5px"><span style="color:#a0aec0;width:64px;flex-shrink:0;text-align:right">持续</span><span>国家队Q末持仓约4.41万亿，重仓大行+加仓科技</span></div>
-</div>
-
-<div style="text-align:right;font-size:10px;color:#a0aec0;margin-top:8px">📎 新浪财经 · Wind | 2026-05-13</div>
 </div>
 </div>
 
-<!-- ====== 投资策略建议 ====== -->
-<div style="background:#fff;border-radius:10px;overflow:hidden;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.06)">
-<div style="background:linear-gradient(90deg,#744210,#c9a227);color:#fff;padding:12px 16px;display:flex;align-items:center;gap:8px">
-<span style="width:24px;height:24px;border-radius:5px;background:#1a365d;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700">★</span>
-<span style="font-size:15px;font-weight:600">投资策略建议（周三盘前）</span>
-</div>
-<div style="padding:14px 12px">
+<div class="sep"></div>
 
-<div style="background:#fffdf5;border-left:3px solid #c9a227;padding:10px 12px;border-radius:0 8px 8px 0;margin-bottom:10px;font-size:13px">
-<p><strong>🎯 核心策略：剑盾配置</strong></p>
-<p style="margin-top:6px">保留<strong>六成仓位锚定科技成长+红利资产</strong>，四成机动。增量资金加速进场。</p>
-</div>
-
-<!-- 看多/风险两栏 -->
-<div style="display:flex;gap:8px;margin-bottom:10px">
-<div style="flex:1;background:#fff5f5;border-radius:8px;padding:10px;font-size:12.5px">
-<p style="color:#e5393e;font-weight:600;margin-bottom:6px">📈 关注方向</p>
-<ul style="padding-left:14px;line-height:1.8">
-<li><strong>存储芯片：</strong>全球存储超级周期</li>
-<li><strong>CPO/光通信：</strong>AI算力井喷受益</li>
-<li><strong>半导体设备：</strong>国产替代+科创板净利增速超200%</li>
-<li><strong>红利资产：</strong>高股息银行做防御底仓</li>
+<!-- Strategy -->
+<div class="stitle">🎯 投资策略建议</div>
+<div class="sbox">
+<h3>核心策略要点</h3>
+<ul>
+<li><strong>整体判断：</strong>A股强势上行通道，沪指站稳4200点。做多情绪饱满，关注盘中低吸机会。</li>
+<li><strong>主线方向：</strong>存储芯片→半导体设备→CPO光模块→商业航天。科技成长为核心主线。</li>
+<li><strong>轮动配置：</strong>新能源（电池/光伏）、有色金属（贵金属/稀土）、大金融板块。</li>
+<li><strong>风险提示：</strong>VIX偏低(17.19)，警惕短期过热回调。WTI原油$102+，关注通胀传导。</li>
+<li><strong>关键点位：</strong>沪指支撑4,150 / 阻力4,300；创业板指支撑3,850 / 阻力4,000</li>
+<li><strong>仓位建议：</strong>7-8成仓位，科技成长主仓+资源品卫星。避免追高连续涨停股。</li>
 </ul>
 </div>
-<div style="flex:1;background:#fff5f5;border-radius:8px;padding:10px;font-size:12.5px">
-<p style="color:#38a169;font-weight:600;margin-bottom:6px">⚠️ 风险提示</p>
-<ul style="padding-left:14px;line-height:1.8">
-<li><strong>CPI超预期：</strong>全球风险资产或调整</li>
-<li><strong>高位回调：</strong>半导体短期涨幅大，警惕追高</li>
-<li><strong>限售解禁：</strong>曼恩斯特等面临大额抛压</li>
-<li><strong>杠杆风险：</strong>两融创新高+券商收紧平仓线</li>
-</ul>
-</div>
-</div>
 
-<!-- 关键观察点 -->
-<div style="background:#f5f2ea;border-radius:8px;padding:10px 12px;font-size:12.5px">
-<p style="font-weight:600;color:#1a365d;margin-bottom:6px">👁️ 今日关键观察点</p>
-<table style="width:100%;border-collapse:collapse">
-<tr><td style="padding:4px 2px;width:80px;border-bottom:1px solid #e0dbcf;color:#718096">上午9:30</td><td style="padding:4px 2px;border-bottom:1px solid #e0dbcf">A股开盘，关注科技延续性</td></tr>
-<tr><td style="padding:4px 2px;width:80px;color:#718096">下午15:00</td><td style="padding:4px 2px;border-bottom:1px solid #e0dbcf">北向资金流向确认</td></tr>
-<tr><td style="padding:4px 2px;width:80px;color:#718096">晚上20:30</td><td style="padding:4px 2px">美国4月CPI公布 — 核心变量！</td></tr>
-</table>
-</div>
+<div class="sep"></div>
 
-<div style="text-align:right;font-size:10px;color:#a0aec0;margin-top:8px">综合多家券商研报 | 仅供参考，不构成投资建议。</div>
-</div>
+<!-- News -->
+<div class="stitle">📰 要闻速览</div>
+<div class="card">
+<div class="ni"><span class="ns">新华社</span><span class="nt">5/12</span>A股全线走强，成交额连续4日破3万亿，沪指站稳4200点创近11年新高。</div>
+<div class="ni"><span class="ns">高盛</span><span class="nt">5/11</span>发布亚洲策略报告"超配中国"，沪深300目标上调至5,300点（隐含+9%）。</div>
+<div class="ni"><span class="ns">摩根士丹利</span><span class="nt">5/12</span>中国人形机器人年内吸引全球46%风投，复制电动车崛起路径。</div>
+<div class="ni"><span class="ns">每经网</span><span class="nt">5/7</span>英伟达与康宁合作建厂，光纤+产能提升10倍。CPO概念爆发。</div>
+<div class="ni"><span class="ns">中金在线</span><span class="nt">5/12</span>WTI原油涨至$102.3/bbl。花旗预测Q2布伦特均价$110/bbl。</div>
 </div>
 
 <!-- Footer -->
-<div style="text-align:center;padding:20px 16px 30px;font-size:11px;color:#a0aec0;border-top:1px solid #ddd">
-<p><strong>A股盘前投资策略日报</strong></p>
-<p style="margin-top:4px">数据来源：新浪财经 · Yahoo Finance · Trading Economics · CNBC · 证券时报 · Wind等</p>
-<p style="margin-top:4px">本报告由自动化系统生成，仅供参考，不构成任何投资建议。市场有风险，投资需谨慎。</p>
-<p style="margin-top:8px;font-size:10px;color:#cbd5e0"><script>document.write('生成时间：'+new Date().toLocaleString('zh-CN'))</script></p>
+<div class="foot">
+<p>数据来源：Wind、东方财富、新浪财经、每经网、上海证券报</p>
+<p style="margin-top:4px;color:#c9a227;">报告仅供参考，不构成投资建议 · 投资有风险，入市需谨慎</p>
 </div>
 
-</div><!-- end body container -->
+</div>
 </body>
 </html>
