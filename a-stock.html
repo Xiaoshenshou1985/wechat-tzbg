@@ -3,455 +3,207 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>A股盘前策略 | 5月13日</title>
+<title>A股盘前策略日报</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-  background: #f5f1eb;
-  color: #2d3748;
-  line-height: 1.6;
-  max-width: 100%;
-  padding: 16px;
-}
+:root { --navy:#1a365d; --gold:#c9a227; --red:#e5393e; --green:#38a169; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system,"Helvetica Neue","PingFang SC",sans-serif;background:#f5f5f5;color:#2d3748;font-size:15px;line-height:1.6;}
+.container { max-width:100%;padding:16px; }
 
 /* Header */
-.header {
-  background: linear-gradient(135deg, #1a365d 0%, #2d4a7a 100%);
-  border-radius: 12px;
-  padding: 24px 20px;
-  text-align: center;
-  margin-bottom: 16px;
-}
-
-.header h1 {
-  color: #c9a227;
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 3px;
-}
-
-.header .date {
-  color: rgba(255,255,255,0.6);
-  font-size: 12px;
-  margin-top: 8px;
-}
+.header { background:linear-gradient(135deg,#0f2440,var(--navy));color:#fff;padding:28px 16px 20px;text-align:center;border-bottom:3px solid var(--gold);border-radius:0 0 16px 16px; }
+.header h1 { font-size:22px;letter-spacing:3px;margin-bottom:6px; }
+.header .sub { color:var(--gold);font-size:12px;letter-spacing:1px; }
 
 /* Section */
-.section {
-  background: #fff;
-  border-radius: 10px;
-  padding: 18px 14px;
-  margin-bottom: 14px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
+.section { margin-top:20px; }
+.section-title { font-size:17px;color:var(--navy);border-left:4px solid var(--gold);padding-left:10px;margin-bottom:12px;display:flex;align-items:center; }
+.section-title::before { content:"";display:inline-block;width:8px;height:8px;background:var(--gold);border-radius:50%;margin-right:6px; }
 
-.section-title {
-  color: #c9a227;
-  font-size: 16px;
-  font-weight: 700;
-  padding-bottom: 10px;
-  margin-bottom: 14px;
-  border-bottom: 2px solid #c9a227;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
+/* Card */
+.card { background:#fff;border-radius:10px;padding:14px;margin-bottom:12px;box-shadow:0 1px 6px rgba(0,0,0,0.08);border-top:3px solid var(--gold); }
 
-/* Summary box */
-.summary {
-  background: linear-gradient(135deg, rgba(26,54,93,0.06), rgba(201,162,39,0.08));
-  border-left: 3px solid #c9a227;
-  padding: 12px;
-  margin-bottom: 14px;
-  font-size: 13px;
-  color: #4a5568;
-  line-height: 1.7;
-}
+/* Grid 2 cols */
+.grid { display:grid;grid-template-columns:1fr 1fr;gap:10px; }
 
-.summary strong { color: #1a365d; }
+/* Table mobile */
+table { width:100%;border-collapse:collapse;font-size:13px;margin:8px 0; }
+th { background:var(--navy);color:#fff;padding:8px 6px;text-align:left;font-size:12px; }
+td { padding:7px 6px;border-bottom:1px solid #eee;font-size:13px; }
 
-/* Data grid - 2 columns */
-.data-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 14px;
-}
+/* Color */
+.up { color:var(--red);font-weight:bold; }
+.down { color:var(--green);font-weight:bold; }
 
-.data-card {
-  background: #f7fafc;
-  border-radius: 8px;
-  padding: 12px;
-  text-align: center;
-  border: 1px solid #e2e8f0;
-}
-
-.data-card .label {
-  font-size: 11px;
-  color: #a0aec0;
-  margin-bottom: 4px;
-}
-
-.data-card .value {
-  font-size: 16px;
-  font-weight: 700;
-}
-
-/* Tables */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 13px;
-  margin-bottom: 12px;
-}
-
-thead th {
-  background: #1a365d;
-  color: #c9a227;
-  padding: 8px 6px;
-  text-align: left;
-  font-weight: 500;
-  font-size: 12px;
-}
-
-tbody td {
-  padding: 7px 6px;
-  border-bottom: 1px solid #edf2f7;
-  font-size: 13px;
-}
-
-/* Color coding */
-.up { color: #e5393e !important; font-weight: 700; }
-.down { color: #38a169 !important; font-weight: 700; }
-
-/* News */
-.news-list .news-item {
-  padding: 10px 0;
-  border-bottom: 1px solid #edf2f7;
-}
-
-.news-list .news-item:last-child { border-bottom: none; }
-
-.news-title {
-  font-size: 13px;
-  color: #2d3748;
-  margin-bottom: 3px;
-  line-height: 1.5;
-}
-
-.news-meta {
-  font-size: 10px;
-  color: #a0aec0;
-}
-
-/* Strategy box */
-.strategy-box {
-  background: linear-gradient(135deg, #1a365d, #2d4a7a);
-  border-radius: 8px;
-  padding: 16px 14px;
-  color: #fff;
-}
-
-.strategy-box h3 {
-  color: #c9a227;
-  font-size: 15px;
-  margin-bottom: 10px;
-}
-
-.strategy-box ul { list-style: none; padding: 0; }
-
-.strategy-box li {
-  padding: 6px 0;
-  padding-left: 16px;
-  position: relative;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.strategy-box li::before {
-  content: '▸';
-  color: #c9a227;
-  position: absolute;
-  left: 0;
-}
+/* Data card compact */
+.dcard { background:#fff;border-radius:8px;padding:12px;text-align:center;border-top:3px solid var(--gold); }
+.dcard .val { font-size:20px;font-weight:bold;margin:4px 0; }
+.dcard .lbl { font-size:11px;color:#718096; }
 
 /* Bar chart mobile */
-.bar-row-mobile {
-  display: flex;
-  align-items: center;
-  margin-bottom: 6px;
-}
+.bar-row { display:flex;align-items:center;margin-bottom:6px; }
+.bar-label { width:72px;font-size:11px;text-align:right;padding-right:6px;flex-shrink:0; }
+.bar-track { flex:1;background:#eee;border-radius:3px;height:16px;overflow:hidden; }
+.bar-fill { height:100%;border-radius:3px;display:flex;align-items:center;padding-left:4px;font-size:9px;color:#fff;font-weight:bold; }
 
-.bar-label-mobile {
-  width: 85px;
-  font-size: 12px;
-  color: #4a5568;
-  text-align: right;
-  padding-right: 8px;
-  flex-shrink: 0;
-}
+/* News */
+.news-item { padding:8px 0;border-bottom:1px solid #eee;font-size:13px; }
+.news-src { font-size:10px;color:#a0aec0;display:inline-block;background:#f0f0f0;padding:1px 5px;border-radius:2px;margin-left:4px; }
 
-.bar-track-mobile {
-  flex: 1;
-  height: 18px;
-  background: #edf2f7;
-  border-radius: 4px;
-  overflow: hidden;
-}
+/* Tags */
+.tag { display:inline-block;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px; }
+.tag-hot { background:#fff3cd;color:#856404; }
+.tag-up { background:#fdd;color:var(--red); }
 
-.bar-fill-mobile {
-  height: 100%;
-  border-radius: 4px;
-  font-size: 10px;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  padding-left: 6px;
-  font-weight: 700;
-}
+/* Strategy */
+.strategy { background:linear-gradient(135deg,#ebf4ff,#fffbeb);border:2px solid var(--gold);border-radius:10px;padding:14px;margin-top:16px; }
+.strategy h3 { color:var(--navy);font-size:15px;margin-bottom:8px; }
 
-.fill-red { background: linear-gradient(90deg, #e5393e, #ff6b6b); }
-.fill-green { background: linear-gradient(90deg, #38a169, #68d391); }
-.fill-gold { background: linear-gradient(90deg, #c9a227, #e8d48b); }
-
-/* Gold divider */
-.gold-divider {
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #c9a227, transparent);
-  margin: 16px 0;
-}
+/* Divider */
+.divider { height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:24px 0 16px;border:none; }
 
 /* Footer */
-.footer {
-  text-align: center;
-  font-size: 11px;
-  color: #a0aec0;
-  padding: 16px 0;
-  line-height: 1.8;
-}
-
-/* Risk table highlight */
-.risk-high { color: #e5393e !important; }
-.risk-mid { color: #c9a227 !important; }
+.footer { text-align:center;padding:16px;font-size:11px;color:#a0aec0; }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <div class="header">
-  <h1>A股盘前投资策略日报</h1>
-  <div class="date">📅 2026年5月13日（周三）| 数据截止：5月12日收盘</div>
+  <h1>A股盘前策略日报</h1>
+  <div class="sub">2026年5月14日（周四）</div>
 </div>
 
-<!-- US MARKETS -->
+<div class="container">
+
+<!-- US Markets -->
 <div class="section">
-  <div class="section-title">🇺🇸 隔夜美股收盘（5/12）</div>
-  <div class="summary">
-    <strong>三大指数涨跌不一：</strong>S&P 500和纳指微涨收历史高位，道指小幅回落。4月CPI同比3.8%创三年新高，通胀压力延续但市场多头格局未变。
-  </div>
-
-  <table>
-    <thead><tr><th>指数</th><th>收盘</th><th>涨跌</th></tr></thead>
-    <tbody>
-      <tr><td>S&P 500</td><td class="up">7,412.84</td><td class="up">+0.19%</td></tr>
-      <tr><td>纳斯达克</td><td class="up">26,274.13</td><td class="up">+0.10%</td></tr>
-      <tr><td>道琼斯</td><td class="down">49,739.62</td><td class="down">-0.08%</td></tr>
-    </tbody>
-  </table>
-
-  <div style="font-size:11px;color:#a0aec0;margin-top:8px;">来源：Yahoo Finance · MarketWatch | 2026-05-12收盘</div>
-</div>
-
-<!-- A SHARE -->
-<div class="section">
-  <div class="section-title">🇨🇳 A股昨日收盘（5/12）</div>
-  <div class="summary">
-    <strong>三大指数涨跌互现：</strong>沪指微跌0.25%，深成指跌0.47%，创业板指微涨0.15%。全天成交3.27万亿，较前日缩量约2957亿。电网设备、非金属材料领涨；能源金属、猪肉板块领跌。
-  </div>
-
-  <table>
-    <thead><tr><th>指数</th><th>收盘</th><th>涨跌</th></tr></thead>
-    <tbody>
-      <tr><td>上证指数</td><td class="down">4,214.49</td><td class="down">-0.25%</td></tr>
-      <tr><td>深证成指</td><td class="down">15,824.92</td><td class="down">-0.47%</td></tr>
-      <tr><td>创业板指</td><td class="up">3,934.88</td><td class="up">+0.15%</td></tr>
-    </tbody>
-  </table>
-
-  <!-- Key data cards -->
-  <div class="data-grid">
-    <div class="data-card">
-      <div class="label">全市场成交额</div>
-      <div class="value" style="color:#1a365d;">3.27万亿</div>
-    </div>
-    <div class="data-card">
-      <div class="label">较前日变化</div>
-      <div class="value down">-2,957亿</div>
-    </div>
-  </div>
-
-  <div style="font-size:11px;color:#a0aec0;">来源：新浪财经 | 2026-05-12收盘</div>
-</div>
-
-<!-- SECTORS -->
-<div class="section">
-  <div class="section-title">📊 板块表现（5/12）</div>
-
-  <div style="margin-bottom:14px;">
-    <div style="font-size:13px;font-weight:700;color:#e5393e;margin-bottom:8px;">🔥 领涨板块</div>
+  <h2 class="section-title">隔夜美股收盘（5/13）</h2>
+  <div class="card">
     <table>
-      <thead><tr><th>板块</th><th>表现</th></tr></thead>
-      <tbody>
-        <tr><td>电网设备</td><td class="up">通光线缆+20%</td></tr>
-        <tr><td>非金属材料</td><td class="up">涨幅居前</td></tr>
-        <tr><td>绿色电力</td><td class="up">多股涨停</td></tr>
-        <tr><td>光纤概念</td><td class="up">中天科技走强</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div style="margin-bottom:14px;">
-    <div style="font-size:13px;font-weight:700;color:#38a169;margin-bottom:8px;">📉 领跌板块</div>
-    <table>
-      <thead><tr><th>板块</th><th>表现</th></tr></thead>
-      <tbody>
-        <tr><td>能源金属</td><td class="down">稀土回调</td></tr>
-        <tr><td>养殖业/猪肉</td><td class="down">跌幅居前</td></tr>
-        <tr><td>白酒</td><td class="down">消费承压</td></tr>
-      </tbody>
+      <tr><th>指数</th><th>涨跌</th></tr>
+      <tr><td>S&P 500</td><td class="up">+0.7%</td></tr>
+      <tr><td>纳斯达克</td><td class="up">+1.3%</td></tr>
+      <tr><td>道琼斯</td><td class="down">-0.1%</td></tr>
     </table>
   </div>
 </div>
 
-<!-- MACRO -->
+<!-- Commodities -->
 <div class="section">
-  <div class="section-title">📈 宏观数据 & 大宗商品</div>
-
-  <!-- Data cards grid -->
-  <div class="data-grid">
-    <div class="data-card">
-      <div class="label">CPI（同比）</div>
-      <div class="value up">+3.8%</div>
-    </div>
-    <div class="data-card">
-      <div class="label">PPI（环比）</div>
-      <div class="value up">+1.7%</div>
-    </div>
-    <div class="data-card">
-      <div class="label">制造业PMI</div>
-      <div class="value" style="color:#38a169;">50.3</div>
-    </div>
-    <div class="data-card">
-      <div class="label">联邦基金利率</div>
-      <div class="value" style="color:#4a5568;">3.75%</div>
-    </div>
-  </div>
-
-  <table>
-    <thead><tr><th>品种</th><th>价格</th><th>涨跌</th></tr></thead>
-    <tbody>
-      <tr><td>黄金</td><td>$4,715/盎司</td><td class="down">-0.45%</td></tr>
-      <tr><td>WTI原油</td><td>$95.42/桶</td><td class="up">+0.64%</td></tr>
-      <tr><td>布伦特原油</td><td>$101.29/桶</td><td class="up">+1.23%</td></tr>
-      <tr><td>VIX恐慌指数</td><td>~17.0</td><td class="down">回落低位</td></tr>
-      <tr><td>美元指数(DXY)</td><td>~98.8</td><td class="up">盘中涨近20点</td></tr>
-    </tbody>
-  </table>
-
-  <div style="font-size:11px;color:#a0aec0;margin-top:8px;">来源：Trading Economics · 国家统计局 · 新浪财经</div>
-</div>
-
-<!-- NEWS -->
-<div class="section">
-  <div class="section-title">📰 重要新闻</div>
-  <div class="news-list">
-    <div class="news-item">
-      <div class="news-title">🔥 4月CPI同比涨3.8%，创三年新高；PPI环比+1.7%连续7个月上涨</div>
-      <div class="news-meta">新浪财经 · 2026-05-12</div>
-    </div>
-    <div class="news-item">
-      <div class="news-title">🛢️ 美伊停火"岌岌可危"，特朗普称伊朗协议处于"生命维持"状态</div>
-      <div class="news-meta">每日经济新闻 · 2026-05-12</div>
-    </div>
-    <div class="news-item">
-      <div class="news-title">🤖 AI+能源双向赋能方案发布，加强算力设施绿电布局规划</div>
-      <div class="news-meta">证券时报 · 2026-05-12</div>
-    </div>
-    <div class="news-item">
-      <div class="news-title">🏢 阶跃星辰完成近25亿美元融资，加速赴港IPO进程</div>
-      <div class="news-meta">中国证券报 · 2026-05-12</div>
-    </div>
-    <div class="news-item">
-      <div class="news-title">🚗 4月中国汽车销量约252.6万辆，中国品牌市占率达75%</div>
-      <div class="news-meta">每经网 · 2026-05-12</div>
-    </div>
-    <div class="news-item">
-      <div class="news-title">📡 "十五五"规划前瞻布局未来产业，具身智能成经济增长点</div>
-      <div class="news-meta">每日经济新闻 · 2026-05-12</div>
-    </div>
+  <h2 class="section-title">大宗商品 &amp; 外汇</h2>
+  <div class="grid">
+    <div class="dcard"><div class="lbl">黄金</div><div class="val up">$4,695/oz</div><div style="font-size:10px;color:#718096;">+0.2%</div></div>
+    <div class="dcard"><div class="lbl">WTI原油</div><div class="val down">$101/桶</div><div style="font-size:10px;color:#718096;">-1.2%</div></div>
+    <div class="dcard"><div class="lbl">VIX恐慌指数</div><div class="val" style="color:var(--navy);">~18.5</div><div style="font-size:10px;color:#718096;">-0.67%</div></div>
+    <div class="dcard"><div class="lbl">美元指数DXY</div><div class="val" style="color:var(--navy);">98.53</div><div style="font-size:10px;color:#718096;">+0.2%</div></div>
   </div>
 </div>
 
-<!-- STRATEGY -->
+<!-- A-Stock -->
 <div class="section">
-  <div class="section-title">🎯 今日投资策略</div>
+  <h2 class="section-title">A股收盘（5/13上周五）</h2>
+  <div class="card">
+    <table>
+      <tr><th>指数</th><th>涨跌</th></tr>
+      <tr><td>上证指数</td><td class="up">+0.67%</td></tr>
+      <tr><td>深证成指</td><td class="up">+1.67%</td></tr>
+      <tr><td>创业板指</td><td class="up">+2.63% 🔥站上4000点</td></tr>
+    </table>
+  </div>
+  
+  <h3 style="font-size:14px;color:var(--navy);margin:12px 0 8px;">北向资金 &amp; 两融</h3>
+  <div class="grid">
+    <div class="dcard"><div class="lbl">北向净流入</div><div class="val up">+6.01亿</div></div>
+    <div class="dcard"><div class="lbl">融资余额</div><div class="val" style="color:var(--navy);font-size:16px;">首破2.8万亿🔥</div></div>
+  </div>
+</div>
 
-  <div class="strategy-box">
-    <h3>核心观点：高位整固，关注电力/科技主线</h3>
-    <ul>
-      <li><strong style="color:#c9a227;">大盘态势：</strong>沪指连创新高后缩量回调，4200点支撑稳固。短期可能回踩4180-4200区间。</li>
-      <li><strong style="color:#c9a227;">板块配置：</strong>①电网设备/电力（政策催化） ②半导体/CPO（科技主线） ③机器人（产业峰会催化）</li>
-      <li><strong style="color:#c9a227;">关注方向：</strong>非金属材料、光纤通信、绿色电力——低位补涨弹性大。</li>
-      <li><strong style="color:#e5393e;">风险提示：</strong>CPI走高+中东油价波动+成交额缩量，控制仓位6-7成，避免追高。</li>
+<!-- Macro -->
+<div class="section">
+  <h2 class="section-title">宏观数据</h2>
+  <div class="card">
+    <table>
+      <tr><th>指标</th><th>数值</th></tr>
+      <tr><td>制造业PMI(4月)</td><td class="up">50.3</td></tr>
+      <tr><td>非制造业PMI</td><td class="down">49.4</td></tr>
+      <tr><td>CPI同比(4月)</td><td class="up">+3.8%</td></tr>
+      <tr><td>PPI环比(4月)</td><td class="up">+1.4% 🔴超预期</td></tr>
+      <tr><td>美联储利率</td><td style="color:var(--navy);font-weight:bold;">3.50%-3.75%</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Hot Sectors -->
+<div class="section">
+  <h2 class="section-title">热点板块</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:3px;margin-bottom:10px;">
+    <span class="tag tag-hot">AI算力</span>
+    <span class="tag tag-up">光通信</span>
+    <span class="tag tag-up">半导体</span>
+    <span class="tag tag-hot">PCB</span>
+    <span class="tag tag-up">商业航天</span>
+    <span class="tag tag-up">储能</span>
+  </div>
+  
+  <h3 style="font-size:13px;color:var(--navy);margin-bottom:8px;">板块涨幅柱状图</h3>
+  <div class="bar-row"><span class="bar-label">光通信</span><div class="bar-track"><div class="bar-fill" style="width:92%;background:#e5393e;">+4.5%</div></div></div>
+  <div class="bar-row"><span class="bar-label">半导体</span><div class="bar-track"><div class="bar-fill" style="width:78%;background:#e5393e;">+3.8%</div></div></div>
+  <div class="bar-row"><span class="bar-label">PCB</span><div class="bar-track"><div class="bar-fill" style="width:65%;background:#e5393e;">+3.2%</div></div></div>
+  <div class="bar-row"><span class="bar-label">AI算力</span><div class="bar-track"><div class="bar-fill" style="width:70%;background:#e5393e;">+3.5%</div></div></div>
+  <div class="bar-row"><span class="bar-label">商业航天</span><div class="bar-track"><div class="bar-fill" style="width:55%;background:#e5393e;">+2.8%</div></div></div>
+  <div class="bar-row"><span class="bar-label">人形机器人</span><div class="bar-track"><div class="bar-fill" style="width:48%;background:#e5393e;">+2.3%</div></div></div>
+</div>
+
+<!-- Key News -->
+<div class="section">
+  <h2 class="section-title">关键新闻</h2>
+  <div class="card">
+    <div class="news-item">🔥 英伟达市值破5.5万亿，黄仁勋赴北京中美峰会<span class="news-src">Investopedia</span></div>
+    <div class="news-item">🔥 PPI环比+1.4%超预期三倍，伊朗战争推高能源<span class="news-src">Investopedia</span></div>
+    <div class="news-item">🔥 Kevin Warsh确认接任美联储主席<span class="news-src">Investopedia</span></div>
+    <div class="news-item">🔥 A股融资余额首破2.8万亿，杠杆资金重仓AI+半导体<span class="news-src">新浪财经</span></div>
+    <div class="news-item">🔥 中际旭创突破千元，A股第十只千元股<span class="news-src">每经</span></div>
+    <div class="news-item">🔥 通鼎互联光纤4连板年内涨超300%<span class="news-src">新浪财经</span></div>
+    <div class="news-item">🔥 德明利龙虎榜净买入14.13亿，机构+北向共抢<span class="news-src">21世纪经济</span></div>
+  </div>
+</div>
+
+<!-- Strategy -->
+<div class="section">
+  <h2 class="section-title">投资策略建议</h2>
+  <div class="strategy">
+    <h3>📊 核心观点：科技主线延续，关注量能验证</h3>
+    <p style="font-size:13px;">创业板指站上4000点，市场情绪偏暖。今日预计震荡偏强，上证重点关注4230-4250区间。</p>
+    
+    <h3 style="margin-top:10px;">🎯 操作策略</h3>
+    <ul style="padding-left:16px;font-size:13px;">
+      <li><strong>进攻：</strong>AI算力+光通信、半导体国产替代</li>
+      <li><strong>防御：</strong>储能电力设备、煤炭高股息</li>
+      <li><strong>仓位：</strong>维持6-7成，融资余额新高注意止盈</li>
     </ul>
-  </div>
 
-  <!-- Allocation chart -->
-  <h4 style="font-size:13px;color:#c9a227;margin-top:16px;margin-bottom:8px;">配置建议</h4>
-  <div class="bar-row-mobile">
-    <span class="bar-label-mobile">科技(CPO/半导体)</span>
-    <div class="bar-track-mobile"><div class="bar-fill-mobile fill-red" style="width:85%;">高配</div></div>
-  </div>
-  <div class="bar-row-mobile">
-    <span class="bar-label-mobile">电网/电力</span>
-    <div class="bar-track-mobile"><div class="bar-fill-mobile fill-gold" style="width:75%;">超配</div></div>
-  </div>
-  <div class="bar-row-mobile">
-    <span class="bar-label-mobile">机器人</span>
-    <div class="bar-track-mobile"><div class="bar-fill-mobile fill-red" style="width:65%;">标配+</div></div>
-  </div>
-  <div class="bar-row-mobile">
-    <span class="bar-label-mobile">消费/白酒</span>
-    <div class="bar-track-mobile"><div class="bar-fill-mobile fill-green" style="width:45%;">低配</div></div>
-  </div>
-  <div class="bar-row-mobile">
-    <span class="bar-label-mobile">能源金属</span>
-    <div class="bar-track-mobile"><div class="bar-fill-mobile fill-green" style="width:40%;">观望</div></div>
+    <h3 style="margin-top:10px;">⚠️ 风险提示</h3>
+    <ul style="padding-left:16px;font-size:13px;">
+      <li>PPI超预期→美联储降息路径或推迟</li>
+      <li>伊朗局势未解，原油波动（WTI ~$101）</li>
+      <li>融资余额2.8万亿创新高，板块分化加剧</li>
+    </ul>
+
+    <h3 style="margin-top:10px;">📌 关注点位</h3>
+    <table>
+      <tr><th>指数</th><th>支撑</th><th>压力</th></tr>
+      <tr><td>上证</td><td>4200/4190</td><td>4250/4280</td></tr>
+      <tr><td>创业板</td><td>3980/3950</td><td>4050/4100</td></tr>
+    </table>
   </div>
 </div>
 
-<!-- RISK -->
-<div class="section">
-  <div class="section-title">⚠️ 风险提示</div>
-  <table>
-    <thead><tr><th>风险因素</th><th>方向</th><th>概率</th></tr></thead>
-    <tbody>
-      <tr><td>CPI超预期，通胀粘性持续</td><td class="down">利空</td><td class="risk-high">高</td></tr>
-      <tr><td>美伊停火 → 油价回落</td><td class="up">利好</td><td class="risk-mid">中</td></tr>
-      <tr><td>A股缩量回调，获利了结</td><td class="down">短期利空</td><td class="risk-high">中高</td></tr>
-      <tr><td>AI+能源政策催化持续</td><td class="up">利好</td><td style="color:#38a169;">高</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<!-- FOOTER -->
+<div class="divider"></div>
 <div class="footer">
-  <p>A股盘前投资策略日报 | 数据来源：新浪财经、Yahoo Finance、Trading Economics等</p>
-  <p style="margin-top:4px;">免责声明：本报告仅供参考，不构成投资建议。投资有风险，入市需谨慎。</p>
-  <p style="margin-top:8px;color:#c9a227;opacity:0.5;">© 2026 A股投资策略研究中心 | Generated at 2026-05-13T08:30 CST</p>
+  <p>📊 数据来源：Investopedia、新浪财经、东方财富等</p>
+  <p style="margin-top:2px;">⚠️ 仅供参考，不构成投资建议。投资有风险，入市需谨慎。</p>
 </div>
 
+</div><!-- /container -->
 </body>
 </html>
