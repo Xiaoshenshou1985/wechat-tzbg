@@ -3,165 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<title>A股盘前策略 | 2026/6/3</title>
+<title>A股盘前策略 | 6/3</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif;background:#f5f0e8;color:#1a365d;line-height:1.7;font-size:14px;max-width:100%;padding:16px}
-.header{background:linear-gradient(135deg,#1a365d 0%,#2c4a7c 60%,#c9a227 100%);color:#fff;padding:28px 12px;text-align:center;border-radius:8px;margin-bottom:16px}
-.header h1{font-size:24px;letter-spacing:4px;font-weight:900;text-shadow:0 1px 6px rgba(0,0,0,.3)}
-.header .sub{font-size:13px;margin-top:6px;opacity:.85}
-.header .dt{margin-top:10px;font-size:12px;opacity:.7}
-.card{background:#fff;border-radius:8px;padding:14px 12px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #e8dcc8}
-.card h3{font-size:15px;color:#c9a227;border-bottom:1px solid #e8dcc8;padding-bottom:6px;margin-bottom:8px}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th{background:#1a365d;color:#fff;padding:6px 4px;text-align:left;font-weight:600;font-size:12px}
-td{padding:5px 4px;border-bottom:1px solid #eee;word-break:break-all}
-tr:nth-child(even){background:#faf7f0}
+body{font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif;background:#f5f2eb;color:#1a1a1a;line-height:1.8;font-size:14px;padding-bottom:40px}
+.header{background:linear-gradient(135deg,#1a365d,#2c4a7c);color:#c9a227;text-align:center;padding:32px 16px 24px;border-bottom:3px solid #c9a227}
+.header h1{font-size:24px;letter-spacing:3px;font-weight:700;margin-bottom:6px}
+.header .sub{font-size:12px;color:#c9a227;opacity:.85}
+.card{background:#fff;border-radius:10px;padding:16px 14px;margin:14px 10px;box-shadow:0 1px 3px rgba(0,0,0,.06);border-left:3.5px solid #c9a227}
+.card-title{font-size:16px;color:#1a365d;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:4px}
+.card-title::before{content:'◆';color:#c9a227;font-size:11px}
+.tag{display:inline-block;background:#1a365d;color:#c9a227;padding:1.5px 7px;border-radius:3px;font-size:10px;margin-right:4px}
 .up{color:#e5393e;font-weight:700}
 .down{color:#38a169;font-weight:700}
-.note{background:#fffbe6;border-left:3px solid #c9a227;padding:10px 12px;margin-bottom:12px;font-size:12.5px;color:#5d4e1f;border-radius:0 6px 6px 0}
-.gold{height:2px;background:linear-gradient(90deg,#c9a227,#f4d56e,#c9a227);margin:18px 0;border-radius:1px}
-.footer{text-align:center;padding:20px 12px;color:#999;font-size:11px;border-top:1px solid #eee;margin-top:16px;line-height:1.8}
+.marg{font-size:12.5px;color:#666;line-height:1.9;margin-top:8px;padding:10px 12px;background:#faf7f0;border-radius:6px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+th{background:#1a365d;color:#c9a227;padding:7px 6px;text-align:left;font-weight:600;font-size:11.5px;border-radius:3px}
+td{padding:6px 6px;border-bottom:1px solid #eee;font-size:12.5px}
+tr:nth-child(even) td{background:#faf7f0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.gcard{background:#faf6ee;border-radius:8px;padding:10px;text-align:center;border:1px solid #e8ddd0}
+.gcard .label{font-size:11px;color:#777;margin-bottom:2px}
+.gcard .val{font-size:15px;font-weight:700;color:#1a365d}
+.gcard .pct{font-size:11.5px;font-weight:600;margin-top:1px}
+.note{font-size:11px;color:#999;margin-top:-4px;padding:4px 8px;background:transparent;border-radius:0}
+.hot-list{padding-left:14px;margin:6px 0;list-style:none}
+.hot-list li{padding:5px 0;font-size:13.5px;color:#333;border-bottom:1px dashed #eee}
+.hot-list li:last-child{border-bottom:none}
+.tip{background:linear-gradient(135deg,#f9f4e6,#fff);border-left:3.5px solid #c9a227;padding:10px 12px;border-radius:0 6px 6px 0;margin-top:8px;font-size:12.5px;color:#333;line-height:1.9}
+.footer{text-align:center;padding:24px 16px;font-size:10px;color:#aaa;letter-spacing:.5px}
 </style>
 </head>
 <body>
 
 <div class="header">
 <h1>A股盘前策略日报</h1>
-<div class="sub">INVESTMENT STRATEGY PRE-MARKET BRIEFING</div>
-<div class="dt">2026年6月3日 · 上周收盘 + 本周前瞻</div>
+<p class="sub">2026年6月3日 · 周三</p>
+<p style="font-size:10.5px;color:#c9a227;opacity:.6;margin-top:4px;">数据截至：2026-06-03 06:00 CST</p>
 </div>
 
-<!-- 核心摘要 -->
-<div class="note"><b>📌 核心摘要：</b>上周五美股三大指数再创新高，纳指站上27,000点；A股周一普跌，科创50暴跌5%。VIX降至16.28，金价$4,536创纪录新高。本周焦点：美伊谈判、OPEC+会议(6/4-6/6)、美国非农数据(6/5)重磅来袭。</div>
-
-<!-- 美股 -->
-<div class="card"><h3>🇺🇸 隔夜美股三大指数</h3>
-<table><tr><th>指数</th><th>点位</th><th>涨跌</th><th>状态</th></tr>
-<tr><td>道琼斯工业</td><td>&gt;51,000</td><td class="up">+ 创新高</td><td>🔴 创历史新高</td></tr>
-<tr><td>S&P 500</td><td>7,599.96</td><td class="up">+0.26%</td><td>🔴 创历史新高</td></tr>
-<tr><td>纳斯达克综合</td><td>27,086.81</td><td class="up">+0.42%</td><td>🔴 创历史新高</td></tr>
-<tr><td>VIX恐慌指数(最新)</td><td>16.28 (6/2)</td><td class="down">-1.60%</td><td>⚪ 低位</td></tr>
-</table></div>
-
-<div style="font-size:12px;color:#555;padding:4px 0 8px;max-width:100%">📌 隔夜关键：三大指数同日创纪录；Nvidia发布PC新芯片股价涨6%+；Dell财报暴涨33%；VIX降至16.28低于正常区间(14-19)上限，情绪平稳；美伊谈判拉锯中；年内加息概率~55%</div>
-
-<div class="gold"></div>
+<!-- 隔夜美股 -->
+<div class="card">
+<div class="card-title">隔夜美股收盘 (6/2)</div>
+<p style="font-size:12.5px;color:#555;margin-bottom:8px;">三大指数再创新高，AI股推动。VIX极低(15.77)。</p>
+<table>
+<tr><th>指数</th><th>最新价</th><th>涨跌%</th></tr>
+<tr><td>S&P 500</td><td class="up">7,616.41</td><td class="up">+0.22%</td></tr>
+<tr><td>道琼斯</td><td class="up">51,353.49</td><td class="up">+0.45%</td></tr>
+<tr><td>纳指100</td><td class="up">30,679.07</td><td class="up">+0.48%</td></tr>
+<tr><td>VIX恐慌指数</td><td class="down" style="color:#2e7d32">15.77</td><td class="down" style="color:#2e7d32">-0.28%</td></tr>
+</table>
+<div class="marg"><span class="tag">重点</span>Marvell暴涨+26%（黄仁勋点名万亿级公司），HPE +26%（AI服务器超预期）</div>
+</div>
 
 <!-- 大宗商品 -->
-<div class="card"><h3>🪙 贵金属 & 🛢️ 能源</h3>
-<table><tr><th>品种</th><th>价格/状态</th></tr>
-<tr><td>黄金(24K/盎司)</td><td>$4,536.78 <span class="up">↑ 历史新高(+1.20%)</span></td></tr>
-<tr><td>白银/盎司</td><td>$74.00 <span class="up">↑ +2.59%</span></td></tr>
-<tr><td>WTI原油/桶</td><td>$76-78 <span style="color:#718096;">高位震荡(-0.73%)</span></td></tr>
-<tr><td>Brent原油/桶</td><td>$82.00 <span class="up">↑ +13%(美伊冲突)</span></td></tr>
-</table></div>
-
-<div class="card"><h3>💱 外汇 & 其他</h3>
-<table><tr><th>品种</th><th>数值/状态</th></tr>
-<tr><td>DXY美元指数</td><td>99.310 <span class="down">-0.14%</span></td></tr>
-<tr><td>锡(金属)/吨</td><td>$42,000 <span class="up">↑ +40%(AI芯片需求)</span></td></tr>
-</table></div>
-
-<div class="gold"></div>
-
-<!-- A股收盘 -->
-<div class="card"><h3>📉 A股周一(6/1)三大指数</h3>
-<table><tr><th>指数</th><th>点位</th><th>涨跌幅</th><th>状态</th></tr>
-<tr><td>上证指数</td><td>4,057.74</td><td class="down">-0.27%</td><td>小幅下跌</td></tr>
-<tr><td>深证成指</td><td>15,340.36</td><td class="down">-1.51%</td><td>中幅下跌</td></tr>
-<tr><td>创业板指</td><td>3,950.94</td><td class="down">-2.15%</td><td>跌幅较大</td></tr>
-<tr><td>科创50</td><td>-</td><td class="up" style="font-size:14px">-5.00% 🔻</td><td>暴跌领跌全场</td></tr>
-</table>
-<div style="font-size:12px;color:#555;padding-top:8px"><b>盘面特征：</b>全市场普跌。半导体/CPO/存储芯片高位获利盘集中兑现(4-5月涨幅巨大)，煤炭板块逆势走强(多股涨停)，电力板块午后拉升，银行股逆势上涨(厦门+4%)。</div></div>
-
-<div class="gold"></div>
-
-<!-- 行业板块 -->
-<div class="card"><h3>🔺 涨幅居前 (6/1)</h3>
-<table><tr><th>板块</th><th>状态</th></tr>
-<tr><td>煤炭开采加工</td><td class="up">↑↑ 多股涨停(新集能源、大有能源等)</td></tr>
-<tr><td>电力板块</td><td class="up">↑ 午后拉升(豫能控股、粤电力A涨停)</td></tr>
-<tr><td>AI应用概念</td><td class="up">↑ 持续走强(用友网络涨停)</td></tr>
-<tr><td>ERP/财税数字化</td><td class="up">↑ (新炬网络、中科金财涨停)</td></tr>
-<tr><td>银行(部分)</td><td class="up">↑ 逆势上涨(厦门+4%、南京+3%)</td></tr>
-</table></div>
-
-<div class="card"><h3>🔻 跌幅居前 (6/1)</h3>
-<table><tr><th>板块</th><th>状态</th></tr>
-<tr><td>存储芯片</td><td class="down">↓↓ 持续走低(东芯股份-11%)</td></tr>
-<tr><td>CPO/光模块</td><td class="down">↓ 集体调整(东山精密等)</td></tr>
-<tr><td>半导体/芯片</td><td class="down">↓ 高位回调主因(科创50-5%)</td></tr>
-<tr><td>光纤/通信</td><td class="down">↓ 领跌全市场</td></tr>
-</table></div>
-
-<div class="gold"></div>
+<div class="card">
+<div class="card-title">大宗 & 汇率</div>
+<div class="grid2">
+<div class="gcard"><div class="label">🥇 黄金/盎司</div><div class="up" style="font-size:15px;font-weight:700">$4,487.22</div><div class="pct up">+0.12%</div></div>
+<div class="gcard"><div class="label">🛢️ WTI原油/桶</div><div style="font-size:15px;font-weight:700;color:#2e7d32">$90.82</div><div class="pct down" style="color:#2e7d32">-1.5%</div></div>
+<div class="gcard"><div class="label">💵 DXY美元指数</div><div style="font-size:15px;font-weight:700;color:#555">99.201</div><div class="pct" style="color:#888">0.00%</div></div>
+<div class="gcard"><div class="label">🥈 白银/盎司</div><div class="up" style="font-size:15px;font-weight:700">$76.64</div><div class="pct up">+1.84%</div></div>
+</div>
+<div class="marg"><span class="tag">分析</span>黄金年涨33%，受中东地缘+通胀黏性支撑；油价回落因美伊停火信号</div>
+</div>
 
 <!-- 宏观 -->
-<div class="card"><h3>🇨🇳 中国PMI (5月)</h3>
-<table><tr><th>指标</th><th>数值</th><th>状态</th></tr>
-<tr><td>制造业PMI</td><td>50.0% (↓-0.3pp)</td><td class="down">降至临界点</td></tr>
-<tr><td>非制造业商务活动指数</td><td>50.1% (+0.7pp)</td><td class="up">↑ 扩张</td></tr>
-<tr><td>综合PMI产出指数</td><td>50.5% (+0.4pp)</td><td class="up">↑ 持续扩张</td></tr>
-<tr><td>高技术制造业PMI</td><td>>52.9%</td><td class="up">连续16个月扩张</td></tr>
+<div class="card">
+<div class="card-title">宏观数据</div>
+<table>
+<tr><th>指标</th><th>最新值</th><th>状态</th></tr>
+<tr><td>美国CPI(4月)</td><td class="up" style="font-weight:700;color:#d32f2f">3.80%</td><td>↑ 加速上行</td></tr>
+<tr><td>美联储利率</td><td>3.50-3.75%</td><td>连续3次不变</td></tr>
+<tr><td>美国ISM制造业(5月)</td><td class="up" style="font-weight:700">~55.1</td><td>超预期强劲</td></tr>
+<tr><td>中国财新PMI(5月)</td><td class="up" style="font-weight:700">51.8</td><td>超预期(预51.4)</td></tr>
+<tr><td>美国失业率(4月)</td><td>4.30%</td><td>持平</td></tr>
 </table>
-<div style="font-size:11px;color:#888;padding-top:4px">来源：国家统计局 · 2026年6月1日发布</div></div>
+<div class="marg"><span class="tag">FOMC</span>下次会议6/17-18，预计维持利率不变。市场定价年底加息概率~60%。</div>
+</div>
 
-<div class="card"><h3>🇺🇸 美国PMI/通胀 (5月)</h3>
-<table><tr><th>指标</th><th>数值</th><th>状态</th></tr>
-<tr><td>ISM制造业PMI</td><td>54.0 (预测53.0)</td><td class="up">↑ 超预期</td></tr>
-<tr><td>PCE通膨年预期(Fed)</td><td>2.7% (上修+30bp)</td><td style="color:#718096;">黏着性确认</td></tr>
-<tr><td>非农就业(5月,6/5公布)</td><td>待更新</td><td class="up">⚡本周焦点</td></tr>
-</table></div>
-
-<div class="card"><h3>🏦 美联储利率(最新FOMC:4/29)</h3>
-<table><tr><th>项目</th><th>状态</th></tr>
-<tr><td>当前联邦基金利率</td><td>3.50%-3.75% (连续第3次不变)</td></tr>
-<tr><td>下次会议</td><td>6/17-18 (14天后)</td></tr>
-<tr><td>年内加息概率</td><td class="up">约55%</td></tr>
-<tr><td>2026年终值预期中位数</td><td>3.25%-3.50%</td></tr>
-<tr><td>长期均衡利率R*</td><td>上修至3.1%</td></tr>
+<!-- A股收盘 -->
+<div class="card" style="border-left-color:#e5393e;">
+<div class="card-title">A股收盘 (6/2) <span class="tag" style="background:#e5393e;color:#fff">重点</span></div>
+<table>
+<tr><th>指数</th><th>收盘价</th><th>涨跌%</th></tr>
+<tr><td>上证指数</td><td>4,075.10</td><td class="up">+0.43%</td></tr>
+<tr><td>深证成指</td><td>15,591.13</td><td class="up">+1.63%</td></tr>
+<tr><td style="font-weight:700">创业板指</td><td style="font-weight:700" class="up" style="font-size:14px">4,055.87</td><td class="up" style="font-size:13px">+2.66% 🚀新高!</td></tr>
+<tr><td>科创50</td><td>1,690.56</td><td class="up">+1.62%</td></tr>
+<tr><td>沪深300</td><td>4,914.56</td><td class="up">+1.45%</td></tr>
+<tr><td>成交额(万/亿)</td><td>2.77万亿</td><td class="down" style="color:#2e7d32;cursor:default">-844亿↓</td></tr>
 </table>
-<div style="font-size:11px;color:#888;padding-top:4px">来源：Finanix / Titan FX · 截至2026年4月FOMC</div></div>
+<div class="marg"><span class="tag" style="background:#c9a227;color:#1a365d">特征</span>创业板指突破4055创历史新高，但全市场超3800只个股下跌！结构性分化极严重。</div>
+</div>
 
-<div class="gold"></div>
+<!-- 板块 -->
+<div class="card" style="border-left-color:#e6a800;">
+<div class="card-title">板块热点</div>
+<p style="font-size:12px;color:#555;margin-bottom:8px;">🔥 = 领涨 | ❄️ = 调整</p>
 
-<!-- 机构策略 -->
-<div class="card"><h3>📈 六大机构6月研判要点</h3>
-<table><tr><th>方向</th><th>重点</th></tr>
-<tr><td>科技聚焦+防御配置</td><td>AI主线不变，关注上游能源电力、下游AI应用</td></tr>
-<tr><td>成长扩散+大盘价值</td><td>6月选股难度大，增加红利资产配置降波动</td></tr>
-<tr><td>推荐方向</td><td>电子/通信(高景气)、煤炭/公用事业(红利防御)</td></tr>
-<tr><td>关注催化</td><td>ASCO创新药、机器人(IPO)、商业航天</td></tr>
-<tr><td>地产板块</td><td>中金看好，"十五五"城市更新规划利好内房</td></tr>
-</table></div>
+<span class="tag" style="background:#d32f2f;color:#fff;font-weight:700">🔥 CPO/光通信</span>
+<p style="font-size:12.5px;margin-left:8px;">源杰科技、光库科技涨超10%；亨通光电涨停创历史新高(市值破2000亿)</p>
 
-<div class="card"><h3>💎 券商金股方向(汇总)</h3>
-<table><tr><th>方向</th><th>标的/板块</th></tr>
-<tr><td>电子/半导体</td><td>宁德时代、中芯国际(多家共同推荐)</td></tr>
-<tr><td>机械设备</td><td>机器人(宇树科技IPO6/1上会)、商业航天</td></tr>
-<tr><td>电力设备/绿电</td><td>算电一体化企业、绿电运营商龙头</td></tr>
-<tr><td>煤炭/红利</td><td>新集能源、大有能源(供需错配+油价支撑)</td></tr>
-<tr><td>银行/金融</td><td>厦门银行、南京银行(息差企稳+业绩改善)</td></tr>
-<tr><td>AI应用</td><td>用友网络、视觉中国(持续走强)</td></tr>
-<tr><td>创新药/医疗</td><td>ASCO催化+医保谈判启动(6/1-10申报)</td></tr>
-</table></div>
+<span class="tag" style="background:#d32f2f;color:#fff;font-weight:700">🔥 PCB/玻璃基板</span>
+<p style="font-size:12.5px;margin-left:8px;">宏和科技地天板、鹏鼎控股涨停</p>
 
-<div class="gold"></div>
+<span class="tag" style="background:#d32f2f;color:#fff;font-weight:700">🔥 MLCC/元件</span>
+<p style="font-size:12.5px;margin-left:8px;">火炬电子4天3板，景气周期延续</p>
 
-<!-- 本周事件 -->
-<div class="card"><h3>📅 本周重大事件日历 (6/3-6/9)</h3>
-<table><tr><th>日期</th><th>事件</th><th>影响</th></tr>
-<tr><td>6/3(三)</td><td>中国5月外汇储备数据</td><td>⚡ 中等</td></tr>
-<tr class="up"><td>6/4-6/6</td><td>OPEC+产油国会议</td><td>⚡⚡ 高(原油→能源/A股)</td></tr>
-<tr style="background:#fffbe6"><td>6/5(五)🇺🇸<b>重磅</b></td><td class="up">美国5月非农就业/失业率/ADP</td><td>⚡⚡⚡ 极高(年内加息概率)</td></tr>
-<tr><td>6/9-10</td><td>中国成品油调价窗口</td><td>📋 常规</td></tr>
-<tr style="background:#fffbe6"><td>6/17-18</td><td class="up">🔴 FOMC利率决议(下次)</td><td>⚡⚡⚡ 极高(全球资产定价)</td></tr>
+<span class="tag" style="background:#d32f2f;color:#fff;font-weight:700">🔥 有色(锡/铜)</span>
+<p style="font-size:12.5px;margin-left:8px;">锡业股份涨停；"算力金属"锡价半年涨40%至42万/吨</p>
+
+<span class="tag" style="background:#d32f2f;color:#fff;font-weight:700">🔥 煤炭</span>
+<p style="font-size:12.5px;margin-left:8px;">大有能源、郑州煤电2连板，迎峰度夏补库</p>
+
+<span class="tag" style="background:#e6a800;color:#fff;font-weight:700">⚡ 机器人</span>
+<p style="font-size:12.5px;margin-left:8px;">中大地德、凯迪股份涨停；上海人形机器人运动会开幕</p>
+
+<span class="tag" style="background:#38a169;color:#fff;font-weight:700">❄️ 科技大票调整</span>
+<p style="font-size:12.5px;margin-left:8px;">科创50前期强势股高位震荡消化筹码，获利回吐</p>
+
+<span class="tag" style="background:#38a169;color:#fff;font-weight:700">❄️ 体育/影视/盲盒退潮</span>
+<p style="font-size:12.5px;margin-left:8px;">中体产业、元隆雅图跌停</p>
+</div>
+
+<!-- 本周日历 -->
+<div class="card" style="border-left-color:#c9a227;">
+<div class="card-title">本周重要事件</div>
+<table>
+<tr><th>日期</th><th>事件</th></tr>
+<tr><td>6/3(周二)</td><td>美国JOLTS职位空缺 <span style="color:#d32f2f;font-weight:700">★★★★★</span></td></tr>
+<tr><td>6/4-6/6</td><td>OPEC+部长级会议 <span style="color:#e6a800;font-weight:700">★★★★☆</span></td></tr>
+<tr><td>6/5(周四)</td><td>美国非农就业数据 <span style="color:#d32f2f;font-weight:700">★★★★★</span></td></tr>
+<tr><td>6/9(周一)</td><td>台北COMPUTEX+英伟达/ARM新品 <span style="color:#e6a800;font-weight:700">★★★★☆</span></td></tr>
+<tr><td>6/12(周四)</td><td>SpaceX IPO上市(估值$780B) <span style="color:#999;font-weight:700">★★★☆☆</span></td></tr>
+<tr><td>6/17-18</td><td>FOMC利率决议+点阵图 <span style="color:#d32f2f;font-weight:700">★★★★★</span></td></tr>
 </table>
-<div style="font-size:11px;color:#888;padding-top:6px"><b>风险提示：</b>①美伊谈判不确定性(霍尔木兹封锁影响123艘船只)；②年内加息概率55%，6/5非农为关键变量；③A股科技高位回调、交易拥挤度高，科创50单日-5%警示风险；④金价$4,536后或获利回吐(美元走强)</div></div>
+</div>
 
-<!-- 免责声明 -->
-<div class="footer">📌 本报告由AI生成，数据来源于公开市场信息(截至2026年6月1-3日)。内容仅供参考，不构成投资建议。投资有风险，决策需谨慎。<br><span style="color:#c9a227;font-size:12px">— A股盘前策略日报 · 2026/6/3生成</span></div>
+<!-- 券商金股 -->
+<div class="card" style="border-left-color:#c9a227;">
+<div class="card-title">券商6月金股TOP5</div>
+<table>
+<tr><th>股票</th><th>推荐数</th><th>核心理由</th></tr>
+<tr><td class="up" style="font-weight:700">中国巨石</td><td style="color:#d32f2f;font-weight:700">7家</td><td>玻纤龙头，量价共振</td></tr>
+<tr><td class="up" style="font-weight:700">新易盛</td><td style="color:#d32f2f;font-weight:700">5家</td><td>1.6T订单大增</td></tr>
+<tr><td class="up" style="font-weight:700">海光信息</td><td style="color:#d32f2f;font-weight:700">4家</td><td>国产算力核心</td></tr>
+<tr><td class="up" style="font-weight:700">宁德时代</td><td style="color:#d32f2f;font-weight:700">4家</td><td>盈利韧性+储能前景</td></tr>
+<tr><td class="up" style="font-weight:700">阳光电源</td><td style="color:#d32f2f;font-weight:700">4家</td><td>海外储能订单释放</td></tr>
+</table>
+</div>
+
+<!-- 操作建议 -->
+<div class="card" style="border-left-color:#e5393e;">
+<div class="card-title">本周操作建议</div>
+<div class="tip">① <strong>科技主线未变</strong>，CPO/PCB/MLCC有反弹机会<br>② 关注<strong>AI PC主题（6/9 COMPUTEX）</strong>，英伟达/ARM/微软联合预热Windows-on-ARM PC<br>③ "杠铃策略"：一端高股息(银行/电力/高速)防御 + 另一端AI算力/半导体进攻<br>④ 本周FOMC前偏谨慎，控制仓位应对6/17利率决议<br></div>
+</div>
+
+<!-- 风险提示 -->
+<div class="card" style="border-left-color:#888;">
+<div class="card-title">⚠️ 风险提示</div>
+<ul style="font-size:12.5px;color:#444;padding-left:16px;line-height:2">
+<li>美伊谈判反复，以色列-黎巴嫩冲突持续</li>
+<li>美国CPI加速至3.80%，FOMC前加息概率~60%</li>
+<li>A股结构性分化：创业板新高但超3800只个股下跌</li>
+<li>AI算力估值拥挤度处历史高位</li>
+<li>两市缩量(2.77万亿)，关注量能变化</li>
+</ul>
+</div>
+
+<div class="footer">
+<p>A股盘前策略日报 © 2026 | 仅供参考，不构成投资建议</p>
+<p style="margin-top:3px;">桌面版：~/tzbg/index.html | 微信版：~/wechat-tzbg/a-stock.html</p>
+</div>
 
 </body>
 </html>
