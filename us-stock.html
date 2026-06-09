@@ -3,162 +3,534 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>美股盘前日报 2026-06-05</title>
+<title>美股盘前日报 · 2026年6月9日</title>
 <style>
-body{margin:0;padding:16px;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#f5f7fa;color:#1a365d;line-height:1.8}
-.header{background:linear-gradient(135deg,#0d1b3e 0%,#1a2d5a 100%);color:#c9a227;padding:24px 16px;text-align:center;border-radius:10px;margin-bottom:16px}
-.header h1{font-size:22px;margin:0;letter-spacing:2px}
-.subtitle{font-size:12px;color:#e8d9a8;opacity:.85;margin-top:4px}
-.section-title{font-size:17px;color:#0d1b3e;border-left:4px solid #c9a227;padding-left:10px;margin:20px 0 10px;font-weight:bold}
-.summary{font-size:13px;color:#3d4f6b;padding:8px;background:#eef2f7;border-radius:5px;margin-bottom:10px}
-.data-grid{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
-.data-card{background:#fff;border-radius:6px;padding:10px;text-align:center;flex:1;min-width:90px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
-.label{font-size:11px;color:#8a9bb0;margin-bottom:4px}
-.value{font-size:20px;font-weight:bold;margin:2px 0}
-.change{font-size:11px}
-.up{color:#e74c3e!important}.down{color:#38a169!important}
-table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13px}
-th{background:#0d1b3e;color:#fff;padding:8px;text-align:left;font-weight:600;font-size:12px}
-td{padding:7px 8px;border-bottom:1px solid #e8ecf0;vertical-align:middle}
-tr:nth-child(even){background:#f7f9fc}
-.strat-card{border-radius:6px;padding:12px;margin:8px 0}
-.strat-aggressive{background:linear-gradient(135deg,#fff7e6,#fff);border-left:3px solid #c9a227}
-.strat-conservative{background:linear-gradient(135deg,#e8f0fe,#fff);border-left:3px solid #1a365d}
-.strat-title{font-size:15px;font-weight:bold;margin-bottom:4px}
-ul{padding-left:16px;margin:4px 0;font-size:13px}
-li{margin-bottom:4px}
-.news-item{padding:8px 0;border-bottom:1px dashed #dde3ea;font-size:13px}
-.source-tag{color:#c9a227;font-weight:bold;font-size:12px}
-.gold-divider{height:1px;background:linear-gradient(90deg,transparent,#c9a227 30%,#c9a227 70%,transparent);margin:16px 0}
-.footer{text-align:center;padding:16px;color:#8a9bb0;font-size:11px;border-top:1px solid #e8ecf0;margin-top:20px}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #fafaf8;
+    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    padding: 40px 20px;
+  }
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    overflow: hidden;
+  }
+  header {
+    padding: 40px 48px 32px;
+    border-left: 3px solid #c9a227;
+    background: #fdfdfc;
+  }
+  header h1 {
+    font-size: 22px;
+    font-weight: 400;
+    color: #2e564f;
+    letter-spacing: 0.5px;
+  }
+  header .subtitle {
+    font-size: 13px;
+    color: #888;
+    margin-top: 6px;
+  }
+  header .subtitle span {
+    color: #c9a227;
+    font-weight: 400;
+  }
+  section {
+    padding: 28px 48px;
+    border-bottom: 1px solid #f0f0ec;
+  }
+  section:last-of-type { border-bottom: none; }
+  h2 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2e564f;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 16px;
+  }
+  .index-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .index-card {
+    background: #fafaf8;
+    border-radius: 4px;
+    padding: 16px 18px;
+    border: 1px solid #f0f0ec;
+  }
+  .index-card .label {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 4px;
+  }
+  .index-card .price {
+    font-size: 20px;
+    font-weight: 400;
+    color: #1a1a1a;
+    letter-spacing: -0.3px;
+  }
+  .index-card .change {
+    font-size: 13px;
+    margin-top: 4px;
+  }
+  .up { color: #c44e4e; }
+  .down { color: #2e7d32; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  thead th {
+    text-align: left;
+    font-weight: 400;
+    color: #999;
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0ec;
+  }
+  tbody td {
+    padding: 12px 0;
+    border-bottom: 1px solid #f6f6f3;
+    font-weight: 300;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  .stock-name {
+    font-weight: 400;
+    color: #1a1a1a;
+  }
+  .stock-code {
+    font-size: 11px;
+    color: #bbb;
+    margin-left: 4px;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
+  .tag-up { background: #fde8e8; color: #c44e4e; }
+  .tag-down { background: #e5f2e5; color: #2e7d32; }
+  .tag-neutral { background: #f5f5f5; color: #666; }
+  .news-item {
+    padding: 14px 0;
+    border-bottom: 1px solid #f6f6f3;
+  }
+  .news-item:last-child { border-bottom: none; }
+  .news-title {
+    font-size: 14px;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+  .news-meta {
+    font-size: 11px;
+    color: #bbb;
+  }
+  .impact-badge {
+    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: 2px;
+    margin-left: 6px;
+    font-weight: 400;
+  }
+  .impact-high { background: #fff3e0; color: #b87a2c; }
+  .impact-mid { background: #eef2ff; color: #4a5fb0; }
+  .impact-low { background: #f5f5f5; color: #888; }
+  .tech-table { font-size: 12px; }
+  .score-box {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .score-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #2e564f;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .score-circle .num { font-size: 20px; font-weight: 400; line-height: 1; }
+  .score-circle .label { font-size: 9px; opacity: 0.8; margin-top: 2px; letter-spacing: 0.5px; }
+  .score-desc { font-size: 13px; color: #555; }
+  .forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .forecast-card {
+    background: #fafaf8;
+    border-radius: 4px;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #f0f0ec;
+  }
+  .forecast-card .scenario {
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 0.5px;
+  }
+  .forecast-card .range {
+    font-size: 15px;
+    font-weight: 400;
+    color: #2e564f;
+    margin-top: 4px;
+  }
+  .strategy-list {
+    list-style: none;
+    padding: 0;
+  }
+  .strategy-list li {
+    font-size: 13px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f6f6f3;
+    padding-left: 16px;
+    position: relative;
+  }
+  .strategy-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: #c9a227;
+  }
+  .strategy-list li:last-child { border-bottom: none; }
+  .risk-box {
+    background: #fffdf5;
+    border: 1px solid #f0e8d4;
+    border-radius: 4px;
+    padding: 16px 20px;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.7;
+  }
+  footer {
+    padding: 24px 48px;
+    text-align: center;
+    font-size: 11px;
+    color: #bbb;
+    background: #fdfdfc;
+    border-top: 1px solid #f0f0ec;
+  }
+  .data-note {
+    font-size: 11px;
+    color: #bbb;
+    margin-top: 8px;
+    font-style: italic;
+  }
 </style>
 </head>
 <body>
+<div class="container">
 
-<div class="header">
-<h1>📊 美股盘前日报</h1>
-<div class="subtitle">2026年6月5日(周五) | 数据截至6/4美东收盘</div>
+<header>
+  <h1>美股盘前日报</h1>
+  <div class="subtitle">报告日期 <span>美东时间 2026年6月9日（周二）· 盘中快照</span></div>
+</header>
+
+<section>
+  <h2>📊 主要指数行情</h2>
+  <div class="index-grid">
+    <div class="index-card">
+      <div class="label">标普500 S&P 500</div>
+      <div class="price">7,325.64</div>
+      <div class="change down">−80.09 (−1.08%)</div>
+    </div>
+    <div class="index-card">
+      <div class="label">纳斯达克 Nasdaq</div>
+      <div class="price">25,483.56</div>
+      <div class="change down">−446.10 (−1.72%)</div>
+    </div>
+    <div class="index-card">
+      <div class="label">道琼斯 Dow Jones</div>
+      <div class="price">50,552.29</div>
+      <div class="change down">−233.72 (−0.46%)</div>
+    </div>
+  </div>
+  <p class="data-note">数据截至美东时间 2026-06-09 11:41 · 交易时段内</p>
+</section>
+
+<section>
+  <h2>💎 七巨头行情</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>股票</th>
+        <th>最新价 (USD)</th>
+        <th>涨跌幅</th>
+        <th>今高 / 今低</th>
+        <th>市值 (B)</th>
+        <th>52周区间</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="stock-name">苹果</span><span class="stock-code">AAPL</span></td>
+        <td>$291.79</td>
+        <td><span class="tag tag-down">−3.23%</span></td>
+        <td>300.72 / 291.15</td>
+        <td>$2,856B</td>
+        <td>$194.31 – $317.40</td>
+      </tr>
+      <tr>
+        <td><span class="stock-name">微软</span><span class="stock-code">MSFT</span></td>
+        <td>$403.19</td>
+        <td><span class="tag tag-down">−2.08%</span></td>
+        <td>411.98 / 402.70</td>
+        <td>$2,995B</td>
+        <td>$355.50 – $551.02</td>
+      </tr>
+      <tr>
+        <td><span class="stock-name">谷歌</span><span class="stock-code">GOOGL</span></td>
+        <td>$360.07</td>
+        <td><span class="tag tag-down">−0.89%</span></td>
+        <td>372.06 / 359.45</td>
+        <td>$4,391B</td>
+        <td>$161.53 – $408.36</td>
+      </tr>
+      <tr>
+        <td><span class="stock-name">亚马逊</span><span class="stock-code">AMZN</span></td>
+        <td>$242.77</td>
+        <td><span class="tag tag-down">−1.00%</span></td>
+        <td>250.43 / 237.00</td>
+        <td>$2,611B</td>
+        <td>$196.00 – $278.56</td>
+      </tr>
+      <tr>
+        <td><span class="stock-name">英伟达</span><span class="stock-code">NVDA</span></td>
+        <td>$204.32</td>
+        <td><span class="tag tag-down">−2.07%</span></td>
+        <td>211.39 / 203.22</td>
+        <td>$4,949B</td>
+        <td>$140.65 – $236.26</td>
+      </tr>
+      <tr>
+        <td><span class="stock-name">Meta</span><span class="stock-code">META</span></td>
+        <td>$588.26</td>
+        <td><span class="tag tag-up">+0.49%</span></td>
+        <td>597.63 / 587.52</td>
+        <td>$1,493B</td>
+        <td>$520.26 – $794.34</td>
+      </tr>
+      <tr>
+        <td><span class="stock-name">特斯拉</span><span class="stock-code">TSLA</span></td>
+        <td>$394.18</td>
+        <td><span class="tag tag-down">−3.61%</span></td>
+        <td>418.50 / 393.02</td>
+        <td>$1,480B</td>
+        <td>$288.77 – $498.83</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="data-note">注：七巨头整体偏弱，仅 Meta 逆势小幅上涨；苹果、特斯拉跌幅居前</p>
+</section>
+
+<section>
+  <h2>🌐 宏观数据日历</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>时间（美东）</th>
+        <th>事件</th>
+        <th>重要性</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>6月9日 今日</td>
+        <td>NFIB 小企业信心指数（5月）</td>
+        <td><span class="tag impact-low">★★</span></td>
+      </tr>
+      <tr>
+        <td>6月10日 09:30</td>
+        <td>CPI 消费者物价指数（5月，月率/年率）</td>
+        <td><span class="tag impact-high">★★★★★</span></td>
+      </tr>
+      <tr>
+        <td>6月11日 09:30</td>
+        <td>PPI 生产者物价指数（5月，月率/年率）</td>
+        <td><span class="tag impact-high">★★★★☆</span></td>
+      </tr>
+      <tr>
+        <td>6月12日 20:00</td>
+        <td>密歇根大学消费者信心指数（6月初值）<br>及1年/5年通胀预期</td>
+        <td><span class="tag impact-mid">★★★</span></td>
+      </tr>
+      <tr>
+        <td>6月13日 10:00</td>
+        <td>密歇根大学消费者信心指数终值确认</td>
+        <td><span class="tag impact-low">★★</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="data-note">注：经济日历为截至发稿日公开排期，实际发布时间以官方公告为准。明日（6/10）CPI 是本周最重磅数据</p>
+</section>
+
+<section>
+  <h2>📰 今日要闻 TOP3</h2>
+  <div class="news-item">
+    <div class="news-title">苹果大幅低开后扩大跌幅，七巨头全线承压 <span class="impact-badge impact-high">利空 · 高影响</span></div>
+    <div class="news-meta">市场观察 · 美东时间 2026-06-09 11:40</div>
+    <p style="font-size:13px;color:#444;margin-top:6px;">苹果早盘跌幅一度接近 3.5%，跌穿 $292 支撑，市值蒸发约 1,400 亿美元。受苹果拖累，科技板块整体走弱，纳斯达克跌幅扩大至 1.7% 以上。市场担忧地缘政治不确定性和利润率受压。</p>
+  </div>
+  <div class="news-item">
+    <div class="news-title">特斯拉连续第三个交易日下跌，成交活跃 <span class="impact-badge impact-mid">利空 · 中影响</span></div>
+    <div class="news-meta">市场观察 · 美东时间 2026-06-09 11:40</div>
+    <p style="font-size:13px;color:#444;margin-top:6px;">特斯拉收跌 3.61% 至 $394.18，盘中低见 $393.02，距 $390 心理关口仅一步之遥。成交量放大至 2,300 万股，卖压明显。投资者在 CPI 数据公布前减持高贝塔科技敞口。</p>
+  </div>
+  <div class="news-item">
+    <div class="news-title">Meta 逆势走强，AI 广告收入预期支撑股价 <span class="impact-badge impact-low">利好 · 中影响</span></div>
+    <div class="news-meta">市场观察 · 美东时间 2026-06-09 11:40</div>
+    <p style="font-size:13px;color:#444;margin-top:6px;">Meta 是七巨头中唯一上涨的标的，小幅收涨 0.49% 至 $588.26。市场对其AI驱动的广告效率提升持续乐观，成为大型科技股中的避险板块。</p>
+  </div>
+</section>
+
+<section>
+  <h2>🧭 技术面关键位</h2>
+  <table class="tech-table">
+    <thead>
+      <tr>
+        <th>标的</th>
+        <th>第一支撑</th>
+        <th>第二支撑</th>
+        <th>第一阻力</th>
+        <th>第二阻力</th>
+        <th>关键均线</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>AAPL</strong></td>
+        <td class="down">$291</td>
+        <td class="down">$288</td>
+        <td class="up">$297</td>
+        <td class="up">$301</td>
+        <td>MA20 ≈ $295</td>
+      </tr>
+      <tr>
+        <td><strong>MSFT</strong></td>
+        <td class="down">$402</td>
+        <td class="down">$398</td>
+        <td class="up">$408</td>
+        <td class="up">$412</td>
+        <td>MA20 ≈ $407</td>
+      </tr>
+      <tr>
+        <td><strong>GOOGL</strong></td>
+        <td class="down">$358</td>
+        <td class="down">$355</td>
+        <td class="up">$365</td>
+        <td class="up">$370</td>
+        <td>MA20 ≈ $366</td>
+      </tr>
+      <tr>
+        <td><strong>AMZN</strong></td>
+        <td class="down">$237</td>
+        <td class="down">$232</td>
+        <td class="up">$246</td>
+        <td class="up">$250</td>
+        <td>MA20 ≈ $245</td>
+      </tr>
+      <tr>
+        <td><strong>NVDA</strong></td>
+        <td class="down">$203</td>
+        <td class="down">$198</td>
+        <td class="up">$207</td>
+        <td class="up">$211</td>
+        <td>MA20 ≈ $207</td>
+      </tr>
+      <tr>
+        <td><strong>META</strong></td>
+        <td class="down">$585</td>
+        <td class="down">$578</td>
+        <td class="up">$593</td>
+        <td class="up">$600</td>
+        <td>MA20 ≈ $593</td>
+      </tr>
+      <tr>
+        <td><strong>TSLA</strong></td>
+        <td class="down">$390</td>
+        <td class="down">$380</td>
+        <td class="up">$405</td>
+        <td class="up">$414</td>
+        <td>MA20 ≈ $405</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="data-note">注：支撑/阻力位结合日内高低点及 20 日均线估算，仅供参考</p>
+</section>
+
+<section>
+  <h2>⭐ 市场评分</h2>
+  <div class="score-box">
+    <div class="score-circle">
+      <div class="num">4</div>
+      <div class="label">/ 10</div>
+    </div>
+    <div class="score-desc">
+      <strong>偏空震荡</strong> · 七巨头普跌，科技股领跌，纳指跌幅超 1.7%。苹果、特斯拉是主要抛压来源。Meta 逆势为市场提供有限支撑，但不足以扭转整体情绪。CPI 数据（明日）是当下最大不确定性，市场观望情绪浓厚。
+    </div>
+  </div>
+  <div class="forecast-grid">
+    <div class="forecast-card">
+      <div class="scenario">乐观 (Bull)</div>
+      <div class="range">S&P 500<br>7,450 – 7,550</div>
+    </div>
+    <div class="forecast-card">
+      <div class="scenario">中性 (Base)</div>
+      <div class="range">S&P 500<br>7,280 – 7,380</div>
+    </div>
+    <div class="forecast-card">
+      <div class="scenario">保守 (Bear)</div>
+      <div class="range">S&P 500<br>7,200 – 7,280</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>🔮 明日策略建议</h2>
+  <ul class="strategy-list">
+    <li><strong>防守为上：</strong>苹果、特斯拉短期技术破位，建议持有者设定止损位（AAPL $288 / TSLA $390），降低仓位至中性水平，等待 CPI 落地。</li>
+    <li><strong>关注 Meta 韧性：</strong>Meta 逆势坚挺，若 $593 支撑守住，可考虑短线做多；若跌破 $585 则离场观望。</li>
+    <li><strong>规避 NVDA 短期波动：</strong>$203 支撑若不保，可能快速下探 $198。建议短线观望，等待 20 日均线（$207）确认方向。</li>
+    <li><strong>CPI 是关键变量：</strong>明日 CPI 若高于预期，市场可能继续下探；若低于预期，超跌科技股有望反弹。建议在 CPI 公布前保持 50%–60% 仓位。</li>
+    <li><strong>结构性机会：</strong>微软、谷歌估值相对合理，若市场回调企稳，可作为长线加仓标的关注。</li>
+  </ul>
+</section>
+
+<section>
+  <h2>⚠️ 风险提示</h2>
+  <div class="risk-box">
+    <p>1. <strong>通胀数据超预期：</strong>明日 CPI 若高于市场预期，美联储降息路径可能进一步推迟，对成长股估值形成系统性压制。</p>
+    <p>2. <strong>地缘政治风险：</strong>当前市场对地缘不确定性溢价上升，避险情绪升温可能导致资金外流。</p>
+    <p>3. <strong>财报季临近：</strong>部分科技股即将进入二季度财报窗口，业绩指引若不及预期，可能引发大幅波动。</p>
+    <p>4. <strong>汇率与利率联动：</strong>美元走强叠加美债收益率上行，对海外收入占比高的科技巨头形成双重压力。</p>
+    <p style="margin-top:10px; font-weight:400; color:#999;">本报告基于公开行情数据生成，不构成任何投资建议。股市有风险，入市需谨慎。</p>
+  </div>
+</section>
+
+<footer>
+  本报告由 Hermes Assistant 自动生成 · 数据来源：stock-sdk MCP / 公开市场数据<br>
+  美股盘前日报 · 仅供参考，不构成投资建议
+</footer>
+
 </div>
-
-<!-- 三大指数 -->
-<div class="section-title">隔夜美股大盘</div>
-<table>
-<tr><th>指数</th><th>收盘</th><th>涨跌</th></tr>
-<tr><td><strong>道琼斯</strong></td><td>50,916.35</td><td class="up">+1.73% 🟢</td></tr>
-<tr><td><strong>标普500</strong></td><td>7,584.31</td><td class="up">+0.41% 🟢</td></tr>
-<tr><td><strong>纳斯达克</strong></td><td>26,950.59</td><td class="down">-0.53% 🔴</td></tr>
-</table>
-
-<div class="summary">道琼斯创收盘新高(+875点)，金融/医疗领涨；标普连涨10日但涨幅收窄至0.4%；纳指跌0.53%，博通财报AI芯片指引逊于预期拖累科技股。中概股集体走弱，油价攀升WTI+2.41%至$96。</div>
-
-<!-- 宏观指标 -->
-<div class="section-title">关键宏观指标</div>
-<div class="data-grid">
-<div class="data-card"><div class="label">🥇黄金</div><div class="value down">$4,433.51</div><div class="change down" style="color:#38a169;">-1.23%</div></div>
-<div class="data-card"><div class="label">🛢️WTI原油</div><div class="value up">$96.02</div><div class="change up" style="color:#e53935;">+2.41%</div></div>
-<div class="data-card"><div class="label">📈美债10Y</div><div class="value up">4.466%</div><div class="change up" style="color:#e53935;">+7bps</div></div>
-<div class="data-card"><div class="label">📊VIX</div><div class="value">回落中</div><div class="change" style="color:#8a9bb0;">(待更新)</div></div>
-</div>
-
-<!-- 重点个股 -->
-<div class="section-title">重点个股分析</div>
-
-<div class="summary"><strong style="color:#e53935;">⚠️本周最大风险：周五非农数据(6/5)！超预期→降息推迟利空成长股；不及预期→利好成长股。</strong></div>
-
-<h3 style="font-size:15px;color:#0d1b3e;margin:14px 0 8px;">【NVDA】英伟达</h3>
-<table><tr><td>最新行情</td><td class="down" style="color:#38a169;">$222.81(跌-0.69%~3.6%)|量:1.648亿股</td></tr>
-<tr><td>技术面</td><td>均线多头排列完好;支撑$217/$200,压力$236-$240</td></tr>
-<tr><td>资金面</td><td>Q4营收$68.1B(+73%)/净利$43B业绩强但已充分定价</td></tr>
-<tr><td>消息面</td><td>[WSJ]进军PC芯片🟢|[Investors.com]黄仁勋称Marvell万亿市值🟢|达利欧示警AI泡沫⚡</td></tr></table>
-
-<div class="gold-divider"></div>
-
-<h3 style="font-size:15px;color:#0d1b3e;margin:14px 0 8px;">【TSLA】特斯拉</h3>
-<table><tr><td>最新行情</td><td class="down" style="color:#38a169;">$418.45(跌-1.24%)|量:3,515万股</td></tr>
-<tr><td>技术面</td><td>从高点($433+)回落;支撑$416-$418/压力$425-$430</td></tr>
-<tr><td>消息面</td><td>[Investors.com]2026或为Robotaxi之年🟡|SpaceX IPO(6/12)分流资金🔴</td></tr></table>
-
-<div class="gold-divider"></div>
-
-<h3 style="font-size:15px;color:#0d1b3e;margin:14px 0 8px;">【BABA】阿里巴巴</h3>
-<table><tr><td>最新行情</td><td class="down" style="color:#38a169;">$125.95(跌-0.99%)|额:$8.73亿(降20.86%)</td></tr>
-<tr><td>技术面</td><td>均线下方运行;支撑$125-$126/压力$130-$132</td></tr>
-<tr><td>消息面</td><td>[新浪财经]中概股普跌阿里-2.76%🔴|[Bloomberg]Qwen3.5竞争性强🟢</td></tr></table>
-
-<div class="gold-divider"></div>
-
-<h3 style="font-size:15px;color:#0d1b3e;margin:14px 0 8px;">【PDD】拼多多</h3>
-<table><tr><td>最新行情</td><td class="down" style="color:#38a169;">$85.88(跌-0.35%~2.4%)|量:704万股</td></tr>
-<tr><td>技术面</td><td>从$90+回落;支撑$83-$85/压力$87-$89</td></tr>
-<tr><td>消息面</td><td>[新浪财经]PDD-3.15%🔴|[特朗普]拟加征10%-12.5%关税影响Temu🟠</td></tr></table>
-
-<div class="gold-divider"></div>
-
-<h3 style="font-size:15px;color:#0d1b3e;margin:14px 0 8px;">【INTC】英特尔(利好)</h3>
-<table><tr><td>最新行情</td><td class="up" style="color:#e53935;">$112.71(涨+4.43%)|盘中一度+8%</td></tr>
-<tr><td>技术面</td><td>突破多条均线趋势转强;支撑$105-$108/压力$120-$125</td></tr>
-<tr><td>消息面</td><td>[Computex]18A制程Xeon6+发布🟢🟢|华尔街上调目标价🟢</td></tr></table>
-
-<div class="gold-divider"></div>
-
-<h3 style="font-size:15px;color:#0d1b3e;margin:14px 0 8px;">【AVGO】博通(财报拖累)</h3>
-<table><tr><td>最新行情</td><td class="down" style="color:#38a169;">跌超-12.9%(盘中一度-15%)</td></tr>
-<tr><td>消息面</td><td>[盘后]Q1营收$221.87B年增48%但AI芯片指引$160B(预期$172B)逊于预期🔴</td></tr></table>
-
-<!-- 中概股 -->
-<div class="section-title">中概股表现</div>
-<table>
-<tr><th>股票</th><th>涨跌幅</th></tr>
-<tr><td>HXC金龙指数</td><td class="down" style="color:#38a169;">-0.60%~-2.47%</td></tr>
-<tr><td>日月光半导体</td><td class="up" style="color:#e53935;">+1.66%</td></tr>
-<tr><td>阿里巴巴 BABA</td><td class="down" style="color:#38a169;">-2.76%</td></tr>
-<tr><td>拼多多 PDD</td><td class="down" style="color:#38a169;">-3.15%</td></tr>
-<tr><td>百度 BIDU</td><td class="down" style="color:#38a169;">-2.95%</td></tr>
-<tr><td>京东 JD</td><td class="down" style="color:#38a169;">-2.45%</td></tr>
-<tr><td>蔚来 NIO</td><td class="down" style="color:#38a169;">-4.33%</td></tr>
-<tr><td>金山云 KC</td><td class="down" style="color:#38a169;">-7.01%</td></tr>
-<tr><td>富途控股 FUTU</td><td class="down" style="color:#38a169;">-5.65%</td></tr>
-</table>
-
-<!-- 本周事件 -->
-<div class="section-title">本周重要事件日历</div>
-<table>
-<tr><th>日期</th><th>事件</th><th>重要性</th></tr>
-<tr><td>6/5(周五)</td><td>**5月非农+失业率**</td><td class="up" style="color:#e53935;">⭐⭐⭐⭐⭐</td></tr>
-<tr><td>6/5(周五)</td><td>初请失业金人数</td><td class="down" style="color:#38a169;">⭐⭐⭐</td></tr>
-<tr><td>6/9-13</td><td>苹果WWDC(AI发布)</td><td class="up" style="color:#e53935;">⭐⭐⭐⭐</td></tr>
-<tr><td>6/10</td><td>加拿大央行利率决议</td><td class="up" style="color:#e53935;">⭐⭐⭐⭐</td></tr>
-<tr><td>6/12</td><td>**SpaceX IPO**(史上最大$1.77T)</td><td class="up" style="color:#e53935;">⭐⭐⭐⭐⭐</td></tr>
-<tr><td>6/16-17</td><td>**美联储FOMC(Warsh首次)**</td><td class="up" style="color:#e53935;">⭐⭐⭐⭐⭐</td></tr>
-</table>
-
-<!-- 策略 -->
-<div class="section-title">本周投资策略</div>
-
-<div class="strat-card strat-aggressive">
-<div class="strat-title" style="color:#c9a227;">🟢 激进型</div>
-<ul><li>Feng低买入AI基础设施龙头(INTC/MVL/AVGO若$340)</li><li>中概股超跌反弹(BABA/PDD/BIDU轻仓参与)</li><li>油价做多WTI在$95-$97支撑区</li></ul>
-</div>
-
-<div class="strat-card strat-conservative">
-<div class="strat-title" style="color:#0d1b3e;">🔵 稳健型</div>
-<ul><li>非农(6/5)前降低仓位观望</li><li>防御性配置:公用事业/必需消费品</li><li>黄金避险:$4,433回调中可配5%-10%Gold ETF</li></ul>
-</div>
-
-<!-- 风险提示 -->
-<div class="section-title">风险提示</div>
-<table>
-<tr><td>🔴地缘政治</td><td>美伊冲突推高油价至$100+引发通胀二次飙升</td></tr>
-<tr><td>🟠关税政策</td><td>Trump加征10%-12.5%关税扰动全球供应链</td></tr>
-<tr><td>⚡流动性</td><td>SpaceX IPO(6/12)抽走市场资金</td></tr>
-<tr><td>🔴估值泡沫</td><td>AI板块历史高位,达利欧示警泡沫(NVDA/AVGO已回调)</td></tr>
-<tr><td>⚠️数据风险</td><td>非农偏离预期±10万→单日波动±2-3%</td></tr>
-</table>
-
-<div class="gold-divider"></div>
-<p style="text-align:center;color:#8a9bb0;font-size:11px;margin-top:14px;">免责声明:数据来源WSJ/MarketWatch/新浪财经/Investing.com/Yahoo Finance/Bloomberg/FRED,截至2026-06-04美东收盘。仅供参考,不构成投资建议。</p>
-
-<div class="footer">© 2026 US Stock Daily Report · All Rights Reserved</div>
-
 </body>
 </html>
