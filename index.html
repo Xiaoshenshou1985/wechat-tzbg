@@ -75,14 +75,28 @@ h1 {
     <div class="desc">宏观/资金/板块/策略/评分预测</div>
     <div class="update-time" id="a-stock-time">加载中...</div>
   </a>
-  
+
   <a href="us-stock.html" class="card">
     <div class="icon">🇺🇸</div>
     <div class="title">美股盘前日报</div>
     <div class="desc">七巨头/宏观数据/新闻/策略</div>
     <div class="update-time" id="us-stock-time">加载中...</div>
   </a>
-  
+
+  <a href="e-stock-summary.html" class="card">
+    <div class="icon">📊</div>
+    <div class="title">A股盘后总结</div>
+    <div class="desc">收盘复盘/次日热点预判/风险提示</div>
+    <div class="update-time" id="e-stock-summary-time">加载中...</div>
+  </a>
+
+  <a href="w-stock-summary.html" class="card">
+    <div class="icon">📅</div>
+    <div class="title">每周股市总结</div>
+    <div class="desc">A股+美股周度回顾/下周热点预测</div>
+    <div class="update-time" id="w-stock-summary-time">加载中...</div>
+  </a>
+
   <p class="footer">本报告仅供参考，不构成投资建议</p>
 </div>
 
@@ -113,16 +127,22 @@ async function fetchUpdateTime(file) {
   }
 }
 
-// 并行获取两个文件的更新时间
+// 并行获取四个文件的更新时间
 Promise.all([
   fetchUpdateTime('a-stock.html'),
-  fetchUpdateTime('us-stock.html')
-]).then(([aTime, usTime]) => {
+  fetchUpdateTime('us-stock.html'),
+  fetchUpdateTime('e-stock-summary.html'),
+  fetchUpdateTime('w-stock-summary.html')
+]).then(([aTime, usTime, eTime, wTime]) => {
   document.getElementById('a-stock-time').textContent = `📅 ${aTime}`;
   document.getElementById('us-stock-time').textContent = `📅 ${usTime}`;
+  document.getElementById('e-stock-summary-time').textContent = `📅 ${eTime}`;
+  document.getElementById('w-stock-summary-time').textContent = `📅 ${wTime}`;
 }).catch(() => {
   document.getElementById('a-stock-time').textContent = '📅 每日08:30更新';
   document.getElementById('us-stock-time').textContent = '📅 每日18:00更新';
+  document.getElementById('e-stock-summary-time').textContent = '📅 每日16:00更新';
+  document.getElementById('w-stock-summary-time').textContent = '📅 每周六9:00更新';
 });
 </script>
 </body>
