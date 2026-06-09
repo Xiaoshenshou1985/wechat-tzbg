@@ -27,9 +27,13 @@ tbody tr:nth-child(even){background:#fafafa}
 .badge-dn{background:#38a169;color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:bold}
 .warn{background:#faf5eb;border-left:3px solid #d4a741;padding:10px 12px;border-radius:6px;margin:12px 0;font-size:13px;color:#5c4b2e}
 .summary{background:#f8f9fa;padding:12px;border-radius:8px;margin:12px 0;font-size:13px;color:#3d4f6b;line-height:1.8}
-.week-grid{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-.week-card{background:#fff;border-radius:8px;padding:10px;box-shadow:0 1px 3px rgba(0,0,0,.05);flex:1;min-width:60px;font-size:11px;color:#4a5e78;line-height:1.6}
-.week-card .day{font-weight:700;color:#2e564f;font-size:12px;border-bottom:1px solid #eee;padding-bottom:4px;margin-bottom:4px}
+.news-item{background:#fff;border-radius:8px;padding:14px 12px;box-shadow:0 1px 3px rgba(0,0,0,.05);margin-bottom:10px;border-left:3px solid #c8965a}
+.news-item .news-title{font-size:14px;font-weight:700;color:#2e564f;margin-bottom:6px}
+.news-item .news-source{font-size:11px;color:#8a9bb0;margin-bottom:4px}
+.news-item .news-link{display:inline-block;background:#2e564f;color:#fff;padding:3px 10px;border-radius:4px;font-size:11px;text-decoration:none;margin-top:4px}
+.news-item .analysis{font-size:12px;color:#4a5e78;line-height:1.7;margin-top:6px}
+.badge-bull{background:#e53935;color:#fff;padding:2px 6px;border-radius:3px;font-size:10px;font-weight:bold;margin-right:4px}
+.badge-bear{background:#38a169;color:#fff;padding:2px 6px;border-radius:3px;font-size:10px;font-weight:bold;margin-right:4px}
 .footer{text-align:center;padding:20px 16px;color:#8a9bb0;font-size:11px;border-top:1px solid #e8ecf0;margin-top:20px}
 .divider{height:1px;background:linear-gradient(90deg,transparent,#c8965a,transparent);margin:16px 0;opacity:.4}
 </style>
@@ -39,23 +43,20 @@ tbody tr:nth-child(even){background:#fafafa}
 <div class="header">
 <h1>A股盘前日报</h1>
 <p class="sub">数据驱动 · 每日研报</p>
-<p class="date">2026年6月9日（周二）| 数据截止：6月8日收盘</p>
+<p class="date">2026年6月9日（周二）| 数据截止：6/8收盘</p>
 </div>
 
 <!-- 一、收盘 -->
-<div class="title">📌 昨日收盘（6/5 周五）</div>
+<div class="title">📌 今日行情（6/9 周一）</div>
 <table>
 <thead><tr><th>指数</th><th>点位</th><th>涨跌幅</th></tr></thead>
 <tbody>
-<tr><td>上证指数</td><td>4,027.74</td><td class="dn">🔴 -0.74%</td></tr>
-<tr><td>深证成指</td><td>15,314.70</td><td class="dn">🔴 -2.21%</td></tr>
-<tr><td>创业板指</td><td>3,957.94</td><td class="dn">🔴 -3.20%（失守4000点）</td></tr>
-<tr><td>科创50</td><td>-</td><td class="dn">🔴 -4.01%</td></tr>
-<tr><td>北证50</td><td>1,299.07</td><td class="up">🟢 +5.59%（逆市暴涨）</td></tr>
+<tr><td>上证指数</td><td>4,010.03</td><td class="up">🟢 +1.28%</td></tr>
+<tr><td>深证成指</td><td>15,268.71</td><td class="up">🟢 +3.02%</td></tr>
+<tr><td>创业板指</td><td>-</td><td class="up">🟢 领涨</td></tr>
+<tr><td>恒生指数</td><td>24,565.90</td><td class="dn">🔴 -0.37%</td></tr>
 </tbody>
 </table>
-<p style="font-size:12px;color:#6b7f95;margin-top:4px;">成交额 <strong style="color:#c8965a;font-size:16px;">3.10万亿</strong> | 连续第30日超2.5万亿 | 涨停84只/跌停17只</p>
-<div class="summary"><strong>市场特征：</strong>"指数大跌、个股多数涨"——全A中位数+0.51%，典型高位核心资产风险释放+低位题材补涨格局。</div>
 
 <!-- 二、板块 -->
 <div class="title">🔥 板块热点</div>
@@ -66,20 +67,20 @@ tbody tr:nth-child(even){background:#fafafa}
 <tr><td><span class="tag">玻璃基板</span></td><td>沃格光电、京东方A盘中涨停</td></tr>
 <tr><td><span class="tag">6G概念</span></td><td>创远信科(30CM涨停)、烽火通信</td></tr>
 <tr><td><span class="tag">光纤通信</span></td><td>三孚股份、特发信息</td></tr>
-<tr><td><span class="tag">零售/银行</span></td><td>步步高、步步高等</td></tr>
+<tr><td><span class="tag">零售/银行</span></td><td>步步高等</td></tr>
 </tbody></table></div>
 
 <div class="card"><h3>🔴 领跌TOP3</h3>
 <table><thead><tr><th>板块</th><th>代表个股</th></tr></thead>
 <tbody>
 <tr><td><span class="tag" style="background:#ffe5e5;color:#c00">算力/CPO</span></td><td>中际旭创(-7.81%，天量583亿)</td></tr>
-<tr><td><span class="tag" style="background:#ffe5e5;color:#c00">半导体/存储</span></td><td>兆易创新(-7%+)、江波龙</td></tr>
+<tr><td><span class="tag" style="background:#ffe5e5;color:#c00">半导体/存储</span></td><td>兆易创新、江波龙</td></tr>
 <tr><td><span class="tag" style="background:#ffe5e5;color:#c00">电力</span></td><td>豫能控股(跌停)、广西能源</td></tr>
 </tbody></table></div>
 
 <!-- 三、资金 -->
-<div class="title">💰 资金流向</div>
-<div class="card"><h3>主力资金净流入/出（6/5）</h3>
+<div class="title">💰 资金流向（6/8）</div>
+<div class="card"><h3>主力资金净流入</h3>
 <table><thead><tr><th>方向</th><th>金额(亿)</th></tr></thead>
 <tbody>
 <tr><td>超大单</td><td class="up">+128.4</td></tr>
@@ -87,11 +88,11 @@ tbody tr:nth-child(even){background:#fafafa}
 <tr><td>中单</td><td class="up">+67.3</td></tr>
 <tr><td>小单</td><td class="dn">-104.8</td></tr>
 </tbody></table>
-<p style="font-size:12px;color:#6b7f95;margin-top:6px;"><strong>北向资金：</strong>净流出约38亿，重点减持电力/算力板块；增持新能源、消费龙头。</p>
+<p style="font-size:12px;color:#6b7f95;margin-top:6px;"><strong>北向资金：</strong>净流出约38亿，减持电力/算力，增持新能源、消费。</p>
 </div>
 
 <!-- 四、技术面 -->
-<div class="title">📈 技术指标信号（上证+创业板）</div>
+<div class="title">📈 技术指标（上证+创业板）</div>
 <div class="card"><h3>上证指数</h3>
 <table><thead><tr><th>指标</th><th>数值</th><th>信号</th></tr></thead>
 <tbody>
@@ -102,16 +103,37 @@ tbody tr:nth-child(even){background:#fafafa}
 </tbody></table>
 </div>
 
-<div class="card"><h3>创业板指</h3>
-<table><thead><tr><th>指标</th><th>数值</th><th>信号</th></tr></thead>
-<tbody>
-<tr><td>MA(5/10/20)</td><td>3,978 / 4,012 / 4,045</td><td class="dn">空头排列</td></tr>
-<tr><td>MACD</td><td>DIF:-18.6, DEA:-11.2</td><td class="dn">死叉加速</td></tr>
-<tr><td>KDJ(9)</td><td>K:15.8, D:24.1, J:-10.3</td><td class="up">超卖反弹信号</td></tr>
-</tbody></table>
+<!-- 五、今日重要新闻 -->
+<div class="title">🔖 今日重要新闻（3条）</div>
+
+<div class="news-item">
+<div class="news-title"><span class="badge-bull">利好</span> 国务院办公厅发布私募基金高质量发展指导意见</div>
+<div class="news-source">来源：新华社 | 2026-06-09</div>
+<a href="https://finance.sina.com.cn/zt_d/gbfbsysmjjgzlfzzdyj/" target="_blank" class="news-link">🔗 查看原文</a>
+<div class="analysis">
+<strong>影响分析：</strong>这是继证监会发布《关于促进私募高质量发展的指导意见》后的又一重磅政策，从国务院层面明确了私募基金的监管框架和发展方向。利好：<strong>头部券商（中信、中金）</strong>的机构业务和代销业务；<strong>基金板块</strong>如华夏基金、易方达等合规优势明显的公司。利空：中小私募机构面临更严格的合规要求，部分可能出清。
+</div>
 </div>
 
-<!-- 五、市场评分 -->
+<div class="news-item">
+<div class="news-title"><span class="badge-bull">利好</span> 安孚科技(688146)公告：电子布年内5轮提价，均价上涨约30%</div>
+<div class="news-source">来源：公司公告/新浪财经 | 2026-06-09</div>
+<a href="https://finance.sina.com.cn/stock/company/sh688146.shtml" target="_blank" class="news-link">🔗 查看原文</a>
+<div class="analysis">
+<strong>影响分析：</strong>电子布（PCB上游核心材料）年内连续5轮涨价，累计涨幅约30%，反映AI算力需求拉动下PCB产业链景气度持续上行。直接利好：<strong>安孚科技(688146)</strong>业绩弹性大；<strong>覆铜板龙头</strong>如生益科技、华正新材等受益上游涨价传导。对<strong>玻璃基板概念（沃格光电）</strong>形成间接催化——PCB景气度提升带动先进封装材料需求。
+</div>
+</div>
+
+<div class="news-item">
+<div class="news-title"><span class="badge-bear">利空</span> 算力明星股接连跌停，市值蒸发逾200亿</div>
+<div class="news-source">来源：新浪财经 | 2026-06-09</div>
+<a href="https://finance.sina.com.cn/stock/" target="_blank" class="news-link">🔗 查看原文</a>
+<div class="analysis">
+<strong>影响分析：</strong>算力板块（CPO、光模块）连续出现跌停个股，市值单日蒸发超200亿。此前中际旭创单日成交583亿天量后持续回落，说明AI算力板块短期见顶信号明显。<strong>利空：</strong>CPO概念股(中际旭创-7.81%)、光模块(新易盛)、服务器(AI服务器)。<strong>影响扩散</strong>：算力退潮可能带动<strong>半导体设备、存储芯片</strong>板块联动调整，但利好资金向<strong>机器人、6G</strong>等新主线切换。
+</div>
+</div>
+
+<!-- 六、市场评分 -->
 <div class="title">⭐ 综合市场评分</div>
 <table style="margin:8px 0"><thead><tr><th>维度</th><th>评分</th><th>说明</th></tr></thead>
 <tbody>
@@ -122,7 +144,7 @@ tbody tr:nth-child(even){background:#fafafa}
 </tbody>
 </table>
 
-<div class="card" style="margin-top:16px"><h3>预测区间（6/8周一）</h3>
+<div class="card" style="margin-top:16px"><h3>预测区间（6/9周二）</h3>
 <table>
 <tr><th>情景</th><th>上证</th><th>创业板</th></tr>
 <tr><td class="up">乐观</td><td>4,050-4,120</td><td>3,980-4,050</td></tr>
@@ -131,17 +153,17 @@ tbody tr:nth-child(even){background:#fafafa}
 </table>
 </div>
 
-<!-- 六、明日策略 -->
-<div class="title">🔮 明日（6/8）策略建议</div>
+<!-- 七、明日策略 -->
+<div class="title">🔮 明日（6/9）策略建议</div>
 <div class="card">
 <h3>操作建议</h3>
 <p class="rec">关注机器人+玻璃基板双主线延续性，绿的谐波已创新高可作为标杆观察。</p>
-<p class="rec">北证50逆市暴涨5.6%，短线可参与但注意获利回吐风险。</p>
+<p class="rec">北证50逆市暴涨5.6%，短线可参与但注意获利回吐风险；电子布涨价利好PCB产业链个股。</p>
 </div>
 
-<!-- 七、风险提示 -->
+<!-- 八、风险提示 -->
 <div class="title">⚠️ 风险提示</div>
-<div class="warn"><strong>1.</strong>创业板指跌破4000点整数关口，若周一继续破位可能引发技术派止损盘。</div>
+<div class="warn"><strong>1.</strong>创业板指跌破4000点整数关口，若继续破位可能引发技术派止损盘。</div>
 <div class="warn"><strong>2.</strong>中际旭创等算力龙头天量下跌（583亿成交额），短期见顶信号明显。</div>
 <div class="warn"><strong>3.</strong>北证50连续大涨后高位放量，需防范获利盘集中兑现。</div>
 
