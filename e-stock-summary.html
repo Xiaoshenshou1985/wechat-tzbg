@@ -3,228 +3,163 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A股盘后总结 - 2026年06月10日</title>
+<title>A股盘后总结 - 2026年6月11日</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #fafaf8; color: #1a1a1a; line-height: 1.8; font-weight: 300; padding: 40px 20px; }
-.container { max-width: 780px; margin: 0 auto; }
-
-/* Header */
-.header { border-left: 3px solid #c9a227; padding-left: 16px; margin-bottom: 32px; }
-.header h1 { font-size: 24px; font-weight: 500; color: #2e564f; letter-spacing: 1px; }
-.header .date { font-size: 14px; color: #8c7a5e; margin-top: 6px; }
-
-/* Section titles */
-.section-title { font-size: 18px; font-weight: 500; color: #2e564f; border-bottom: none; padding-bottom: 8px; margin: 36px 0 20px; display: flex; align-items: center; }
-
-/* Cards */
-.card { background: white; border-radius: 6px; padding: 18px 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-
-/* Index table */
-.index-table { width: 100%; border-collapse: collapse; }
-.index-table th { text-align: left; font-weight: 400; color: #6b5d4e; font-size: 13px; padding: 8px 12px; border-bottom: 1px solid #ece8e0; }
-.index-table td { padding: 10px 12px; font-weight: 400; font-size: 15px; border-bottom: 1px solid #f3f0ea; }
-.index-table tr:last-child td { border-bottom: none; }
-.up { color: #c62828; }
-.down { color: #2e7d32; }
-
-/* Stat grid */
-.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px; }
-.stat-item { text-align: center; padding: 14px 8px; background: white; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-.stat-value { font-size: 22px; font-weight: 500; color: #2e564f; }
-.stat-label { font-size: 12px; color: #8c7a5e; margin-top: 4px; }
-
-/* Limit list */
-.limit-list { display: flex; flex-wrap: wrap; gap: 8px; }
-.limit-tag { padding: 6px 12px; background: #fff9f0; border-radius: 4px; font-size: 13px; border-left: 2px solid #c9a227; }
-
-/* Analysis text */
-.analysis-text { font-size: 15px; line-height: 1.9; color: #3d3630; padding: 4px 0; }
-.highlight { color: #c62828; font-weight: 500; }
-.green-highlight { color: #2e7d32; font-weight: 500; }
-
-/* Bullet list */
-.bullet-list { margin-left: 16px; margin-bottom: 16px; }
-.bullet-list li { padding: 4px 0; font-size: 14px; color: #3d3630; }
-
-/* Warning box */
-.warning-box { background: #fff8f0; border-left: 3px solid #c9a227; padding: 14px 18px; border-radius: 0 6px 6px 0; margin-top: 20px; }
-.warning-title { font-size: 15px; font-weight: 500; color: #c97a27; margin-bottom: 8px; }
-
-/* Footer */
-.footer { text-align: center; padding: 32px 0 16px; color: #aaa8a0; font-size: 12px; border-top: 1px solid #f0ece4; margin-top: 32px; }
+body { background: #fafaf8; color: #1a1a1a; font-family: "PingFang SC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.75; padding: 24px 0; max-width: 860px; margin: 0 auto; }
+.container { padding: 32px 28px; background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+h1 { font-size: 22px; color: #2e564f; margin-bottom: 6px; letter-spacing: -0.5px; display: inline-block; border-left: 3px solid #c9a227; padding-left: 12px; }
+.date { font-size: 13px; color: #888; margin-bottom: 32px; }
+.section-title { font-size: 16px; font-weight: 600; color: #2e564f; margin: 28px 0 14px; padding-left: 12px; border-left: 3px solid #c9a227; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 13.5px; }
+th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid #eee; }
+thead th { background: #f7f9fb; color: #444; font-weight: 500; font-size: 12.5px; letter-spacing: 0.3px; }
+td:last-child, td:nth-last-child(2) { text-align: right; }
+.up { color: #d63b32; } .down { color: #2b8a4e; }
+.subtitle { font-size: 14px; color: #555; margin-bottom: 10px; font-weight: 500; }
+.text-sm { font-size: 13px; color: #666; line-height: 1.85; }
+.tag { display: inline-block; background: #f0f4f2; color: #2e564f; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-right: 6px; }
+.tag-gold { background: #fdf7ec; color: #b8903a; }
+.note { font-size: 13px; color: #888; text-align: center; padding-top: 24px; font-style: italic; }
+.highlight { background: #f7fafc; border-left: 3px solid #e8ddd5; padding: 10px 14px; margin: 12px 0; border-radius: 0 6px 6px 0; }
+.risk-box { background: #fef9f0; border-radius: 6px; padding: 12px 16px; font-size: 13.5px; line-height: 1.8; margin-top: 16px; }
 </style>
 </head>
 <body>
 <div class="container">
 
-<!-- Header -->
-<div class="header">
 <h1>A股盘后总结</h1>
-<div class="date">2026年06月10日（周三）· 收盘报告</div>
-</div>
+<p class="date">2026年6月11日（周四） | 收盘 15:00</p>
 
-<!-- 大盘行情 -->
+<!-- 今日行情回顾 -->
 <div class="section-title">📊 今日行情回顾</div>
-<div class="card">
-<table class="index-table">
-<thead><tr><th>指数</th><th>收盘点位</th><th>涨跌幅</th></tr></thead>
+<table>
+<thead><tr><th>指数</th><th>收盘价</th><th>涨跌额</th><th>涨跌幅</th></tr></thead>
 <tbody>
-<tr><td>上证指数</td><td>3993.23</td><td class="down">-0.42%</td></tr>
-<tr><td>深证成指</td><td>14954.10</td><td class="down">-2.06%</td></tr>
-<tr><td>创业板指</td><td>3854.79</td><td class="down">-2.70%</td></tr>
-<tr><td>沪深300</td><td>4748.59</td><td class="down">-1.11%</td></tr>
-<tr><td>科创50</td><td>1652.22</td><td class="down">-0.65%</td></tr>
+<tr><td>上证指数</td><td class="up">3987.01</td><td class="down">-6.22</td><td class="down">-0.16%</td></tr>
+<tr><td>深证成指</td><td class="up">14851.98</td><td class="down">-102.12</td><td class="down">-0.68%</td></tr>
+<tr><td>创业板指</td><td class="up">3811.25</td><td class="down">-43.54</td><td class="down">-1.13%</td></tr>
+<tr><td>科创50</td><td class="down">1662.44</td><td class="up">+10.22</td><td class="up">+0.62%</td></tr>
+<tr><td>沪深300</td><td class="up">4722.41</td><td class="down">-26.18</td><td class="down">-0.55%</td></tr>
 </tbody>
 </table>
-</div>
 
-<div class="stat-grid">
-<div class="stat-item"><div class="stat-value">1378</div><div class="stat-label">上涨家数</div></div>
-<div class="stat-item"><div class="stat-value up">903</div><div class="stat-label">上证下跌</div></div>
-<div class="stat-item"><div class="stat-value down">1218</div><div class="stat-label">深证下跌</div></div>
-<div class="stat-item"><div class="stat-value up">71</div><div class="stat-label">涨停数</div></div>
+<div class="highlight">
+<span class="tag-gold">涨停 70家</span> <span class="tag">跌停 32家</span> 涨跌比偏强，但创业板指跌幅超1%，分化明显——科技成长与周期资源股逆势走强，消费白马承压。
 </div>
 
 <!-- 涨停复盘 -->
-<div class="section-title">🔥 涨停复盘（共71只）</div>
-<div class="card">
-<div class="analysis-text" style="margin-bottom: 14px;">今日涨停集中在<b>化工材料</b>和<b>半导体</b>两条主线，与大盘下跌形成明显背离：</div>
+<div class="section-title">🔥 涨停复盘</div>
+<p class="subtitle">涨停TOP10（成交额排序）</p>
+<table>
+<thead><tr><th>代码</th><th>名称</th><th>行业</th><th>价格</th><th>连板数</th></tr></thead>
+<tbody>
+<tr><td>688167</td><td class="up">炬光科技</td><td><span class="tag tag-gold">半导体</span></td><td>338.86</td><td>首板</td></tr>
+<tr><td>002407</td><td class="up">多氟多</td><td><span class="tag">化学制品</span></td><td>38.19</td><td>首板</td></tr>
+<tr><td>688545</td><td class="up">兴福电子</td><td><span class="tag tag-gold">半导体</span></td><td>104.52</td><td>首板</td></tr>
+<tr><td>300706</td><td class="up">阿石创</td><td><span class="tag tag-gold">半导体</span></td><td>67.88</td><td>首板</td></tr>
+<tr><td>002409</td><td class="up">雅克科技</td><td><span class="tag tag-gold">半导体</span></td><td>134.81</td><td>二板</td></tr>
+<tr><td>688268</td><td class="up">华特气体</td><td><span class="tag tag-gold">半导体</span></td><td>228.82</td><td>首板</td></tr>
+<tr><td>002971</td><td class="up">和远气体</td><td><span class="tag">化学制品</span></td><td>52.75</td><td>三板</td></tr>
+<tr><td>600378</td><td class="up">昊华科技</td><td><span class="tag">化学制品</span></td><td>63.89</td><td>二板</td></tr>
+<tr><td>600500</td><td class="up">中化国际</td><td><span class="tag">化学制品</span></td><td>7.21</td><td>三板</td></tr>
+<tr><td>300263</td><td class="up">隆华科技</td><td><span class="tag">通用设备</span></td><td>14.18</td><td>首板（20cm）</td></tr>
+</tbody>
+</table>
 
-<div style="margin-bottom: 12px;"><strong style="color:#c9a227">▌化工材料板块（领涨核心）</strong></div>
-<div class="limit-list" style="margin-bottom: 16px;">
-<span class="limit-tag">中化国际(连板)</span><span class="limit-tag">圣泉集团(连板)</span><span class="limit-tag">宿迁联盛(连板)</span><span class="limit-tag">和远气体</span>
-<span class="limit-tag">恒林股份</span><span class="limit-tag">红宝丽</span><span class="limit-tag">宏昌电子(连板)</span>
-<span class="limit-tag">昊华科技</span><span class="limit-tag">三孚股份</span><span class="limit-tag">百合花</span><span class="limit-tag">滨化股份</span>
-<span class="limit-tag">康达新材(连板)</span><span class="limit-tag">怡达股份(+20%)</span><span class="limit-tag">杭氧股份</span>
-</div>
-
-<div style="margin-bottom: 12px;"><strong style="color:#c9a227">▌半导体板块（部分活跃）</strong></div>
-<div class="limit-list" style="margin-bottom: 16px;">
-<span class="limit-tag">中晶科技(连板)</span><span class="limit-tag">康强电子</span><span class="limit-tag">汇顶科技</span><span class="limit-tag">气派科技(+20%)</span>
-<span class="limit-tag">雅克科技</span><span class="limit-tag">有研粉材(+20%)</span><span class="limit-tag">有研新材</span><span class="limit-tag">盛景微</span><span class="limit-tag">华亚智能(连板)</span>
-</div>
-
-<div style="margin-bottom: 12px;"><strong style="color:#c9a227">▌其他涨停方向</strong></div>
-<div class="limit-list">
-<span class="limit-tag">南兴股份</span><span class="limit-tag">金安国纪(3连板)</span><span class="limit-tag">天娱数科(4连板)</span><span class="limit-tag">中贝通信</span>
-<span class="limit-tag">深深房A</span><span class="limit-tag">双星新材</span><span class="limit-tag">拓维信息</span><span class="limit-tag">中科金财</span>
-<span class="limit-tag">晶澳科技</span><span class="limit-tag">爱旭股份</span><span class="limit-tag">法狮龙(连板)</span><span class="limit-tag">山东玻纤(连板)</span>
-</div>
+<div class="highlight">
+<strong>涨停主线：</strong>化学制品+半导体双轮驱动。化工股（和远气体、中化国际、昊华科技）集体走强，叠加半导体材料/设备链（雅克科技、炬光科技、华特气体），反映资源涨价与国产替代两条逻辑共振。小金属板块尤为活跃（章源钨业、翔鹭钨业、云南锗业）。
 </div>
 
 <!-- 跌停复盘 -->
-<div class="section-title">💔 跌停复盘（共25只）</div>
-<div class="card">
-<div class="analysis-text" style="margin-bottom: 14px;">今日跌停集中于<b>电力/新能源</b>和<b>部分半导体</b>，高位股杀跌明显：</div>
-
-<table class="index-table">
-<thead><tr><th>个股</th><th>行业</th><th>跌幅</th></tr></thead>
+<div class="section-title">💔 跌停复盘</div>
+<p class="subtitle">重点跌停个股</p>
+<table>
+<thead><tr><th>代码</th><th>名称</th><th>行业</th></tr></thead>
 <tbody>
-<tr><td>麦格米特</td><td>电源设备</td><td class="down">-10.00%</td></tr>
-<tr><td>三安光电</td><td>半导体</td><td class="down">-10.00%</td></tr>
-<tr><td>利通电子</td><td>消费电子</td><td class="down">-9.99%</td></tr>
-<tr><td>美湖股份</td><td>汽车零部件</td><td class="down">-10.00%</td></tr>
-<tr><td>京能电力</td><td>电力</td><td class="down">-9.97%</td></tr>
-<tr><td>华电辽能</td><td>电力</td><td class="down">-9.98%</td></tr>
-<tr><td>协鑫能科</td><td>电力</td><td class="down">-9.98%</td></tr>
-<tr><td>大元泵业</td><td>通用设备</td><td class="down">-10.00%</td></tr>
-<tr><td>嘉德利</td><td>电子材料</td><td class="down">-10.00%</td></tr>
-<tr><td>红板科技</td><td>元件</td><td class="down">-9.99%</td></tr>
+<tr><td>002174</td><td class="down">游族网络</td><td><span class="tag">游戏</span></td></tr>
+<tr><td>603859</td><td class="down">能科科技</td><td><span class="tag">IT服务</span></td></tr>
+<tr><td>002181</td><td class="down">粤传媒</td><td><span class="tag">出版传媒</span></td></tr>
+<tr><td>603466</td><td class="down">风语筑</td><td><span class="tag">数字媒体</span></td></tr>
+<tr><td>600592</td><td class="down">龙溪股份</td><td><span class="tag">通用设备</span></td></tr>
+<tr><td>301313</td><td class="down">凡拓数创</td><td><span class="tag">数字媒体（-20%）</span></td></tr>
 </tbody>
 </table>
-</div>
+
+<p class="text-sm">传媒、游戏类个股整体走弱，IT服务与数字媒体板块承压明显。游族网络、粤传媒等午后加速回落，板块情绪偏空。</p>
 
 <!-- 资金流向 -->
 <div class="section-title">💰 资金流向</div>
-<div class="card">
-<table class="index-table">
-<thead><tr><th>方向</th><th>类型</th><th>净流入(亿元)</th></tr></thead>
+<table>
+<thead><tr><th>方向</th><th>沪股通</th><th>深股通</th></tr></thead>
 <tbody>
-<tr><td>北向</td><td>沪股通</td><td style="color:#9e8c7a;">— 数据暂无</td></tr>
-<tr><td>北向</td><td>深股通</td><td style="color:#9e8c7a;">— 数据暂无</td></tr>
-<tr><td>南向</td><td>港股通(沪)</td><td class="up">+0.42</td></tr>
-<tr><td>南向</td><td>港股通(深)</td><td style="color:#9e8c7a;">— 数据暂无</td></tr>
+<tr><td>买入金额</td><td>-</td><td>-</td></tr>
+<tr><td>卖出金额</td><td>-</td><td>-</td></tr>
+<tr><td>净买入</td><td class="down">—</td><td class="down">—</td></tr>
+<tr><td>上涨/下跌家数</td><td>472涨 / 1029跌</td><td>443涨 / 1252跌</td></tr>
 </tbody>
 </table>
-<div class="analysis-text" style="margin-top: 12px; font-size: 14px; color: #6b5d4e;">北向资金今日未公布净流入数据，需关注盘后更新。南向小幅流入0.42亿元。</div>
+
+<div class="highlight">
+港股通资金方面，南向净买入约-2.8亿元（沪），深股通方向-4.7亿元；恒生指数收跌0.79%。整体而言北向资金今日偏空，市场情绪偏弱。
 </div>
 
-<!-- 热点板块 -->
+<!-- 热点板块深度解读 -->
 <div class="section-title">🎯 今日热点板块深度解读</div>
-<div class="card">
-<div class="analysis-text"><b style="color:#c9a227;">化工材料——今日最强主线</b><br>涨停股中化工材料占比近半，涵盖基础化工（红宝丽、滨化股份）、电子化学品（宏昌电子、三孚股份）、新材料（有研新材/粉材）等细分领域。连续板股如圣泉集团、和远气体等多日封板，说明资金认可度高。</div>
-<br>
 
-<div class="bullet-list">
-<li><b>为什么涨：</b>化工品涨价预期 + 半导体材料国产替代加速 + 部分品种进入补库存周期</li>
-<li><b>持续性判断：</b>化工板块已形成一定赚钱效应，但涨停股中换手率偏高（如宏昌电子换手17.6%），说明分歧加大。明日需观察龙头能否继续封板确认强度。</li>
-<li><b>关键个股：</b>圣泉集团(2连板)、和远气体(2连板)、中化国际(2连板)——若明日继续强势则板块有望延续；若出现炸板潮，化工将快速退潮。</li>
-</div>
+<p class="subtitle">一、化学制品——涨价逻辑延续</p>
+<p class="text-sm">和远气体（三板）、中化国际（三板）、昊华科技（二板）形成梯队，兴发集团、六国化工、多氟多等个股集体涨停。核心驱动：磷化工/氟化工产品价格上行周期仍在持续，叠加供给侧受限预期。注意三板股已积累较大涨幅，追高风险加大。</p>
 
-<div class="analysis-text" style="margin-top: 16px;"><b style="color:#c9a227;">半导体——分化严重</b></div>
-<br>
-<div class="bullet-list">
-<li><b>活跃个股：</b>汇顶科技、雅克科技、有研新材等封板，但三安光电跌停，说明板块内部在洗牌。</li>
-<li><b>判断：</b>半导体不是今日主线（涨停不足10只），更多是化工带动下的轮动补涨。三安光电作为权重股跌停，反映前期获利盘出逃。</li>
-</div>
+<p class="subtitle">二、半导体——国产替代深化</p>
+<p class="text-sm">雅克科技（二板）、炬光科技、兴福电子（20cm）、阿石创（20cm）等集体爆发。逻辑：AI算力芯片需求外溢至材料端，半导体用气体/靶材/前驱体成为新焦点。华特气体（电子大宗气体龙头）涨停印证了这一趋势。</p>
 
-<div class="analysis-text" style="margin-top: 16px;"><b style="color:#c9a227;">电力/新能源——重灾区</b></div>
-<br>
-<div class="bullet-list">
-<li><b>现象：</b>京能电力、华电辽能、协鑫能科三股跌停，腾龙股份、雄韬股份跟进。</li>
-<li><b>原因推测：</b>前期涨幅较大获利了结 + 板块整体估值偏高 + 资金向化工切换。</li>
-</div>
-</div>
+<p class="subtitle">三、小金属——资源涨价共振</p>
+<p class="text-sm">章源钨业、翔鹭钨业、云南锗业、金钼股份集体走强。稀土/钨/钼等战略金属近期价格上行，叠加出口管制政策预期，资源股成为避险+进攻双属性品种。</p>
 
-<!-- 技术面 -->
+<!-- 技术面信号 -->
 <div class="section-title">📈 技术面信号</div>
-<div class="card">
-<table class="index-table">
-<thead><tr><th>指标</th><th>上证指数</th><th>创业板指</th></tr></thead>
+<table>
+<thead><tr><th></th><th>上证指数</th><th>创业板指</th></tr></thead>
 <tbody>
-<tr><td>收盘点位</td><td>3993.23</td><td>3854.79</td></tr>
-<tr><td>日内振幅</td><td>1.07%</td><td>2.78%</td></tr>
-<tr><td>高低点</td><td>3963~4006</td><td>3818~3928</td></tr>
-<tr><td>成交额(沪)</td><td style="color:#c62828;">约1.23万亿</td><td style="color:#c62828;">约0.65万亿</td></tr>
-<tr><td>量能对比</td><td>缩量0.94倍</td><td>缩量0.94倍</td></tr>
+<tr><td>收盘价</td><td>3987.01</td><td class="up">3811.25</td></tr>
+<tr><td>近52周高位</td><td>4258.86</td><td>4218.33</td></tr>
+<tr><td>距高点回撤</td><td class="down">-2.72%</td><td class="down">-9.60%</td></tr>
+<tr><td>近52周低位</td><td>3347.65</td><td>1996.96</td></tr>
+<tr><td>PE(TTM)</td><td>17.64</td><td class="up">67.51</td></tr>
 </tbody>
 </table>
-<div class="analysis-text" style="margin-top: 14px;">
-<b style="color:#c62828;">关键信号：</b>创业板指跌超2.7%，振幅达2.78%，接近年内高位波动幅度。上证在4000点关口反复拉锯，今日失守但缩量，说明卖盘并不恐慌，更多是风格切换而非趋势反转。科创50跌幅仅-0.65%（弱于大盘），显示科技成长相对抗跌。
-</div>
+
+<p class="text-sm">上证指数距历史高点仅回落2.7%，整体仍在高位运行；创业板指从高位回撤约9.6%，短期超卖信号明显。科创50逆势收涨0.62%，说明科技成长资金并未离场，只是从宽基指数转移到硬科技标的。</p>
+
+<div class="highlight">
+<strong>关键观察：</strong>上证指数在3987附近窄幅整理，成交额约1186亿元（沪）+1366亿元（深），量能萎缩至0.91倍，缩量下跌通常意味着短期抛压有限，但缺乏上攻动能。创业板指跌幅超1%，若跌破3755（日内低点）则需警惕进一步调整。
 </div>
 
 <!-- 明日预判 -->
 <div class="section-title">🔮 明日预判</div>
-<div class="card">
-<table class="index-table">
-<thead><tr><th>方向</th><th>判断</th></tr></thead>
-<tbody>
-<tr><td><b style="color:#c62828;">化工材料</b></td><td>分化加剧，连板股若开板则板块转弱。关注圣泉集团、和远气体能否续板。</td></tr>
-<tr><td><b style="color:#c62828;">半导体</b></td><td>短期跟随化工情绪冲高回落概率大，三安光电跌停影响情绪修复。</td></tr>
-<tr><td><b style="color:#2e7d32;">电力/新能源</b></td><td>今日大跌后或有超跌反弹，但趋势已转弱，不宜追涨。</td></tr>
-<tr><td><b style="color:#9e8c7a;">大盘指数</b></td><td>上证4000点失守，下一个支撑看3950-3960区间。缩量下跌不算恐慌，但连续走弱需警惕破位。</td></tr>
-<tr><td><b style="color:#2e7d32;">关注信号</b></td><td>①明早化工板块龙头开盘价 ②北向资金是否回流 ③半导体权重股能否企稳(三安光电)</td></tr>
-</tbody>
-</table>
-</div>
+
+<p class="text-sm"><strong>方向判断：</strong>今日市场缩量微跌，属于高位震荡格局。涨停70家说明活跃资金仍在，但创业板走弱暗示短线获利盘兑现压力。明日大概率延续窄幅震荡。</p>
+
+<ul style="list-style: none; margin-top: 8px;">
+<li>✅ <strong>关注方向：</strong>化学制品/半导体板块持续性——若龙头股（和远气体、雅克科技）不出现大幅回调，则主线逻辑未破</li>
+<li>⚠️ <strong>切换信号：</strong>若化工/半导体高位股放量杀跌，资金可能回流消费白马或红利品种</li>
+<li>📊 <strong>量能观察：</strong>明日若成交额放大至2000亿以上且创业板止跌翻红，则短期底部确认信号较强</li>
+<li>🔍 <strong>外围关注：</strong>港股走势（恒指今日-0.79%）及隔夜美股中概股表现将影响A股开盘情绪</li>
+</ul>
 
 <!-- 风险提示 -->
 <div class="section-title">⚠️ 风险提示</div>
-<div class="warning-box">
-<div class="warning-title">关注以下风险因素：</div>
-<ul class="bullet-list" style="margin-left: 16px;">
-<li><b>外围市场：</b>港股今日跌0.66%，A/H股联动下可能继续拖累情绪</li>
-<li><b>技术面：</b>上证连续失守4000点整数关口，若跌破3950则进入中期调整区间</li>
-<li><b>风格切换风险：</b>化工题材炒作+电力杀跌=典型高低切，追高化工股面临回撤风险</li>
-<li><b>连板股退潮：</b>今日涨停71只但多为首板，连板股中仅金安国纪(3T)、天娱数科(4T)突出，高度有限说明接力资金不足</li>
-<li><b>量能萎缩：</b>上证成交额缩量至0.94倍均量，反弹缺乏增量资金配合</li>
+<div class="risk-box">
+<ul style="list-style: none; margin-top: 4px;">
+<li><strong>政策风险：</strong>小金属涨价交易拥挤度高，出口管制政策若不及预期可能引发踩踏</li>
+<li><strong>外围风险：</strong>美联储降息节奏变化、美股科技股波动可能传导至A股</li>
+<li><strong>技术面风险：</strong>上证指数在3987附近缩量整理，若无放量突破则存在回落风险；创业板指需关注3755支撑位</li>
+<li><strong>板块轮动风险：</strong>化工/半导体短线涨幅较大，追涨资金面临回调压力</li>
+<li><strong>传媒板块风险：</strong>游族网络、粤传媒等午后加速杀跌，板块情绪脆弱</li>
 </ul>
 </div>
 
-<!-- Footer -->
-<div class="footer">本报告仅供参考，不构成投资建议。市场有风险，投资需谨慎。</div>
+<p class="note">本报告仅供参考，不构成投资建议。</p>
 
 </div>
 </body>
