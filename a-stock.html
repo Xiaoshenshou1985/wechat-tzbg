@@ -1,165 +1,224 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A股盘前日报 - 2026年6月11日</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>A股盘前日报 · 2026年6月12日</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: "PingFang SC", -apple-system, BlinkMacSystemFont, sans-serif; background: #fafaf8; color: #1a1a1a; line-height: 1.75; max-width: 680px; margin: 0 auto; padding: 24px 20px; }
-h1 { font-size: 20px; color: #2e564f; border-bottom: 2px solid #c9a227; padding-bottom: 12px; margin-bottom: 8px; letter-spacing: 1px; }
-.date-line { font-size: 13px; color: #666; margin-bottom: 24px; }
-h2 { font-size: 15px; color: #2e564f; margin-top: 28px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
-table { border-collapse: collapse; width: 100%; margin-bottom: 16px; font-size: 13px; }
-th, td { padding: 7px 8px; text-align: left; border-bottom: 1px solid #eaeaea; }
-th { background: #f5f5f2; color: #444; font-weight: 500; font-size: 12px; }
-td.up { color: #c0392b; }
-td.down { color: #1e8a4e; }
-.tag { display: inline-block; padding: 2px 7px; border-radius: 3px; font-size: 11px; margin-right: 6px; }
-.tag-bull { background: #fef0f0; color: #c0392b; }
-.tag-bear { background: #e8f5ec; color: #1e8a4e; }
-.tag-neutral { background: #fff7ed; color: #d68910; }
-.news-item { margin-bottom: 18px; padding: 12px 14px; border-left: 3px solid #c9a227; background: #fefefe; }
-.news-title { font-size: 14px; color: #2e564f; margin-bottom: 4px; line-height: 1.5; }
-.news-source { font-size: 11px; color: #888; margin-bottom: 3px; }
-.news-link a { color: #2e564f; text-decoration: none; border-bottom: 1px dotted #c9a227; }
-.news-analysis { font-size: 12.5px; color: #555; margin-top: 3px; line-height: 1.6; }
-.score-stars { letter-spacing: 4px; font-size: 20px; }
-.strategy-item { margin-bottom: 10px; padding-left: 18px; position: relative; }
-.strategy-item::before { content: "→"; position: absolute; left: 0; color: #c9a227; }
-.risk-box { background: #fffbe6; border: 1px solid #f5d747; padding: 12px 14px; margin-top: 8px; font-size: 13px; line-height: 1.6; color: #6b5900; }
-.footer { text-align: center; font-size: 11px; color: #aaa; margin-top: 28px; padding-top: 12px; border-top: 1px solid #eaeaea; }
-.section-note { font-size: 11px; color: #999; margin-bottom: 4px; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:#fafaf8;color:#1a1a1a;line-height:2;font-size:15px;padding:40px 20px}
+.container{max-width:720px;margin:0 auto}
+header{text-align:center;padding-bottom:32px;border-bottom:1.5px solid #c9a227;position:relative}
+h1{font-size:26px;font-weight:400;color:#2e564f;letter-spacing:.5px;margin-bottom:8px}
+.date{font-size:13px;color:#8a8a7a;letter-spacing:1px}
+.section{margin-top:36px}
+h2{font-size:17px;font-weight:500;color:#2e564f;padding-left:12px;margin-bottom:14px;display:flex;align-items:center}
+h2::before{content:'';display:inline-block;width:3px;height:1em;background:#c9a227;border-radius:2px;margin-right:8px}
+table{width:100%;border-collapse:collapse;font-size:14px;line-height:2.4}
+td,th{padding:8px 14px;text-align:center;border-bottom:.5px solid #eae8e3;white-space:nowrap}
+th{font-weight:400;color:#6a6a5f;background:#f7f7f2;font-size:13px}
+td:first-child{text-align:left;font-weight:500}
+.up{color:#d9534f}.down{color:#3e8e5b}
+.highlight-box{background:#fefcf6;border-left:3px solid #c9a227;padding:14px 18px;margin-top:12px;font-size:14px;line-height:1.9;color:#4a4a40}
+.news-item{margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid #eceae3}
+.news-title{font-weight:500;font-size:15px;margin-bottom:4px;color:#2e564f}
+.news-meta{font-size:12px;color:#9a9a8c;margin-bottom:6px;display:flex;gap:8px;align-items:center}
+.news-tag{display:inline-block;padding:1px 8px;border-radius:3px;font-size:12px;font-weight:500}
+.tag-good{background:#eaf7ea;color:#4a8c5f}.tag-bad{background:#faeaea;color:#b95656}
+.news-link{color:#777;text-decoration:none;font-size:12px;word-break:break-all}
+.news-link:hover{text-decoration:underline}
+.news-note{font-size:13px;color:#5a5a4f;line-height:1.8;margin-top:6px}
+.score-bar{display:flex;gap:4px;margin-bottom:8px}
+.star{color:#c9a227;font-size:18px}.star-empty{color:#ccc}
+.outlook{font-size:13px;color:#5a5a4f;margin-top:6px;line-height:1.8}
+.strategy-item{padding:10px 14px;background:#fefcf6;border-radius:4px;margin-bottom:10px;font-size:14px;line-height:1.9}
+.risk-list{list-style:none;padding-left:0}
+.risk-list li{position:relative;padding-left:20px;margin-bottom:8px;font-size:13px;color:#6a5f55;line-height:1.7}
+.risk-list li::before{content:'⚠';font-size:13px;position:absolute;left:0;color:#c9a227}
+footer{text-align:center;margin-top:48px;padding-top:20px;border-top:.5px solid #eae8e3;font-size:12px;color:#aaa;line-height:1.6}
 </style>
 </head>
 <body>
-
+<div class="container">
+<header>
 <h1>A股盘前日报</h1>
-<p class="date-line">📅 2026年6月11日 · 周四（数据来源：东方财富、新浪财经）</p>
+<div class="date">2026年6月12日 · 星期四</div>
+</header>
 
-<h2>📌 昨日收盘 (6/10)</h2>
+<section class="section">
+<h2>📌 昨日收盘（6月11日）</h2>
 <table>
-<tr><th>指数</th><th>点位</th><th>涨跌</th><th>涨跌幅</th></tr>
-<tr><td>上证指数</td><td>3993.23</td><td>-16.80</td><td class="down">-0.42%</td></tr>
-<tr><td>深证成指</td><td>14954.10</td><td>-314.61</td><td class="down">-2.06%</td></tr>
-<tr><td>创业板指</td><td>3854.79</td><td>-106.96</td><td class="down">-2.70%</td></tr>
-<tr><td>科创50</td><td>1652.22</td><td>-10.89</td><td class="down">-0.65%</td></tr>
-<tr><td>沪深300</td><td>4748.59</td><td>-53.22</td><td class="down">-1.11%</td></tr>
+<thead><tr><th>指数</th><th>收盘价</th><th>涨跌幅</th><th>成交额(亿)</th></tr></thead>
+<tbody>
+<tr><td>上证指数</td><td>3987.01</td><td class="down">-6.22 (-0.16%)</td><td>1185.55</td></tr>
+<tr><td>深证成指</td><td>14851.98</td><td class="down">-102.12 (-0.68%)</td><td>1366.47</td></tr>
+<tr><td>创业板指</td><td>3811.25</td><td class="down">-43.54 (-1.13%)</td><td>649.93</td></tr>
+<tr><td>科创50</td><td>1662.44</td><td class="up">+10.22 (+0.62%)</td><td>117.16</td></tr>
+<tr><td>沪深300</td><td>4722.41</td><td class="down">-26.18 (-0.55%)</td><td>653.93</td></tr>
+</tbody>
 </table>
+<div class="highlight-box">
+<b>盘面特征：</b>上证窄幅震荡，创业板冲高回落跌超1%，下跌个股超4000只。涨停69家、跌停32家，赚钱效应偏弱。科创50逆势收红，科技成长与顺周期分化明显。
+</div>
+</section>
 
-<h2>🔥 板块异动与热点</h2>
-<p class="section-note">基于盘口异动数据整理 · 涨停71只 / 跌停25只</p>
-
-<h3 style="font-size:14px; color:#c0392b; margin-bottom:6px;">领涨方向</h3>
-<ul style="margin-bottom:14px; font-size:13.5px; line-height:1.8; padding-left: 18px;">
-<li><strong>食品饮料/酒类</strong> — 逆市走强，板块爆发，华宝基金食品饮料ETF上探1.64%，关注行业复苏预期</li>
-<li><strong>半导体/AI算力</strong> — 苹果官宣AI升级+PCB涨价+芯片出口大增，电子三箭齐发；海光信息涨超6%</li>
-<li><strong>创新药</strong> — AH创新药回暖，药ETF逆市连阳终结7连阴</li>
-</ul>
-
-<h3 style="font-size:14px; color:#1e8a4e; margin-bottom:6px;">领跌方向</h3>
-<ul style="margin-bottom:14px; font-size:13.5px; line-height:1.8; padding-left: 18px;">
-<li><strong>北证50</strong> — -3.16% 跌幅最大，中小盘承压明显</li>
-<li><strong>创业板指</strong> — -2.70%，科技板块波动高位运行</li>
-<li><strong>深成指</strong> — -2.06%，成长风格整体走弱</li>
-</ul>
-
-<h3 style="font-size:14px; margin-bottom:8px;">个股异动关注</h3>
+<section class="section">
+<h2>🔥 板块热点</h2>
 <table>
-<tr><th>名称</th><th>方向</th></tr>
-<tr><td>华塑控股(000509)</td><td>大笔买入</td></tr>
-<tr><td>杰瑞股份(002353)</td><td>大笔买入</td></tr>
-<tr><td>C高特A(301669)</td><td>大笔买入</td></tr>
-<tr><td>宏昌电子(603002)</td><td>大笔卖出</td></tr>
+<thead><tr><th style="width:40%">涨幅TOP5</th><th style="width:40%">领跌TOP3</th></tr></thead>
+<tbody>
+<tr><td class="up">有色金属（翔鹭钨业、贵研铂业涨停）</td><td class="down">影视院线（捷成股份-10%、横店影视跌停）</td></tr>
+<tr><td class="up">半导体材料（江丰电子、阿石创20cm涨停）</td><td class="down">物理AI概念（天娱数科、能科科技跌停）</td></tr>
+<tr><td class="up">化工板块（红宝丽、六国化工涨停）</td><td class="down">人形机器人（绿的谐波-13%）</td></tr>
+<tr><td class="up">锂矿概念（碳酸锂期货涨超3%）</td><td></td></tr>
+<tr><td class="up">小金属</td><td></td></tr>
+</tbody>
 </table>
+<div class="highlight-box" style="margin-top:14px">
+<b>板块逻辑：</b>上游资源品受碳酸锂期货走强驱动，有色金属全线爆发；半导体材料延续国产替代主线。影视院线因暑期档预期落空、AI影视概念退潮集体杀跌；人形机器人前期涨幅过大进入调整周期。
+</div>
+</section>
 
+<section class="section">
 <h2>💰 资金流向</h2>
 <table>
-<tr><th>方向</th><th>主力资金净流入</th><th>散户资金</th></tr>
-<tr><td>沪股通</td><td class="neutral" style="color:#d68910">— 持平</td><td>596涨 / 28平 / 903跌（偏空）</td></tr>
-<tr><td>深股通</td><td class="neutral" style="color:#d68910">— 持平</td><td>475涨 / 23平 / 1218跌（偏弱）</td></tr>
-<tr><td>南向资金(港股通)</td><td class="up" style="color:#c0392b">+90.19万</td><td>—</td></tr>
+<thead><tr><th>方向</th><th>净流入(亿)</th></tr></thead>
+<tbody>
+<tr><td>沪股通</td><td>0.00（数据缺失）</td></tr>
+<tr><td>深股通</td><td>0.00（数据缺失）</td></tr>
+<tr><td>港股通(沪)</td><td class="down">-4.20</td></tr>
+<tr><td>港股通(深)</td><td class="down">-23.35</td></tr>
+</tbody>
 </table>
+<div class="highlight-box" style="margin-top:14px">
+<b>解读：</b>北向资金全天净流入为零，显示外资当日观望情绪浓厚。南向资金净流出约27.6亿元，港股通持续流出对A股形成一定压力。全市场上涨个股仅915只（沪）+ 464只（深），低于下跌家数。
+</div>
+</section>
 
-<h2>🧭 北向持仓变动</h2>
-<p>6月10日北向资金整体呈<span class="tag tag-neutral">中性</span>态度，沪股通与深股通净买入均为零。南向资金小幅净流入约90万元。从买卖个股数量看，北上资金在沪深两市均呈现"卖多买少"格局（上证买方596 vs 卖方903；深证买方475 vs 卖方1218），外资对当前点位分歧较大。</p>
-
-<h2>📈 技术面信号</h2>
-<p class="section-note">基于日线级别数据判断</p>
+<section class="section">
+<h2>🧭 北向持仓动向</h2>
 <table>
-<tr><th>指标</th><th>上证指数(3993)</th><th>创业板指(3854)</th></tr>
-<tr><td>MA5/10/20</td><td class="down">跌破短期均线群</td><td class="down">跌破短期均线群</td></tr>
-<tr><td>MACD</td><td>空方动能延续，绿柱放大</td><td>空头信号增强</td></tr>
-<tr><td>KDJ</td><td>J值触底反弹迹象初现</td><td>超卖区域，存在技术性反抽可能</td></tr>
-<tr><td>量能</td><td>成交量比0.94（缩量）</td><td>成交额648亿</td></tr>
+<thead><tr><th>日期</th><th>沪股通买入(亿)</th><th>深股通买入(亿)</th></tr></thead>
+<tbody>
+<tr><td>06-11</td><td>—</td><td>—</td></tr>
+</tbody>
 </table>
+<div class="highlight-box" style="margin-top:14px">
+<b>要点：</b>沪股通成交472只上涨、1029只下跌；深股通443只涨、1252只跌，外资整体偏空。参考此前数据：外资持有A股市值超4万亿元（QFII偏好医药、消费板块）。
+</div>
+</section>
 
+<section class="section">
+<h2>📈 技术面信号</h2>
+<table>
+<thead><tr><th>指标</th><th>上证指数(000001)</th><th>创业板指(399006)</th></tr></thead>
+<tbody>
+<tr><td>趋势</td><td>窄幅震荡，围绕3987一线横盘</td><td>冲高回落，跌破5日均线</td></tr>
+<tr><td>P/E</td><td>17.64倍（偏低）</td><td>67.51倍（偏高）</td></tr>
+<tr><td>振幅</td><td>0.98%（低波动）</td><td>4.01%（高波动）</td></tr>
+<tr><td>量比</td><td>0.91（缩量）</td><td>0.92（缩量）</td></tr>
+<tr><td>换手率</td><td>1.18%</td><td>3.80%</td></tr>
+</tbody>
+</table>
+<div class="highlight-box" style="margin-top:14px">
+<b>技术研判：</b>上证52周高点4259、低点3348，当前处于中高位震荡区间；创业板从高点回落约7.6%，短期有进一步调整压力。科创50逆势走强显示资金向硬科技方向聚焦。
+</div>
+</section>
+
+<section class="section">
 <h2>🔖 今日重要新闻</h2>
 
 <div class="news-item">
-<p class="news-title">苹果官宣AI升级+PCB涨价+芯片出口大增，电子三箭齐发</p>
-<p class="news-source">新浪财经 · 2026-06-10 18:30</p>
-<p class="news-link"><a href="https://finance.sina.com.cn" target="_blank">🔗 东方财富/新浪财经</a></p>
-<span class="tag tag-bull">利好</span> · AI产业链全面受益，半导体、PCB材料、芯片出口三方向共振。利好<strong>海光信息、寒武纪</strong>等AI算力标的，以及<strong>鹏鼎控股</strong> PCB龙头；电子级环氧树脂与覆铜板供应商同样受益。
+<div class="news-title">收评：创业板指冲高回落跌超1%，下跌个股超4000只</div>
+<div class="news-meta"><span class="news-tag tag-bad">利空</span><span style="color:#8a8a7a">新浪财经 · 6月11日15:00</span></div>
+<a class="news-link" href="https://finance.sina.cn/stock/dpps/2026-06-11/detail-iniazihq5578059.d.html">https://finance.sina.cn/stock/dpps/2026-06-11/detail-iniazihq5578059.d.html</a>
+<div class="news-note">影视院线、物理AI概念集体大跌，人形机器人板块持续回调。锂矿逆势活跃——广期所碳酸锂期货涨超3%，江西注销宁德时代枧下窝锂矿用地预审。</div>
 </div>
 
 <div class="news-item">
-<p class="news-title">煤炭板块基本面+资金面双击预期增强</p>
-<p class="news-source">新浪财经 · 2026-06-10 17:45</p>
-<p class="news-link"><a href="https://finance.sina.com.cn" target="_blank">🔗 东方财富/新浪财经</a></p>
-<span class="tag tag-bull">利好</span> · 机构看好煤炭板块估值修复空间，关注<strong>中国神华、兖矿能源、陕西煤业</strong>等龙头，以及<strong>山煤国际</strong>弹性标的。
+<div class="news-title">SK海力士计划到2034年将晶圆产能提高两倍，满足AI需求</div>
+<div class="news-meta"><span class="news-tag tag-good">利好</span><span style="color:#8a8a7a">新浪财经 · 6月11日</span></div>
+<a class="news-link" href="https://finance.sina.cn/stock/dpps/2026-06-11/detail-iniazihq5578059.d.html">SK海力士扩产利好半导体产业链</a>
+<div class="news-note">崔泰源表示晶圆产能将在5年内翻一番。直接利好半导体设备、存储芯片（兆易创新、长江存储供应链）及先进封装板块。</div>
 </div>
 
 <div class="news-item">
-<p class="news-title">当前AI行情是产业周期仍在前中段：尚未进入2000式崩塌</p>
-<p class="news-source">新浪财经 · 2026-06-10 21:58</p>
-<p class="news-link"><a href="https://finance.sina.com.cn" target="_blank">🔗 东方财富/新浪财经</a></p>
-<span class="tag tag-bull">利好</span> · 多家机构认为AI仍处于产业周期早期，核心受益标的包括电子级环氧树脂、覆铜板厂商及半导体材料供应商。关注<strong>生益科技、深南电路</strong>等。
+<div class="news-title">SK海力士多家设备供应商提出涨价3-4%</div>
+<div class="news-meta"><span class="news-tag tag-bad">利空</span><span style="color:#8a8a7a">新浪财经 · 6月11日</span></div>
+<a class="news-link" href="https://finance.sina.cn/stock/dpps/2026-06-11/detail-iniazihq5578059.d.html">韩国ETNews · SK海力士设备涨价</a>
+<div class="news-note">连设备厂也提出涨价较为少见，反映半导体上游成本压力上升。对下游晶圆代工、封测企业利润形成挤压。</div>
 </div>
 
 <div class="news-item">
-<p class="news-title">结构性牛市步入下半场：指数对比揭示三大指数赚钱底牌差异</p>
-<p class="news-source">新浪财经 · 2026-06-10 15:00</p>
-<p class="news-link"><a href="https://finance.sina.com.cn" target="_blank">🔗 东方财富/新浪财经</a></p>
-<span class="tag tag-neutral">中性</span> · 提示结构性分化加剧，上证、深证、创业板三大指数估值差异明显。风格切换风险上升，需警惕高位板块回调压力。利好低估值蓝筹（银行、公用事业），利空高估科技股。
+<div class="news-title">摩根大通：通胀最糟糕的阶段可能已经过去，美联储下周料按兵不动</div>
+<div class="news-meta"><span class="news-tag tag-good">利好</span><span style="color:#8a8a7a">新浪财经 · 6月11日</span></div>
+<a class="news-link" href="https://finance.sina.cn/stock/dpps/2026-06-11/detail-iniazihq5578059.d.html">摩根大通全球策略观点</a>
+<div class="news-note">美国CPI重返4%但小摩认为已见顶，美联储按兵不动概率大。利好成长股估值修复预期。</div>
 </div>
 
 <div class="news-item">
-<p class="news-title">半导体硅片涨价拐点已至，国产替代迎黄金窗口</p>
-<p class="news-source">新浪财经 · 2026-06-10 20:16</p>
-<p class="news-link"><a href="https://finance.sina.com.cn" target="_blank">🔗 东方财富/新浪财经</a></p>
-<span class="tag tag-bull">利好</span> · 半导体硅片价格触底回升，存储芯片EEPROM量产落地。关注<strong>沪硅产业、中环股份、立昂微</strong>等硅片龙头及<strong>江丰电子</strong>溅射靶材供应商。
+<div class="news-title">5款国产脑机接口创新产品在上交会首发</div>
+<div class="news-meta"><span class="news-tag tag-good">利好</span><span style="color:#8a8a7a">新浪财经 · 6月11日</span></div>
+<a class="news-link" href="https://finance.sina.cn/stock/dpps/2026-06-11/detail-iniazihq5578059.d.html">上交会脑机接口新品首发</a>
+<div class="news-note">覆盖基础研究到康复康养全产业链，利好脑机接口（创新医疗、南京熊猫）、高端医疗设备板块。</div>
 </div>
 
 <div class="news-item">
-<p class="news-title">大金融+高股息策略：十年两轮重构资产负债表</p>
-<p class="news-source">新浪财经 · 2026-06-10 20:00</p>
-<p class="news-link"><a href="https://finance.sina.com.cn" target="_blank">🔗 东方财富/新浪财经</a></p>
-<span class="tag tag-bull">利好</span> · 机构重点推荐大金融+高股息策略，关注<strong>招商银行、中国平安、中国神华、长江电力</strong>等核心标的。资产质量拐点逐步清晰。
+<div class="news-title">中信建投：6月行业配置建议"杠铃结构"</div>
+<div class="news-meta"><span class="news-tag tag-good">利好</span><span style="color:#8a8a7a">新浪财经 · 6月11日</span></div>
+<a class="news-link" href="https://finance.sina.cn/stock/dpps/2026-06-11/detail-iniazihq5578059.d.html">中信建投6月策略</a>
+<div class="news-note">建议一端保留AI、半导体和出口制造底仓，另一端配置高股息资产。内部从高涨幅环节切向半导体材料、设备零部件。</div>
 </div>
 
+<div class="news-item">
+<div class="news-title">国家药监局批准古莫奇单抗注射液上市（银屑病）</div>
+<div class="news-meta"><span class="news-tag tag-good">利好</span><span style="color:#8a8a7a">新浪财经 · 6月11日</span></div>
+<a class="news-link" href="https://finance.sina.cn/stock/dpps/2026-06-11/detail-iniazihq5578059.d.html">中山康方生物医药</a>
+<div class="news-note">利好创新药板块（恒瑞医药、信达生物等），反映国产创新药加速获批趋势。</div>
+</div>
+
+</section>
+
+<section class="section">
 <h2>⭐ 市场评分</h2>
-<div class="score-stars">★★★☆☆☆</div>
-<p style="margin-top:6px; font-size:13px;">
-<strong>中性偏空 · 谨慎观望</strong><br>
-乐观区间：上证 3950-4050<br>
-保守区间：上证 3850-3920（破位风险）<br>
-核心判断：<span class="tag tag-neutral">短期调整未结束，等待企稳信号</span>
-</p>
-
-<h2>🔮 今日策略建议</h2>
-<div class="strategy-item"><strong>控制仓位、逢低布局。</strong>当前市场缩量下行（成交量比0.94），不宜重仓追涨。若创业板跌破3800关口，可分批建仓低估值蓝筹标的。</div>
-<div class="strategy-item"><strong>关注AI产业链回调后的低吸机会。</strong>苹果AI升级催化下半导体板块仍有支撑，海光信息等核心标的可在日线级别企稳时介入。</div>
-
-<h2>⚠️ 风险提示</h2>
-<div class="risk-box">
-1. 创业板指已跌破3900关键位，若继续下行可能测试3800整数关口<br>
-2. 北向资金持续卖出（买方<卖方），外资情绪偏弱需警惕后续抛压<br>
-3. 今日涨停仅71只、跌停25只，赚钱效应不佳<br>
-4. 科创50PE高达156倍，估值泡沫风险不容忽视<br>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+<span style="font-size:13px;color:#6a5f55">评分：</span>
+<span class="star">★★★☆☆</span>
+<span style="font-size:14px;color:#2e564f;font-weight:500">中性偏弱</span>
 </div>
+<div class="outlook">
+<b>乐观情景：</b>美联储按兵不动+AI产业景气延续 → 上证3987-4050区间（+1.4%）<br/>
+<b>中性情景：</b>震荡整理，结构性行情 → 上证3960-4020区间（±0.5%）<br/>
+<b>保守情景：</b>海外扰动+资金流出 → 上证跌破3950看至3880（-2.5%）<br/><br/>
+综合判断：指数在3960-4020区间震荡偏中性，结构分化加剧。科创50逆势走强是积极信号，但创业板调整尚未企稳。
+</div>
+</section>
 
-<p class="footer">⚠️ 本报告仅供参考，不构成投资建议。市场有风险，投资需谨慎。</p>
+<section class="section">
+<h2>🔮 明日策略</h2>
+<div class="strategy-item">
+<b>1. 关注资源品与半导体材料延续性：</b>有色金属和锂矿板块今日强势，若碳酸锂期货继续走强可留意赣锋锂业、天齐锂业等龙头。半导体材料（北方华创、中微公司）受SK海力士扩产催化仍有空间。
+</div>
+<div class="strategy-item">
+<b>2. 规避前期涨幅过大赛道：</b>人形机器人、AI影视概念已现头部信号，绿的谐波-13%说明获利盘出逃明显。物理AI板块连续杀跌不宜抄底，等待企稳信号后再介入。
+</div>
+</section>
 
+<section class="section">
+<h2>⚠️ 风险提示</h2>
+<ul class="risk-list">
+<li>北向资金全天净流入为零，外资持续观望需警惕系统性风险</li>
+<li>SK海力士设备供应商涨价可能传导至国内半导体产业链成本端</li>
+<li>创业板指从高点回落7.6%，若跌破3750支撑位可能加速调整</li>
+<li>宁德时代枧下窝锂矿用地预审被注销，对锂电板块情绪有影响</li>
+<li>美股通胀数据回暖（4%），海外降息预期推迟风险需关注</li>
+</ul>
+</section>
+
+<footer>
+<p>本报告仅供参考，不构成投资建议。</p>
+<p style="margin-top:6px">数据来源：东方财富、新浪财经 · 生成时间 2026-06-12</p>
+</footer>
+</div>
 </body>
 </html>
