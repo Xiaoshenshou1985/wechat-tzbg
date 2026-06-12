@@ -3,163 +3,216 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A股盘后总结 - 2026年6月11日</title>
+<title>A股盘后总结 - 2026年6月12日</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #fafaf8; color: #1a1a1a; font-family: "PingFang SC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.75; padding: 24px 0; max-width: 860px; margin: 0 auto; }
-.container { padding: 32px 28px; background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-h1 { font-size: 22px; color: #2e564f; margin-bottom: 6px; letter-spacing: -0.5px; display: inline-block; border-left: 3px solid #c9a227; padding-left: 12px; }
-.date { font-size: 13px; color: #888; margin-bottom: 32px; }
-.section-title { font-size: 16px; font-weight: 600; color: #2e564f; margin: 28px 0 14px; padding-left: 12px; border-left: 3px solid #c9a227; }
-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 13.5px; }
-th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid #eee; }
-thead th { background: #f7f9fb; color: #444; font-weight: 500; font-size: 12.5px; letter-spacing: 0.3px; }
-td:last-child, td:nth-last-child(2) { text-align: right; }
-.up { color: #d63b32; } .down { color: #2b8a4e; }
-.subtitle { font-size: 14px; color: #555; margin-bottom: 10px; font-weight: 500; }
-.text-sm { font-size: 13px; color: #666; line-height: 1.85; }
-.tag { display: inline-block; background: #f0f4f2; color: #2e564f; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-right: 6px; }
-.tag-gold { background: #fdf7ec; color: #b8903a; }
-.note { font-size: 13px; color: #888; text-align: center; padding-top: 24px; font-style: italic; }
-.highlight { background: #f7fafc; border-left: 3px solid #e8ddd5; padding: 10px 14px; margin: 12px 0; border-radius: 0 6px 6px 0; }
-.risk-box { background: #fef9f0; border-radius: 6px; padding: 12px 16px; font-size: 13.5px; line-height: 1.8; margin-top: 16px; }
+body { font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: #fafaf8; color: #1a1a1a; line-height: 2; font-weight: 300; padding: 40px 20px; }
+.container { max-width: 720px; margin: 0 auto; }
+
+/* Header */
+header { border-left: 3px solid #c9a227; padding-left: 16px; margin-bottom: 48px; }
+h1 { font-size: 22px; font-weight: 500; color: #2e564f; letter-spacing: 2px; }
+.subtitle { font-size: 13px; color: #999; margin-top: 6px; font-weight: 300; }
+
+/* Section titles */
+h2 { font-size: 16px; color: #2e564f; border-bottom: 1px solid #eee; padding-bottom: 8px; margin: 40px 0 20px; font-weight: 400; letter-spacing: 1px; }
+h3 { font-size: 14px; color: #555; margin: 20px 0 10px; font-weight: 400; }
+
+/* Index cards */
+.index-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 16px; }
+.index-card { background: #fff; border-radius: 8px; padding: 14px 12px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+.index-name { font-size: 12px; color: #777; margin-bottom: 6px; }
+.index-price { font-size: 20px; font-weight: 500; letter-spacing: -0.5px; }
+.index-change { font-size: 13px; margin-top: 4px; font-weight: 400; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+td, th { padding: 8px 12px; text-align: left; font-size: 13px; border-bottom: 1px solid #eee; }
+th { color: #777; font-weight: 400; }
+tr:last-child td { border-bottom: none; }
+
+/* Colors */
+.up { color: #e53e3e; }
+.down { color: #38a169; }
+.gold { color: #c9a227; font-weight: 400; }
+
+/* Stats row */
+.stats-row { display: flex; justify-content: space-between; margin-bottom: 16px; font-size: 13px; color: #555; }
+.stat-item span { display: block; }
+.stat-label { color: #999; font-size: 12px; }
+
+/* Limit up/down list */
+.limit-list li { padding: 4px 0; font-size: 13px; display: flex; align-items: center; }
+.tag { display: inline-block; width: 52px; text-align: center; border-radius: 3px; font-size: 12px; margin-right: 8px; flex-shrink: 0; padding: 1px 4px; }
+.tag-up { background: #fef2f2; color: #e53e3e; }
+.tag-down { background: #f0fff4; color: #38a169; }
+
+/* Highlight box */
+.callout { background: #fdf8ec; border-left: 3px solid #c9a227; padding: 14px 16px; margin: 20px 0; border-radius: 0 6px 6px 0; font-size: 13px; line-height: 1.8; }
+
+/* Section spacing */
+.section { margin-bottom: 36px; }
+
+/* Footer */
+footer { text-align: center; color: #bbb; font-size: 12px; margin-top: 48px; padding-top: 20px; border-top: 1px solid #eee; letter-spacing: 1px; }
 </style>
 </head>
 <body>
 <div class="container">
 
+<header>
 <h1>A股盘后总结</h1>
-<p class="date">2026年6月11日（周四） | 收盘 15:00</p>
+<p class="subtitle">2026年6月12日（周五）收盘</p>
+</header>
 
-<!-- 今日行情回顾 -->
-<div class="section-title">📊 今日行情回顾</div>
-<table>
-<thead><tr><th>指数</th><th>收盘价</th><th>涨跌额</th><th>涨跌幅</th></tr></thead>
-<tbody>
-<tr><td>上证指数</td><td class="up">3987.01</td><td class="down">-6.22</td><td class="down">-0.16%</td></tr>
-<tr><td>深证成指</td><td class="up">14851.98</td><td class="down">-102.12</td><td class="down">-0.68%</td></tr>
-<tr><td>创业板指</td><td class="up">3811.25</td><td class="down">-43.54</td><td class="down">-1.13%</td></tr>
-<tr><td>科创50</td><td class="down">1662.44</td><td class="up">+10.22</td><td class="up">+0.62%</td></tr>
-<tr><td>沪深300</td><td class="up">4722.41</td><td class="down">-26.18</td><td class="down">-0.55%</td></tr>
-</tbody>
-</table>
-
-<div class="highlight">
-<span class="tag-gold">涨停 70家</span> <span class="tag">跌停 32家</span> 涨跌比偏强，但创业板指跌幅超1%，分化明显——科技成长与周期资源股逆势走强，消费白马承压。
+<section class="section">
+<h2>📊 今日行情回顾</h2>
+<div class="index-grid">
+<div class="index-card"><div class="index-name">上证指数</div><div class="index-price up">4031.51</div><div class="index-change up">+1.12%</div></div>
+<div class="index-card"><div class="index-name">深证成指</div><div class="index-price up">14963.41</div><div class="index-change up">+0.75%</div></div>
+<div class="index-card"><div class="index-name">创业板指</div><div class="index-price up">3830.35</div><div class="index-change up">+0.50%</div></div>
+<div class="index-card"><div class="index-name">科创50</div><div class="index-price up">1663.22</div><div class="index-change up">+0.05%</div></div>
+<div class="index-card"><div class="index-name">沪深300</div><div class="index-price up">4777.32</div><div class="index-change up">+1.16%</div></div>
 </div>
 
-<!-- 涨停复盘 -->
-<div class="section-title">🔥 涨停复盘</div>
-<p class="subtitle">涨停TOP10（成交额排序）</p>
-<table>
-<thead><tr><th>代码</th><th>名称</th><th>行业</th><th>价格</th><th>连板数</th></tr></thead>
-<tbody>
-<tr><td>688167</td><td class="up">炬光科技</td><td><span class="tag tag-gold">半导体</span></td><td>338.86</td><td>首板</td></tr>
-<tr><td>002407</td><td class="up">多氟多</td><td><span class="tag">化学制品</span></td><td>38.19</td><td>首板</td></tr>
-<tr><td>688545</td><td class="up">兴福电子</td><td><span class="tag tag-gold">半导体</span></td><td>104.52</td><td>首板</td></tr>
-<tr><td>300706</td><td class="up">阿石创</td><td><span class="tag tag-gold">半导体</span></td><td>67.88</td><td>首板</td></tr>
-<tr><td>002409</td><td class="up">雅克科技</td><td><span class="tag tag-gold">半导体</span></td><td>134.81</td><td>二板</td></tr>
-<tr><td>688268</td><td class="up">华特气体</td><td><span class="tag tag-gold">半导体</span></td><td>228.82</td><td>首板</td></tr>
-<tr><td>002971</td><td class="up">和远气体</td><td><span class="tag">化学制品</span></td><td>52.75</td><td>三板</td></tr>
-<tr><td>600378</td><td class="up">昊华科技</td><td><span class="tag">化学制品</span></td><td>63.89</td><td>二板</td></tr>
-<tr><td>600500</td><td class="up">中化国际</td><td><span class="tag">化学制品</span></td><td>7.21</td><td>三板</td></tr>
-<tr><td>300263</td><td class="up">隆华科技</td><td><span class="tag">通用设备</span></td><td>14.18</td><td>首板（20cm）</td></tr>
-</tbody>
-</table>
-
-<div class="highlight">
-<strong>涨停主线：</strong>化学制品+半导体双轮驱动。化工股（和远气体、中化国际、昊华科技）集体走强，叠加半导体材料/设备链（雅克科技、炬光科技、华特气体），反映资源涨价与国产替代两条逻辑共振。小金属板块尤为活跃（章源钨业、翔鹭钨业、云南锗业）。
+<div class="stats-row">
+<div class="stat-item"><span class="stat-label">上涨 / 下跌家数</span><span class="up" style="font-size:15px;font-weight:400;">438 / 58</span></div>
+<div class="stat-item"><span class="stat-label">涨停 / 跌停</span><span style="font-size:15px;font-weight:400;"><span class="up">89</span> / <span class="down">15</span></span></div>
+<div class="stat-item"><span class="stat-label">两市成交额</span><span style="font-size:15px;font-weight:400;">3.22万亿</span></div>
 </div>
 
-<!-- 跌停复盘 -->
-<div class="section-title">💔 跌停复盘</div>
-<p class="subtitle">重点跌停个股</p>
+<p>大盘放量上攻，沪指一举突破4000点整数关口。有色金属板块全线爆发，铜、钼、铅锌等品种集体涨停，军工、券商同步走强，市场做多氛围浓厚。</p>
+</section>
+
+<section class="section">
+<h2>🔥 涨停复盘 TOP10</h2>
 <table>
-<thead><tr><th>代码</th><th>名称</th><th>行业</th></tr></thead>
-<tbody>
-<tr><td>002174</td><td class="down">游族网络</td><td><span class="tag">游戏</span></td></tr>
-<tr><td>603859</td><td class="down">能科科技</td><td><span class="tag">IT服务</span></td></tr>
-<tr><td>002181</td><td class="down">粤传媒</td><td><span class="tag">出版传媒</span></td></tr>
-<tr><td>603466</td><td class="down">风语筑</td><td><span class="tag">数字媒体</span></td></tr>
-<tr><td>600592</td><td class="down">龙溪股份</td><td><span class="tag">通用设备</span></td></tr>
-<tr><td>301313</td><td class="down">凡拓数创</td><td><span class="tag">数字媒体（-20%）</span></td></tr>
-</tbody>
+<tr><th>代码</th><th>名称</th><th>行业</th><th>连板数</th></tr>
+<tr><td>603993</td><td class="gold">洛阳钼业</td><td>工业金属</td><td>首板</td></tr>
+<tr><td>002971</td><td class="gold">和远气体</td><td>化学制品</td><td>4连板</td></tr>
+<tr><td>600519</td><td class="gold">金钼股份</td><td>小金属</td><td>2连板</td></tr>
+<tr><td>301348</td><td class="gold">蓝箭电子</td><td>半导体</td><td>首板(20cm)</td></tr>
+<tr><td>603065</td><td class="gold">宿迁联盛</td><td>化学制品</td><td>4连板</td></tr>
+<tr><td>001257</td><td class="gold">盛龙股份</td><td>小金属</td><td>2连板</td></tr>
+<tr><td>300377</td><td class="gold">赢时胜</td><td>软件开发</td><td>首板(20cm)</td></tr>
+<tr><td>688163</td><td class="gold">赛伦生物</td><td>生物制品</td><td>首板(20cm)</td></tr>
+<tr><td>920634</td><td class="gold">新威凌</td><td>工业金属</td><td>首板(30cm)</td></tr>
+<tr><td>601696</td><td class="gold">中银证券</td><td>券商</td><td>首板</td></tr>
 </table>
 
-<p class="text-sm">传媒、游戏类个股整体走弱，IT服务与数字媒体板块承压明显。游族网络、粤传媒等午后加速回落，板块情绪偏空。</p>
-
-<!-- 资金流向 -->
-<div class="section-title">💰 资金流向</div>
-<table>
-<thead><tr><th>方向</th><th>沪股通</th><th>深股通</th></tr></thead>
-<tbody>
-<tr><td>买入金额</td><td>-</td><td>-</td></tr>
-<tr><td>卖出金额</td><td>-</td><td>-</td></tr>
-<tr><td>净买入</td><td class="down">—</td><td class="down">—</td></tr>
-<tr><td>上涨/下跌家数</td><td>472涨 / 1029跌</td><td>443涨 / 1252跌</td></tr>
-</tbody>
-</table>
-
-<div class="highlight">
-港股通资金方面，南向净买入约-2.8亿元（沪），深股通方向-4.7亿元；恒生指数收跌0.79%。整体而言北向资金今日偏空，市场情绪偏弱。
+<div class="callout">
+<strong>涨停逻辑分析：</strong>今天涨停潮由有色金属驱动，铜、钼、铅锌等大宗商品涨价成为主线。洛阳钼业、金钼股份等矿业龙头封单坚决，反映出资金对资源品价格持续走强的预期。军工板块（中航西飞、航天发展）受地缘刺激走强，券商板块（中银证券、财达证券）则是对6月降息预期的提前博弈。
 </div>
+</section>
 
-<!-- 热点板块深度解读 -->
-<div class="section-title">🎯 今日热点板块深度解读</div>
-
-<p class="subtitle">一、化学制品——涨价逻辑延续</p>
-<p class="text-sm">和远气体（三板）、中化国际（三板）、昊华科技（二板）形成梯队，兴发集团、六国化工、多氟多等个股集体涨停。核心驱动：磷化工/氟化工产品价格上行周期仍在持续，叠加供给侧受限预期。注意三板股已积累较大涨幅，追高风险加大。</p>
-
-<p class="subtitle">二、半导体——国产替代深化</p>
-<p class="text-sm">雅克科技（二板）、炬光科技、兴福电子（20cm）、阿石创（20cm）等集体爆发。逻辑：AI算力芯片需求外溢至材料端，半导体用气体/靶材/前驱体成为新焦点。华特气体（电子大宗气体龙头）涨停印证了这一趋势。</p>
-
-<p class="subtitle">三、小金属——资源涨价共振</p>
-<p class="text-sm">章源钨业、翔鹭钨业、云南锗业、金钼股份集体走强。稀土/钨/钼等战略金属近期价格上行，叠加出口管制政策预期，资源股成为避险+进攻双属性品种。</p>
-
-<!-- 技术面信号 -->
-<div class="section-title">📈 技术面信号</div>
-<table>
-<thead><tr><th></th><th>上证指数</th><th>创业板指</th></tr></thead>
-<tbody>
-<tr><td>收盘价</td><td>3987.01</td><td class="up">3811.25</td></tr>
-<tr><td>近52周高位</td><td>4258.86</td><td>4218.33</td></tr>
-<tr><td>距高点回撤</td><td class="down">-2.72%</td><td class="down">-9.60%</td></tr>
-<tr><td>近52周低位</td><td>3347.65</td><td>1996.96</td></tr>
-<tr><td>PE(TTM)</td><td>17.64</td><td class="up">67.51</td></tr>
-</tbody>
-</table>
-
-<p class="text-sm">上证指数距历史高点仅回落2.7%，整体仍在高位运行；创业板指从高位回撤约9.6%，短期超卖信号明显。科创50逆势收涨0.62%，说明科技成长资金并未离场，只是从宽基指数转移到硬科技标的。</p>
-
-<div class="highlight">
-<strong>关键观察：</strong>上证指数在3987附近窄幅整理，成交额约1186亿元（沪）+1366亿元（深），量能萎缩至0.91倍，缩量下跌通常意味着短期抛压有限，但缺乏上攻动能。创业板指跌幅超1%，若跌破3755（日内低点）则需警惕进一步调整。
-</div>
-
-<!-- 明日预判 -->
-<div class="section-title">🔮 明日预判</div>
-
-<p class="text-sm"><strong>方向判断：</strong>今日市场缩量微跌，属于高位震荡格局。涨停70家说明活跃资金仍在，但创业板走弱暗示短线获利盘兑现压力。明日大概率延续窄幅震荡。</p>
-
-<ul style="list-style: none; margin-top: 8px;">
-<li>✅ <strong>关注方向：</strong>化学制品/半导体板块持续性——若龙头股（和远气体、雅克科技）不出现大幅回调，则主线逻辑未破</li>
-<li>⚠️ <strong>切换信号：</strong>若化工/半导体高位股放量杀跌，资金可能回流消费白马或红利品种</li>
-<li>📊 <strong>量能观察：</strong>明日若成交额放大至2000亿以上且创业板止跌翻红，则短期底部确认信号较强</li>
-<li>🔍 <strong>外围关注：</strong>港股走势（恒指今日-0.79%）及隔夜美股中概股表现将影响A股开盘情绪</li>
+<section class="section">
+<h2>💔 跌停/炸板个股</h2>
+<ul class="limit-list">
+<li><span class="tag tag-down">跌停</span> 晋拓股份（汽车零部）— 前期高位获利回吐</li>
+<li><span class="tag tag-down">跌停</span> 春光科技（家电零部）— 板块调整</li>
+<li><span class="tag tag-down">跌停</span> 粤桂股份（综合Ⅱ）— 连续大涨后资金出逃，成交额21.5亿</li>
+<li><span class="tag tag-down">跌停</span> 横店影视（影视院线）— 业绩预期弱</li>
+<li><span class="tag tag-down">跌停</span> 康达新材（化学制品）— 板块轮动</li>
 </ul>
 
-<!-- 风险提示 -->
-<div class="section-title">⚠️ 风险提示</div>
-<div class="risk-box">
-<ul style="list-style: none; margin-top: 4px;">
-<li><strong>政策风险：</strong>小金属涨价交易拥挤度高，出口管制政策若不及预期可能引发踩踏</li>
-<li><strong>外围风险：</strong>美联储降息节奏变化、美股科技股波动可能传导至A股</li>
-<li><strong>技术面风险：</strong>上证指数在3987附近缩量整理，若无放量突破则存在回落风险；创业板指需关注3755支撑位</li>
-<li><strong>板块轮动风险：</strong>化工/半导体短线涨幅较大，追涨资金面临回调压力</li>
-<li><strong>传媒板块风险：</strong>游族网络、粤传媒等午后加速杀跌，板块情绪脆弱</li>
-</ul>
-</div>
+<p style="font-size:13px;color:#555;margin-top:8px;">跌停股集中在前期热门赛道，化工、影视等板块调整明显。粤桂股份成交额超20亿，高位放量跌停说明筹码松动，追高风险较大。</p>
+</section>
 
-<p class="note">本报告仅供参考，不构成投资建议。</p>
+<section class="section">
+<h2>💰 资金流向</h2>
+<table>
+<tr><th colspan="4">行业资金净流入 TOP5</th></tr>
+<tr><td>有色金属</td><td class="gold" style="font-weight:400;">+144.1亿</td><td>洛阳钼业领涨</td></tr>
+<tr><td>电力设备</td><td class="gold" style="font-weight:400;">+91.8亿</td><td>宁德时代领涨</td></tr>
+<tr><td>工业金属</td><td class="gold" style="font-weight:400;">+83.7亿</td><td>洛阳钼业领涨</td></tr>
+<tr><td>电池</td><td class="gold" style="font-weight:400;">+74.4亿</td><td>恩捷股份涨停</td></tr>
+<tr><td>电子化学品</td><td class="gold" style="font-weight:400;">+70.2亿</td><td>格林达、江化微等</td></tr>
+</table>
+
+<h3>北向资金</h3>
+<p>沪股通净流入 <span class="up">0 元</span>，深股通净流入 <span class="up">0 元</span>。今日沪深港通数据未披露实时净流入金额，整体看外资态度偏静默。</p>
+
+<h3>南向资金</h3>
+<p>港股通（沪）净流出 <span class="down">-2.19亿</span>，港股通（深）净流入 <span class="up">+15.60亿</span>。北向观望、南向小幅净买入。</p>
+</section>
+
+<section class="section">
+<h2>🎯 今日热点板块深度解读</h2>
+<h3>有色金属 &gt;&gt;&gt; 绝对主线</h3>
+<p>钼板块+10%（金钼股份涨停）、铅锌+9.14%、铜+7.03%，有色板块整体净流入144亿。直接驱动因素：</p>
+<ul style="font-size:13px;color:#555;list-style:none;padding-left:0;margin-bottom:12px;">
+<li>CME铜价持续走强，工业金属价格重估</li>
+<li>全球供应链重构背景下资源品战略价值凸显</li>
+<li>洛阳钼业、紫金矿业等资源龙头带动板块效应</li>
+</ul>
+
+<h3>航空军工 &gt;&gt;&gt; 政策催化</h3>
+<p>中航西飞涨停（+10%），航空装备板块多股走强。近期地缘局势叠加国产大飞机进展，军工订单预期强化。</p>
+
+<h3>券商 &gt;&gt;&gt; 降息博弈</h3>
+<p>中银证券、财达证券双双涨停。6月LPR降息预期升温，券商作为利率敏感品种提前布局。</p>
+</section>
+
+<section class="section">
+<h2>📈 技术面信号</h2>
+<h3>上证指数（日线）</h3>
+<table>
+<tr><th>指标</th><th>数值</th></tr>
+<tr><td>MA5/10/20</td><td>3961 / 3947 / 3928</td></tr>
+<tr><td>MACD DIF/DEA/MACD柱</td><td class="up">3.95 / -2.07 / +0.14</td></tr>
+<tr><td>KDJ K/D/J</td><td class="up">89.48 / 81.97 / 104.49</td></tr>
+</table>
+
+<p style="font-size:13px;color:#555;margin-top:8px;">沪指站上MA5/10/20多条均线，MACD金叉后柱状图扩大，趋势向好。但KDJ J值突破100进入超买区，短期注意技术性回踩风险。</p>
+
+<h3>创业板指（日线）</h3>
+<table>
+<tr><th>指标</th><th>数值</th></tr>
+<tr><td>MA5/10/20</td><td>3854 / 3947 / 3962</td></tr>
+<tr><td>MACD DIF/DEA/MACD柱</td><td class="down">24.54 / 65.90 / -0.83</td></tr>
+<tr><td>KDJ K/D/J</td><td class="down">21.32 / 30.24 / 3.49</td></tr>
+</table>
+
+<p style="font-size:13px;color:#555;margin-top:8px;">创业板受制于MA20/30压制，MACD死叉向下发散。但KDJ处于低位超卖区(J=3.49)，存在反弹需求。短期关注能否站上3900关口。</p>
+</section>
+
+<section class="section">
+<h2>🔮 明日预判</h2>
+<p><strong>主线方向延续概率较大：</strong></p>
+<ul style="font-size:13px;color:#555;list-style:none;padding-left:0;">
+<li>有色金属板块短期强势格局未破，但需警惕获利盘兑现（洛阳钼业、紫金矿业等龙头已积累较大涨幅）</li>
+<li>军工板块受事件驱动，持续性取决于地缘消息催化节奏</li>
+<li>券商板块博弈降息落地，若LPR下调预期兑现可能利好出尽</li>
+</ul>
+
+<p style="margin-top:12px;"><strong>重点关注信号：</strong></p>
+<ul style="font-size:13px;color:#555;list-style:none;padding-left:0;">
+<li>CME金属期货夜盘表现（决定有色板块次日开盘）</li>
+<li>沪指能否站稳4000点——这是心理关口，突破则打开上行空间</li>
+<li>创业板MACD能否企稳金叉——若延续下跌趋势可能拖累指数</li>
+<li>6月降息预期变化——直接影响券商和成长股定价</li>
+</ul>
+
+<div class="callout">
+<strong>策略提示：</strong>大盘放量突破4000点，整体做多氛围浓厚。但KDJ超买+创业板技术面偏弱，说明内外分化明显。建议关注有色金属龙头回调机会，谨慎追高；军工可逢低布局，券商博弈降息需快进快出。
+</div>
+</section>
+
+<section class="section">
+<h2>⚠️ 风险提示</h2>
+<ul style="font-size:13px;color:#555;list-style:none;padding-left:0;">
+<li><strong>外围风险：</strong>CME大宗商品价格波动可能引发有色板块剧烈震荡，需警惕大宗商品周期见顶信号</li>
+<li><strong>政策预期差：</strong>LPR降息若不及市场预期（如仅下调5BP），券商及成长股可能遭遇重挫</li>
+<li><strong>高位回调压力：</strong>沪指站上4000点上方后，前期获利盘和套牢盘共振可能导致短期调整</li>
+<li><strong>创业板弱势延续：</strong>KDJ超卖+MACD死叉，若不能企稳可能拖累大盘蓝筹股表现</li>
+<li><strong>北向静默风险：</strong>北向资金今日净流入为0，外资态度不明，一旦转向可能形成增量抛压</li>
+</ul>
+</section>
+
+<footer>
+<p>本报告由AI辅助生成，仅供参考，不构成任何投资建议</p>
+<p style="margin-top:6px;">数据来源于实时行情 · 2026年6月12日</p>
+</footer>
 
 </div>
 </body>
