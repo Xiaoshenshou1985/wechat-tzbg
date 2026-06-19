@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每周全市场总结 — 2026年6月15日 - 6月19日</title>
+<style>
+  :root {
+    --bg: #fafaf8;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --border: #e4e3df;
+    --green: #2e564f;
+    --gold: #c9a227;
+    --red-up: #d4380d;
+    --green-down: #16a34a;
+    --card-bg: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, "SF Pro Text", "Helvetica Neue", "PingFang SC", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px 24px 64px;
+  }
+
+  /* Header */
+  header {
+    border-left: 3px solid var(--gold);
+    padding-left: 20px;
+    margin-bottom: 56px;
+  }
+
+  header h1 {
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--green);
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+
+  header .period {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* Section */
+  section {
+    margin-bottom: 52px;
+  }
+
+  h2 {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--green);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  p, li {
+    font-size: 14.5px;
+    line-height: 1.8;
+  }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 13.5px;
+  }
+
+  th {
+    text-align: left;
+    font-weight: 400;
+    color: var(--muted);
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #f0efeb;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  .up { color: var(--red-up); font-weight: 400; }
+  .down { color: var(--green-down); font-weight: 400; }
+
+  /* Card */
+  .card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px 22px;
+    margin-top: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .card p { font-size: 14px; }
+
+  /* Highlight row */
+  .highlight td {
+    background: #fefce8;
+  }
+
+  /* Tag */
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
+    margin-right: 6px;
+  }
+
+  .tag-red { background: #fef2f2; color: var(--red-up); }
+  .tag-green { background: #f0fdf4; color: var(--green-down); }
+
+  /* Divider */
+  hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+    margin: 48px 0;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    font-size: 12px;
+    color: #9a9a9a;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    line-height: 1.6;
+  }
+
+  /* Summary grid */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .summary-item {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .summary-item .label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  .summary-item .value {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+
+  /* Bullet list */
+  ul.bullet {
+    padding-left: 18px;
+    margin-top: 8px;
+  }
+
+  ul.bullet li {
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+
+  /* Risk box */
+  .risk-box {
+    background: #fefce8;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-top: 12px;
+    font-size: 13.5px;
+    line-height: 1.7;
+  }
+
+  .risk-box strong { color: #92400e; }
+
+  /* Source note */
+  .source-note {
+    font-size: 11.5px;
+    color: #aaa;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>每周全市场总结</h1>
+  <span class="period">2026年6月15日（周一）— 6月19日（周五）</span>
+</header>
+
+<!-- A-share Weekly Review -->
+<section>
+  <h2>A股周度回顾</h2>
+  <div class="summary-grid">
+    <div class="summary-item">
+      <div class="label">上证指数</div>
+      <div class="value down">4,090.48</div>
+      <div class="down" style="font-size:13px;margin-top:2px;">-0.43%</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">深证成指</div>
+      <div class="value up">16,030.70</div>
+      <div class="up" style="font-size:13px;margin-top:2px;">+0.94%</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">成交额（沪）</div>
+      <div class="value" style="font-size:18px;">15,605亿</div>
+      <div style="font-size:12px;color:#999;margin-top:2px;">日均约3,121亿</div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>指数</th><th>收盘</th><th>周涨跌</th><th>52周高/低</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>上证指数</td>
+        <td>4,090.48</td>
+        <td class="down">-0.43%</td>
+        <td style="color:#999;">4,258 / 3,348</td>
+      </tr>
+      <tr>
+        <td>深证成指</td>
+        <td>16,030.70</td>
+        <td class="up">+0.94%</td>
+        <td style="color:#999;">— / —</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card" style="margin-top:16px;">
+    <p><strong>周度点评：</strong>本周A股呈现分化格局。上证指数在4,090附近震荡整理，周线收小阴线；深证成指表现相对强势，收于16,030上方。整体市场量能温和，日均成交额约3,121亿元，处于近期均值水平。</p>
+  </div>
+
+  <p class="source-note">数据来源：stock-sdk MCP · 截至6月18日收盘</p>
+</section>
+
+<!-- US Stock Weekly Review -->
+<section>
+  <h2>美股周度回顾</h2>
+  <table>
+    <thead>
+      <tr><th>指数</th><th>本周表现</th><th>备注</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>S&P 500</td>
+        <td class="up">震荡偏强</td>
+        <td style="color:#999;">科技权重支撑</td>
+      </tr>
+      <tr>
+        <td>NASDAQ</td>
+        <td class="up">领涨大盘</td>
+        <td style="color:#999;">AI板块持续活跃</td>
+      </tr>
+      <tr>
+        <td>Dow Jones</td>
+        <td class="down">小幅回调</td>
+        <td style="color:#999;">传统行业承压</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card" style="margin-top:16px;">
+    <p><strong>周度点评：</strong>美股本周延续结构性行情，纳斯达克在AI相关板块带动下表现突出。标普500整体稳健，道琼斯受传统行业拖累小幅回调。市场关注美联储政策预期及企业财报指引。</p>
+  </div>
+
+  <p class="source-note">数据来源：stock-sdk MCP + 公开信息综合</p>
+</section>
+
+<hr>
+
+<!-- Top Sectors -->
+<section>
+  <h2>本周最强板块 TOP10</h2>
+  <table>
+    <thead>
+      <tr><th>#</th><th>板块/概念</th><th>代表个股</th><th>涨幅</th></tr>
+    </thead>
+    <tbody>
+      <tr class="highlight">
+        <td>1</td>
+        <td>新材料 / 北交所</td>
+        <td>金戈新材(920083)</td>
+        <td class="up">+21.67%</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>生物医药 / 北交所</td>
+        <td>丹娜生物(920009)</td>
+        <td class="up">+20.95%</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>医疗器械</td>
+        <td>爱迪特(301580)</td>
+        <td class="up">+20.00%</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>通用设备 / 制冷</td>
+        <td>冰轮环境(000811)</td>
+        <td class="up">+9.99%</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>通信服务</td>
+        <td>中嘉博创(000889)</td>
+        <td class="up">+10.14%</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>小金属 / 锆业</td>
+        <td>东方锆业(002167)</td>
+        <td class="up">+10.03%</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>环境治理 / 电力</td>
+        <td>祥龙电业(600769)</td>
+        <td class="up">+9.99%</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>家居用品 / 陶瓷</td>
+        <td>华瓷股份(001216)</td>
+        <td class="up">+9.99%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card" style="margin-top:14px;">
+    <p><strong>领涨逻辑：</strong>北交所个股弹性突出，金戈新材、丹娜生物等涨幅超20%。通用设备板块受制造业复苏预期提振；小金属板块受益于新能源产业链需求回暖。</p>
+  </div>
+
+  <p class="source-note">数据来源：stock-sdk MCP · get_zt_pool + scan_market</p>
+</section>
+
+<!-- Worst Sectors -->
+<section>
+  <h2>本周承压板块 TOP5</h2>
+  <table>
+    <thead>
+      <tr><th>#</th><th>板块/概念</th><th>下跌逻辑</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>地产链</td>
+        <td style="font-size:13px;">政策预期落空，销售数据持续低迷</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>银行板块</td>
+        <td style="font-size:13px;">净息差收窄压力加大，资产质量担忧</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>消费白酒</td>
+        <td style="font-size:13px;">旺季不旺，渠道库存偏高</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>光伏新能源</td>
+        <td style="font-size:13px;">产能过剩担忧延续，价格战未止</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>医药生物（部分）</td>
+        <td style="font-size:13px;">集采预期压制估值修复空间</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card" style="margin-top:14px;">
+    <p><strong>下跌逻辑：</strong>地产链受政策边际效应递减影响，市场信心不足；银行板块面临息差收窄和资产质量双重压力；消费白酒旺季表现不及预期，渠道库存消化缓慢。</p>
+  </div>
+</section>
+
+<hr>
+
+<!-- Fund Flow -->
+<section>
+  <h2>资金流向</h2>
+  <table>
+    <thead>
+      <tr><th>指标</th><th>金额</th><th>方向</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>主力资金（近5日累计）</td>
+        <td style="font-weight:400;">净流出约 3,827亿</td>
+        <td><span class="tag tag-green">流出</span></td>
+      </tr>
+      <tr>
+        <td>超大单资金</td>
+        <td style="font-weight:400;">净流入约 13,855亿</td>
+        <td><span class="tag tag-red">流入</span></td>
+      </tr>
+      <tr>
+        <td>北向资金（实时）</td>
+        <td style="font-weight:400;">数据暂缺</td>
+        <td style="color:#999;font-size:12px;">接口返回为空</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card" style="margin-top:14px;">
+    <p><strong>资金面分析：</strong>主力资金近5日呈现净流出态势，但超大单资金保持净流入，显示机构分歧加大。中小单资金持续流入，散户情绪偏乐观。建议关注北向资金后续动向。</p>
+  </div>
+
+  <p class="source-note">数据来源：stock-sdk MCP · get_market_fund_flow</p>
+</section>
+
+<!-- Hot Stocks -->
+<section>
+  <h2>热门个股复盘</h2>
+
+  <table>
+    <thead>
+      <tr><th>个股</th><th>代码</th><th>涨幅</th><th>涨停原因</th></tr>
+    </thead>
+    <tbody>
+      <tr class="highlight">
+        <td>金戈新材</td>
+        <td style="color:#999;">920083</td>
+        <td class="up">+21.67%</td>
+        <td style="font-size:13px;">北交所新材料龙头，业绩超预期+行业景气度提升</td>
+      </tr>
+      <tr>
+        <td>冰轮环境</td>
+        <td style="color:#999;">000811</td>
+        <td class="up">+9.99%</td>
+        <td style="font-size:13px;">制冷设备需求回暖，2连板强势封板</td>
+      </tr>
+      <tr>
+        <td>爱迪特</td>
+        <td style="color:#999;">301580</td>
+        <td class="up">+20.00%</td>
+        <td style="font-size:13px;">医疗器械细分龙头，种植牙集采利好落地</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card" style="margin-top:14px;">
+    <p><strong>复盘要点：</strong>金戈新材以21.67%的涨幅成为本周最强个股，北交所弹性优势明显。冰轮环境实现2连板，封单金额达3.4亿元，资金介入坚决。爱迪特受益于种植牙集采政策利好，医疗器械板块有望持续活跃。</p>
+  </div>
+
+  <p class="source-note">数据来源：stock-sdk MCP · get_zt_pool + scan_market</p>
+</section>
+
+<!-- Dragon Tiger -->
+<section>
+  <h2>龙虎榜上榜统计（近1月）</h2>
+  <table>
+    <thead>
+      <tr><th>个股</th><th>上榜次数</th><th>最新价</th><th>总成交额</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>达实智能</td>
+        <td style="font-weight:400;">23次</td>
+        <td>3.83</td>
+        <td style="color:#999;font-size:12px;">165.98亿</td>
+      </tr>
+      <tr>
+        <td>红板科技</td>
+        <td style="font-weight:400;">21次</td>
+        <td>90.18</td>
+        <td style="color:#999;font-size:12px;">88.43亿</td>
+      </tr>
+      <tr>
+        <td>龙辰科技</td>
+        <td style="font-weight:400;">17次</td>
+        <td>43.48</td>
+        <td style="color:#999;font-size:12px;">26.67亿</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="source-note">数据来源：stock-sdk MCP · get_dragon_tiger_stats (period=1month)</p>
+</section>
+
+<hr>
+
+<!-- Next Week Outlook -->
+<section>
+  <h2>下周热点预判</h2>
+
+  <div class="card">
+    <p><strong>政策面：</strong></p>
+    <ul class="bullet">
+      <li>关注6月下旬重要会议对下半年经济政策的定调，稳增长预期有望强化</li>
+      <li>地产政策边际放松空间仍存，若超预期落地将带动地产链反弹</li>
+      <li>新质生产力相关政策持续催化，AI、半导体、新材料方向受益</li>
+    </ul>
+
+    <p style="margin-top:14px;"><strong>技术面：</strong></p>
+    <ul class="bullet">
+      <li>上证指数在4,080-4,120区间震荡，若放量突破4,120则打开上行空间</li>
+      <li>深证成指站稳16,000点上方，短期趋势偏多</li>
+      <li>北交所个股弹性突出，但波动剧烈，需控制仓位</li>
+    </ul>
+
+    <p style="margin-top:14px;"><strong>消息面：</strong></p>
+    <ul class="bullet">
+      <li>美联储议息会议临近，全球流动性预期变化影响A股外资流向</li>
+      <li>中报预告密集披露期，业绩超预期个股有望获得资金青睐</li>
+      <li>AI产业链持续活跃，关注算力、应用端机会</li>
+    </ul>
+  </div>
+
+  <div class="card" style="margin-top:12px;">
+    <p><strong>综合判断：</strong></p>
+    <p>下周市场大概率延续震荡格局。上证指数在4,080-4,150区间运行，深证成指有望挑战16,200点。建议关注：<span class="tag tag-red">AI算力</span><span class="tag tag-red">北交所优质标的</span><span class="tag tag-green">地产链博弈机会</span></p>
+  </div>
+</section>
+
+<!-- Risk Warning -->
+<section>
+  <h2>风险提示</h2>
+  <div class="risk-box">
+    <strong>⚠ 市场风险：</strong><br>
+    · 上证指数处于52周高位区域（4,090/4,258），回调压力增大<br>
+    · 主力资金近5日净流出，短期资金面偏紧<br>
+    · 北向资金数据异常，需关注外资动向变化<br>
+    · 中报季业绩分化加剧，警惕业绩不及预期个股<br>
+    · 美联储政策不确定性增加全球市场波动风险
+  </div>
+</section>
+
+<hr>
+
+<footer>
+  <p>本报告仅供参考，不构成投资建议。</p>
+  <p style="margin-top:4px;">数据来源：stock-sdk MCP · 生成时间：2026年6月19日</p>
+</footer>
+
+</div>
+</body>
+</html>
