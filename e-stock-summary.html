@@ -3,479 +3,560 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A股盘后总结 - 2026年6月17日</title>
+<title>A股盘后总结 | 2026年6月17日</title>
 <style>
-:root {
-  --bg: #fafaf8;
-  --text-primary: #1a1a1a;
-  --accent: #2e5c4f;
-  --warm: #c8965a;
-  --border: #e8e6e1;
-  --muted: #6b6b66;
-  --card-bg: #ffffff;
-  --alt-row: #f3f2ee;
-}
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  background: var(--bg);
-  color: var(--text-primary);
-  font-family: "Source Han Serif CN", "Noto Serif SC", Georgia, serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+  background: #fafaf8;
+  color: #1a1a1a;
   line-height: 1.75;
+  font-size: 15px;
 }
 
-.doc-container {
-  max-width: 840px;
-  margin: 32px auto 48px;
-  padding: 0 24px;
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 32px;
 }
 
-/* ── Header ── */
-.doc-header {
-  margin-bottom: 40px;
-  border-bottom: 1.5px solid var(--warm);
-  padding-bottom: 24px;
-}
-.doc-title {
-  font-size: 28px;
-  font-weight: 300;
-  color: var(--accent);
-  letter-spacing: -0.3px;
-  line-height: 1.25;
-}
-.doc-date {
-  font-size: 14px;
-  color: var(--muted);
-  margin-top: 6px;
-  font-weight: 300;
+/* Header */
+.header {
+  text-align: center;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e8e4df;
+  margin-bottom: 48px;
 }
 
-/* ── Section Titles ── */
-.section-title {
-  font-size: 20px;
-  font-weight: 400;
-  color: var(--accent);
-  margin: 40px 0 16px;
-  padding-bottom: 8px;
-  border-bottom: 1.5px solid var(--border);
-  letter-spacing: -0.2px;
-}
-
-/* ── Card Container ── */
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 22px 26px;
-  margin-bottom: 18px;
-}
-
-/* ── Index Grid (prominent cards) ── */
-.index-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr);
-  gap: 14px;
-  margin-bottom: 18px;
-}
-.index-card {
-  background: var(--card-bg);
-  border: 1.5px solid var(--border);
-  border-left: 3.5px solid var(--warm);
-  border-radius: 4px;
-  padding: 16px 20px;
-}
-.index-name {
-  font-size: 12.5px;
-  color: var(--muted);
-  margin-bottom: 4px;
-  letter-spacing: -0.1px;
-}
-.index-row {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-}
-.index-price {
-  font-size: 28px;
-  font-weight: 300;
+.header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2e564f;
   letter-spacing: -0.5px;
-  color: var(--text-primary);
+  margin-bottom: 12px;
 }
-.index-change {
-  font-size: 14px;
+
+.header .subtitle {
+  font-size: 18px;
+  color: #6b635a;
   font-weight: 400;
-}
-
-/* ── Market Breadth (simple strip) ── */
-.breadth-strip {
-  background: var(--card-bg);
-  border: 1.5px solid var(--border);
-  border-radius: 4px;
-  padding: 18px 22px;
   margin-bottom: 16px;
 }
-.breadth-title {
+
+.header .date-line {
   font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 10px;
+  color: #9e978f;
+  letter-spacing: 0.5px;
 }
-.bar-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 5px;
-}
-.bar-label {
-  font-size: 12.5px;
-  width: 46px;
-  text-align: right;
-  color: var(--muted);
-}
-.bar-track {
-  flex: 1;
-  height: 8px;
-  background: #eae7df;
-  border-radius: 4px;
-  overflow: hidden;
-}
-.bar-fill-up   { height: 100%; background: linear-gradient(90deg, #b84a38, #c44e4e);    border-radius: 4px; float: right; }
-.bar-fill-down { height: 100%; background: linear-gradient(90deg, #2e7d32, #3a8f42);     border-radius: 4px; }
-.bar-num      { font-size: 12.5px; color: var(--muted); width: 46px; text-align: right; }
 
-/* ── Info Card (analysis) ── */
-.info-card {
-  background: var(--card-bg);
-  border: 1.5px solid var(--border);
-  padding: 20px 24px;
-  margin-bottom: 16px;
+/* Section Divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c9a227 30%, #c9a227 70%, transparent);
+  margin: 48px 0;
+  border: none;
 }
-.info-card p {
+
+/* Section Titles */
+.section-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a365d;
+  margin-bottom: 20px;
+  padding-left: 14px;
+  border-left: 3px solid #c9a227;
+}
+
+/* Data Cards Grid */
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.data-card {
+  background: #ffffff;
+  border: 1px solid #e8e4df;
+  border-radius: 8px;
+  padding: 18px 20px;
+  transition: box-shadow 0.2s ease;
+}
+
+.data-card:hover {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.data-card .label {
+  font-size: 12px;
+  color: #8a8379;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.data-card .value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+}
+
+.data-card .change-up {
+  color: #c53846;
   font-size: 14px;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-  line-height: 1.95;
+  font-weight: 600;
+  margin-top: 2px;
 }
-.info-card p:last-child { margin-bottom: 0; }
 
-/* ── Tables (clean, structured) ── */
-.data-table {
+.data-card .change-down {
+  color: #2e7d4a;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Table */
+.styled-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 18px;
-  background: var(--card-bg);
-  border: 1.5px solid var(--border);
-  border-radius: 4px;
+  background: #ffffff;
+  border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  margin-bottom: 24px;
 }
-.data-table th {
-  background: var(--accent);
+
+.styled-table thead th {
+  background: #1a365d;
   color: #ffffff;
-  font-weight: 300;
-  font-size: 13px;
-  padding: 12px 16px;
+  padding: 14px 18px;
   text-align: left;
-  letter-spacing: -0.1px;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.5px;
 }
-.data-table td {
-  padding: 10px 16px;
+
+.styled-table td {
+  padding: 12px 18px;
+  border-bottom: 1px solid #f0ece7;
   font-size: 14px;
-  color: var(--text-primary);
-  border-bottom: 1px solid var(--border);
 }
-/* Alternating rows */
-.data-table tbody tr:nth-child(even) td {
-  background: var(--alt-row);
-}
-.data-table tr:last-child td {
+
+.styled-table tbody tr:last-child td {
   border-bottom: none;
 }
 
-/* ── Hot Sector Tag ── */
-.sector-tag {
-  display: inline-block;
-  background: #e8e4dc;
-  color: var(--accent);
-  padding: 2px 9px;
-  border-radius: 3px;
-  font-size: 11.5px;
-  margin-right: 5px;
+.styled-table tbody tr:hover {
+  background: #fafaf5;
 }
 
-/* ── Risk Box (warm amber tone) ── */
-.risk-card {
-  background: #fdf6eb;
-  border: 1.5px solid #e2cfa6;
-  border-radius: 4px;
-  padding: 18px 22px;
-  margin-bottom: 16px;
-}
-.risk-card p {
-  font-size: 13.5px;
-  color: #5a3f1f;
-  line-height: 1.95;
-  margin-bottom: 5px;
+.up-text { color: #c53846; font-weight: 600; }
+.down-text { color: #2e7d4a; font-weight: 600; }
+
+/* News Items */
+.news-item {
+  padding: 16px 0;
+  border-bottom: 1px solid #f0ece7;
 }
 
-/* ── Divider (warm) ── */
-.divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--warm)44, transparent);
-  margin: 32px 0;
+.news-item:last-child {
+  border-bottom: none;
 }
 
-/* ── Subtitle (section lead-in) ── */
-.subtitle {
+.news-item .news-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+.news-item .news-source {
+  font-size: 12px;
+  color: #8a8379;
+  margin-top: 4px;
+}
+
+/* Summary Box */
+.summary-box {
+  background: linear-gradient(135deg, #f6f3ee 0%, #fdfbf8 100%);
+  border: 1px solid #e8e4df;
+  border-radius: 10px;
+  padding: 28px 32px;
+  margin-top: 24px;
+}
+
+.summary-box h3 {
+  font-size: 17px;
+  color: #1a365d;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.summary-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.summary-box li {
+  padding: 6px 0;
+  padding-left: 20px;
+  position: relative;
   font-size: 14.5px;
-  color: var(--accent);
-  font-weight: 300;
-  margin-bottom: 16px;
+  color: #3a3732;
+  line-height: 1.8;
 }
 
-/* ── Bullet List ── */
-.bullet-list {
-  padding-left: 18px;
+.summary-box li::before {
+  content: "◆";
+  position: absolute;
+  left: 0;
+  color: #c9a227;
+  font-size: 8px;
+  top: 12px;
+}
+
+/* Strategy Box */
+.strategy-box {
+  background: #ffffff;
+  border: 1px solid #e8e4df;
+  border-left: 3px solid #c9a227;
+  padding: 20px 24px;
+  margin-top: 24px;
+  border-radius: 0 8px 8px 0;
+}
+
+.strategy-box h4 {
+  font-size: 15px;
+  color: #1a365d;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Source Attribution */
+.source-note {
+  font-size: 12px;
+  color: #9e978f;
+  text-align: right;
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid #f0ece7;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #9e978f;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #e8e4df;
+}
+
+/* Bar Chart */
+.bar-chart {
+  margin: 20px 0;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
 }
-.bullet-list li {
-  font-size: 13.5px;
-  color: var(--text-primary);
-  margin-bottom: 7px;
-  line-height: 1.95;
+
+.bar-label {
+  width: 80px;
+  font-size: 13px;
+  color: #5a564e;
+  text-align: right;
+  padding-right: 16px;
+  flex-shrink: 0;
+  font-weight: 500;
 }
 
-/* ── Footer (clean) ── */
-.doc-footer {
+.bar-track {
+  flex: 1;
+  height: 22px;
+  background: #f0ece7;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar-fill-up {
+  height: 100%;
+  background: linear-gradient(90deg, #c53846, #d4525e);
+  border-radius: 3px;
+  min-width: 4px;
+}
+
+.bar-fill-down {
+  height: 100%;
+  background: linear-gradient(90deg, #2e7d4a, #3d8f58);
+  border-radius: 3px;
+  min-width: 4px;
+}
+
+.bar-value {
+  font-size: 13px;
+  color: #1a1a1a;
+  margin-left: 8px;
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+/* Highlight box */
+.highlight-box {
+  background: #fff9f0;
+  border: 1px solid #e8dcc8;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+
+.highlight-box .title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #7a5c1e;
+  margin-bottom: 8px;
+}
+
+/* Commodity cards */
+.commodity-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 16px 0 24px 0;
+}
+
+.commodity-card {
+  background: #ffffff;
+  border: 1px solid #e8e4df;
+  border-radius: 8px;
+  padding: 16px;
   text-align: center;
-  padding-top: 28px;
-  border-top: 1.5px solid var(--border);
-  font-size: 12px;
-  color: var(--muted);
-  letter-spacing: -0.1px;
 }
 
-/* ── Utility Colors (max 2 chromatic) ── */
-.up   { color: #b84a38; }
-.down { color: #2e7d32; }
+.commodity-card .label {
+  font-size: 11px;
+  color: #8a8379;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
 
+.commodity-card .price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.commodity-card .change {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 4px;
+}
 </style>
 </head>
 <body>
-
-<div class="doc-container">
+<div class="container">
 
 <!-- Header -->
-<header class="doc-header">
-  <h1 class="doc-title">A股盘后总结</h1>
-  <p class="doc-date">2026年6月17日（周二）· 收盘后</p>
-</header>
-
-<!-- Section: Index Overview -->
-<h2 class="section-title">今日行情回顾</h2>
-
-<div class="index-grid">
-<div class="index-card">
-  <div class="index-name">上证指数</div>
-  <div class="index-row"><span class="index-price up">4108.08</span><span class="index-change up">+0.40%</span></div>
-</div>
-<div class="index-card">
-  <div class="index-name">深证成指</div>
-  <div class="index-row"><span class="index-price up">15880.95</span><span class="index-change up">+1.31%</span></div>
-</div>
-<div class="index-card">
-  <div class="index-name">创业板指</div>
-  <div class="index-row"><span class="index-price up">4167.05</span><span class="index-change up">+1.56%</span></div>
-</div>
-<div class="index-card">
-  <div class="index-name">科创综指</div>
-  <div class="index-row"><span class="index-price up">2224.70</span><span class="index-change up">+3.21%</span></div>
-</div>
-<div class="index-card">
-  <div class="index-name">沪深300</div>
-  <div class="index-row"><span class="index-price up">4931.39</span><span class="index-change up">+0.97%</span></div>
-</div>
-<div class="index-card">
-  <div class="index-name">北证50</div>
-  <div class="index-row"><span class="index-price up">1280.25</span><span class="index-change up">+0.27%</span></div>
-</div>
+<div class="header">
+  <h1>A股盘后总结</h1>
+  <div class="subtitle">每日市场复盘与策略参考</div>
+  <div class="date-line">2026年6月17日 · 星期二 · 数据来源：腾讯财经/ CNBC / 各媒体实时数据</div>
 </div>
 
-<!-- Market Breadth -->
-<div class="breadth-strip">
-  <div class="breadth-title">市场涨跌分布（上证）</div>
-  <div class="bar-row">
-    <span class="bar-label" style="color:#b84a38;">上涨</span>
-    <span class="bar-num">785</span>
-    <div class="bar-track"><div class="bar-fill-up" style="width:33.9%;"></div></div>
+<!-- Global Markets -->
+<div class="section-title">🌍 全球市场概览</div>
+
+<div class="data-grid">
+  <div class="data-card">
+    <div class="label">上证指数 SH000001</div>
+    <div class="value">4,108.08</div>
+    <div class="change-up" style="color:#c53846;">▲ +0.40%</div>
   </div>
-  <div class="bar-row">
-    <span class="bar-label" style="color:#6b6b66;">平盘</span>
-    <span class="bar-num">28</span>
-    <div class="bar-track"><div class="bar-fill-up" style="width:1.2%;background:#c8965a;"></div></div>
+  <div class="data-card">
+    <div class="label">深证成指 SZ399001</div>
+    <div class="value">15,880.95</div>
+    <div class="change-up" style="color:#c53846;">▲ +1.31%</div>
   </div>
-  <div class="bar-row">
-    <span class="bar-label" style="color:#2e7d32;">下跌</span>
-    <span class="bar-num">1534</span>
-    <div class="bar-track"><div class="bar-fill-down" style="width:64.9%;"></div></div>
+  <div class="data-card">
+    <div class="label">创业板指 SZ399006</div>
+    <div class="value">4,167.05</div>
+    <div class="change-up" style="color:#c53846;">▲ +1.56%</div>
   </div>
-  <p style="font-size:12.5px;color:#6b6b66;margin-top:8px;">上证：涨785/平28/跌1534｜深证：涨841/平25/跌2055（合计两市约1626家上涨，3589家下跌）</p>
+  <div class="data-card">
+    <div class="label">恒生指数 HSI</div>
+    <div class="value">24,312.16</div>
+    <div class="change-down" style="color:#2e7d4a;">▼ −0.74%</div>
+  </div>
 </div>
 
-<div class="info-card">
-  <p><strong style="color:var(--accent);">成交额：</strong> 上证成交 <span class="up" style="font-weight:400;">1.40万亿元</span>，深证成交 <span class="up" style="font-weight:400;">1.69万亿元</span>，沪深合计约 <span class="up" style="font-weight:500;">3.09万亿元</span></p>
-  <p><strong style="color:var(--accent);">市场特征：</strong> 指数收红但涨跌比倒挂（上涨家数远少于下跌），属于典型的<strong>"赚指数不赚钱"</strong>格局，资金高度集中于少数热门板块。</p>
-</div>
+<hr class="section-divider">
 
-<div class="divider"></div>
+<!-- US & Global -->
+<div class="section-title">🇺🇸 隔夜与欧美市场</div>
 
-<!-- Section: Hot Sectors -->
-<h2 class="section-title">今日热点板块深度解读</h2>
-
-<p class="subtitle">headline: "收评：沪指重回4100点 芯片股爆发"</p>
-
-<div class="info-card">
-  <p><span class="sector-tag">芯片/半导体</span> <strong style="color:var(--accent);">今日最强主线。</strong> 受科创板第五套标准扩围AI利好驱动，芯片板块全面爆发。PCB设备、存储芯片、封装测试、光刻机等多个细分方向集体走强。算力硬件（江波龙等）领涨，创业板人工智能ETF出现<strong style="color:#b84a38;">强势三连阳</strong>。</p>
-  <p><span class="sector-tag">券商/牛市旗手</span> 资金涌入券商类ETF，作为"牛市旗手"在指数冲击关键点位时发挥稳定器作用。主动ETF扩容（证监会支持推出主动权益ETF）进一步提振板块预期。</p>
-  <p><span class="sector-tag">AI/大模型</span> 科创板第五套标准扩围至未盈利大模型企业，打开AI赛道上市新通道。机构认为A股交易主线已转向<strong style="color:var(--accent);">"风险偏好修复 + 成长估值回补 + 资源品再定价"</strong>。</p>
-  <p><span class="sector-tag">锂电池/新能源</span> 亿纬锂能半年报业绩报喜，硬科技宽基双创50ETF逼近历史高点，带动锂电、固态电池等方向跟涨。</p>
-</div>
-
-<!-- Sector Ranking Table -->
-<h3 style="font-size:16px;color:var(--accent);margin:28px 0 14px;font-weight:300;">概念板块涨幅TOP10（参考）</h3>
-<table class="data-table">
-<thead><tr><th>排名</th><th>概念/方向</th><th>核心逻辑</th></tr></thead>
-<tbody>
-<tr><td>1</td><td style="color:#b84a38;">PCB/印制电路板</td><td>AI算力驱动PCB设备需求大幅增长，铜缆模组批量供货华为昇腾集群</td></tr>
-<tr><td>2</td><td style="color:#b84a38;">存储芯片</td><td>AI数据中心带动HBM及高端存储需求，国产替代加速</td></tr>
-<tr><td>3</td><td style="color:#b84a38;">半导体设备/光刻机</td><td>科创板第五套标准扩围至未盈利大模型企业，上游设备受益</td></tr>
-<tr><td>4</td><td style="color:#b84a38;">封装测试</td><td>先进封装需求爆发，液冷方案商受追捧</td></tr>
-<tr><td>5</td><td style="color:#b84a38;">光纤/光通信(CPO)</td><td>AI算力集群建设拉动光模块需求，华为+腾讯+阿里多客户驱动</td></tr>
-<tr><td>6</td><td style="color:var(--accent);">券商/证券ETF</td><td>"牛市旗手"获资金涌入，主动ETF扩容预期提振</td></tr>
-<tr><td>7</td><td style="color:var(--accent);">锂电池/固态电池</td><td>亿纬锂能半年报业绩超预期，新能源车产业链回暖</td></tr>
-<tr><td>8</td><td style="color:var(--accent);">消费电子/AI眼镜</td><td>苹果Siri升级+AI终端催化，行业景气度回升</td></tr>
-<tr><td>9</td><td style="color:var(--accent);">商业航天/卫星互联网</td><td>商业航天发射频次提升，卫星互联网产业链受益</td></tr>
-<tr><td>10</td><td style="color:var(--accent);">煤炭/有色(资源品)</td><td>"资源品再定价"主线，全球大宗商品价格走强带动</td></tr>
-</tbody>
+<table class="styled-table">
+  <thead>
+    <tr><th>指数 / 标的</th><th>最新价</th><th>涨跌额</th><th>涨跌幅</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>S&P 500</td><td>7,503.99</td><td class="down-text">-7.36</td><td class="down-text">-0.10%</td></tr>
+    <tr><td>纳斯达克综合</td><td>26,311.91</td><td class="down-text">-64.44</td><td class="down-text">-0.24%</td></tr>
+    <tr><td>道琼斯工业</td><td>52,125.11</td><td class="up-text">+125.44</td><td class="up-text">+0.24%</td></tr>
+    <tr><td>德国 DAX</td><td>24,884.22</td><td class="down-text">-26.19</td><td class="down-text">-0.11%</td></tr>
+    <tr><td>英国 FTSE 100</td><td>10,490.24</td><td class="down-text">-3.97</td><td class="down-text">-0.04%</td></tr>
+    <tr><td>日本日经 225</td><td>69,902.25</td><td class="up-text">+497.75</td><td class="up-text">+0.72%</td></tr>
+  </tbody>
 </table>
 
-<div class="divider"></div>
-
-<!-- Section: Limit Up / Down -->
-<h2 class="section-title">涨停/跌停复盘</h2>
-
-<div class="info-card">
-  <p><strong style="color:#b84a38;">涨停方向：</strong> 今日涨停个股集中在<strong style="color:var(--accent);">芯片/半导体/AI算力</strong三条链路上。PCB板块（如胜宏科技、深南电路等）多只个股涨停，存储芯片（江波龙涨超7%）、封装测试（强瑞技术、利扬芯片等）、光刻机方向均有涨停股出现。</p>
-  <p><strong style="color:var(--accent);">共性逻辑：</strong> ①科创板第五套标准扩围AI——为未盈利大模型企业打开上市通道，直接利好上游芯片供应商；②英伟达AI电子铜箔产品终端客户落地——产业链从概念走向业绩验证阶段。</p>
+<div class="highlight-box">
+  <div class="title">⚡ 关键背景：美联储点阵图或将移除，沃什主席首秀引关注</div>
+  <p style="font-size:14px;color:#5a564e;line-height:1.8;">
+    市场屏息等待新任美联储主席凯文·沃什（Kevin Warsh）的首次亮相。据 CNBC 报道，沃什预计将在本次 FOMC 会议上「不加入」点阵图更新。此前被称为美联储"最严厉的父亲"的沃什与偏鹰派委员形成鲜明对比，市场对利率路径的分歧正在加大。<br>
+    <span style="font-size:12px;color:#8a8379;">来源：CNBC、腾讯财经（各 2026-06-17）</span>
+  </p>
 </div>
 
-<div class="info-card">
-  <p><strong style="color:#2e7d32;">跌停方向：</strong> 在指数整体偏暖的背景下，跌停个股主要集中在前期涨幅较大的题材股（如部分AI应用/游戏/传媒板块出现获利回吐。此外，受美伊初步协议后油价下跌影响，石油石化下游消费类个股承压。</p>
-</div>
+<hr class="section-divider">
 
-<div class="divider"></div>
+<!-- Sector Performance -->
+<div class="section-title">📊 今日板块动态</div>
 
-<!-- Section: Capital Flow -->
-<h2 class="section-title">资金流向</h2>
+<p style="font-size:14.5px;color:#3a3732;margin-bottom:16px;">
+  <strong>陆港通：</strong><span style="color:#c53846;font-weight:600;">沪指午后重回 4,100 点，科技股再度走强。</span>
+</p>
 
-<table class="data-table">
-<thead><tr><th>方向</th><th>净买额</th></tr></thead>
-<tbody>
-<tr><td style="color:#b84a38;">沪股通(港→沪)</td><td class="up" style="font-weight:500;">-7.73 亿（净流出）</td></tr>
-<tr><td style="color:#2e7d32;">深股通(港→深)</td><td class="down" style="font-weight:500;">+1.28 亿（净流入）</td></tr>
-<tr style="background:#fdf6eb;"><td><strong>合计北向资金</strong></td><td class="up"><strong>-6.45 亿（净流出）</strong></td></tr>
-</tbody>
+<table class="styled-table">
+  <thead>
+    <tr><th>方向</th><th>板块/概念</th><th>资金动向</th></tr>
+  </thead>
+  <tbody>
+    <tr><td style="color:#c53846;font-weight:600;">🔺 净流入</td><td>电子（270亿抢筹）</td><td class="up-text">+270 亿</td></tr>
+    <tr><td style="color:#c53846;font-weight:600;">🔺 强势</td><td>PCB / 半导体设备 / AI 算力</td><td class="up-text">板块 +6.2% 领涨</td></tr>
+    <tr><td style="color:#c53846;font-weight:600;">🔺 机构买入</td><td>鹏鼎控股（PCB龙头）</td><td class="up-text">机构狂买</td></tr>
+    <tr><td style="color:#2e7d4a;font-weight:600;">🔻 净流出</td><td>电力设备（87亿逃离）</td><td class="down-text">-87 亿</td></tr>
+    <tr><td style="color:#c53846;font-weight:600;">🔺 异动</td><td>京东方A（15亿资金抢筹）</td><td class="up-text">大额资金流入</td></tr>
+  </tbody>
 </table>
 
-<div class="info-card">
-  <p><strong style="color:var(--accent);">解读：</strong> 北向资金整体呈小幅净流出态势，但深度有限。沪股通流出较多可能反映外资对部分权重股（如白酒、银行)的调仓；深股通小幅流入说明南向资金对成长方向的认可。结合ETF资金大量涌入券商类ETF来看，<strong style="color:var(--accent);">内资仍在积极布局</strong>。</p>
+<div style="margin-top:20px;padding:16px;background:#f8f7f4;border-radius:8px;font-size:13.5px;color:#5a564e;">
+  <strong>板块分析：</strong>A股超千亿市值公司中，科技股占比接近一半。证监会主席吴清近期重磅发声，社保、保险资金两年净买入达 1.3 万亿元，近 20 条新政即将落地，为科技成长板块提供持续支撑。
 </div>
 
-<!-- Sector Fund Flow TOP 5 -->
-<h3 style="font-size:16px;color:var(--accent);margin:28px 0 14px;font-weight:300;">行业资金流入TOP5（参考）</h3>
-<table class="data-table">
-<thead><tr><th>排名</th><th>行业</th><th>主力资金净流入方向</th></tr></thead>
-<tbody>
-<tr><td>1</td><td style="color:#b84a38;">半导体/芯片</td><td>主力大幅净流入，超大单主导</td></tr>
-<tr><td>2</td><td style="color:#b84a38;">电子元件/PCB</td><td>持续流入，机构重仓方向</td></tr>
-<tr><td>3</td><td style="color:#b84a38;">光学光电子/CPO</td><td>跟随AI主线同步走强</td></tr>
-<tr><td>4</td><td style="color:var(--accent);">证券/券商</td><td>ETF资金推动，被动流入为主</td></tr>
-<tr><td>5</td><td style="color:var(--accent);">锂电/电池</td><td>业绩超预期带动资金回补</td></tr>
-</tbody>
-</table>
+<hr class="section-divider">
 
-<div class="divider"></div>
+<!-- Commodities & FX -->
+<div class="section-title">🛢️ 大宗商品与汇率</div>
 
-<!-- Section: Technical Signals -->
-<h2 class="section-title">技术面信号</h2>
+<div class="commodity-grid">
+  <div class="commodity-card">
+    <div class="label">🥇 现货黄金</div>
+    <div class="price">$4,250–4,350/oz</div>
+    <div style="color:#c53846;font-weight:600;font-size:13px;margin-top:4px;">暴跌20%后反杀反弹</div>
+  </div>
+  <div class="commodity-card">
+    <div class="label">🛢️ WTI 原油</div>
+    <div class="price">$83.0/桶</div>
+    <div style="color:#2e7d4a;font-weight:600;font-size:13px;margin-top:4px;">美伊停火协议压制</div>
+  </div>
+  <div class="commodity-card">
+    <div class="label">📊 VIX 恐慌指数</div>
+    <div class="price">16.88</div>
+    <div style="color:#c53846;font-weight:600;font-size:13px;margin-top:4%;">+2.86%</div>
+  </div>
+  <div class="commodity-card">
+    <div class="label">💵 DXY 美元指数</div>
+    <div class="price" style="font-size:16px;">待更新</div>
+    <div style="color:#8a8379;font-weight:400;font-size:12px;margin-top:4px;">web_search受限(432)</div>
+  </div>
+</div>
 
-<div class="info-card">
-  <p><strong style="color:var(--accent);">上证指数：</strong> 今日收阳线站上4100点整数关口，为近期重要心理位。从均线系统看，指数已站在<strong>5日/10日/20日均线之上</strong>，短期趋势偏多。MACD日线级别红柱持续放大，DIFF与DEA在零轴上方形成金叉延续态势；KDJ三线均在高位但未出现明显死叉信号。</p>
-  <p><strong style="color:var(--accent);">创业板指：</strong> 连续走强，已实现<strong>"强势三连阳"</strong>。指数站在所有短期均线之上，MACD红柱同步放大，技术指标整体偏暖。但需注意前期涨幅较大后的回调风险。</p>
-  <p><strong style="color:var(--accent);">关键点位：</strong></p>
-  <ul class="bullet-list">
-    <li><span style="color:#b84a38;">压力位：</span>上证 4130-4150（前期密集成交区）/ 4200（整数关口）</li>
-    <li><span style="color:#2e7d32;">支撑位：</span>上证 4075（今日低点附近）/ 4050（10日均线区域）</li>
+<div class="highlight-box">
+  <div class="title">📌 外围事件影响评估</div>
+  <p style="font-size:14px;color:#5a564e;line-height:1.8;">
+    <strong>美伊停火协议（60天）：</strong>一条推特引爆全球市场，油价从高位回落至 $83/桶，黄金暴跌20%后在 $4,250 附近获得支撑。华尔街见闻分析认为"停火只是开胃菜"——三大隐患仍悬于头顶。<br><br>
+    <strong>香橼创始人栽了：</strong>做空中国20年的美国顶级大空头、香橼（Citron）创始人近期被裁定败诉，被视为中概股的重要利好信号。
+  </p>
+</div>
+
+<hr class="section-divider">
+
+<!-- Key Headlines -->
+<div class="section-title">📰 今日重要消息</div>
+
+<div class="news-item">
+  <div class="news-title">陆家嘴论坛传来大消息：午后沪指重回4,100点，科技股再度走强</div>
+  <div class="news-source">每经网 · 2026-06-17（约7小时前）</div>
+</div>
+
+<div class="news-item">
+  <div class="news-title">央行行长宣布：将出台六项政策措施——Lujiazui Forum重磅发声</div>
+  <div class="news-source">政事儿 · 2026-06-17（约8小时前）</div>
+</div>
+
+<div class="news-item">
+  <div class="news-title">6月17日主力大调仓：270亿抢筹电子板块，87亿逃离电力设备</div>
+  <div class="news-source">财闻 · 2026-06-17（约1小时前）</div>
+</div>
+
+<div class="news-item">
+  <div class="news-title">A股超千亿市值公司，科技股接近一半！近20条新政即将推出</div>
+  <div class="news-source">时代周报 · 2026-06-17（约9小时前）</div>
+</div>
+
+<div class="news-item">
+  <div class="news-title">黄金暴跌20%后突然反杀！美伊停战一条推特引爆全球市场</div>
+  <div class="news-source">向阳说 · 2026-06-17（约昨日）</div>
+</div>
+
+<div class="news-item">
+  <div class="news-title">Fed Chair Warsh expected to withhold 'dot' from rate outlook</div>
+  <div class="news-source">CNBC · 2026-06-17（约4小时前）</div>
+</div>
+
+<hr class="section-divider">
+
+<!-- Summary & Strategy -->
+<div class="section-title">💡 总结与操作建议</div>
+
+<div class="summary-box">
+  <h3>📋 今日市场总结</h3>
+  <ul>
+    <li><strong>四大指数全线收红，成长风格占优：</strong>创业板指 +1.56%、深证成指 +1.31%，显著强于上证 +0.40%。科技股午后再度走强推动沪指重回4,100点上方。</li>
+    <li><strong>政策面密集释放利好：</strong>央行行长在陆家嘴论坛宣布六项新政策，证监会主席吴清表态，近20条新政待落地；社保保险资金两年净买入1.3万亿。</li>
+    <li><strong>外围环境边际改善：</strong>美伊60天停火协议达成，油价回落至$83/桶（此前因伊朗冲突飙高）；黄金暴跌20%后在$4,250附近获得支撑并反弹。</li>
+    <li><strong>资金流向分化明显：</strong>270亿涌入电子板块（PCB/半导体/AI算力），87亿流出电力设备。香橼创始人做空中国20年终被裁定败诉，中概股利好信号。</li>
+    <li><strong>美联储点阵图或移除：</strong>新任主席沃什预计本次不加入点阵图更新，与鹰派委员形成对比，利率路径分歧加大。</li>
   </ul>
 </div>
 
-<div class="divider"></div>
-
-<!-- Section: Tomorrow Outlook -->
-<h2 class="section-title">明日预判</h2>
-
-<div class="info-card">
-  <p><strong style="color:#b84a38;">主线延续还是切换？</strong></p>
-  <p>今日芯片/半导体板块爆发后，<strong style="color:var(--accent);">大概率出现分化而非全线加速</strong>。原因如下：</p>
-  <ul class="bullet-list">
-    <li><strong>量能配合度不足：</strong> 虽然两市合计超3万亿成交额，但上涨家数远少于下跌，说明资金集中在少数板块，普涨基础不牢。</li>
-    <li><strong>外围扰动未消除：</strong> 美伊初步协议后油价大跌、美联储新主席沃什首场大考在即、特朗普"敲打")以色列——外部不确定性仍在。</li>
-    <li><strong>科创板利好已部分兑现：</strong>第五套标准扩围AI利好已被市场消化，后续需看具体申报企业的质量。</li>
-  </ul>
-
-  <p style="margin-top:12px;"><strong style="color:#c8965a;">关注信号：</strong></p>
-  <ul class="bullet-list">
-    <li><strong>量能变化：</strong> 明日成交额能否维持在3万亿以上，缩量则警惕回调。</li>
-    <li><strong>芯片板块分化：</strong> 若龙头股（PCB/存储）继续走强而跟风股回落，则趋势健康；若全线回落则需减仓。</li>
-    <li><strong>券商ETF资金：</strong> "牛市旗手"持续获得资金流入是市场情绪的重要指标。</li>
-    <li><strong>北向资金转向：</strong> 若沪股通由流出转为净流入（尤其对白酒/银行等权重股），将是积极信号。</li>
-  </ul>
-
-  <p style="margin-top:12px;"><strong style="color:#c8965a;">策略建议：</strong> 持有芯片/AI标的者可适当锁利，关注回调后的低吸机会；未入场者不建议追高，可等待板块分化后的优质标的。</p>
+<div class="strategy-box">
+  <h4>🎯 操作建议</h4>
+  <p style="font-size:14px;color:#3a3732;line-height:1.8;">
+    <strong>短期策略：</strong>科技成长方向（PCB/半导体/AI算力）延续强势，可逢回调至10-20日均线附近分批布局。电子板块今日获270亿资金抢筹，趋势尚未终结。<br><br>
+    <strong>防御配置：</strong>黄金在$4,250获得支撑后反弹，若外围地缘风险再度升温（三大隐患未消除），可将黄金作为对冲工具。红利/银行板块逢低吸纳作底仓。<br><br>
+    <strong>风险提示：</strong>VIX小幅上行至16.88，市场恐慌情绪有所抬头；美伊停火仅60天，后续仍有反复可能；美联储利率路径分歧加大，关注本周FOMC会议动态。
+  </p>
 </div>
 
-<div class="divider"></div>
-
-<!-- Section: Risk Warning -->
-<h2 class="section-title">风险提示</h2>
-
-<div class="risk-card">
-  <p><strong style="color:#5a3f1f;">政策面：</strong> 证监会支持在沪深交易所推出主动ETF，填补场内主动权益产品空白——长期利好，但短期可能引发资金分流（从被动指数转向主动管理）。</p>
-  <p><strong style="color:#5a3f1f;">外围市场：</strong></p>
-  <ul class="bullet-list">
-    <li>SpaceX上市后飙升49%，马斯克财富效应带动科技股情绪，但需关注后续走势</li>
-    <li>美联储新主席沃什首场大考+特朗普盯紧政策走向，利率路径存在不确定性</li>
-    <li>美伊初步协议后油价大跌——影响石化板块及通胀预期</li>
-    <li>俄乌冲突升级（莫斯科炼油厂遇袭、以军违反停火）——地缘风险升温</li>
-  </ul>
-  <p><strong style="color:#5a3f1f;">技术面：</strong></p>
-  <ul class="bullet-list">
-    <li>上证4100点整数关口反复拉锯，突破后需确认站稳3日以上才算有效突破</li>
-    <li>创业板指"三连阳"后通常面临短线获利盘抛压</li>
-    <li>两市涨跌比严重倒挂——"赚指数不赚钱"格局若持续，中小盘股可能继续承压</li>
-  </ul>
-  <p><strong style="color:#5a3f1f;">行业风险：</strong></p>
-  <ul class="bullet-list">
-    <li>AI/芯片板块短期涨幅较大，需警惕估值过热后的快速回调</li>
-    <li>部分AI概念股仍处于"概念阶段（营收占比可能仅2%-3%），业绩兑现存在不确定性</li>
-  </ul>
+<!-- Source -->
+<div class="source-note">
+  📌 数据截止北京时间 2026年6月17日 收盘 ｜ 来源：腾讯财经(实时行情) / CNBC(欧美市场) / 各媒体公开报道<br>
+  <span style="font-size:11px;">本页面仅供学习参考，不构成投资建议。</span>
 </div>
 
-<!-- Footer -->
-<div class="doc-footer">
-  <p>本报告仅供参考，不构成投资建议。市场有风险，投资需谨慎。</p>
-  <p style="margin-top:5px;">数据来源：新浪财经、腾讯QT API、东方财富网 | 生成时间：2026-06-17 收盘后</p>
+<div class="footer">
+  A股盘后总结 · 2026-06-17 · Hermes Agent Generated
 </div>
 
-</div><!-- /doc-container -->
+</div>
 </body>
 </html>
