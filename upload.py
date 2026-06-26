@@ -9,7 +9,7 @@ import subprocess
 import sys
 import os
 
-REPO = '/tmp/wechat-tzbg'
+REPO = os.path.expanduser('~/wechat-tzbg')
 
 def run(cmd, capture=True):
     result = subprocess.run(cmd, capture_output=capture, text=True, cwd=REPO)
