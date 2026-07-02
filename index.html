@@ -427,30 +427,20 @@
     frame.src = page + '.html';
   }
 
-  // Fetch last-modified time for each report via HTTP HEAD
-  async function fetchUpdateTime(page) {
-    const el = document.getElementById('time-' + page);
+  // Load update times from timestamps.json (Cloudflare strips Last-Modified headers)
+  async function loadTimestamps() {
     try {
-      const resp = await fetch(page + '.html', { method: 'HEAD', cache: 'no-cache' });
-      const lastMod = resp.headers.get('Last-Modified');
-      if (lastMod) {
-        const d = new Date(lastMod);
-        const y = d.getFullYear();
-        const m = String(d.getMonth() + 1).padStart(2, '0');
-        const day = String(d.getDate()).padStart(2, '0');
-        const hh = String(d.getHours()).padStart(2, '0');
-        const mm = String(d.getMinutes()).padStart(2, '0');
-        el.textContent = y + '-' + m + '-' + day + ' ' + hh + ':' + mm;
-      } else {
-        el.textContent = '时间未知';
-      }
+      const resp = await fetch('timestamps.json?' + Date.now(), { cache: 'no-cache' });
+      const data = await resp.json();
+      Object.keys(data).forEach(page => {
+        const el = document.getElementById('time-' + page);
+        if (el) el.textContent = data[page];
+      });
     } catch (e) {
-      el.textContent = '—';
+      // fallback silent
     }
   }
-
-  // Fetch times for all 4 reports on load
-  ['a-stock', 'us-stock', 'e-stock-summary', 'w-stock-summary'].forEach(fetchUpdateTime);
+  loadTimestamps();
 
   // Unhide loading when switching pages
   document.getElementById('contentFrame').addEventListener('load', function() {

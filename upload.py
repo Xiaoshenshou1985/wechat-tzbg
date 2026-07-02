@@ -8,8 +8,11 @@
 import subprocess
 import sys
 import os
+import json
+from datetime import datetime
 
 REPO = os.path.expanduser('~/wechat-tzbg')
+TZ = '+0800'
 
 def run(cmd, capture=True):
     result = subprocess.run(cmd, capture_output=capture, text=True, cwd=REPO)
@@ -37,8 +40,24 @@ def upload(filename, msg=''):
             run(['git', 'rebase', '--abort'])
             r = run(['git', 'fetch', 'origin', 'main'])
         
-        # 3. 添加并提交
+        # 3. 更新 timestamps.json（把 .html 后缀去掉就是 key）
+        page_key = filename.replace('.html', '') if filename.endswith('.html') else filename
+        ts_path = os.path.join(REPO, 'timestamps.json')
+        ts = {}
+        if os.path.exists(ts_path):
+            with open(ts_path) as f:
+                ts = json.load(f)
+        now_local = datetime.now().strftime('%Y-%m-%d %H:%M')
+        if filename.endswith('.html'):
+            ts[page_key] = now_local
+            with open(ts_path, 'w') as f:
+                json.dump(ts, f, indent=2, ensure_ascii=False)
+                f.write('\n')
+            print(f"🕒 timestamps.json: {page_key} → {now_local}")
+        
+        # 4. 添加 timestamps.json 和报告文件
         run(['git', 'add', filename])
+        run(['git', 'add', 'timestamps.json'])
         commit_msg = msg or f"Update {filename}"
         r = run(['git', 'commit', '-m', commit_msg])
         if 'nothing to commit' in r.stderr:
