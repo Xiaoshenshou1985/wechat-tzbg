@@ -3,419 +3,422 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>美股盘前日报 — 2026-07-02</title>
+<title>美股盘前日报 — 2026年7月3日</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
     background: #fafaf8;
     color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
     line-height: 1.8;
+    padding: 0;
     font-weight: 300;
     font-size: 15px;
-    -webkit-font-smoothing: antialiased;
   }
-  .container { max-width: 820px; margin: 0 auto; padding: 60px 40px 40px; }
-  
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 40px 40px;
+  }
+
   /* Header */
   .header {
-    position: relative;
     padding-bottom: 32px;
-    margin-bottom: 44px;
+    margin-bottom: 40px;
+    border-bottom: none;
+    position: relative;
   }
   .header::after {
     content: '';
     position: absolute;
-    left: 0;
     bottom: 0;
-    width: 2px;
-    height: 40px;
+    left: 0;
+    width: 60px;
+    height: 2px;
     background: #c9a227;
-  }
-  .header .sub {
-    font-size: 13px;
-    color: #999;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
   }
   .header h1 {
     font-size: 28px;
-    font-weight: 500;
+    font-weight: 400;
+    letter-spacing: 1px;
     color: #2e564f;
-    letter-spacing: -0.3px;
+    margin-bottom: 6px;
   }
-  .header .meta {
-    font-size: 13px;
+  .header .date {
+    font-size: 14px;
     color: #888;
-    margin-top: 6px;
+    font-weight: 300;
   }
-  .header .meta span { color: #c9a227; }
+  .header .note {
+    font-size: 13px;
+    color: #999;
+    margin-top: 12px;
+    font-style: italic;
+  }
 
   /* Sections */
-  .section { margin-bottom: 44px; }
+  .section {
+    margin-bottom: 40px;
+  }
   .section-title {
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 400;
     color: #2e564f;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
     margin-bottom: 18px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #e8e6de;
+    letter-spacing: 0.5px;
   }
 
-  /* Table */
-  table { width: 100%; border-collapse: collapse; margin-bottom: 8px; }
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+  }
   th {
     text-align: left;
-    font-size: 11px;
-    font-weight: 600;
-    color: #999;
+    font-weight: 400;
+    color: #888;
+    font-size: 12px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 8px 10px 8px 0;
-    border-bottom: 1px solid #e8e6de;
+    letter-spacing: 0.5px;
+    padding: 8px 12px 8px 0;
+    border-bottom: 1px solid #e8e8e4;
   }
   td {
-    padding: 10px 10px 10px 0;
-    border-bottom: 1px solid #f0eee8;
+    padding: 10px 12px 10px 0;
+    border-bottom: 1px solid #f0f0ec;
     font-size: 14px;
   }
-  td:last-child, th:last-child { padding-right: 0; }
-  .col-name { width: 32%; }
-  .col-price { width: 26%; text-align: right; }
-  .col-change { width: 22%; text-align: right; }
-  .col-pct { width: 20%; text-align: right; }
+  tr:last-child td { border-bottom: none; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .num-red { color: #c44; }
+  .num-green { color: #2a8a60; }
+  .ticker-col { font-weight: 400; width: 70px; }
+  .name-col { color: #666; width: 100px; }
+  .price-col { width: 90px; }
+  .chg-col { width: 100px; }
+  .pct-col { width: 80px; }
 
-  .up { color: #c93a3a; font-weight: 400; }
-  .dn { color: #2e8b57; font-weight: 400; }
-
-  /* Card for news/notes */
-  .note {
-    background: #f4f3ef;
-    border-radius: 6px;
+  /* Mini summary callout */
+  .callout {
+    background: #f2f2ee;
+    border-left: 3px solid #c9a227;
     padding: 16px 20px;
-    margin-bottom: 10px;
-    font-size: 14px;
+    margin: 16px 0 24px;
+    border-radius: 0;
+    font-size: 13.5px;
     line-height: 1.7;
-    color: #333;
+    color: #444;
   }
-  .note strong { font-weight: 500; color: #1a1a1a; }
-  .note .tag {
+  .callout strong { color: #2e564f; font-weight: 400; }
+
+  /* Risk disclaimer */
+  .risk {
+    font-size: 11px;
+    color: #aaa;
+    line-height: 1.6;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid #eee;
+    text-align: center;
+  }
+
+  /* Commodity grid */
+  .commodity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 4px;
+  }
+  .commodity-card {
+    background: #f5f5f1;
+    padding: 16px 18px;
+    border-radius: 0;
+  }
+  .commodity-card .label {
+    font-size: 12px;
+    color: #888;
+    font-weight: 300;
+    margin-bottom: 4px;
+  }
+  .commodity-card .price {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 2px;
+  }
+  .commodity-card .change {
+    font-size: 13px;
+  }
+
+  /* News items */
+  .news-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0ec;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .news-item:last-child { border-bottom: none; }
+  .news-item .tag {
     display: inline-block;
     font-size: 11px;
-    font-weight: 500;
     color: #c9a227;
-    background: rgba(201, 162, 39, 0.08);
-    padding: 1px 8px;
-    border-radius: 3px;
     margin-right: 6px;
-    letter-spacing: 0.3px;
+    font-weight: 400;
   }
 
-  /* Divider */
-  .divider { height: 1px; background: #e8e6de; margin: 28px 0; }
-
-  /* Risk Notice */
-  .risk {
-    background: #fafaf8;
-    border: 1px solid #e8e6de;
-    border-radius: 6px;
-    padding: 16px 20px;
-    margin-top: 20px;
+  /* Signal cards */
+  .signal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .signal-card {
+    padding: 14px 18px;
+    border-left: 3px solid #ddd;
+  }
+  .signal-card.bull { border-left-color: #2a8a60; }
+  .signal-card.bear { border-left-color: #c44; }
+  .signal-card.neutral { border-left-color: #c9a227; }
+  .signal-card .label {
     font-size: 12px;
-    color: #999;
-    line-height: 1.7;
+    color: #888;
+    font-weight: 300;
+    margin-bottom: 4px;
+  }
+  .signal-card .title {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 2px;
+  }
+  .signal-card .desc {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
   }
 
-  /* Footer */
   .footer {
-    margin-top: 44px;
-    padding-top: 20px;
-    border-top: 1px solid #e8e6de;
     text-align: center;
     font-size: 12px;
     color: #bbb;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid #eee;
   }
-
-  /* Stagger state labels */
-  .state-label {
-    font-size: 11px;
-    color: #aaa;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .state-label span { color: #c9a227; }
 
   @media (max-width: 600px) {
-    .container { padding: 32px 20px 24px; }
-    .header h1 { font-size: 22px; }
+    .container { padding: 32px 20px; }
+    .commodity-grid { grid-template-columns: 1fr; }
+    .signal-grid { grid-template-columns: 1fr; }
+    table { font-size: 13px; }
   }
 </style>
 </head>
 <body>
 <div class="container">
 
-<!-- Header -->
-<div class="header">
-  <div class="sub">US Stock Pre-Market Daily</div>
-  <h1>美股盘前日报</h1>
-  <div class="meta">2026 年 7 月 2 日 · 星期四 · <span>数据截至美东早 7:10</span></div>
-</div>
-
-<!-- 🏛️ 三大指数回顾 -->
-<div class="section">
-  <div class="section-title">三大指数回顾</div>
-  <table>
-    <thead>
-      <tr><th class="col-name">指数</th><th class="col-price">收盘价</th><th class="col-change">涨跌</th><th class="col-pct">涨跌幅</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>道琼斯工业指数 (DJI)</td>
-        <td class="col-price">52,305.24</td>
-        <td class="col-change dn">-13.96</td>
-        <td class="col-pct dn">-0.03%</td>
-      </tr>
-      <tr>
-        <td>标普 500 (SPX)</td>
-        <td class="col-price">7,483.23</td>
-        <td class="col-change dn">-16.13</td>
-        <td class="col-pct dn">-0.22%</td>
-      </tr>
-      <tr>
-        <td>纳斯达克综合 (IXIC)</td>
-        <td class="col-price">26,040.03</td>
-        <td class="col-change dn">-173.69</td>
-        <td class="col-pct dn">-0.66%</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="state-label" style="margin-top:4px;">盘前期货 · <span>截至 7:10 AM EDT</span></div>
-  <table>
-    <thead>
-      <tr><th class="col-name">期货</th><th class="col-price">最新</th><th class="col-change">涨跌</th><th class="col-pct">涨跌幅</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>标普 500 期货</td>
-        <td class="col-price">7,543.50</td>
-        <td class="col-change">0.00</td>
-        <td class="col-pct">0.00%</td>
-      </tr>
-      <tr>
-        <td>道琼斯期货</td>
-        <td class="col-price">52,771.00</td>
-        <td class="col-change up">+103.00</td>
-        <td class="col-pct up">+0.20%</td>
-      </tr>
-      <tr>
-        <td>纳斯达克 100 期货</td>
-        <td class="col-price">30,012.25</td>
-        <td class="col-change dn">-82.00</td>
-        <td class="col-pct dn">-0.27%</td>
-      </tr>
-      <tr>
-        <td>VIX 恐慌指数</td>
-        <td class="col-price">16.69</td>
-        <td class="col-change up">+0.10</td>
-        <td class="col-pct up">+0.60%</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="note" style="margin-top:14px;">
-    <span class="tag">盘前</span>三大指数昨日小幅收跌，科技股拖累纳指表现最弱（-0.66%）。盘前期货分化：道指期货小幅走高（+0.20%），纳指期货延续弱势（-0.27%），市场静待周五发布的六月非农就业报告。
-  </div>
-</div>
-
-<!-- 🏢 七巨头个股分析 -->
-<div class="section">
-  <div class="section-title">七巨头个股分析</div>
-  <table>
-    <thead>
-      <tr><th class="col-name">股票</th><th class="col-price">收盘价</th><th class="col-change">涨跌</th><th class="col-pct">涨跌幅</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Apple (AAPL)</td>
-        <td class="col-price">$294.38</td>
-        <td class="col-change up">+5.02</td>
-        <td class="col-pct up">+1.73%</td>
-      </tr>
-      <tr>
-        <td>Microsoft (MSFT)</td>
-        <td class="col-price">$384.28</td>
-        <td class="col-change up">+11.26</td>
-        <td class="col-pct up">+3.02%</td>
-      </tr>
-      <tr>
-        <td>Amazon (AMZN)</td>
-        <td class="col-price">$241.70</td>
-        <td class="col-change up">+3.36</td>
-        <td class="col-pct up">+1.41%</td>
-      </tr>
-      <tr>
-        <td>NVIDIA (NVDA)</td>
-        <td class="col-price">$197.58</td>
-        <td class="col-change dn">-2.51</td>
-        <td class="col-pct dn">-1.25%</td>
-      </tr>
-      <tr>
-        <td>Meta (META)</td>
-        <td class="col-price">$612.91</td>
-        <td class="col-change up">+49.62</td>
-        <td class="col-pct up">+8.81%</td>
-      </tr>
-      <tr>
-        <td>Alphabet (GOOGL)</td>
-        <td class="col-price">$361.21</td>
-        <td class="col-change up">+3.84</td>
-        <td class="col-pct up">+1.07%</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="state-label" style="margin-top:4px;">盘前报价 · <span>截至 7:10 AM EDT</span></div>
-  <table>
-    <thead>
-      <tr><th class="col-name">股票</th><th class="col-price">盘前价</th><th class="col-change">涨跌</th><th class="col-pct">涨跌幅</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>AAPL</td>
-        <td class="col-price">$295.20</td>
-        <td class="col-change up">+0.82</td>
-        <td class="col-pct up">+0.28%</td>
-      </tr>
-      <tr>
-        <td>MSFT</td>
-        <td class="col-price">$387.28</td>
-        <td class="col-change up">+3.00</td>
-        <td class="col-pct up">+0.78%</td>
-      </tr>
-      <tr>
-        <td>AMZN</td>
-        <td class="col-price">$242.17</td>
-        <td class="col-change up">+0.47</td>
-        <td class="col-pct up">+0.19%</td>
-      </tr>
-      <tr>
-        <td>NVDA</td>
-        <td class="col-price">$196.14</td>
-        <td class="col-change dn">-1.44</td>
-        <td class="col-pct dn">-0.73%</td>
-      </tr>
-      <tr>
-        <td>META</td>
-        <td class="col-price">$614.01</td>
-        <td class="col-change up">+1.10</td>
-        <td class="col-pct up">+0.18%</td>
-      </tr>
-      <tr>
-        <td>GOOGL</td>
-        <td class="col-price">$358.60</td>
-        <td class="col-change dn">-2.61</td>
-        <td class="col-pct dn">-0.72%</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="note" style="margin-top:14px;">
-    <strong>META 飙升 +8.81%</strong> — 传闻进军云计算业务，盘中一度触及 $628.28，成交量约 4505 万股，是日均成交量的 2.6 倍。<br>
-    <strong>MSFT 涨 +3.02%</strong> — 资金回流蓝筹科技，H1 虽跌 23% 但市场看好其 $1900 亿 AI 基建投资前景。<br>
-    <strong>NVDA 跌 -1.25%</strong> — 韩国 Kospi 芯片股暴跌（SK Hynix、三星跌近 8%）拖累全球半导体情绪。<br>
-    <strong>GOOGL 盘前偏弱</strong> — 欧盟维持 €41 亿 Android 反垄断罚款决定，累计罚款近 €110 亿。
-  </div>
-</div>
-
-<!-- 🛢️ 大宗商品走势 -->
-<div class="section">
-  <div class="section-title">大宗商品走势</div>
-  <table>
-    <thead>
-      <tr><th class="col-name">品种</th><th class="col-price">最新价</th><th class="col-change">涨跌</th><th class="col-pct">涨跌幅</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>黄金 (GC)</td>
-        <td class="col-price">$4,075.80</td>
-        <td class="col-change dn">-6.60</td>
-        <td class="col-pct dn">-0.16%</td>
-      </tr>
-      <tr>
-        <td>白银 (SI)</td>
-        <td class="col-price">$60.14</td>
-        <td class="col-change dn">-0.38</td>
-        <td class="col-pct dn">-0.62%</td>
-      </tr>
-      <tr>
-        <td>WTI 原油 (CL)</td>
-        <td class="col-price">$67.47</td>
-        <td class="col-change dn">-1.11</td>
-        <td class="col-pct dn">-1.62%</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="note" style="margin-top:14px;">
-    <span class="tag">商品</span>金价小幅回调，交投于 $4,076 附近，白银在 $60 关口附近震荡。原油承压走弱（-1.62%），伊朗海上浮储油轮增多，市场担忧供应过剩；Bloomberg 报道大量伊朗原油囤积海上待售。
-  </div>
-</div>
-
-<!-- 📰 重要经济数据与事件 -->
-<div class="section">
-  <div class="section-title">重要经济数据与事件</div>
-
-  <div class="note">
-    <strong>今日焦点：六月非农就业报告</strong><br>
-    <span class="tag">关键</span>劳工部将于北京时间今晚 20:30（美东 8:30 AM）发布六月就业报告。市场预期劳动力市场正在回暖但趋势复杂，数据显示就业增长可能加快但工资压力和劳动参与率仍是变量。这是 7 月 FOMC 会议前最关键的就业数据。
+  <!-- Header -->
+  <div class="header">
+    <h1>美股盘前日报</h1>
+    <div class="date">2026年7月3日 · 星期五</div>
+    <div class="note">今日美国金融市场因独立日假期休市。本报告基于上一交易日（7月2日）数据及当前大宗商品报价。</div>
   </div>
 
-  <div class="note">
-    <strong>韩国 Kospi 暴跌近 8%</strong><br>
-    <span class="tag">市场</span>SK Hynix 和三星电子领跌，拖累全球半导体板块。MU（美光）跌 -10.30%、AMD 跌 -6.89%、INTC 跌 -9.00%、AMAT 跌 -9.93%，存储和芯片设备股集体重挫。NVDA 盘前续跌 -0.73%。
+  <!-- 三大指数 -->
+  <div class="section">
+    <div class="section-title">三大指数回顾</div>
+
+    <table>
+      <tr>
+        <th>指数</th>
+        <th class="num">收盘</th>
+        <th class="num">涨跌</th>
+        <th class="num">涨幅</th>
+      </tr>
+      <tr>
+        <td class="ticker-col">DJIA</td>
+        <td class="num price-col">52,900.07</td>
+        <td class="num chg-col num-green">+594.83</td>
+        <td class="num pct-col num-green">+1.14%</td>
+      </tr>
+      <tr>
+        <td class="ticker-col">S&amp;P 500</td>
+        <td class="num price-col">7,483.24</td>
+        <td class="num chg-col" style="color:#888;">+0.01</td>
+        <td class="num pct-col" style="color:#888;">持平</td>
+      </tr>
+      <tr>
+        <td class="ticker-col">NASDAQ</td>
+        <td class="num price-col">25,832.67</td>
+        <td class="num chg-col num-red">-207.36</td>
+        <td class="num pct-col num-red">-0.80%</td>
+      </tr>
+    </table>
+
+    <div class="callout">
+      <strong>道指创历史新高</strong> — 6月非农就业数据远低于预期，缓解加息担忧，道指飙升594点收于52,900.07点，连续第四周上涨。科技股承压拖累纳指走低，标普500基本持平。本周三大指数均录得约2%的涨幅。
+    </div>
   </div>
 
-  <div class="note">
-    <strong>Google 欧盟反垄断裁决</strong><br>
-    <span class="tag">监管</span>欧盟法院维持对 Alphabet 的 €41 亿 Android 反垄断罚款，累计 Google 在欧洲的罚款总额逼近 €110 亿。GOOGL 盘前跌 -0.72%，市场反应温和。
+  <!-- 七巨头 -->
+  <div class="section">
+    <div class="section-title">七巨头个股分析</div>
+
+    <table>
+      <tr>
+        <th>代码</th>
+        <th>名称</th>
+        <th class="num">收盘</th>
+        <th class="num">涨跌额</th>
+        <th class="num">涨跌幅</th>
+      </tr>
+      <tr>
+        <td class="ticker-col">AAPL</td>
+        <td class="name-col">苹果</td>
+        <td class="num price-col">$308.63</td>
+        <td class="num chg-col num-green">+$14.25</td>
+        <td class="num pct-col num-green">+4.84%</td>
+      </tr>
+      <tr>
+        <td class="ticker-col">MSFT</td>
+        <td class="name-col">微软</td>
+        <td class="num price-col">$390.49</td>
+        <td class="num chg-col num-green">+$6.21</td>
+        <td class="num pct-col num-green">+1.62%</td>
+      </tr>
+      <tr>
+        <td class="ticker-col">AMZN</td>
+        <td class="name-col">亚马逊</td>
+        <td class="num price-col">$242.67</td>
+        <td class="num chg-col num-green">+$0.97</td>
+        <td class="num pct-col num-green">+0.40%</td>
+      </tr>
+      <tr>
+        <td class="ticker-col">NVDA</td>
+        <td class="name-col">英伟达</td>
+        <td class="num price-col">$194.83</td>
+        <td class="num chg-col num-red">-$2.75</td>
+        <td class="num pct-col num-red">-1.39%</td>
+      </tr>
+      <tr>
+        <td class="ticker-col">META</td>
+        <td class="name-col">Meta</td>
+        <td class="num price-col">$582.90</td>
+        <td class="num chg-col num-red">-$30.01</td>
+        <td class="num pct-col num-red">-4.90%</td>
+      </tr>
+      <tr>
+        <td class="ticker-col">GOOGL</td>
+        <td class="name-col">Alphabet A</td>
+        <td class="num price-col">$359.91</td>
+        <td class="num chg-col num-red">-$1.30</td>
+        <td class="num pct-col num-red">-0.36%</td>
+      </tr>
+      <tr>
+        <td class="ticker-col">GOOG</td>
+        <td class="name-col">Alphabet C</td>
+        <td class="num price-col">$356.18</td>
+        <td class="num chg-col num-red">-$1.71</td>
+        <td class="num pct-col num-red">-0.48%</td>
+      </tr>
+    </table>
+
+    <div class="callout">
+      <strong>科技股分化加剧</strong> — 就业数据利好利率敏感股，AAPL放量大涨近5%领涨七巨头；芯片股持续承压，NVDA跌1.4%，META重挫4.9%。市场呈现从科技成长股向周期价值股的轮动趋势。TSLA日内跌7.5%，尽管Q2交付量超预期。
+    </div>
   </div>
 
-  <div class="note">
-    <strong>Meta 探索云业务</strong><br>
-    <span class="tag">公司</span>报道称 Meta 正评估进军云计算领域，股价单日飙涨 8.81%。市场将其视为 Meta 继广告和元宇宙之后的第三条增长曲线。
+  <!-- 大宗商品 -->
+  <div class="section">
+    <div class="section-title">大宗商品走势</div>
+
+    <div class="commodity-grid">
+      <div class="commodity-card">
+        <div class="label">原油 (WTI)</div>
+        <div class="price">$68.61</div>
+        <div class="change num-red">-3.02%</div>
+      </div>
+      <div class="commodity-card">
+        <div class="label">黄金 (COMEX)</div>
+        <div class="price">$4,189.40</div>
+        <div class="change num-green">+4.15%</div>
+      </div>
+      <div class="commodity-card">
+        <div class="label">白银 (COMEX)</div>
+        <div class="price">$62.88</div>
+        <div class="change num-green">+8.08%</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>贵金属大涨，原油承压</strong> — 美元走软和非农数据不及预期推动黄金飙升4.15%至4,189美元，白银大涨8%突破62美元。原油受全球需求放缓担忧及霍尔木兹海峡航运恢复影响，跌至68.61美元，月内累计下跌26%。
+    </div>
   </div>
 
-  <div class="note">
-    <strong>Microsoft $1900 亿 AI 投资</strong><br>
-    <span class="tag">基建</span>MSFT 今年计划投入约 $1900 亿用于 AI 基础设施建设，包括参与洲际海底光缆项目。虽 H1 跌 23%，但 AI 长期叙事驱动资金回流。
+  <!-- 经济数据与事件 -->
+  <div class="section">
+    <div class="section-title">重要经济数据与事件</div>
+
+    <div class="news-item">
+      <span class="tag">📊 就业</span>
+      <strong>6月非农仅增5.7万，远逊预期</strong> — 美国6月非农就业人口增加5.7万人，远低于预期的11万人。前两月数据遭下修。失业率4.2%，低于预期的4.3%。数据表明美国招聘活动明显降温。
+    </div>
+    <div class="news-item">
+      <span class="tag">🏦 美联储</span>
+      <strong>加息预期推迟至12月</strong> — 非农数据公布后，CME FedWatch显示市场仍定价年内一次25bp加息，但时点从10月推迟至12月。短期美债收益率下行，美元走弱。
+    </div>
+    <div class="news-item">
+      <span class="tag">🗣️ 美联储</span>
+      <strong>主席Warsh：通胀风险有所缓解</strong> — 美联储主席Kevin Warsh本周表示物价风险已缓和，重申致力于将通胀带回2%目标。上月FOMC维持利率不变，但部分官员支持年内加息。
+    </div>
+    <div class="news-item">
+      <span class="tag">⛽ 能源</span>
+      <strong>原油月跌26%，美伊谈判取得进展</strong> — 霍尔木兹海峡航运逐步恢复，全球需求前景不明朗，原油价格持续承压。WTI自6月以来已从约93美元跌至68.61美元。
+    </div>
+    <div class="news-item">
+      <span class="tag">🏭 板块</span>
+      <strong>周期股跑赢科技股</strong> — 非农数据推动金融、工业等周期板块走强，道指创历史新高。科技/芯片股延续调整，纳指下跌。市场呈现明显的板块轮动特征。
+    </div>
   </div>
-</div>
 
-<!-- 🔮 明日关注信号 -->
-<div class="section">
-  <div class="section-title">明日关注信号</div>
+  <!-- 明日关注 -->
+  <div class="section">
+    <div class="section-title">明日关注信号</div>
 
-  <div class="note" style="background: #fafaf8; border: 1px solid #e8e6de;">
-    <strong>1. 六月非农数据（今晚 20:30）</strong> — 若数据强于预期，可能强化美联储维持高利率预期，压制科技股估值；若弱于预期，则利好降息预期。<br><br>
-    <strong>2. 半导体板块连锁反应</strong> — 韩国芯片股的暴跌是否会引发美股科技板块更大规模的获利回吐，关注 NVDA 能否守住 $190 关口。<br><br>
-    <strong>3. 原油走势</strong> — 伊朗原油浮储量上升，若 OPEC+ 无应对，油价或进一步下探 $65 支撑位。<br><br>
-    <strong>4. 避险情绪</strong> — VIX 升至 16.69，若非农数据不及预期或地缘风险升温，VIX 可能突破 18 关口。<br><br>
-    <strong>5. 美元 & 美债</strong> — 关注美元指数和 10 年期美债收益率在非农数据发布后的反应，直接影响大宗商品和新兴市场资金流向。
+    <div class="signal-grid">
+      <div class="signal-card neutral">
+        <div class="label">下周开盘</div>
+        <div class="title">7月6日（周一）恢复交易</div>
+        <div class="desc">市场在三天长周末后重新开市，关注假期期间地缘政治和海外市场动态。</div>
+      </div>
+      <div class="signal-card bull">
+        <div class="label">利率预期</div>
+        <div class="title">加息预期推迟利好风险资产</div>
+        <div class="desc">非农不及预期使12月前加息概率降低，短端利率下行，有利于成长股估值修复。</div>
+      </div>
+      <div class="signal-card bear">
+        <div class="label">科技股</div>
+        <div class="title">纳斯达克/半导体持续承压</div>
+        <div class="desc">纳指已从6月高点回落，NVDA、META等权重股走弱。关注下周CPI数据是否加剧科技股调整。</div>
+      </div>
+      <div class="signal-card neutral">
+        <div class="label">通胀数据</div>
+        <div class="title">下周CPI数据成关键</div>
+        <div class="desc">Warsh暗示通胀风险缓解，但市场仍等待CPI确认。若通胀继续回落，将强化"软着陆"叙事。</div>
+      </div>
+    </div>
   </div>
-</div>
 
-<!-- ⚠️ 风险提示 -->
-<div class="section">
-  <div class="risk">
-    <strong>风险提示</strong><br>
-    本报告所载数据及分析仅供参考，不构成任何投资建议或投资邀约。市场有风险，投资需谨慎。过往表现不代表未来收益。报告中的数据来源于公开信息和第三方数据源，可能存在延迟或误差。投资者应基于独立判断做出投资决策，并自行承担相关风险。
+  <!-- 风险提示 -->
+  <div class="section">
+    <div class="risk">
+      ⚠️ 本报告仅供参考，不构成投资建议。市场有风险，投资需谨慎。数据来源：Yahoo Finance、TradingEconomics、公开新闻报道。数据截至2026年7月3日。
+    </div>
   </div>
-</div>
 
-<!-- Footer -->
-<div class="footer">
-  本报告仅供参考，不构成投资建议<br>
-  Data: Yahoo Finance · Generated by Hermes Agent | 2026-07-02
-</div>
+  <!-- Footer -->
+  <div class="footer">
+    本报告仅供参考，不构成投资建议
+  </div>
 
 </div>
 </body>
