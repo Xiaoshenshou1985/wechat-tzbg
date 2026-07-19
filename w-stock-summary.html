@@ -3,557 +3,490 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>每周全市场总结 2026年7月10日</title>
+<title>每周全市场总结 2026.07.13 - 07.19</title>
 <style>
-body {
-  margin: 0;
-  padding: 0;
-  background: #fafaf8;
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
-  color: #1a1a1a;
-  font-weight: 350;
-  line-height: 1.8;
-  -webkit-font-smoothing: antialiased;
-}
-.container {
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 60px 40px 40px;
-}
-/* Header */
-.header {
-  position: relative;
-  padding-left: 28px;
-  margin-bottom: 48px;
-}
-.header::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 4px;
-  bottom: 4px;
-  width: 3px;
-  background: #c9a227;
-  border-radius: 2px;
-}
-.header h1 {
-  font-size: 28px;
-  font-weight: 450;
-  color: #2e564f;
-  margin: 0 0 6px;
-  letter-spacing: 1px;
-}
-.header .date-range {
-  font-size: 14px;
-  color: #8a8a8a;
-  margin: 0;
-}
-/* Section */
-.section {
-  margin-bottom: 44px;
-}
-.section-title {
-  font-size: 20px;
-  font-weight: 400;
-  color: #2e564f;
-  margin: 0 0 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e8e6e0;
-}
-/* Market Overview Card */
-.overview-cards {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 24px;
-}
-.card {
-  flex: 1;
-  min-width: 180px;
-  background: #ffffff;
-  border-radius: 8px;
-  padding: 18px 20px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-}
-.card .name {
-  font-size: 13px;
-  color: #8a8a8a;
-  margin: 0 0 4px;
-  letter-spacing: 0.5px;
-}
-.card .price {
-  font-size: 24px;
-  font-weight: 450;
-  color: #1a1a1a;
-  margin: 0 0 4px;
-}
-.card .change {
-  font-size: 14px;
-  margin: 0;
-}
-.up { color: #d0313a; }
-.down { color: #2b8a47; }
-/* Table */
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-.data-table th {
-  text-align: left;
-  padding: 10px 12px;
-  font-weight: 400;
-  color: #8a8a8a;
-  border-bottom: 1px solid #e8e6e0;
-  font-size: 12px;
-  letter-spacing: 0.5px;
-}
-.data-table td {
-  padding: 10px 12px;
-  border-bottom: 1px solid #f0eee8;
-  vertical-align: top;
-}
-.data-table tr:last-child td {
-  border-bottom: none;
-}
-/* K-line mini table */
-.kline-table td {
-  font-size: 13px;
-  font-weight: 350;
-}
-/* Events */
-.event-item {
-  padding: 10px 0;
-  border-bottom: 1px solid #f0eee8;
-  font-size: 14px;
-}
-.event-item:last-child {
-  border-bottom: none;
-}
-.event-date {
-  color: #c9a227;
-  font-size: 12px;
-  margin-right: 10px;
-  display: inline-block;
-  min-width: 40px;
-}
-/* Outlook */
-.outlook-text {
-  font-size: 14px;
-  color: #444;
-  margin: 0;
-}
-/* Risk notice */
-.risk-notice {
-  margin-top: 48px;
-  padding: 16px 20px;
-  background: #f5f5f0;
-  border-radius: 6px;
-  font-size: 12px;
-  color: #8a8a8a;
-  text-align: center;
-}
-/* Footer */
-.footer {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid #e8e6e0;
-  text-align: center;
-  font-size: 12px;
-  color: #b0b0a8;
-  letter-spacing: 0.5px;
-}
-/* Key indicators row */
-.indicators {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  margin: 16px 0;
-}
-.indicator-item {
-  font-size: 13px;
-  color: #555;
-}
-.indicator-item .label {
-  color: #8a8a8a;
-}
-.indicator-item .value {
-  font-weight: 400;
-}
-/* Weekly bar */
-.weekly-bar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin: 4px 0;
-}
-.weekly-bar .label {
-  min-width: 100px;
-  font-size: 13px;
-  color: #555;
-}
-.weekly-bar .pct {
-  font-size: 13px;
-  min-width: 60px;
-}
-@media (max-width: 640px) {
-  .container { padding: 32px 20px 24px; }
-  .card { min-width: 140px; }
-}
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #fafaf8;
+    color: #1a1a1a;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+
+  /* Header */
+  header {
+    padding-bottom: 40px;
+    margin-bottom: 48px;
+    border-left: 3px solid #c9a227;
+    padding-left: 28px;
+  }
+
+  header h1 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #2e564f;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  header .date-range {
+    font-size: 14px;
+    color: #888;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  /* Sections */
+  .section {
+    margin-bottom: 44px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #2e564f;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e8e6e0;
+    letter-spacing: 1px;
+  }
+
+  .section-title .icon {
+    margin-right: 8px;
+    font-style: normal;
+  }
+
+  /* Data tables */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+  }
+
+  .data-table th {
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 12px 8px 0;
+    border-bottom: 1px solid #e8e6e0;
+  }
+
+  .data-table td {
+    padding: 10px 12px 10px 0;
+    border-bottom: 1px solid #f0ede8;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .data-table td:first-child {
+    font-weight: 400;
+    color: #333;
+  }
+
+  .data-table td:nth-child(2) {
+    font-weight: 400;
+    text-align: right;
+  }
+
+  .data-table td:nth-child(3) {
+    text-align: right;
+  }
+
+  .up { color: #d32f2f; }
+  .down { color: #2e7d32; }
+  .neutral { color: #888; }
+
+  /* Narrative text */
+  .narrative {
+    font-size: 14px;
+    color: #444;
+    line-height: 2;
+    margin-bottom: 12px;
+    font-weight: 300;
+  }
+
+  .narrative strong {
+    font-weight: 500;
+    color: #1a1a1a;
+  }
+
+  .narrative .highlight {
+    color: #2e564f;
+    font-weight: 400;
+  }
+
+  /* Event list */
+  .event-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .event-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0ede8;
+    font-size: 14px;
+    font-weight: 300;
+    color: #444;
+    line-height: 1.7;
+  }
+
+  .event-list li:last-child {
+    border-bottom: none;
+  }
+
+  .event-list li .tag {
+    display: inline-block;
+    background: #f0ede8;
+    color: #666;
+    font-size: 11px;
+    padding: 1px 8px;
+    border-radius: 2px;
+    margin-right: 8px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  .event-list li .tag.important {
+    background: #2e564f;
+    color: #fff;
+  }
+
+  .event-list li .tag.hot {
+    background: #c9a227;
+    color: #fff;
+  }
+
+  /* Outlook section */
+  .outlook-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 8px;
+  }
+
+  .outlook-card {
+    background: #f5f3ef;
+    padding: 20px;
+    border-radius: 4px;
+  }
+
+  .outlook-card h4 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2e564f;
+    margin-bottom: 10px;
+  }
+
+  .outlook-card p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* Risk disclaimer */
+  .disclaimer {
+    margin-top: 60px;
+    padding: 20px 24px;
+    background: #f5f3ef;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #999;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .disclaimer strong {
+    color: #777;
+    font-weight: 400;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid #e8e6e0;
+    font-size: 12px;
+    color: #bbb;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .container { padding: 32px 20px; }
+    .outlook-grid { grid-template-columns: 1fr; }
+    header h1 { font-size: 22px; }
+  }
 </style>
 </head>
 <body>
 <div class="container">
 
   <!-- Header -->
-  <div class="header">
+  <header>
     <h1>每周全市场总结</h1>
-    <p class="date-range">2026年7月6日（周一）— 7月10日（周五）</p>
-  </div>
+    <div class="date-range">2026.07.13 — 2026.07.19</div>
+  </header>
 
-  <!-- A股周线回顾 -->
+  <!-- A股周线 -->
   <div class="section">
-    <h2 class="section-title">A股周线回顾</h2>
-
-    <div class="overview-cards">
-      <div class="card">
-        <p class="name">上证指数</p>
-        <p class="price">3,996.16</p>
-        <p class="change down">-47.48 (-1.17%)</p>
-      </div>
-      <div class="card">
-        <p class="name">深证成指</p>
-        <p class="price">15,046.67</p>
-        <p class="change down">-550.84 (-3.53%)</p>
-      </div>
-      <div class="card">
-        <p class="name">创业板指</p>
-        <p class="price">3,842.73</p>
-        <p class="change down">-177.20 (-4.41%)</p>
-      </div>
-    </div>
-
-    <p style="font-size:13px;color:#8a8a8a;margin:0 0 12px;">上周五收盘对比本周五收盘</p>
-
-    <table class="data-table kline-table">
+    <h2 class="section-title"><span class="icon">&#9654;</span> A股周线回顾</h2>
+    <p class="narrative">
+      本周A股市场遭遇重挫，三大指数全线大跌。上证指数周跌<span class="down">5.81%</span>，失守3800点关口；深证成指暴跌<span class="down">8.90%</span>，创业板指更是重挫<span class="down">10.78%</span>，创年内最大单周跌幅。全周市场成交额放大至约2.67万亿元，恐慌性抛售迹象明显。
+    </p>
+    <table class="data-table">
       <tr>
-        <th>日期</th>
-        <th>上证指数</th>
-        <th>深证成指</th>
-        <th>创业板指</th>
+        <th>指数</th>
+        <th>周收盘</th>
+        <th>周涨跌幅</th>
+        <th>周高</th>
+        <th>周低</th>
       </tr>
       <tr>
-        <td>7/6（周一）</td>
-        <td>4,041.24 <span class="down">-0.06%</span></td>
-        <td class="down">15,416.80</td>
-        <td class="down">3,948.86</td>
+        <td>上证指数</td>
+        <td>3764.15</td>
+        <td class="down">-5.81%</td>
+        <td>3983.05</td>
+        <td>3745.17</td>
       </tr>
       <tr>
-        <td>7/7（周二）</td>
-        <td class="down">3,990.24</td>
-        <td class="down">15,225.11</td>
-        <td class="down">3,911.91</td>
+        <td>深证成指</td>
+        <td>13706.88</td>
+        <td class="down">-8.90%</td>
+        <td>15041.33</td>
+        <td>13586.49</td>
       </tr>
       <tr>
-        <td>7/8（周三）</td>
-        <td class="down">3,970.88</td>
-        <td class="down">14,939.73</td>
-        <td class="down">3,845.35</td>
+        <td>创业板指</td>
+        <td>3428.63</td>
+        <td class="down">-10.78%</td>
+        <td>3905.31</td>
+        <td>3387.26</td>
       </tr>
       <tr>
-        <td>7/9（周四）</td>
-        <td class="up">4,036.59</td>
-        <td class="up">15,398.73</td>
-        <td class="up">4,018.17</td>
+        <td>科创50</td>
+        <td>1715.40</td>
+        <td class="down">-7.12%</td>
+        <td>1844.38</td>
+        <td>1698.32</td>
       </tr>
       <tr>
-        <td>7/10（周五）</td>
-        <td class="down">3,996.16</td>
-        <td class="down">15,046.67</td>
-        <td class="down">3,842.73</td>
+        <td>沪深300</td>
+        <td>4529.10</td>
+        <td class="down">-3.60%</td>
+        <td>—</td>
+        <td>—</td>
       </tr>
     </table>
-
-    <div class="indicators">
-      <span class="indicator-item"><span class="label">本周高点：</span><span class="value">上证 4,074.83 / 深证 15,749.36 / 创业板 4,063.63</span></span>
-      <span class="indicator-item"><span class="label">本周低点：</span><span class="value">上证 3,938.88 / 深证 14,781.24 / 创业板 3,812.66</span></span>
-    </div>
-
-    <div style="margin-top:10px;">
-      <div class="weekly-bar">
-        <span class="label">上证指数</span>
-        <div style="flex:1;height:6px;background:#f0eee8;border-radius:3px;overflow:hidden;">
-          <div style="width:100%;height:100%;background:#2b8a47;border-radius:3px;"></div>
-        </div>
-        <span class="pct down">-1.17%</span>
-      </div>
-      <div class="weekly-bar">
-        <span class="label">深证成指</span>
-        <div style="flex:1;height:6px;background:#f0eee8;border-radius:3px;overflow:hidden;">
-          <div style="width:100%;height:100%;background:#2b8a47;border-radius:3px;"></div>
-        </div>
-        <span class="pct down">-3.53%</span>
-      </div>
-      <div class="weekly-bar">
-        <span class="label">创业板指</span>
-        <div style="flex:1;height:6px;background:#f0eee8;border-radius:3px;overflow:hidden;">
-          <div style="width:100%;height:100%;background:#2b8a47;border-radius:3px;"></div>
-        </div>
-        <span class="pct down">-4.41%</span>
-      </div>
-    </div>
-
-    <p style="font-size:14px;color:#444;margin-top:20px;">
-      <strong style="color:#2e564f;font-weight:400;">盘面概述：</strong>
-      本周A股三大指数全线收跌，创业板指重挫4.41%领跌，深证成指跌3.53%，上证指数相对抗跌仅跌1.17%。市场呈现"沪强深弱"格局，周初科技成长股加速冲高后，周四黑色星期四大幅回调，创业板失守3900点。全周成交额前四个交易日不足3万亿，周五放量至3.41万亿。个股层面涨多跌少，周五上涨3256家（71%），下跌1326家（29%），权重股拖累指数明显。科创50周五单日重挫5.53%，半导体、存储芯片等科技板块周四起持续大跌。
+    <p class="narrative">
+      全市场超5000只个股下跌，成交额26716亿元，较前周放量2527亿元。权重股中仅有银行板块展现韧性，科技股、医药股、光通信板块遭遇全面杀跌。
     </p>
   </div>
 
   <!-- 全球市场 -->
   <div class="section">
-    <h2 class="section-title">全球市场周线</h2>
-
-    <div class="overview-cards">
-      <div class="card">
-        <p class="name">道琼斯</p>
-        <p class="price">52,487.41</p>
-        <p class="change up">+193.78 (+0.37%)</p>
-      </div>
-      <div class="card">
-        <p class="name">标普500</p>
-        <p class="price">7,543.64</p>
-        <p class="change up">+30.47 (+0.41%)</p>
-      </div>
-      <div class="card">
-        <p class="name">纳斯达克</p>
-        <p class="price">26,206.89</p>
-        <p class="change down">-156.72 (-0.59%)</p>
-      </div>
-    </div>
-
-    <p style="font-size:13px;color:#8a8a8a;margin:0 0 16px;">数据截至7月9日（周四）收盘 / 对比7月3日上周五收盘</p>
-
-    <table class="data-table" style="margin-bottom:16px;">
+    <h2 class="section-title"><span class="icon">&#9654;</span> 全球市场周线</h2>
+    <p class="narrative">
+      美股本周亦承压下行，纳斯达克周跌约<span class="down">1.4%</span>，科技股回调明显。标普500和道指小幅下跌。恒生指数周跌<span class="down">2.13%</span>，受A股拖累明显。
+    </p>
+    <table class="data-table">
       <tr>
         <th>指数</th>
-        <th>最新收盘</th>
-        <th>周涨跌幅</th>
-        <th>周内高点</th>
-        <th>周内低点</th>
+        <th>最新价</th>
+        <th>涨跌幅</th>
       </tr>
       <tr>
-        <td>道琼斯</td>
-        <td>52,487.41</td>
-        <td class="up">+0.37%</td>
-        <td>52,574.89</td>
-        <td>52,249.44</td>
+        <td>道琼斯指数</td>
+        <td>52146.42</td>
+        <td class="down">-0.77%</td>
+      </tr>
+      <tr>
+        <td>纳斯达克指数</td>
+        <td>25520.24</td>
+        <td class="down">-1.40%</td>
       </tr>
       <tr>
         <td>标普500</td>
-        <td>7,543.64</td>
-        <td class="up">+0.41%</td>
-        <td>7,546.89</td>
-        <td>7,481.73</td>
+        <td>7457.69</td>
+        <td class="down">-1.01%</td>
       </tr>
       <tr>
-        <td>纳斯达克</td>
-        <td>26,206.89</td>
-        <td class="down">-0.59%</td>
-        <td>26,215.82</td>
-        <td>25,825.85</td>
+        <td>恒生指数</td>
+        <td>24474.61</td>
+        <td class="down">-2.13%</td>
+      </tr>
+      <tr>
+        <td>美元指数</td>
+        <td>100.67</td>
+        <td class="down">-0.10%</td>
       </tr>
     </table>
-
-    <div style="display:flex;flex-wrap:wrap;gap:24px;margin-top:14px;padding:14px 0;border-top:1px solid #f0eee8;">
-      <div>
-        <span style="font-size:12px;color:#8a8a8a;">恒生指数</span><br>
-        <span style="font-size:18px;font-weight:400;">24,167.55</span>
-        <span class="up" style="font-size:13px;"> +0.57%</span>
-      </div>
-      <div>
-        <span style="font-size:12px;color:#8a8a8a;">美元指数</span><br>
-        <span style="font-size:18px;font-weight:400;">100.81</span>
-        <span class="down" style="font-size:13px;"> -0.10%</span>
-      </div>
-    </div>
-
-    <p style="font-size:14px;color:#444;margin-top:16px;">
-      美股本周整体偏强，标普500和道指连续第二周上涨，标普逼近7600关口。纳指本周小幅回调，科技股内部出现分化。上周五美国6月非农数据显示新增就业11.8万人，失业率4.3%，劳动力市场温和降温。7月9日公布的美联储会议纪要偏鸽，市场对9月降息预期升温。周五（今晚）将公布美国6月CPI数据，市场密切关注通胀走向。恒生指数同步走强，周五涨0.57%报24,167点。
-    </p>
   </div>
 
   <!-- 大宗商品 -->
   <div class="section">
-    <h2 class="section-title">大宗商品周线</h2>
-
+    <h2 class="section-title"><span class="icon">&#9654;</span> 大宗商品周线</h2>
+    <p class="narrative">
+      受地缘政治因素驱动，<strong>原油</strong>本周大幅上涨<span class="up">4.49%</span>，单周涨幅创4月以来最大。美国再度打击伊朗，霍尔木兹海峡局势紧张推动油价飙升。黄金小幅上涨<span class="up">0.79%</span>，避险需求有所回升。
+    </p>
     <table class="data-table">
       <tr>
         <th>品种</th>
-        <th>最新价格</th>
-        <th>当日涨跌</th>
-        <th>趋势</th>
+        <th>最新价</th>
+        <th>涨跌幅</th>
       </tr>
       <tr>
         <td>黄金</td>
-        <td>$4,105.80</td>
-        <td class="down">-0.85%</td>
-        <td style="font-size:12px;color:#8a8a8a;">高位震荡，周内从4200回落</td>
+        <td>4023.53</td>
+        <td class="up">+0.79%</td>
       </tr>
       <tr>
-        <td>WTI原油（8月）</td>
-        <td>$71.95</td>
-        <td class="down">-0.18%</td>
-        <td style="font-size:12px;color:#8a8a8a;">70美元附近弱势震荡</td>
+        <td>WTI原油</td>
+        <td>81.80</td>
+        <td class="up">+4.49%</td>
       </tr>
       <tr>
-        <td>比特币</td>
-        <td>$64,161.71</td>
-        <td class="up">+2.01%</td>
-        <td style="font-size:12px;color:#8a8a8a;">本周反弹，站上6.4万</td>
+        <td>螺纹钢</td>
+        <td>3109</td>
+        <td class="down">-0.35%</td>
+      </tr>
+      <tr>
+        <td>大豆</td>
+        <td>3811</td>
+        <td class="up">+0.53%</td>
+      </tr>
+      <tr>
+        <td>棉花</td>
+        <td>15815</td>
+        <td class="down">-0.22%</td>
       </tr>
     </table>
-
-    <p style="font-size:14px;color:#444;margin-top:16px;">
-      黄金本周高位回落，从上周4200美元上方回调至4100附近，美元指数走弱未能推动黄金继续上行，市场在等待CPI数据指引。原油持续在70美元附近弱势震荡，需求端担忧抑制上行空间。比特币本周反弹至6.4万美元以上，市场风险情绪有所回暖。国内期货方面，周五期货连续指数跌1.43%报4,767点。
-    </p>
   </div>
 
   <!-- 板块轮动 -->
   <div class="section">
-    <h2 class="section-title">板块轮动分析</h2>
-
-    <p style="font-size:14px;color:#444;margin:0 0 12px;">
-      <strong style="color:#2e564f;font-weight:400;">本周主线：</strong>创新药爆发 &middot; 商业航天崛起 &middot; 科技成长高位回落
+    <h2 class="section-title"><span class="icon">&#9654;</span> 板块轮动分析</h2>
+    <p class="narrative">
+      <strong>本周市场呈现极致的防御性轮动特征。</strong>在指数大幅下跌的背景下，仅少数板块录得正收益。
     </p>
-
-    <table class="data-table">
-      <tr>
-        <th style="width:40%;">最强板块/概念</th>
-        <th style="width:20%;">涨幅</th>
-        <th>驱动因素</th>
-      </tr>
-      <tr>
-        <td>CRO概念</td>
-        <td class="up">+4.43%</td>
-        <td style="font-size:12px;color:#555;">2026版基药目录创新药首次批量入围</td>
-      </tr>
-      <tr>
-        <td>减肥药</td>
-        <td class="up">+4.35%</td>
-        <td style="font-size:12px;color:#555;">创新药板块全面爆发，龙头股涨停</td>
-      </tr>
-      <tr>
-        <td>国产航母</td>
-        <td class="up">+4.27%</td>
-        <td style="font-size:12px;color:#555;">军工板块活跃</td>
-      </tr>
-      <tr>
-        <td>商业航天</td>
-        <td class="up">活跃</td>
-        <td style="font-size:12px;color:#555;">长征十号乙海上回收成功，午后直线拉升</td>
-      </tr>
-      <tr>
-        <td>白酒</td>
-        <td class="up">积极</td>
-        <td style="font-size:12px;color:#555;">传统消费板块本周持续走强</td>
-      </tr>
-    </table>
-
-    <table class="data-table" style="margin-top:16px;">
-      <tr>
-        <th style="width:40%;">最弱板块</th>
-        <th style="width:20%;">调整幅度</th>
-        <th>说明</th>
-      </tr>
-      <tr>
-        <td>半导体/元件</td>
-        <td class="down">大幅回落</td>
-        <td style="font-size:12px;color:#555;">周四起集体跳水，胜宏科技、中际旭创大跌</td>
-      </tr>
-      <tr>
-        <td>存储芯片</td>
-        <td class="down">大跌</td>
-        <td style="font-size:12px;color:#555;">兆易创新等龙头跌幅居前</td>
-      </tr>
-      <tr>
-        <td>电子特气/电子化学品</td>
-        <td class="down">逼近跌停</td>
-        <td style="font-size:12px;color:#555;">中船特气接近20cm跌停</td>
-      </tr>
-      <tr>
-        <td>科创50</td>
-        <td class="down">-5.53%</td>
-        <td style="font-size:12px;color:#555;">周五单日暴跌，科技成长股全面退潮</td>
-      </tr>
-    </table>
-
-    <p style="font-size:14px;color:#444;margin-top:16px;">
-      <strong style="color:#2e564f;font-weight:400;">轮动特征：</strong>
-      本周市场呈现典型的"高切低"格局。周初科技真龙加速冲高后，周四黑色星期四科技股集体崩跌，资金大幅转向创新药、消费（白酒）、军工等低位板块。创新药受2026版基药目录利好催化，CRO概念周五大涨4.43%，成为本周最强主线。商业航天受长征十号乙成功回收事件驱动，午后直线拉升。封板效率"差"显示追涨风险较高，市场情绪脆弱。
+    <p class="narrative">
+      <span class="highlight">强势板块：</span>
+    </p>
+    <p class="narrative">
+      <strong>银行</strong>板块逆市走强，7月以来累计超额收益达14%。建设银行、中国银行、工商银行、农业银行涨幅居前，百亿银行ETF创年内天量。在大盘恐慌下跌中，资金涌入高股息、低估值银行板块避险。<br>
+      <strong>电力</strong>板块低开高走，乐山电力、华银电力、赣能股份、深南电A等涨停，珈伟新能涨超10%。顶层碳达峰五年方案落地催化电力板块。<br>
+      <strong>化工</strong>板块逆市显韧性，90余家深市化工企业披露半年度业绩预告，逾六成预增，恒逸石化等净利润增幅超10倍。
+    </p>
+    <p class="narrative">
+      <span class="highlight">弱势板块：</span>
+    </p>
+    <p class="narrative">
+      <strong>半导体</strong>板块重挫，兆易创新、大为股份、德明利、华天科技等多股跌停，超50只个股跌超10%。<br>
+      <strong>CRO概念</strong>大幅回调，昭衍新药、百诚医药、百奥赛图等多股跌停。<br>
+      <strong>光纤/光通信</strong>持续下挫，长光华芯、长飞光纤、光迅科技、中兴通讯等跌停。光通信巨头新易盛业绩预喜但月内跌超20%，市场担忧存储涨价挤占云厂商资本开支。<br>
+      <strong>创业板AI</strong>概念股创近3个月新低，人工智能ETF跌超9%。
+    </p>
+    <p class="narrative" style="margin-top:16px; font-size:13px; color:#888;">
+      概念板块涨幅前三：可燃冰(-0.54%)、超超临界发电(-0.64%)、同花顺中特估100(-0.80%)——均为跌幅相对较小的概念，无概念板块录得正收益。
     </p>
   </div>
 
   <!-- 本周重大事件 -->
   <div class="section">
-    <h2 class="section-title">本周重大事件</h2>
-
-    <div class="event-item">
-      <span class="event-date">7/6</span>
-      <strong style="font-weight:400;">长征十号乙海上回收成功</strong>
-      <span style="font-size:13px;color:#666;display:block;margin-top:2px;">中国火箭复用技术获重大突破，商业航天、卫星导航板块午后直线拉升，海兰信、航天环宇、神剑股份等多股封板。</span>
-    </div>
-    <div class="event-item">
-      <span class="event-date">7/6</span>
-      <strong style="font-weight:400;">2026版基药目录创新药批量入围</strong>
-      <span style="font-size:13px;color:#666;display:block;margin-top:2px;">创新药首次批量入围基药目录，CRO/减肥药板块爆发，常山药业、昭衍新药、双鹭药业等近10股涨停。</span>
-    </div>
-    <div class="event-item">
-      <span class="event-date">7/7</span>
-      <strong style="font-weight:400;">SpaceX正式纳入纳斯达克100指数</strong>
-      <span style="font-size:13px;color:#666;display:block;margin-top:2px;">SpaceX于7月7日正式纳入纳斯达克100指数，全球关注。</span>
-    </div>
-    <div class="event-item">
-      <span class="event-date">7/9</span>
-      <strong style="font-weight:400;">美联储公布6月会议纪要</strong>
-      <span style="font-size:13px;color:#666;display:block;margin-top:2px;">纪要偏鸽，市场对9月降息预期升温。标普500、道指小幅上涨反应积极。</span>
-    </div>
-    <div class="event-item">
-      <span class="event-date">7/10</span>
-      <strong style="font-weight:400;">美国6月CPI数据公布</strong>
-      <span style="font-size:13px;color:#666;display:block;margin-top:2px;">市场密切关注的通胀数据今晚出炉，将直接影响美联储9月降息决策。</span>
-    </div>
-    <div class="event-item">
-      <span class="event-date">7/10</span>
-      <strong style="font-weight:400;">SK海力士以ADR形式在纳斯达克上市</strong>
-      <span style="font-size:13px;color:#666;display:block;margin-top:2px;">全球存储芯片龙头SK海力士在美上市，半导体行业关注度提升。</span>
-    </div>
+    <h2 class="section-title"><span class="icon">&#9654;</span> 本周重大事件</h2>
+    <ul class="event-list">
+      <li>
+        <span class="tag hot">地缘</span>
+        <strong>美国再度打击伊朗，油价飙升</strong> — 霍尔木兹海峡疏散行动受挫，美伊持续相互打击对方目标。伊朗称美违反承诺，伊方已停止履行谅解备忘录。WTI原油单周涨幅创4月以来最大。
+      </li>
+      <li>
+        <span class="tag important">科技</span>
+        <strong>2026世界人工智能大会（WAIC）举行</strong> — 上海人形机器人中试服务平台正式启用，多家企业签署战略合作协议，聚焦具身智能产业发展。
+      </li>
+      <li>
+        <span class="tag">业绩</span>
+        <strong>光通信巨头业绩预喜，股价背离</strong> — 新易盛预计上半年净利润70-80亿元，同比增77-103%。但光模块板块月内跌超20%，市场担忧存储涨价挤占云厂商资本开支。
+      </li>
+      <li>
+        <span class="tag">化工</span>
+        <strong>90余家深市化工企业预告业绩大增</strong> — 逾六成预增，10家扭亏为盈。恒逸石化等净利润增幅下限超10倍，化工行业景气度显著回升。
+      </li>
+      <li>
+        <span class="tag">政策</span>
+        <strong>顶层碳达峰五年方案落地</strong> — 新能源赛道中长期成长空间明确，电力板块受益明显，火电、储能、风电等方向获得政策催化。
+      </li>
+      <li>
+        <span class="tag">市场</span>
+        <strong>多家上市公司回应稳定股价</strong> — 行云科技、物产金轮、金石资源、中青旅、坤彩科技等密集回应股价波动，部分公司表示正研究回购、增持等措施。
+      </li>
+      <li>
+        <span class="tag">基金</span>
+        <strong>2026基金二季报密集披露</strong> — 聚焦基金二季报持仓变化，宽基ETF单日成交额超1500亿，资金越跌越买。
+      </li>
+      <li>
+        <span class="tag">数据</span>
+        <strong>上半年深圳累计进出口2.88万亿元</strong> — 西南地区最大油气田产量创新高，全球最大煤制油项目智能化改造完成。
+      </li>
+    </ul>
   </div>
 
   <!-- 下周展望 -->
   <div class="section">
-    <h2 class="section-title">下周展望</h2>
-    <p class="outlook-text">
-      本周A股市场在"沪强深弱"格局中结束，创业板指连跌五周，科技成长股集体退潮。短期来看，科创50单日暴跌5.53%值得警惕，科技股的调整可能延续。创新药和商业航天作为本周新主线，后续持续性仍需观察。下周关注以下几点：
-    </p>
-    <ul style="font-size:14px;color:#444;padding-left:20px;margin-top:10px;line-height:2;">
-      <li>美国6月CPI数据公布后的市场反应，将决定美联储降息预期走向</li>
-      <li>科技成长股能否企稳——半导体板块已连续大幅回调，可能迎来超跌反弹</li>
-      <li>创新药板块的持续性——基药目录利好消化后资金的去留</li>
-      <li>上证指数在4000点整数关口的争夺——本周收于3996，多空博弈激烈</li>
-      <li>成交量能否持续在3万亿以上——周五放量至3.41万亿，需观察持续性</li>
-    </ul>
+    <h2 class="section-title"><span class="icon">&#9654;</span> 下周展望</h2>
+    <div class="outlook-grid">
+      <div class="outlook-card">
+        <h4>A股市场</h4>
+        <p>
+          本周恐慌性下跌后，上证指数已逼近年初低点区域。银行、电力等防御板块持续获得资金青睐，但科技股调整尚未结束。关注下周是否有政策面维稳信号，以及存储芯片涨价对AI算力产业链的传导是否持续发酵。
+        </p>
+      </div>
+      <div class="outlook-card">
+        <h4>海外市场</h4>
+        <p>
+          美伊冲突升级是短期最大不确定性。若霍尔木兹海峡局势进一步紧张，油价可能继续攀升，推高全球通胀预期。美股科技股面临财报季考验，Meta据称正洽谈出租算力给Anthropic，AI产业链格局持续演变。
+        </p>
+      </div>
+      <div class="outlook-card">
+        <h4>大宗商品</h4>
+        <p>
+          地缘溢价推动油价短期偏强，但全球经济放缓预期压制上行空间。黄金在避险需求支撑下维持高位震荡，关注下周美联储降息预期变化对金价的影响。
+        </p>
+      </div>
+      <div class="outlook-card">
+        <h4>关注方向</h4>
+        <p>
+          银行（高股息避险）、电力（碳达峰政策催化）、化工（业绩反转）、黄金（避险+降息预期）。审慎对待科技股和光通信板块，等待存储涨价影响消化。
+        </p>
+      </div>
+    </div>
   </div>
 
   <!-- 风险提示 -->
-  <div class="risk-notice">
-    本报告仅供参考，不构成投资建议。投资有风险，入市需谨慎。
+  <div class="disclaimer">
+    <strong>⚠ 风险提示</strong><br>
+    本报告所载信息仅供参考，不构成对任何人的投资建议或要约。市场有风险，投资需谨慎。过往业绩不代表未来表现，投资者应基于自身独立判断进行投资决策，自担风险。本报告数据来源于公开市场信息，不保证数据的准确性、完整性和时效性。
   </div>
 
   <!-- Footer -->
-  <div class="footer">
-    每周全市场总结 &middot; 2026年7月10日 &middot; 数据来源：同花顺、雅虎财经、腾讯行情
-  </div>
+  <footer>
+    本报告仅供参考，不构成投资建议<br>
+    Generated on 2026.07.19
+  </footer>
 
 </div>
 </body>
