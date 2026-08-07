@@ -3,481 +3,410 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A股盘后总结 — 2026年8月6日</title>
+<title>A股盘后总结 2026-08-07</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #fafaf8;
-    color: #1a1a1a;
-    line-height: 1.8;
-    font-weight: 300;
-    font-size: 15px;
-  }
-  .container {
-    max-width: 880px;
-    margin: 0 auto;
-    padding: 60px 40px 80px;
-  }
-
-  /* Header */
-  .header {
-    border-left: 3px solid #c9a227;
-    padding-left: 24px;
-    margin-bottom: 48px;
-  }
-  .header h1 {
-    font-size: 28px;
-    font-weight: 500;
-    color: #2e564f;
-    letter-spacing: 2px;
-    margin-bottom: 6px;
-  }
-  .header .subtitle {
-    font-size: 14px;
-    color: #888;
-    font-weight: 300;
-  }
-
-  /* Section */
-  .section {
-    margin-bottom: 42px;
-  }
-  .section-title {
-    font-size: 18px;
-    font-weight: 500;
-    color: #2e564f;
-    border-left: 3px solid #c9a227;
-    padding-left: 14px;
-    margin-bottom: 18px;
-    letter-spacing: 1px;
-  }
-  .section-body {
-    padding-left: 17px;
-  }
-
-  /* Index cards */
-  .index-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin-bottom: 18px;
-  }
-  .index-card {
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: 6px;
-    padding: 16px 18px;
-  }
-  .index-card .name {
-    font-size: 13px;
-    color: #666;
-    margin-bottom: 4px;
-  }
-  .index-card .price {
-    font-size: 22px;
-    font-weight: 500;
-    color: #1a1a1a;
-    margin-bottom: 2px;
-  }
-  .index-card .change {
-    font-size: 14px;
-  }
-  .up { color: #c0392b; }
-  .down { color: #27ae60; }
-  .flat { color: #888; }
-
-  /* Data row */
-  .data-row {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-bottom: 14px;
-  }
-  .data-item {
-    font-size: 14px;
-    color: #444;
-  }
-  .data-item strong {
-    font-weight: 500;
-    color: #1a1a1a;
-  }
-
-  /* Table */
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13.5px;
-    margin-bottom: 4px;
-  }
-  .data-table th {
-    text-align: left;
-    padding: 8px 10px;
-    color: #666;
-    font-weight: 400;
-    border-bottom: 1px solid #e8e8e6;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-  }
-  .data-table td {
-    padding: 8px 10px;
-    border-bottom: 1px solid #f0f0ee;
-  }
-  .data-table tr:last-child td { border-bottom: none; }
-
-  /* Text block */
-  .text-block {
-    font-size: 14px;
-    color: #333;
-    line-height: 2;
-    margin-bottom: 14px;
-  }
-  .text-block .highlight {
-    color: #2e564f;
-    font-weight: 500;
-  }
-  .text-block .tag {
-    display: inline-block;
-    background: #f0f0ee;
-    color: #555;
-    padding: 1px 10px;
-    border-radius: 3px;
-    font-size: 12px;
-    margin: 0 3px;
-  }
-  .text-block .tag-hot {
-    background: #fef0ef;
-    color: #c0392b;
-  }
-  .text-block .tag-cold {
-    background: #edf7f2;
-    color: #27ae60;
-  }
-
-  /* Divider */
-  .divider {
-    border: none;
-    border-top: 1px solid #e8e8e6;
-    margin: 36px 0;
-  }
-
-  /* Risk footer */
-  .risk-footer {
-    margin-top: 50px;
-    padding: 18px 22px;
-    background: #f5f5f2;
-    border-radius: 6px;
-    font-size: 12px;
-    color: #999;
-    line-height: 1.6;
-  }
-
-  /* Responsive */
-  @media (max-width: 640px) {
-    .container { padding: 30px 18px 50px; }
-    .index-grid { grid-template-columns: repeat(2, 1fr); }
-  }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #fafaf8;
+  color: #1a1a1a;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans SC", sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+  padding: 0;
+}
+.header {
+  border-left: 4px solid #c9a227;
+  padding: 40px 48px 32px 48px;
+  margin: 0 0 32px 0;
+  background: #fafaf8;
+}
+.header h1 {
+  font-size: 28px;
+  font-weight: 400;
+  color: #2e564f;
+  letter-spacing: 2px;
+}
+.header .subtitle {
+  font-size: 14px;
+  color: #888;
+  margin-top: 6px;
+  letter-spacing: 1px;
+}
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 32px 48px 32px;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section-title {
+  font-size: 18px;
+  font-weight: 400;
+  color: #2e564f;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e8e4dc;
+  letter-spacing: 1px;
+}
+.indices-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.index-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.index-card .name {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 4px;
+}
+.index-card .price {
+  font-size: 22px;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+.index-card .change {
+  font-size: 16px;
+  margin-top: 2px;
+}
+.up { color: #c0392b; }
+.down { color: #27ae60; }
+.stats-bar {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 16px 20px;
+  background: #fff;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.stats-bar .stat {
+  font-size: 14px;
+  color: #555;
+}
+.stats-bar .stat strong {
+  font-weight: 400;
+  color: #1a1a1a;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 8px 0 16px 0;
+}
+table th {
+  text-align: left;
+  padding: 8px 10px;
+  font-weight: 400;
+  color: #888;
+  font-size: 12px;
+  border-bottom: 1px solid #e8e4dc;
+  letter-spacing: 1px;
+}
+table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #f0eee8;
+}
+table tr:last-child td { border-bottom: none; }
+.highlight-box {
+  background: #fff;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.highlight-box h3 {
+  font-size: 15px;
+  font-weight: 400;
+  color: #2e564f;
+  margin-bottom: 10px;
+}
+.highlight-box p {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 6px;
+}
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 12px;
+  color: #2e564f;
+  border: 1px solid #d4d0c8;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+.analysis-text {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.9;
+  margin-bottom: 12px;
+}
+.footer {
+  text-align: center;
+  padding: 32px 0;
+  font-size: 12px;
+  color: #aaa;
+  border-top: 1px solid #e8e4dc;
+  letter-spacing: 1px;
+}
+@media (max-width: 640px) {
+  .indices-grid { grid-template-columns: repeat(2, 1fr); }
+  .header { padding: 24px 20px 20px 20px; }
+  .container { padding: 0 16px 32px 16px; }
+}
 </style>
 </head>
 <body>
+<div class="header">
+  <h1>A股盘后总结</h1>
+  <div class="subtitle">2026年8月7日 星期五</div>
+</div>
 <div class="container">
 
-  <div class="header">
-    <h1>A股盘后总结</h1>
-    <div class="subtitle">2026年8月6日（星期四）&nbsp;|&nbsp;数据截至收盘</div>
-  </div>
-
-  <!-- 今日行情回顾 -->
-  <div class="section">
-    <div class="section-title">今日行情回顾</div>
-    <div class="section-body">
-      <div class="index-grid">
-        <div class="index-card">
-          <div class="name">上证指数</div>
-          <div class="price">3,900.35</div>
-          <div class="change up">+21.92 &nbsp;+0.57%</div>
-        </div>
-        <div class="index-card">
-          <div class="name">深证成指</div>
-          <div class="price">14,110.12</div>
-          <div class="change down">-34.08 &nbsp;-0.24%</div>
-        </div>
-        <div class="index-card">
-          <div class="name">创业板指</div>
-          <div class="price">3,515.56</div>
-          <div class="change down">-19.58 &nbsp;-0.55%</div>
-        </div>
-        <div class="index-card">
-          <div class="name">科创50</div>
-          <div class="price">1,701.29</div>
-          <div class="change up">+7.62 &nbsp;+0.45%</div>
-        </div>
-        <div class="index-card">
-          <div class="name">上证50</div>
-          <div class="price">2,920.13</div>
-          <div class="change down">-3.93 &nbsp;-0.13%</div>
-        </div>
-        <div class="index-card">
-          <div class="name">沪深300</div>
-          <div class="price">4,651.31</div>
-          <div class="change down">-6.85 &nbsp;-0.15%</div>
-        </div>
-      </div>
-
-      <div class="data-row">
-        <div class="data-item">沪深两市成交额：<strong>25,475亿</strong> <span style="color:#888;font-size:12px;">（缩量1,324亿）</span></div>
-        <div class="data-item">上涨家数：<strong class="up">2,405只</strong>（52%）</div>
-        <div class="data-item">下跌家数：<strong class="down">2,183只</strong>（47%）</div>
-        <div class="data-item">停牌：<strong>11只</strong></div>
-      </div>
-
-      <div class="text-block">
-        A股三大指数今日涨跌不一。上证指数低开高走，午后维持强势，收涨0.57%；深证成指与创业板指冲高回落，分别收跌0.24%和0.55%。市场成交额25,475亿元，较上日缩量1,324亿元，但仍维持高位。全市场超2,700只个股上涨，涨停108只，跌停10只，赚钱效应尚可。
-      </div>
+<!-- 今日行情回顾 -->
+<div class="section">
+  <div class="section-title">今日行情回顾</div>
+  <div class="indices-grid">
+    <div class="index-card">
+      <div class="name">上证指数</div>
+      <div class="price">3940.04</div>
+      <div class="change up">+1.02%</div>
+    </div>
+    <div class="index-card">
+      <div class="name">深证成指</div>
+      <div class="price">14311.01</div>
+      <div class="change up">+1.42%</div>
+    </div>
+    <div class="index-card">
+      <div class="name">创业板指</div>
+      <div class="price">3563.12</div>
+      <div class="change up">+1.35%</div>
+    </div>
+    <div class="index-card">
+      <div class="name">科创50</div>
+      <div class="price">1744.02</div>
+      <div class="change up">+2.51%</div>
+    </div>
+    <div class="index-card">
+      <div class="name">沪深300</div>
+      <div class="price">4694.44</div>
+      <div class="change up">+0.82%</div>
+    </div>
+    <div class="index-card">
+      <div class="name">中证500</div>
+      <div class="price">7980.12</div>
+      <div class="change up">+1.93%</div>
+    </div>
+    <div class="index-card">
+      <div class="name">上证50</div>
+      <div class="price">2960.42</div>
+      <div class="change up">+1.47%</div>
+    </div>
+    <div class="index-card">
+      <div class="name">北证50</div>
+      <div class="price">--</div>
+      <div class="change up">+1.01%</div>
     </div>
   </div>
+  <div class="stats-bar">
+    <div class="stat">成交额 <strong>26,834亿</strong> <span style="color:#c0392b;">（放量1,359亿）</span></div>
+    <div class="stat">上涨 <strong class="up">2,294家</strong> 占比 50%</div>
+    <div class="stat">下跌 <strong class="down">2,296家</strong> 占比 50%</div>
+    <div class="stat">停牌 <strong>9家</strong></div>
+    <div class="stat">封板效率 <strong>一般</strong></div>
+  </div>
+  <p class="analysis-text">三大指数集体低开高走，午后涨幅扩大。上证指数收涨1.02%逼近3950关口，深成指与创业板指分别涨1.42%和1.35%。科创50表现最为强势，涨幅达2.51%。全市场成交额放量至2.68万亿元，较上日增加1,359亿元，量能温和放大。涨跌家数基本持平，上涨2294家对下跌2296家，市场呈现结构性分化特征——医药、PCB等板块大幅走强，而银行、地产、煤炭等权重板块集体走弱，形成"八二切换"格局。</p>
+</div>
 
-  <hr class="divider">
+<!-- 涨停复盘 -->
+<div class="section">
+  <div class="section-title">涨停复盘</div>
+  <div class="highlight-box">
+    <h3>创新药/CRO——今日最强主线</h3>
+    <p>创新药板块低开高走，全板块爆发，逾30只个股涨停或涨超10%。CRO概念指数大涨8.05%，减肥药概念涨6.62%，重组蛋白概念涨6.61%，霸占概念涨幅榜前三。驱动逻辑：<strong>全球医药投融资回暖信号明确</strong> + 国内创新药出海授权(license-out)持续放量 + 中报季CRO龙头业绩亮眼预期。</p>
+  </div>
+  <table>
+    <thead>
+      <tr><th>代码</th><th>名称</th><th>涨幅</th><th>成交额</th><th>所属板块</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>300363</td><td>博腾股份</td><td class="up">+20.02%</td><td>13.83亿</td><td>CRO</td></tr>
+      <tr><td>688137</td><td>近岸蛋白</td><td class="up">+20.01%</td><td>1.71亿</td><td>重组蛋白</td></tr>
+      <tr><td>688073</td><td>毕得医药</td><td class="up">+20.01%</td><td>3.23亿</td><td>医药中间体</td></tr>
+      <tr><td>301047</td><td>义翘神州</td><td class="up">+20.00%</td><td>13.71亿</td><td>重组蛋白</td></tr>
+      <tr><td>301080</td><td class="up">百普赛斯</td><td class="up">+20.00%</td><td>9.15亿</td><td>重组蛋白</td></tr>
+      <tr><td>688265</td><td>南模生物</td><td class="up">+20.00%</td><td>1.58亿</td><td>模式动物</td></tr>
+      <tr><td>688046</td><td>药康生物</td><td class="up">+19.99%</td><td>5.00亿</td><td>模式动物</td></tr>
+      <tr><td>301230</td><td>泓博医药</td><td class="up">+19.99%</td><td>7.58亿</td><td>CRO</td></tr>
+      <tr><td>688105</td><td>诺唯赞</td><td class="up">+18.59%</td><td>5.64亿</td><td>生物试剂</td></tr>
+      <tr><td>300725</td><td>药石科技</td><td class="up">+18.39%</td><td>21.28亿</td><td>CRO/分子砌块</td></tr>
+    </tbody>
+  </table>
+  <div class="highlight-box">
+    <h3>PCB/电子化学品——辅线强势</h3>
+    <p>PCB概念板块同步走强，一博科技、宝鼎科技、景旺电子、生益电子等十余股涨停。元件板块指数大涨6.45%。驱动逻辑：AI算力需求拉动高端PCB订单增长 + 覆铜板涨价预期 + 铜箔加工费触底回升。</p>
+  </div>
+  <table>
+    <thead>
+      <tr><th>代码</th><th>名称</th><th>涨幅</th><th>成交额</th><th>特征</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>688020</td><td>方邦股份</td><td class="up">+20.00%</td><td>8.62亿</td><td>电子屏蔽材料</td></tr>
+      <tr><td>301217</td><td>铜冠铜箔</td><td class="up">+16.98%</td><td>88.37亿</td><td>锂电铜箔+PCB铜箔</td></tr>
+      <tr><td>688519</td><td>南亚新材</td><td class="up">+16.53%</td><td>32.22亿</td><td>覆铜板</td></tr>
+      <tr><td>300476</td><td>胜宏科技</td><td class="up">+12.01%</td><td>197.51亿</td><td>PCB</td></tr>
+      <tr><td>002384</td><td>东山精密</td><td class="up">+4.04%</td><td>200.99亿</td><td>PCB/FPC</td></tr>
+    </tbody>
+  </table>
+</div>
 
-  <!-- 涨停复盘 -->
-  <div class="section">
-    <div class="section-title">涨停复盘</div>
-    <div class="section-body">
-      <div class="text-block">
-        今日共 <span class="highlight">108只</span> 个股涨停（含新股），涨停板数量维持高位。市场主线围绕 <span class="tag tag-hot">煤炭</span> <span class="tag tag-hot">电子化学品</span> <span class="tag tag-hot">通信设备</span> <span class="tag tag-hot">转基因</span> 展开。
-      </div>
-      <table class="data-table">
-        <thead>
-          <tr><th>股票</th><th>代码</th><th>涨幅</th><th>成交额</th><th>所属板块</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>锴威特</td><td>688693</td><td class="up">+20.00%</td><td>0.4亿</td><td>电子化学品</td></tr>
-          <tr><td>科翔股份</td><td>300903</td><td class="up">+20.00%</td><td>25.3亿</td><td>PCB/通信设备</td></tr>
-          <tr><td>蜀道装备</td><td>300540</td><td class="up">+19.99%</td><td>7.4亿</td><td>轨道交通</td></tr>
-          <tr><td>中巨芯</td><td>688549</td><td class="up">+19.99%</td><td>49.4亿</td><td>电子化学品</td></tr>
-          <tr><td>广哈通信</td><td>300711</td><td class="up">+19.99%</td><td>2.6亿</td><td>通信设备</td></tr>
-          <tr><td>欣天科技</td><td>300615</td><td class="up">+19.97%</td><td>7.8亿</td><td>通信设备</td></tr>
-          <tr><td>飞天诚信</td><td>300386</td><td class="up">+19.96%</td><td>2.6亿</td><td>网络安全</td></tr>
-          <tr><td>任子行</td><td>300311</td><td class="up">+19.93%</td><td>11.1亿</td><td>网络安全</td></tr>
-          <tr><td>长电科技</td><td>600584</td><td class="up">+10.00%</td><td>172.6亿</td><td>半导体封装</td></tr>
-          <tr><td>云南锗业</td><td>002428</td><td class="up">+10.00%</td><td>—</td><td>有色金属/锗</td></tr>
-          <tr><td>平煤股份</td><td>601666</td><td class="up">+10.00%</td><td>—</td><td>煤炭</td></tr>
-          <tr><td>淮北矿业</td><td>600985</td><td class="up">+10.00%</td><td>—</td><td>煤炭</td></tr>
-        </tbody>
+<!-- 跌停/弱势 -->
+<div class="section">
+  <div class="section-title">跌停与弱势板块</div>
+  <table>
+    <thead>
+      <tr><th>代码</th><th>名称</th><th>跌幅</th><th>成交额</th><th>原因</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>603468</td><td>C津富</td><td class="down">-17.98%</td><td>7.78亿</td><td>新股次日大幅回调</td></tr>
+      <tr><td>300506</td><td>名家汇</td><td class="down">-13.48%</td><td>9.27亿</td><td>高位回落</td></tr>
+      <tr><td>601700</td><td>风范股份</td><td class="down">-10.06%</td><td>6.44亿</td><td>跌停</td></tr>
+      <tr><td>600892</td><td>大晟文化</td><td class="down">-10.04%</td><td>1.39亿</td><td>游戏板块回调/跌停</td></tr>
+      <tr><td>603106</td><td>恒银科技</td><td class="down">-9.96%</td><td>6.49亿</td><td>数字货币概念回调</td></tr>
+      <tr><td>300369</td><td>绿盟科技</td><td class="down">-9.64%</td><td>9.67亿</td><td>网络安全板块走弱</td></tr>
+      <tr><td>002425</td><td>凯撒文化</td><td class="down">-8.90%</td><td>7.17亿</td><td>游戏板块回调/跌停</td></tr>
+    </tbody>
+  </table>
+  <p class="analysis-text" style="margin-top:12px;">数字货币板块（吉大正元-7.30%、高伟达-7.43%、天融信-7.61%）和游戏板块（大晟文化、凯撒文化跌停，盛天网络、中青宝跟跌）表现最弱。银行板块收跌0.95%，煤炭跌1.02%，房地产跌1.06%，权重股整体承压，资金从传统板块向成长赛道切换的迹象明显。</p>
+</div>
+
+<!-- 资金流向 -->
+<div class="section">
+  <div class="section-title">资金流向</div>
+  <p class="analysis-text">全市场成交额26,834亿元，较上日放量1,359亿元，增量资金入场迹象明显。从成交额排行看，资金高度集中于AI算力链（光模块、存储、PCB）和医药两大方向：</p>
+  <table>
+    <thead><tr><th>排名</th><th>名称</th><th>成交额</th><th>涨跌幅</th><th>板块</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>中际旭创</td><td>546.71亿</td><td class="down">-3.68%</td><td>光模块/AI算力</td></tr>
+      <tr><td>2</td><td>兆易创新</td><td>305.21亿</td><td class="up">+8.32%</td><td>存储芯片</td></tr>
+      <tr><td>3</td><td>长鑫科技</td><td>267.02亿</td><td class="up">+1.00%</td><td>存储芯片</td></tr>
+      <tr><td>4</td><td>新易盛</td><td>257.94亿</td><td class="down">-0.22%</td><td>光模块</td></tr>
+      <tr><td>5</td><td>东山精密</td><td>200.99亿</td><td class="up">+4.04%</td><td>PCB/FPC</td></tr>
+      <tr><td>6</td><td>胜宏科技</td><td>197.51亿</td><td class="up">+12.01%</td><td>PCB</td></tr>
+      <tr><td>7</td><td>寒武纪</td><td>187.53亿</td><td class="up">+2.72%</td><td>AI芯片</td></tr>
+      <tr><td>8</td><td>长电科技</td><td>174.83亿</td><td class="up">+2.48%</td><td>封测</td></tr>
+      <tr><td>9</td><td>亨通光电</td><td>165.05亿</td><td class="up">+6.00%</td><td>光通信</td></tr>
+      <tr><td>10</td><td>中国巨石</td><td>154.71亿</td><td class="up">+8.83%</td><td>玻纤</td></tr>
+    </tbody>
+  </table>
+  <p class="analysis-text" style="margin-top:12px;">成交额前十合计超2,400亿元，占全市场约9%。AI算力链（中际旭创、新易盛、兆易创新、长鑫科技、寒武纪）合计成交超1,500亿元，是市场最大的资金沉淀方向。北向资金方面，今日市场整体放量上涨，料北向资金大概率净流入，但具体金额需待收盘后交易所公布。</p>
+</div>
+
+<!-- 热点板块深度解读 -->
+<div class="section">
+  <div class="section-title">今日热点板块深度解读</div>
+
+  <div class="highlight-box">
+    <h3>创新药/CRO——为什么涨？</h3>
+    <p><strong>直接催化：</strong>多家中报业绩预喜 + 全球生物医药融资触底回升。2026年H1中国创新药license-out交易金额已超2025年全年，海外BD（商务拓展）持续放量。</p>
+    <p><strong>基本面支撑：</strong>CRO板块经历两年调整，估值处于历史低位（药明康德PE约25x，药石科技PE约30x）。全球新药研发投入仍保持5-6%年增速，国内CRO渗透率提升空间大。</p>
+    <p><strong>资金面特征：</strong>板块今日成交额超千亿，多只20cm涨停，属于典型的"底部放量爆发"形态。龙虎榜数据待盘后公布，预计机构席位为主力买入方。</p>
+    <p><strong>持续性判断：</strong>⭐⭐⭐⭐ 板块今日出现全面爆发（而非个别龙头），且伴随成交额显著放大，医药板块估值底部+基本面拐点+资金共振，短期有望延续。但第一波放量后通常会有分化，建议关注核心CRO标的（药明康德、康龙化成、泰格医药）和细分龙头（药石科技、皓元医药）。</p>
+  </div>
+
+  <div class="highlight-box">
+    <h3>PCB/电子化学品——为什么涨？</h3>
+    <p><strong>直接催化：</strong>AI服务器、800G/1.6T光模块对高端PCB需求持续拉动 + 覆铜板涨价周期启动。SK海力士今日宣布投资384亿美元在韩国建厂，进一步强化AI硬件需求预期。</p>
+    <p><strong>基本面支撑：</strong>PCB行业2026年H1景气度超预期，上游铜箔、玻纤布、树脂等原材料价格温和上涨，龙头公司产能利用率高位运行。胜宏科技、东山精密等业绩持续高增。</p>
+    <p><strong>持续性判断：</strong>⭐⭐⭐⭐ 作为AI算力链的"卖铲人"逻辑，PCB板块受益于AI投资周期确定性较高。但铜冠铜箔日成交88亿、胜宏科技197亿，短线资金博弈激烈，追高需谨慎。中线关注业绩确定性强的龙头（胜宏科技、沪电股份、深南电路）。</p>
+  </div>
+
+  <div class="highlight-box">
+    <h3>银行/地产/煤炭——为什么跌？</h3>
+    <p>银行板块收跌0.95%，房地产跌1.06%，煤炭跌1.02%，为今日市场主要拖累项。原因：</p>
+    <p>1）<strong>风格切换</strong>：资金从高股息防御板块向成长赛道切换，是典型的"八二行情"特征；<br>
+    2）<strong>利率预期</strong>：全球流动性收紧节奏暂缓，风险偏好回升，资金从银行等防御板块撤出；<br>
+    3）<strong>行业利空</strong>：今日又有10家县域农商行解散，中小银行改革加速，市场对银行资产质量担忧升温。</p>
+  </div>
+</div>
+
+<!-- 技术面信号 -->
+<div class="section">
+  <div class="section-title">技术面信号</div>
+  <div class="indices-grid" style="grid-template-columns: repeat(2, 1fr);">
+    <div class="index-card">
+      <div class="name">上证指数</div>
+      <div class="price" style="font-size:16px;">3940.04</div>
+      <table style="margin:6px 0;font-size:13px;">
+        <tr><td>MA5</td><td>3870</td><td class="up">&#9650; 收盘站上</td></tr>
+        <tr><td>MA10</td><td>3849</td><td class="up">&#9650; 收盘站上</td></tr>
+        <tr><td>MA20</td><td>3859</td><td class="up">&#9650; 收盘站上</td></tr>
+        <tr><td>MA60</td><td>4002</td><td class="down">&#9660; 上方压力</td></tr>
+        <tr><td>量比</td><td colspan="2">1.01 温和放量</td></tr>
       </table>
-      <div class="text-block" style="margin-top:14px;">
-        <strong style="font-weight:500;">涨停共性逻辑：</strong><br>
-        <strong>煤炭板块</strong>（近10股涨停）：平煤股份、淮北矿业、晋控煤业等涨停，强势逻辑源于夏季用电高峰+煤价企稳反弹+高股息防御属性。<br>
-        <strong>电子化学品/半导体</strong>：中巨芯20cm涨停、锴威特涨停、长电科技涨停（+10%，成交172.6亿），受益于国产替代预期+AI芯片需求拉动。<br>
-        <strong>通信设备</strong>：科翔股份、广哈通信、欣天科技涨停，5G/6G概念近期催化密集。<br>
-        <strong>转基因/种业</strong>：秋乐种业一度涨超20%，政策面转基因商业化加速推进利好。
-      </div>
     </div>
-  </div>
-
-  <hr class="divider">
-
-  <!-- 跌停/炸板 -->
-  <div class="section">
-    <div class="section-title">跌停分析</div>
-    <div class="section-body">
-      <div class="text-block">
-        今日共 <span class="highlight">10只</span> 个股跌停或跌幅超9.9%，多为ST股退市整理及个别高位股调整。
-      </div>
-      <table class="data-table">
-        <thead>
-          <tr><th>股票</th><th>代码</th><th>跌幅</th><th>成交额</th><th>原因分析</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>C嘉立创</td><td>001232</td><td class="down">-11.56%</td><td>37.9亿</td><td>次新股回调，上市后获利盘涌出</td></tr>
-          <tr><td>惠城环保</td><td>300779</td><td class="down">-12.93%</td><td>27.3亿</td><td>前期涨幅过大，获利回吐</td></tr>
-          <tr><td>立新能源</td><td>001258</td><td class="down">-9.90%</td><td>18.8亿</td><td>新能源板块整体走弱拖累</td></tr>
-          <tr><td>联创光电</td><td>600363</td><td class="down">-9.98%</td><td>0.8亿</td><td>资金出逃，缩量跌停</td></tr>
-          <tr><td>世纪天鸿</td><td>300654</td><td class="down">-10.56%</td><td>6.5亿</td><td>教育板块低迷</td></tr>
-        </tbody>
-      </table>
-      <div class="text-block" style="margin-top:10px;">
-        跌停股以ST股退市整理和前期涨幅较大的个股为主，市场整体未出现恐慌性抛售。教育板块传智教育、中公教育领跌；汽车整车板块北汽蓝谷、江淮汽车跌幅居前，板块整体承压。
-      </div>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <!-- 资金流向 -->
-  <div class="section">
-    <div class="section-title">资金流向</div>
-    <div class="section-body">
-      <div class="text-block">
-        今日资金面呈现结构性分化。东方财富资金流API当前不可用，以下基于板块表现和成交额数据进行推断分析：
-      </div>
-      <div class="data-row">
-        <div class="data-item">两市成交额：<strong>25,475亿</strong> <span style="color:#888;font-size:12px;">（缩量1,324亿）</span></div>
-        <div class="data-item">沪市成交：<strong>11,668亿</strong></div>
-        <div class="data-item">深市成交：<strong>13,620亿</strong></div>
-      </div>
-      <div class="text-block" style="margin-top:12px;">
-        <strong style="font-weight:500;">行业资金流入推测（基于板块涨跌幅及代表股表现）：</strong><br><br>
-        <strong>资金流入方向：</strong>
-      </div>
-      <table class="data-table">
-        <thead>
-          <tr><th>行业</th><th>代表股表现</th><th>资金判断</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>煤炭开采</td><td>平煤股份、淮北矿业等近10股涨停，板块平均涨幅+5.37%</td><td class="up">主力大幅流入</td></tr>
-          <tr><td>电子化学品</td><td>中巨芯20cm涨停，板块平均+3.63%</td><td class="up">主力流入</td></tr>
-          <tr><td>通信设备</td><td>科翔股份涨停，亨通光电+3.2%，天孚通信+3.89%</td><td class="up">主力流入</td></tr>
-          <tr><td>半导体</td><td>长电科技涨停(+10.00%)，板块平均+2.20%</td><td class="up">主力流入</td></tr>
-          <tr><td>银行</td><td>板块平均+0.64%，4只代表股全部上涨</td><td class="up">小幅流入</td></tr>
-        </tbody>
-      </table>
-      <div class="text-block" style="margin-top:12px;">
-        <strong style="font-weight:500;">资金流出方向：</strong>
-      </div>
-      <table class="data-table">
-        <thead>
-          <tr><th>行业</th><th>代表股表现</th><th>资金判断</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>汽车整车</td><td>北汽蓝谷-6.54%，板块平均-4.57%</td><td class="down">主力大幅流出</td></tr>
-          <tr><td>新能源</td><td>宁德时代-4.24%，隆基绿能承压，板块平均-2.62%</td><td class="down">主力流出</td></tr>
-          <tr><td>医药</td><td>药明康德、恒瑞医药走弱，板块平均-2.64%</td><td class="down">主力流出</td></tr>
-          <tr><td>证券</td><td>中信证券、东方财富走弱，板块平均-1.14%</td><td class="down">小幅流出</td></tr>
-          <tr><td>消费/白酒</td><td>贵州茅台、五粮液承压，板块平均-0.73%</td><td class="down">小幅流出</td></tr>
-        </tbody>
+    <div class="index-card">
+      <div class="name">创业板指</div>
+      <div class="price" style="font-size:16px;">3563.12</div>
+      <table style="margin:6px 0;font-size:13px;">
+        <tr><td>MA5</td><td>3481</td><td class="up">&#9650; 收盘站上</td></tr>
+        <tr><td>MA10</td><td>3429</td><td class="up">&#9650; 收盘站上</td></tr>
+        <tr><td>MA20</td><td>3527</td><td class="up">&#9650; 收盘站上</td></tr>
+        <tr><td>MA60</td><td>3868</td><td class="down">&#9660; 上方压力</td></tr>
+        <tr><td>量比</td><td colspan="2">1.07 温和放量</td></tr>
       </table>
     </div>
   </div>
+  <p class="analysis-text" style="margin-top:12px;">
+    <strong>上证指数：</strong>收盘站上MA20（3859）和MA10（3849），短期均线多头排列。但MA60（4002）形成上方压制，且今日低开高走、盘中一度回踩3885，显示3900关口仍需夯实。若后续放量突破3950-4000区间，则中期趋势转为乐观；若缩量回踩，则关注3900及MA5（3870）的支撑。
+  </p>
+  <p class="analysis-text">
+    <strong>创业板指：</strong>今日收涨1.35%，重新站上MA20（3527），短期均线（MA5/MA10）拐头向上，量比1.07温和放大，走势强于主板。但MA60（3868）距离当前收盘价仍有约8.5%的价差，中期趋势尚未完全扭转，需关注后续能否持续放量突破3600整数关口。
+  </p>
+  <p class="analysis-text">
+    <strong>MACD/KDJ研判：</strong>上证指数日线MACD金叉后DIF/DEA在零轴附近运行，红柱有所放大，多头动能增强。KDJ三线在50上方金叉发散，短期技术面偏多。创业板指MACD同样金叉，但距离零轴仍有距离，属于"底部金叉"形态，若后续持续放量，则中期反弹空间可期。
+  </p>
+</div>
 
-  <hr class="divider">
-
-  <!-- 今日热点板块深度解读 -->
-  <div class="section">
-    <div class="section-title">今日热点板块深度解读</div>
-    <div class="section-body">
-      <div class="text-block">
-        <strong>1. 煤炭开采加工（板块平均+5.37%，近10股涨停）</strong><br>
-        今日最强主线。驱动逻辑：<br>
-        · 夏季用电高峰持续，电厂日耗高位运行，动力煤价格企稳反弹<br>
-        · 高股息防御属性突出，在市场风格偏防御时资金集中流入<br>
-        · 中报季临近，煤炭企业盈利预期稳健<br>
-        · 持续性判断：<span class="tag tag-hot">中等偏强</span> — 用电高峰持续至8月底，但需警惕政策调控风险，追高需谨慎<br><br>
-
-        <strong>2. 电子化学品/半导体材料（中巨芯20cm涨停，锴威特涨停）</strong><br>
-        · 国产替代逻辑持续催化，半导体材料板块受资金追捧<br>
-        · 中巨芯（688549）成交49.4亿，资金博弈激烈<br>
-        · 长电科技（600584）涨停，成交172.6亿，半导体封装龙头获资金认可<br>
-        · 持续性判断：<span class="tag tag-hot">中等</span> — 国产替代趋势确定，但短期涨幅较大，注意分化<br><br>
-
-        <strong>3. 转基因/种业（秋乐种业涨超17%，概念+3.31%领涨）</strong><br>
-        · 转基因商业化加速推进，政策面持续利好<br>
-        · 秋乐种业一度涨超20%，神农种业、康农种业涨幅居前<br>
-        · 持续性判断：<span class="tag tag-hot">中等</span> — 政策驱动型行情，注意兑现节奏<br><br>
-
-        <strong>4. 通信设备/6G概念（概念+2.73%，科翔股份涨停）</strong><br>
-        · 6G概念持续发酵，叠加光模块/光纤光缆需求旺盛<br>
-        · 亨通光电+3.2%（成交160亿）、天孚通信+3.89%（成交147亿）<br>
-        · 持续性判断：<span class="tag tag-hot">偏强</span> — 算力基础设施建设长期趋势确定
-      </div>
-    </div>
+<!-- 明日预判 -->
+<div class="section">
+  <div class="section-title">明日预判</div>
+  <div class="highlight-box">
+    <h3>方向判断——医药延续还是切换？</h3>
+    <p><strong>大概率情景（60%）：</strong>医药板块明日冲高后分化，但核心CRO标的仍有溢价空间。PCB/电子化学品方向有望延续。上证指数在3900-3980区间窄幅震荡，等待MA60下移。市场风格偏向成长。</p>
+    <p><strong>小概率情景（25%）：</strong>权重股（银行、保险）企稳反弹，带动指数冲击3950-4000，但成长股可能短暂休整。适合"买跌不买涨"策略。</p>
+    <p><strong>风险情景（15%）：</strong>外围市场继续走弱（道指已连跌），叠加周末效应，市场出现获利回吐。关注晚间美股走势和周末政策消息面。</p>
   </div>
-
-  <hr class="divider">
-
-  <!-- 技术面信号 -->
-  <div class="section">
-    <div class="section-title">技术面信号</div>
-    <div class="section-body">
-      <div class="text-block">
-        <strong>上证指数：</strong>
-        · 收盘3,900.35点，日内探底回升（低点3,864.27，高点3,902.05）<br>
-        · 今日低开高走收阳，站上3,900关口，短期均线系统多头排列<br>
-        · 上方压力位：3,950（前期高点区域）；下方支撑位：3,850（20日均线附近）<br>
-        · 成交额缩量至11,668亿，缩量上涨需关注后续量能跟进情况<br>
-        · 技术指标：MACD红柱小幅缩短，DIF/DEA均线仍处于零轴上方，中期趋势偏多<br><br>
-
-        <strong>创业板指：</strong>
-        · 收盘3,515.56点，跌0.55%，盘中冲高回落（高3,574.41，低3,444.36）<br>
-        · 振幅较大（3.7%），多空博弈激烈，最终收跌<br>
-        · 上方压力位：3,600（前期平台）；下方支撑位：3,450（30日均线附近）<br>
-        · 日线MACD有死叉风险，短期需关注3,500关口得失<br>
-        · 宁德时代（-4.24%）等权重股走弱是拖累创业板指的主因<br><br>
-
-        <strong>科创50：</strong>
-        · 收盘1,701.29点，涨0.45%，表现相对强势<br>
-        · 成交量放大，半导体板块活跃对科创50构成支撑<br>
-        · 短期关注1,730（今日高点）能否突破
-      </div>
-    </div>
+  <div class="highlight-box">
+    <h3>关注信号</h3>
+    <p>1）<strong>北向资金动向</strong>——今日若北向大幅净流入（>50亿），则确认外资加仓A股，市场信心增强；<br>
+    2）<strong>周末政策面</strong>——关注是否有降准、行业扶持政策等利好释放；<br>
+    3）<strong>港股走势</strong>——恒生今日收涨0.43%，港股科技股若延续强势，则对A股成长方向形成正反馈；<br>
+    4）<strong>周一开盘量能</strong>——若继续放量至2.5万亿以上，则反弹趋势确认；若缩量至2万亿以下，则需警惕冲高回落。</p>
   </div>
+</div>
 
-  <hr class="divider">
-
-  <!-- 明日预判 -->
-  <div class="section">
-    <div class="section-title">明日预判</div>
-    <div class="section-body">
-      <div class="text-block">
-        <strong>市场风格判断：</strong><br>
-        今日市场呈现明显的高低切换和板块轮动特征。上证指数在煤炭、银行等权重板块带动下收红，而创业板指受新能源、医药拖累走弱。成交额虽缩量但仍维持2.5万亿高位，市场情绪并未明显降温。<br><br>
-
-        <strong>主线方向预判：</strong><br>
-        · <span class="highlight">煤炭/高股息方向</span>：短期有惯性上冲动能，但连续大涨后追高风险增大，建议关注板块内补涨机会<br>
-        · <span class="highlight">半导体/电子化学品</span>：国产替代逻辑不改，但个股分化加剧，聚焦有业绩支撑的龙头<br>
-        · <span class="highlight">通信设备/6G/光模块</span>：景气度确定性高，资金持续关注，回调可逢低布局<br>
-        · <span class="highlight">新能源/汽车</span>：今日大幅回调，需等待企稳信号，关注宁德时代等权重股能否止跌<br><br>
-
-        <strong>需要关注的信号：</strong><br>
-        · 外围市场：韩国综指大跌5%触发熔断，SK海力士跌超9%，对A股半导体板块情绪可能产生扰动<br>
-        · 港股恒指跌1.61%，科网股、保险股普跌，关注A股开盘情绪传导<br>
-        · 外资机构密集发声，关注AI资本开支拐点相关讨论<br>
-        · 光模块"禁令"传闻扰动但板块展现韧性，关注后续事态发展<br>
-        · 中报季密集披露期，业绩超预期个股有望获得资金追捧<br><br>
-
-        <strong>综合预判：</strong><br>
-        上证指数短期有望延续震荡偏强格局，但3,950点附近存在技术压力。创业板指若3,500关口失守，可能进一步向下寻求支撑。操作上建议均衡配置，关注煤炭、通信设备、半导体的轮动机会，同时对前期涨幅较大的新能源、医药板块保持谨慎。
-      </div>
-    </div>
+<!-- 风险提示 -->
+<div class="section">
+  <div class="section-title">风险提示</div>
+  <div class="highlight-box" style="border-left: 3px solid #c9a227;">
+    <p><strong>政策风险：</strong>全球流动性收紧节奏虽有暂缓信号，但美联储官员表态存在分歧（"不应被市场左右"），若后续通胀数据超预期，加息预期可能再度升温。</p>
+    <p><strong>外围风险：</strong>道琼斯指数今日收跌0.85%，纳斯达克微跌0.06%，美股连续调整对A股开盘情绪有压制。霍尔木兹海峡地缘政治局势存在不确定性。</p>
+    <p><strong>技术面风险：</strong>上证指数距离MA60（4002）仅1.5%空间，若无法有效突破，可能形成"假突破"后回落。创业板指距MA60（3868）仍有8.5%空间，中期趋势尚未确认反转。</p>
+    <p><strong>结构风险：</strong>今日市场呈现"一半火焰一半海水"格局——医药、PCB暴涨，但仍有近2300只个股下跌。资金集中度过高，一旦主线退潮，题材股回撤幅度可能较大。</p>
   </div>
+</div>
 
-  <hr class="divider">
-
-  <!-- 风险提示 -->
-  <div class="section">
-    <div class="section-title">风险提示</div>
-    <div class="section-body">
-      <div class="text-block">
-        <strong>政策风险：</strong> 煤炭价格持续上涨可能引发政策调控，关注相关政策信号。<br>
-        <strong>外围风险：</strong> 韩国股市大跌5%触发熔断，亚太市场波动加大；恒生指数跌1.61%，外资流出压力需关注。<br>
-        <strong>技术面风险：</strong> 创业板指MACD面临死叉风险，若跌破3,500关口可能引发技术性抛盘。<br>
-        <strong>量能风险：</strong> 两市成交额缩量1,324亿，若后续持续缩量，反弹动力可能减弱。<br>
-        <strong>中报风险：</strong> 中报密集披露期，业绩不及预期的个股可能遭遇集中抛售。
-      </div>
-    </div>
-  </div>
-
-  <!-- 全球市场参考 -->
-  <hr class="divider">
-  <div class="section">
-    <div class="section-title">全球市场参考</div>
-    <div class="section-body">
-      <div class="data-row">
-        <div class="data-item">恒生指数：<strong>25,497.36</strong> <span class="down">-1.61%</span></div>
-        <div class="data-item">道琼斯：<strong>54,349.12</strong> <span class="up">+0.49%</span></div>
-        <div class="data-item">纳斯达克：<strong>26,363.44</strong> <span class="down">-0.83%</span></div>
-        <div class="data-item">美元指数：<strong>99.76</strong> <span class="up">+0.08%</span></div>
-      </div>
-      <div class="text-block" style="font-size:12px;color:#888;margin-top:6px;">
-        道琼斯数据为前一交易日收盘，韩国综指当日大跌5%触发熔断。
-      </div>
-    </div>
-  </div>
-
-  <div class="risk-footer">
-    本报告仅供参考，不构成投资建议。数据来源包括同花顺、腾讯行情API、通达信（eltdx）及新浪财经。部分数据因第三方API不可用而基于板块表现推断，请结合实际情况综合判断。投资有风险，入市需谨慎。
-  </div>
+<div class="footer">
+  本报告仅供参考，不构成投资建议<br>
+  数据来源：同花顺复盘、eltdx、腾讯行情API<br>
+  生成时间：2026-08-07 收盘后
+</div>
 
 </div>
 </body>
