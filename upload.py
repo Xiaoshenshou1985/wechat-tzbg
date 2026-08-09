@@ -9,6 +9,8 @@ import subprocess
 import sys
 import os
 import json
+import time
+import re
 from datetime import datetime
 
 REPO = os.path.expanduser('~/wechat-tzbg')
@@ -17,6 +19,24 @@ TZ = '+0800'
 def run(cmd, capture=True):
     result = subprocess.run(cmd, capture_output=capture, text=True, cwd=REPO)
     return result
+
+def retry_push(max_attempts=3, base_delay=10):
+    """Git push 带退避重试，应对 GitHub 429 限流"""
+    for attempt in range(1, max_attempts + 1):
+        r = run(['git', 'push', 'origin', 'main', '--force-with-lease'])
+        if r.returncode == 0:
+            return r
+        err = r.stderr + r.stdout
+        # 检测 429 / rate limit
+        if re.search(r'429|rate limit|exceeded|too many requests', err, re.I):
+            if attempt < max_attempts:
+                delay = base_delay * attempt  # 10s, 20s, 30s
+                print(f"⚠️ 遇到 GitHub 限流(429)，{delay}秒后重试 (第{attempt}次)...")
+                time.sleep(delay)
+                continue
+        # 非限流错误直接报
+        return r
+    return r
 
 def upload(filename, msg=''):
     if not os.path.exists(os.path.join(REPO, filename)):
@@ -64,10 +84,10 @@ def upload(filename, msg=''):
             print(f"ℹ️ {filename} 无变化，跳过")
             return True
         
-        # 4. 推送
-        r = run(['git', 'push', 'origin', 'main', '--force-with-lease'])
+        # 4. 推送（带 429 重试）
+        r = retry_push()
         if r.returncode != 0:
-            print(f"❌ 推送失败: {r.stderr[:200]}")
+            print(f"❌ 推送失败(尝试3次后): {r.stderr[:200]}")
             return False
         
         print(f"✅ {filename} 已上传: {commit_msg}")
