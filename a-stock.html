@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A股盘前日报 2026-08-14</title>
+<title>A股盘前日报 2026-08-19</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -17,7 +17,6 @@
   }
   .wrap { max-width: 920px; margin: 0 auto; padding: 56px 40px 72px; }
 
-  /* Header：金色竖线装饰 */
   header {
     border-left: 4px solid #c9a227;
     padding: 6px 0 6px 24px;
@@ -29,274 +28,425 @@
     color: #2e564f;
     letter-spacing: 0.03em;
   }
-  header .sub {
-    margin-top: 6px;
-    color: #999;
-    font-size: 13px;
-    letter-spacing: 0.05em;
+  header p {
+    font-size: 14px;
+    color: #888;
+    margin-top: 4px;
   }
-  .divider { height: 1px; background: #e9e5dc; margin: 28px 0 44px; }
 
-  section { margin-bottom: 52px; }
-  h2 {
-    display: flex; align-items: baseline; gap: 10px;
-    font-size: 20px; font-weight: 400;
+  .section {
+    margin-top: 40px;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 400;
     color: #2e564f;
-    margin-bottom: 20px;
-    letter-spacing: 0.04em;
+    border-left: 3px solid #c9a227;
+    padding-left: 14px;
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
   }
-  h2::before {
-    content: ""; display: inline-block; width: 3px; align-self: stretch;
-    background: #c9a227; margin-right: 2px; border-radius: 1px;
+  .section-sub {
+    font-size: 14px;
+    color: #888;
+    font-weight: 300;
+    margin-left: 8px;
   }
-  h3 { font-size: 15px; font-weight: 500; color: #444; margin: 18px 0 10px; }
 
-  p { margin-bottom: 12px; color: #333; }
-  .muted { color: #999; font-size: 13px; }
-  .lead { color: #555; }
-
-  /* 数据卡片 */
   .index-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
   }
   .index-card {
-    background: #fff; border: 1px solid #f0ece3; border-radius: 6px;
-    padding: 18px 20px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 14px 16px;
   }
-  .index-card .name { font-size: 13px; color: #888; margin-bottom: 6px; }
-  .index-card .val { font-size: 22px; font-weight: 400; }
-  .index-card .chg { font-size: 13px; margin-top: 4px; }
+  .index-card .name { font-size: 13px; color: #666; }
+  .index-card .price { font-size: 22px; font-weight: 400; margin: 4px 0; }
+  .index-card .chg { font-size: 13px; }
   .up { color: #c0392b; }
-  .down { color: #1e7a46; }
+  .down { color: #27825c; }
+  .up-bg { background: #fdf2f0; }
+  .down-bg { background: #f0f8f4; }
 
-  /* 表格 */
-  table { width: 100%; border-collapse: collapse; margin: 14px 0 18px; font-size: 14px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 12px 0;
+  }
   th {
-    text-align: left; color: #2e564f; font-weight: 500;
-    border-bottom: 1px solid #d8d2c4; padding: 10px 12px; font-size: 13px;
+    text-align: left;
+    padding: 10px 12px;
+    font-weight: 400;
+    color: #888;
+    border-bottom: 1px solid #e8e8e6;
+    font-size: 13px;
   }
-  td { border-bottom: 1px solid #f0ece3; padding: 10px 12px; color: #333; }
+  td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f0f0ee;
+  }
   tr:last-child td { border-bottom: none; }
-  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+
   .tag {
-    display: inline-block; font-size: 12px; color: #2e564f;
-    background: #eef4f1; border-radius: 3px; padding: 1px 8px; margin-left: 6px;
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 400;
+    margin-right: 4px;
   }
-  .tag-gold { background: #f7f1e0; color: #8a6d1f; }
+  .tag-red { background: #fdf2f0; color: #c0392b; }
+  .tag-green { background: #f0f8f4; color: #27825c; }
+  .tag-gold { background: #fcf6e6; color: #b8941e; }
 
-  /* 关键位 */
-  .levels { background: #fff; border: 1px solid #f0ece3; border-radius: 6px; padding: 18px 22px; margin: 14px 0; }
-  .levels .row { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px dashed #f0ece3; }
-  .levels .row:last-child { border-bottom: none; }
-  .levels .k { color: #888; font-size: 13px; }
-  .levels .v { font-weight: 400; }
-
-  ul.tips { list-style: none; padding: 0; }
-  ul.tips li {
-    padding: 10px 0 10px 22px; position: relative;
-    border-bottom: 1px dashed #f0ece3; color: #333;
+  .news-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0ee;
+    font-size: 14px;
   }
-  ul.tips li:last-child { border-bottom: none; }
-  ul.tips li::before {
-    content: ""; position: absolute; left: 4px; top: 18px;
-    width: 6px; height: 6px; border-radius: 50%; background: #c9a227;
-  }
+  .news-item:last-child { border-bottom: none; }
+  .news-item .time { color: #aaa; font-size: 12px; margin-right: 8px; }
+  .news-item .label { display: inline-block; font-size: 11px; padding: 1px 6px; border-radius: 2px; margin-right: 6px; }
+  .label-利多 { background: #fdf2f0; color: #c0392b; }
+  .label-利空 { background: #f0f8f4; color: #27825c; }
+  .label-中性 { background: #f5f5f3; color: #888; }
 
-  .risk-box { background: #fdf9f2; border-radius: 6px; padding: 18px 22px; }
-  .risk-box li { color: #6b5b4a; padding: 6px 0; border-bottom: 1px dashed #eee4d4; list-style: none; }
-  .risk-box li:last-child { border-bottom: none; }
-  .risk-box li::before { content: "— "; color: #c9a227; }
+  .analysis-text {
+    font-size: 14px;
+    line-height: 2;
+    color: #333;
+    margin: 12px 0;
+  }
+  .analysis-text strong { color: #1a1a1a; font-weight: 500; }
+
+  .risk-box {
+    background: #fcf6e6;
+    border-left: 3px solid #c9a227;
+    padding: 16px 20px;
+    border-radius: 4px;
+    margin: 16px 0;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.8;
+  }
 
   footer {
-    margin-top: 64px; text-align: center; color: #aaa; font-size: 12px;
-    letter-spacing: 0.08em;
+    text-align: center;
+    color: #bbb;
+    font-size: 13px;
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid #eee;
+    letter-spacing: 0.02em;
   }
+
   @media (max-width: 640px) {
+    .wrap { padding: 32px 20px 48px; }
     .index-grid { grid-template-columns: repeat(2, 1fr); }
-    .wrap { padding: 36px 20px 56px; }
+    header h1 { font-size: 24px; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <header>
-    <h1>A股盘前日报</h1>
-    <div class="sub">2026年8月14日 周五 · 数据截至 8月13日收盘 · 全市场成交 25680 亿元（放量 4008 亿）</div>
-  </header>
-  <div class="divider"></div>
+<header>
+  <h1>A股盘前日报</h1>
+  <p>2026-08-19 周三 | 数据截至 2026-08-18 收盘</p>
+</header>
 
-  <!-- 昨日行情回顾 -->
-  <section>
-    <h2>昨日行情回顾</h2>
-    <p class="lead">三大指数高开低走集体收跌，医药独强难撑全局，全市场超 4300 只个股下跌，放量阴线、赚钱效应快速收敛。</p>
-    <div class="index-grid">
-      <div class="index-card">
-        <div class="name">上证指数</div>
-        <div class="val">3926.96</div>
-        <div class="chg down">-19.72&nbsp;&nbsp;-0.50%</div>
-      </div>
-      <div class="index-card">
-        <div class="name">深证成指</div>
-        <div class="val">14289.44</div>
-        <div class="chg down">-124.99&nbsp;&nbsp;-0.87%</div>
-      </div>
-      <div class="index-card">
-        <div class="name">创业板指</div>
-        <div class="val">3586.04</div>
-        <div class="chg down">-16.04&nbsp;&nbsp;-0.45%</div>
-      </div>
-      <div class="index-card">
-        <div class="name">科创50</div>
-        <div class="val">1717.75</div>
-        <div class="chg down">-1.11%</div>
-      </div>
-      <div class="index-card">
-        <div class="name">北证50</div>
-        <div class="val">1097.80</div>
-        <div class="chg down">-1.62%</div>
-      </div>
-      <div class="index-card">
-        <div class="name">沪深300</div>
-        <div class="val">4663.95</div>
-        <div class="chg down">-0.57%</div>
-      </div>
+<!-- 昨日行情回顾 -->
+<div class="section">
+  <div class="section-title">昨日行情回顾</div>
+  <div class="index-grid">
+    <div class="index-card">
+      <div class="name">上证指数</div>
+      <div class="price">3,990.30</div>
+      <div class="chg up">+0.19% <span style="color:#aaa;font-size:12px;">+7.65</span></div>
     </div>
-    <table>
-      <tr><th>项目</th><th class="num">数值</th><th>解读</th></tr>
-      <tr><td>全市场成交额</td><td class="num">25680 亿</td><td>较上日放量 4008 亿，放量下跌需警惕</td></tr>
-      <tr><td>个股涨跌（全市场）</td><td class="num"><span class="up">1085</span> 涨 / <span class="down">4041</span> 跌</td><td>跌多涨少，亏钱效应占主导</td></tr>
-      <tr><td>涨跌停</td><td class="num">涨停 <span class="up">76</span> / 跌停 <span class="down">10</span></td><td>涨停集中于医药，封板效率较差</td></tr>
-      <tr><td>主力资金</td><td class="num down">净流出 198 亿</td><td>小单净流入 186 亿，主力撤、散户接</td></tr>
-      <tr><td>最强概念</td><td class="num up">CRO +3.13%</td><td>重组蛋白 +2.51%、细胞免疫治疗 +2.06%</td></tr>
-      <tr><td>最弱方向</td><td class="num down">贵金属 / 教育 / 工业金属</td><td>黄金白银跳水，教育尾盘补跌</td></tr>
-    </table>
-  </section>
-
-  <!-- 涨停复盘 -->
-  <section>
-    <h2>涨停复盘</h2>
-    <p class="lead">76 只涨停，主线高度集中：<strong>医药全链条（CRO / 创新药 / 中药 / 医药电商）包揽大半</strong>，电力与地产链低位补涨为辅。CRO 概念 +3.13% 领涨全市场，博济医药、万邦医药、近岸蛋白等 20cm 涨停潮。</p>
-    <table>
-      <tr><th>个股</th><th class="num">涨幅</th><th class="num">成交额</th><th>板块归属</th></tr>
-      <tr><td>博济医药 <span class="muted">300404</span></td><td class="num up">+20.02%</td><td class="num">8.2 亿</td><td>CRO <span class="tag">主线龙头</span></td></tr>
-      <tr><td>南模生物 <span class="muted">688265</span></td><td class="num up">+20.01%</td><td class="num">2.9 亿</td><td>模式动物/创新药服务 <span class="tag">主线</span></td></tr>
-      <tr><td>近岸蛋白 <span class="muted">688137</span></td><td class="num up">+20.01%</td><td class="num">4.3 亿</td><td>生物试剂/CRO 上游 <span class="tag">主线</span></td></tr>
-      <tr><td>蓝盾光电 <span class="muted">300862</span></td><td class="num up">+20.01%</td><td class="num">4.1 亿</td><td>光电/安防</td></tr>
-      <tr><td>万邦医药 <span class="muted">301520</span></td><td class="num up">+20.00%</td><td class="num">12.8 亿</td><td>CRO <span class="tag">主线</span></td></tr>
-      <tr><td>药易购 <span class="muted">300937</span></td><td class="num up">+19.98%</td><td class="num">5.5 亿</td><td>医药电商 <span class="tag">主线</span></td></tr>
-      <tr><td>陇神戎发 <span class="muted">300534</span></td><td class="num up">+19.97%</td><td class="num">17.3 亿</td><td>中药 <span class="tag">主线</span></td></tr>
-      <tr><td>兰卫医学 <span class="muted">301060</span></td><td class="num up">+19.96%</td><td class="num">4.3 亿</td><td>医学检验/CRO <span class="tag">主线</span></td></tr>
-      <tr><td>大唐发电 <span class="muted">601991</span></td><td class="num up">+10.02%</td><td class="num">59.7 亿</td><td>电力 <span class="tag tag-gold">低位补涨</span></td></tr>
-      <tr><td>亚泰集团 <span class="muted">600881</span></td><td class="num up">+10.19%</td><td class="num">6.4 亿</td><td>地产/建材 <span class="tag tag-gold">低位补涨</span></td></tr>
-    </table>
-    <h3>共性逻辑</h3>
-    <p>① <strong>CRO / 创新药</strong>：百花医药 7 连板打出的赚钱效应外溢，资金沿 CRO → 生物试剂 → 模式动物 → 中药 → 医药电商全链条扩散，20cm 标的集中兑现；② <strong>电力</strong>：大唐发电 59.7 亿巨量涨停带动火电/绿电，防御属性 + 高股息逻辑；③ <strong>地产链</strong>：亚泰、荣丰控股、京投发展、深振业A 批量涨停，超跌低位反抽。涨停结构呈"医药强攻、低估值防御搭台"特征。</p>
-  </section>
-
-  <!-- 跌停/炸板 -->
-  <section>
-    <h2>跌停 / 炸板</h2>
-    <p class="lead">主板跌停 4 只，另有科创板/创业板多只跌超 10%。封板效率"较差"，医药板块日内明显冲高回落，情绪出现退潮苗头。</p>
-    <table>
-      <tr><th>个股</th><th class="num">跌幅</th><th class="num">成交额</th><th>原因简析</th></tr>
-      <tr><td>传智教育 <span class="muted">003032</span></td><td class="num down">-9.99%</td><td class="num">11.2 亿</td><td>教育板块尾盘跳水，区间高位补跌</td></tr>
-      <tr><td>甘咨询 <span class="muted">000779</span></td><td class="num down">-9.98%</td><td class="num">12.9 亿</td><td>前期强势，放量兑现</td></tr>
-      <tr><td>高争民爆 <span class="muted">002827</span></td><td class="num down">-10.00%</td><td class="num">12.6 亿</td><td>民爆强势股回落</td></tr>
-      <tr><td>麦迪科技 <span class="muted">603990</span></td><td class="num down">-9.99%</td><td class="num">14.2 亿</td><td>高位杀跌，获利盘出逃</td></tr>
-      <tr><td>普联软件 <span class="muted">300996</span></td><td class="num down">-10.52%</td><td class="num">20.8 亿</td><td>创业板大跌（未触 20cm 跌停），信创/软件走弱</td></tr>
-      <tr><td>C国仪 <span class="muted">688828</span></td><td class="num down">-14.25%</td><td class="num">12.9 亿</td><td>次新股，上市初波动剧烈</td></tr>
-    </table>
-    <h3>情绪信号</h3>
-    <p>10jqka 复盘显示当日<strong>封板效率"较差"</strong>；医药板块"冲高回落、近 10 股涨停但多股炸板"，7 连板百花医药盘后再度发布风险提示——高位连板股分歧加大，短线情绪进入退潮与分化临界点。教育（传智教育触及跌停）、贵金属（晓程科技 -8.98%、成交 30.6 亿）成为补跌重灾区。</p>
-  </section>
-
-  <!-- 资金流向 -->
-  <section>
-    <h2>资金流向</h2>
-    <div class="levels">
-      <div class="row"><span class="k">全市场主力（8-13）</span><span class="v down">净流出 198 亿</span></div>
-      <div class="row"><span class="k">大单</span><span class="v down">净流出 110 亿</span></div>
-      <div class="row"><span class="k">中单</span><span class="v up">净流入 12 亿</span></div>
-      <div class="row"><span class="k">小单（散户）</span><span class="v up">净流入 186 亿</span></div>
-      <div class="row"><span class="k">北向资金</span><span class="v" style="color:#888">盘中实时数据自 2024 年 8 月起停发，当日无公开数据</span></div>
+    <div class="index-card">
+      <div class="name">深证成指</div>
+      <div class="price">14,622.50</div>
+      <div class="chg down">-0.56% <span style="color:#aaa;font-size:12px;">-81.78</span></div>
     </div>
-    <p class="muted">注：东方财富行业资金流接口当日不可用，以下行业方向为基于涨停分布与个股成交额的结构推断。</p>
-    <table>
-      <tr><th>行业方向</th><th>资金倾向</th><th>证据</th></tr>
-      <tr><td>医药生物</td><td class="up">净流入（最强主线）</td><td>药明康德 120 亿成交 +2.07%，20cm 涨停潮</td></tr>
-      <tr><td>电力/公用事业</td><td class="up">净流入</td><td>大唐发电 59.7 亿涨停，华电能源、京能电力跟涨</td></tr>
-      <tr><td>AI 算力/光模块</td><td class="up">结构分化</td><td>天孚通信 +7.13%（168.6 亿）、紫光股份 +7.03%（164.6 亿）；中际旭创 277.5 亿平收</td></tr>
-      <tr><td>存储/半导体</td><td class="down">高换手流出</td><td>兆易创新 -2.10%（229 亿）、长鑫科技 -1.20%（254 亿）、风华高科 -6.75%（133 亿）</td></tr>
-      <tr><td>贵金属/有色</td><td class="down">净流出</td><td>晓程科技 -8.98%、黄金白银跳水、工业金属走弱</td></tr>
-    </table>
-  </section>
-
-  <!-- 今日热点板块预判 -->
-  <section>
-    <h2>今日热点板块预判</h2>
-    <table>
-      <tr><th>方向</th><th>预判</th><th>核心逻辑</th></tr>
-      <tr><td>医药（CRO/创新药）</td><td><span class="tag">分歧加剧 · 谨慎追高</span></td><td>主线地位未破，但 7 连板风险提示 + 冲高回落 + 封板差，今日看龙头（博济、万邦、陇神）竞价与晋级；高标开板杀跌即转入退潮</td></tr>
-      <tr><td>存储 / AI 硬件</td><td><span class="tag tag-gold">修复概率较大</span></td><td>隔夜美股标普 500 创历史新高、存储板块同步走强，A 股存储/光模块昨放量分歧，今日有望反包（长鑫科技、兆易创新、天孚通信、中际旭创）</td></tr>
-      <tr><td>电力 / 公用事业</td><td><span class="tag tag-gold">防御延续</span></td><td>大唐发电 59.7 亿涨停立住标杆，低位 + 高股息，弱势行情防御属性占优</td></tr>
-      <tr><td>光缆 / 通信</td><td><span class="tag tag-gold">事件催化</span></td><td>商务部 8-14 起对印度单模光纤继续征反倾销税，利好国内光纤光缆（亨通、长飞、中天）</td></tr>
-      <tr><td>锂矿</td><td><span class="tag tag-gold">关注</span></td><td>碳酸锂价格突破 15 万元/吨，强现实行情延续，留意盐湖、赣锋、天齐</td></tr>
-      <tr><td>人形机器人</td><td><span class="tag tag-gold">情绪催化</span></td><td>宇树科技 IPO 申购开启，95 家公募获配超 18 亿元，一级市场热度外溢</td></tr>
-      <tr><td>贵金属 / 教育</td><td><span class="tag">回避</span></td><td>黄金白银跳水、美元 100 关口企稳，教育板块补跌未完</td></tr>
-    </table>
-  </section>
-
-  <!-- 技术面信号 -->
-  <section>
-    <h2>技术面信号</h2>
-    <h3>上证指数（收 3926.96）</h3>
-    <div class="levels">
-      <div class="row"><span class="k">均线</span><span class="v">MA5 3943（失守） / MA10 3896 / MA20 3862 / MA30 3901 / MA60 3988</span></div>
-      <div class="row"><span class="k">MACD</span><span class="v">DIF -7.02 &gt; DEA -26.74，金叉修复延续，红柱 39.45</span></div>
-      <div class="row"><span class="k">KDJ</span><span class="v">K 83.3 / D 82.0 / J 85.8，高位钝化</span></div>
-      <div class="row"><span class="k">关键支撑</span><span class="v">3900（整数关 + MA30 3901）→ 3862（MA20）</span></div>
-      <div class="row"><span class="k">关键压力</span><span class="v">3943（MA5）→ 3966（8-10 高点）→ 3970 上方</span></div>
+    <div class="index-card">
+      <div class="name">创业板指</div>
+      <div class="price">3,705.56</div>
+      <div class="chg down">-0.93% <span style="color:#aaa;font-size:12px;">-34.59</span></div>
     </div>
-    <h3>创业板指（收 3586.04）</h3>
-    <div class="levels">
-      <div class="row"><span class="k">均线</span><span class="v">MA5 3568 / MA10 3502 / MA20 3487，短中期均线全部踩在脚下（强于上证）</span></div>
-      <div class="row"><span class="k">MACD</span><span class="v">DIF -65.51 &gt; DEA -103.87，红柱 76.73，修复动能较强</span></div>
-      <div class="row"><span class="k">KDJ</span><span class="v">K 81.5 / D 76.4 / J 91.7，进入超买区</span></div>
-      <div class="row"><span class="k">关键支撑</span><span class="v">3568（MA5）→ 3502（MA10）</span></div>
-      <div class="row"><span class="k">关键压力</span><span class="v">3602（8-12 高点）→ 3620 一线</span></div>
+    <div class="index-card">
+      <div class="name">科创50</div>
+      <div class="price">1,790.87</div>
+      <div class="chg up">+0.11%</div>
     </div>
-    <p class="muted">综合：两大指数 MACD 均处金叉修复、中期均线未破坏，但昨日放量阴线 + KDJ 高位（J 值 86~92）显示短线需消化获利盘。上证 3900 是今日多空分水岭。</p>
-  </section>
-
-  <!-- 今日操作建议 -->
-  <section>
-    <h2>今日操作建议</h2>
-    <ul class="tips">
-      <li><strong>仓位基调：</strong>震荡市、重个股轻指数。昨日主力净流出 198 亿 + 放量下跌，建议总仓位控制在五至六成，不满仓追涨。</li>
-      <li><strong>医药主线：</strong>分歧日只做前排核心（博济医药、万邦医药、陇神戎发、药易购）低吸，严禁追高标杂毛；若百花医药等高标竞价大幅低开或开板，视为退潮信号，医药仓果断减半。</li>
-      <li><strong>存储 / 算力修复：</strong>隔夜美股存储走强 + 标普创新高，关注长鑫科技、兆易创新、天孚通信、紫光股份能否放量反包，高开不追、回踩不破昨低再介入。</li>
-      <li><strong>低位轮动：</strong>电力（大唐发电标杆）、光纤（印度反倾销落地）、锂矿（碳酸锂破 15 万）、机器人（宇树 IPO）四选一，分散布局低位补涨方向。</li>
-      <li><strong>关注信号：</strong>① 9:25 医药龙头竞价强弱；② 早盘 30 分钟成交额是否维持 2500 亿+ 级别；③ 上证 3900 得失（失守看 3862）；④ 涨停家数相较昨日 76 家是否衰减。</li>
-    </ul>
-  </section>
-
-  <!-- 风险提示 -->
-  <section>
-    <h2>风险提示</h2>
-    <div class="risk-box">
-      <ul>
-        <li><strong>政策/贸易：</strong>美国拟对进口无人机及零部件征收最高 100% 关税，中美摩擦升温；央行二季度货政报告定调"适度宽松"，留意汇率与降准落地节奏。</li>
-        <li><strong>外围：</strong>隔夜美股创新高但原油因库存暴增 1742 万桶回落、黄金白银跳水，风险偏好与大宗走势背离，美元指数 100 关口争夺。</li>
-        <li><strong>技术面：</strong>上证失守 MA5、放量阴线形成量价背离；KDJ 高位钝化（创业板 J 值 91.7 超买），3900 一旦失守将向 3860 一线回踩。</li>
-        <li><strong>资金面：</strong>主力净流出 198 亿、散户净流入 186 亿，筹码向散户转移；封板效率较差、炸板率高，短线情绪退潮风险。</li>
-        <li><strong>个股：</strong>回避 ST / 退市整理期个股及次新高位品种（C国仪 -14% 警示），教育、贵金属补跌方向勿抄底。</li>
-      </ul>
+    <div class="index-card">
+      <div class="name">北证50</div>
+      <div class="price">1,137.89</div>
+      <div class="chg up">+2.67%</div>
     </div>
-  </section>
+    <div class="index-card">
+      <div class="name">沪深300</div>
+      <div class="price">4,725.81</div>
+      <div class="chg down">-0.32%</div>
+    </div>
+  </div>
 
-  <footer>本报告仅供参考，不构成投资建议 · 数据来源：同花顺复盘 / 腾讯行情 / 通达信全市场扫描</footer>
+  <table>
+    <tr><th>指标</th><th class="num">数值</th><th class="num">较上日</th></tr>
+    <tr>
+      <td>全市场成交额</td>
+      <td class="num">24,198 亿元</td>
+      <td class="num up">+173 亿</td>
+    </tr>
+    <tr>
+      <td>上涨家数</td>
+      <td class="num up">1,735 只</td>
+      <td class="num" style="color:#888;">占比 38%</td>
+    </tr>
+    <tr>
+      <td>下跌家数</td>
+      <td class="num down">2,855 只</td>
+      <td class="num" style="color:#888;">占比 62%</td>
+    </tr>
+    <tr>
+      <td>停牌</td>
+      <td class="num" style="color:#888;">13 只</td>
+      <td class="num"></td>
+    </tr>
+    <tr>
+      <td>封板效率</td>
+      <td colspan="2" style="color:#2e564f;">较好</td>
+    </tr>
+  </table>
+</div>
+
+<!-- 涨停复盘 -->
+<div class="section">
+  <div class="section-title">涨停复盘 <span class="section-sub">20cm涨停为主，种业/国产操作系统双主线</span></div>
+  <table>
+    <tr><th>#</th><th>代码</th><th>名称</th><th class="num">涨幅</th><th class="num">成交额(亿)</th><th>所属板块</th></tr>
+    <tr><td>1</td><td>300189</td><td><strong>神农种业</strong></td><td class="num up">+20.04%</td><td class="num">22.91</td><td><span class="tag tag-red">种业</span></td></tr>
+    <tr><td>2</td><td>300313</td><td><strong>天山生物</strong></td><td class="num up">+20.04%</td><td class="num">1.88</td><td><span class="tag tag-red">种业</span></td></tr>
+    <tr><td>3</td><td>300598</td><td><strong>诚迈科技</strong></td><td class="num up">+20.01%</td><td class="num">7.69</td><td><span class="tag tag-red">国产操作系统</span></td></tr>
+    <tr><td>4</td><td>300684</td><td><strong>中石科技</strong></td><td class="num up">+20.00%</td><td class="num">48.48</td><td><span class="tag tag-red">消费电子</span></td></tr>
+    <tr><td>5</td><td>688112</td><td><strong>鼎阳科技</strong></td><td class="num up">+20.00%</td><td class="num">3.32</td><td><span class="tag tag-red">半导体/电子测量</span></td></tr>
+    <tr><td>6</td><td>301106</td><td><strong>骏成科技</strong></td><td class="num up">+20.00%</td><td class="num">1.16</td><td><span class="tag tag-red">电子</span></td></tr>
+    <tr><td>7</td><td>301129</td><td><strong>瑞纳智能</strong></td><td class="num up">+20.00%</td><td class="num">2.79</td><td><span class="tag tag-red">智慧水务</span></td></tr>
+    <tr><td>8</td><td>688152</td><td><strong>麒麟信安</strong></td><td class="num up">+20.00%</td><td class="num">2.26</td><td><span class="tag tag-red">国产操作系统</span></td></tr>
+    <tr><td>9</td><td>300970</td><td><strong>华绿生物</strong></td><td class="num up">+20.00%</td><td class="num">2.31</td><td><span class="tag tag-red">农业</span></td></tr>
+    <tr><td>10</td><td>301516</td><td><strong>中远通</strong></td><td class="num up">+16.46%</td><td class="num">6.64</td><td><span class="tag tag-red">电力设备</span></td></tr>
+  </table>
+
+  <div class="analysis-text">
+    <strong>涨停共性分析：</strong>昨日涨停以20cm票为主，两大主线清晰：<strong>种业/粮食</strong>受厄尔尼诺现象驱动，秋乐种业涨29.98%、神农种业、天山生物、华绿生物等涨停，天邦食品（猪肉）亦涨停；<strong>国产操作系统</strong>午后集体拉升，诚迈科技、麒麟信安、中国软件涨停，润和软件、软通动力跟涨。<strong>大成交额方向</strong>中石科技、神农种业、中远通放量明显，资金参与度高。
+  </div>
+</div>
+
+<!-- 跌停/大跌 -->
+<div class="section">
+  <div class="section-title">重点下跌个股 <span class="section-sub">医药/影视/能源金属承压</span></div>
+  <table>
+    <tr><th>#</th><th>代码</th><th>名称</th><th class="num">跌幅</th><th class="num">成交额(亿)</th><th>下跌原因</th></tr>
+    <tr><td>1</td><td>300558</td><td><strong>贝达药业</strong></td><td class="num down">-20.00%</td><td class="num">17.81</td><td>医药板块承压，资金出逃</td></tr>
+    <tr><td>2</td><td>301520</td><td><strong>万邦医药</strong></td><td class="num down">-13.17%</td><td class="num">10.59</td><td>创新药回调</td></tr>
+    <tr><td>3</td><td>301047</td><td><strong>义翘神州</strong></td><td class="num down">-13.03%</td><td class="num">19.04</td><td>医药板块走弱</td></tr>
+    <tr><td>4</td><td>000802</td><td><strong>北京文化</strong></td><td class="num down">-9.19%</td><td class="num">16.72</td><td>影视院线低开低走</td></tr>
+    <tr><td>5</td><td>002229</td><td><strong>鸿博股份</strong></td><td class="num down">-8.97%</td><td class="num">17.93</td><td>算力概念回调</td></tr>
+    <tr><td>6</td><td>002668</td><td><strong>TCL智家</strong></td><td class="num down">-8.96%</td><td class="num">8.65</td><td>智能家居板块回落</td></tr>
+    <tr><td>7</td><td>002580</td><td><strong>圣阳股份</strong></td><td class="num down">-8.78%</td><td class="num">18.09</td><td>储能概念调整</td></tr>
+    <tr><td>8</td><td>300720</td><td><strong>海川智能</strong></td><td class="num down">-9.05%</td><td class="num">20.52</td><td>高估值品种回调</td></tr>
+    <tr><td>9</td><td>301717</td><td><strong>超纯应材</strong></td><td class="num down">-9.04%</td><td class="num">37.45</td><td>半导体材料高位回落</td></tr>
+    <tr><td>10</td><td>600881</td><td><strong>亚泰集团</strong></td><td class="num down">-8.14%</td><td class="num">8.77</td><td>地产板块走弱</td></tr>
+  </table>
+  <div class="analysis-text">
+    <strong>下跌逻辑：</strong>医药板块大面积走弱，贝达药业跌停、万邦医药/义翘神州跌超13%；影视院线板块低开低走，北京文化逼近跌停；能源金属板块低迷，永杉锂业、融捷股份、博迁新材跌幅居前。半导体材料方向高位分化，超纯应材放量跌超9%。
+  </div>
+</div>
+
+<!-- 资金流向 -->
+<div class="section">
+  <div class="section-title">资金流向 <span class="section-sub">南向资金净买入超100亿港元</span></div>
+  <div class="analysis-text">
+    昨日东方财富资金流数据接口暂不可用，但从行情表现推断：<br>
+    <strong>资金流入方向：</strong>种业/粮食概念（厄尔尼诺驱动）、国产操作系统（午后拉升放量）、银行板块（逆市护盘，中行、农行涨超2%）。<br>
+    <strong>资金流出方向：</strong>医药板块（贝达药业跌停，板块整体承压）、影视院线（北京文化逼近跌停）、能源金属、半导体材料高位分化。<br>
+    <strong>南向资金：</strong>净买入超100亿港元，恒生指数涨1.65%，港股通资金持续流入。<br>
+    <strong>主力资金特征：</strong>成交量前20名中，兆易创新（267.9亿）、长鑫科技（254.6亿）、中际旭创（218.3亿）位列前三，科技股交投活跃但涨跌分化，显示资金在高位博弈。
+  </div>
+</div>
+
+<!-- 昨日热点板块预判 -->
+<div class="section">
+  <div class="section-title">昨日热点板块分析</div>
+  <table>
+    <tr><th>板块</th><th class="num">涨幅</th><th>领涨股</th><th>驱动逻辑</th></tr>
+    <tr>
+      <td><strong>转基因</strong></td>
+      <td class="num up">+9.30%</td>
+      <td>秋乐种业(+29.98%)、神农种业(+20.04%)</td>
+      <td>厄尔尼诺现象引发粮食供应担忧</td>
+    </tr>
+    <tr>
+      <td><strong>玉米</strong></td>
+      <td class="num up">+7.47%</td>
+      <td>康农种业(+24.47%)、敦煌种业(+10.08%)</td>
+      <td>厄尔尼诺+粮食安全</td>
+    </tr>
+    <tr>
+      <td><strong>粮食概念</strong></td>
+      <td class="num up">+6.52%</td>
+      <td>金健米业、京粮控股、黑芝麻涨停</td>
+      <td>粮食供应风险升温</td>
+    </tr>
+    <tr>
+      <td><strong>国产操作系统</strong></td>
+      <td class="num up">+5%+</td>
+      <td>诚迈科技(+20.01%)、麒麟信安(+20%)</td>
+      <td>午后拉升，自主可控预期</td>
+    </tr>
+    <tr>
+      <td><strong>猪肉</strong></td>
+      <td class="num up">活跃</td>
+      <td>天邦食品(+10.13%)、罗牛山涨停</td>
+      <td>厄尔尼诺联动+猪周期预期</td>
+    </tr>
+    <tr>
+      <td><strong>银行</strong></td>
+      <td class="num up">+0.75%+</td>
+      <td>中行、农行涨超2%</td>
+      <td>逆市护盘，息差环比回升预期</td>
+    </tr>
+    <tr>
+      <td><strong>影视院线</strong></td>
+      <td class="num down">-2%+</td>
+      <td>北京文化(-9.19%)</td>
+      <td>板块低开低走，资金流出</td>
+    </tr>
+    <tr>
+      <td><strong>能源金属</strong></td>
+      <td class="num down">-3%+</td>
+      <td>永杉锂业、融捷股份跌幅居前</td>
+      <td>周期回落，需求预期走弱</td>
+    </tr>
+  </table>
+</div>
+
+<!-- 技术面信号 -->
+<div class="section">
+  <div class="section-title">技术面信号 <span class="section-sub">上证窄幅震荡，创业板承压</span></div>
+  <div class="analysis-text">
+    <strong>上证指数（3,990.30）：</strong>昨日低开高走收涨0.19%，盘中探底3,955.60后回升，收于3,990.30，逼近4,000点整数关口。日线连续三日收于5日线上方，短期均线多头排列。MACD金叉延续，红柱微幅放大。量能24,198亿，较前日增量173亿，维持万亿以上活跃度。上方压力位4,000/4,050，支撑位3,950/3,900。<br><br>
+    <strong>创业板指（3,705.56）：</strong>昨日收跌0.93%，盘中一度跌至3,662.45，表现弱于主板。MACD红柱收窄，KDJ高位死叉迹象，短期技术面偏弱。创业板权重股（医药、新能源）承压拖累指数。下方支撑3,660/3,600，上方压力3,780/3,800。<br><br>
+    <strong>市场结构：</strong>上证与创业板分化明显，风格切换特征显著——防御性板块（银行、农业）走强，成长板块（医药、能源金属、半导体材料）分化调整。银行板块逆市护盘，种业/粮食板块受事件驱动爆发。
+  </div>
+</div>
+
+<!-- 今日热点板块预判 -->
+<div class="section">
+  <div class="section-title">今日热点板块预判</div>
+  <div class="analysis-text">
+    <strong>延续方向：</strong><br>
+    &bull; <strong>种业/粮食/猪肉：</strong>厄尔尼诺事件持续发酵，叠加俄罗斯黑海港口粮船遇袭（至少五艘），粮食供应风险进一步升温。该方向短期催化因素充足，但需警惕连续大涨后的分化，关注秋乐种业、神农种业等龙头股溢价情况。<br>
+    &bull; <strong>国产操作系统/自主可控：</strong>午后拉升放量，诚迈科技、麒麟信安封板坚决，关注今日能否确认板块效应延续。<br><br>
+    <strong>潜在轮动方向：</strong><br>
+    &bull; <strong>人形机器人：</strong>机构研报密集关注，认为2026年是人形机器人0-1兑现重要节点。精耕减震器、机器人线束、AI视觉检测等细分方向值得关注。<br>
+    &bull; <strong>半导体零部件/材料：</strong>半导体上行周期弹性品种，磷化铟、面板+基板联动等方向获机构推荐。但需注意高位分化风险（超纯应材昨跌超9%）。<br>
+    &bull; <strong>银行板块：</strong>逆市护盘，中行、农行涨超2%，上半年利润降幅收窄+息差环比回升，机构认为逢低布局有较高胜率。<br><br>
+    <strong>风险方向：</strong><br>
+    &bull; <strong>AI/科技板块：</strong>隔夜纳指跌超1%，科技板块回落，AI交易情绪逆转，苹果"反AI"属性正成股价拖累，中概股多数下跌（百度跌超12%）。需警惕今日A股AI/算力方向的联动压力。<br>
+    &bull; <strong>医药板块：</strong>贝达药业跌停，创新药/生物医药板块整体承压，短期回避高估值医药股。<br>
+    &bull; <strong>影视院线：</strong>板块持续走弱，缺乏催化，短期不宜抄底。
+  </div>
+</div>
+
+<!-- 隔夜重要消息 -->
+<div class="section">
+  <div class="section-title">隔夜重要消息</div>
+  <div>
+    <div class="news-item">
+      <span class="label label-利空">利空</span> <span class="time">08/19</span>
+      <strong>纳指跌超1%，科技板块回落</strong>
+      <span style="color:#888;font-size:13px;">纳斯达克-1.33%，标普500-0.69%，道琼斯-0.22%。全球债券收益率飙升，市场风险偏好下降。</span>
+    </div>
+    <div class="news-item">
+      <span class="label label-利空">利空</span> <span class="time">08/19</span>
+      <strong>中概股多数下跌，百度跌超12%</strong>
+      <span style="color:#888;font-size:13px;">AI交易情绪逆转，苹果"反AI"属性正成股价拖累，短期科技股承压。</span>
+    </div>
+    <div class="news-item">
+      <span class="label label-利多">利多</span> <span class="time">08/18</span>
+      <strong>俄罗斯黑海港口附近至少五艘粮船遇袭</strong>
+      <span style="color:#888;font-size:13px;">粮食供应风险升温，厄尔尼诺事件叠加地缘因素，或进一步推升种业/粮食板块。</span>
+    </div>
+    <div class="news-item">
+      <span class="label label-利多">利多</span> <span class="time">08/18</span>
+      <strong>前7个月服务零售额增长5.0%</strong>
+      <span style="color:#888;font-size:13px;">国家统计局发布数据，消费复苏态势延续，对内需板块构成支撑。</span>
+    </div>
+    <div class="news-item">
+      <span class="label label-中性">中性</span> <span class="time">08/18</span>
+      <strong>南向资金净买入超100亿港元</strong>
+      <span style="color:#888;font-size:13px;">南向资金持续流入港股，恒生指数涨1.65%，但恒科指跌0.9%，芯片股走弱。</span>
+    </div>
+    <div class="news-item">
+      <span class="label label-中性">中性</span> <span class="time">08/18</span>
+      <strong>转型牛并未结束，看好A股"金秋行情"</strong>
+      <span style="color:#888;font-size:13px;">多家机构发声，中金、华泰等认为向上趋势基础未变，但短期仍需关注业绩确定性和市场节奏。</span>
+    </div>
+    <div class="news-item">
+      <span class="label label-利多">利多</span> <span class="time">08/18</span>
+      <strong>长鑫科技总市值突破4万亿元</strong>
+      <span style="color:#888;font-size:13px;">科创板"硬科技"释放强劲增长动能，科创板半年报亮点纷呈。</span>
+    </div>
+    <div class="news-item">
+      <span class="label label-中性">中性</span> <span class="time">08/18</span>
+      <strong>2026上合组织数字经济论坛将于9月14日举行</strong>
+      <span style="color:#888;font-size:13px;">数字经济相关主题或迎来阶段性催化。</span>
+    </div>
+  </div>
+</div>
+
+<!-- 今日操作建议 -->
+<div class="section">
+  <div class="section-title">今日操作建议</div>
+  <div class="risk-box">
+    <strong>方向判断：</strong>震荡分化，结构性机会为主<br><br>
+    <strong>关注方向：</strong><br>
+    1. <strong>种业/粮食（延续）：</strong>厄尔尼诺+黑海粮船遇袭双重催化，短线仍有惯性，但追高需谨慎，观察龙头股封板质量。<br>
+    2. <strong>银行/防御（防御配置）：</strong>逆市护盘逻辑清晰，资金从高位成长股向低估值防御切换，中行、农行等大行可作为底仓配置。<br>
+    3. <strong>国产操作系统（观察持续性）：</strong>昨日午后放量拉升，需今日确认板块效应。若诚迈科技、麒麟信安继续强势，可关注润和软件、软通动力等跟涨标的。<br>
+    4. <strong>人形机器人/半导体零部件（中期布局）：</strong>机构密集调研，2026年产业化兑现节点，适合逢低布局。<br><br>
+    <strong>警惕方向：</strong><br>
+    &bull; AI/算力板块受隔夜美股科技股回落压制，中际旭创、新易盛等高位品种注意风险。<br>
+    &bull; 医药板块贝达药业跌停后，短期回避创新药/生物医药，等待企稳信号。<br>
+    &bull; 创业板指技术面偏弱，KDJ死叉，短期不宜重仓博弈成长股。<br><br>
+    <strong>仓位建议：</strong>控制仓位在5-6成，以防御性配置为主，等待市场方向明朗。
+  </div>
+</div>
+
+<!-- 风险提示 -->
+<div class="section">
+  <div class="section-title">风险提示</div>
+  <div class="risk-box">
+    <strong>外围风险：</strong>隔夜纳指跌超1%，科技板块回落，全球债券收益率飙升，短期外部风险偏好下降。AI交易情绪逆转，对A股AI/算力板块构成联动压力。<br><br>
+    <strong>政策风险：</strong>关注直播经济规范健康发展等政策落地，可能对相关板块产生短期扰动。不得利用算法技术实施价格歧视等监管信号需关注。<br><br>
+    <strong>技术面风险：</strong>创业板指KDJ高位死叉迹象，MACD红柱收窄；上证指数4,000点整数关口压力明显，突破需量能配合。两市成交额虽维持万亿以上，但不足以推动全面突破。<br><br>
+    <strong>行业风险：</strong>医药板块大面积承压，能源金属板块持续低迷，影视院线板块低开低走——这些板块短期缺乏催化，不适合抄底博弈。
+  </div>
+</div>
+
+<footer>
+  本报告仅供参考，不构成投资建议<br>
+  数据来源：同花顺、新浪财经、腾讯财经、通达信
+</footer>
+
 </div>
 </body>
 </html>
