@@ -3,18 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>美股盘前日报 2026-08-13</title>
+<title>美股盘前日报 2026-08-20</title>
 <style>
   :root {
     --bg: #fafaf8;
     --ink: #1a1a1a;
-    --muted: #6b6b66;
     --green: #2e564f;
     --gold: #c9a227;
     --up: #c53b3b;
     --down: #2b7a4b;
-    --card: #f6f5f0;
     --line: #eaeae5;
+    --card: #f6f5f0;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -22,490 +21,320 @@
     color: var(--ink);
     font-family: -apple-system, "SF Pro Display", "PingFang SC", "Helvetica Neue", sans-serif;
     line-height: 1.7;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
   }
-  .container { max-width: 780px; margin: 0 auto; padding: 56px 32px 72px; }
-
-  /* Header */
-  header { padding-bottom: 36px; }
-  .title-wrap { position: relative; padding-left: 24px; }
-  .title-wrap::before {
+  .wrap { max-width: 780px; margin: 0 auto; padding: 56px 28px 80px; }
+  header {
+    position: relative;
+    padding: 8px 0 28px;
+    margin-bottom: 44px;
+    border-bottom: 1px solid var(--line);
+  }
+  header::before {
     content: "";
     position: absolute;
-    left: 0; top: 6px;
-    width: 2px; height: 60px;
+    top: 4px; left: 0;
+    width: 60px; height: 2px;
     background: var(--gold);
   }
-  h1 {
-    font-size: 28px;
+  header h1 {
+    font-size: 26px;
     font-weight: 500;
     color: var(--green);
     letter-spacing: 1px;
-    line-height: 1.3;
   }
-  .sub { margin-top: 8px; font-size: 13px; color: var(--muted); }
-  .meta { margin-top: 18px; font-size: 12.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 12px; }
-  .meta b { color: var(--ink); font-weight: 500; }
-
-  /* Sections */
-  section { margin-top: 52px; }
-  h2 {
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--green);
-    margin-bottom: 4px;
+  header .date {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #888;
     letter-spacing: 0.5px;
   }
-  .sec-sub { font-size: 12.5px; color: var(--muted); margin-bottom: 20px; }
-
-  /* Tables */
-  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  header .tagline {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #999;
+  }
+  section { margin-bottom: 48px; }
+  h2 {
+    position: relative;
+    padding-left: 16px;
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--green);
+    margin-bottom: 20px;
+  }
+  h2::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 7px;
+    width: 3px; height: 15px;
+    background: var(--gold);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
   th {
     text-align: left;
     font-weight: 500;
     font-size: 12px;
-    color: var(--muted);
     letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #888;
+    padding: 8px 10px;
     border-bottom: 1px solid var(--line);
-    padding: 8px 10px 10px;
-    white-space: nowrap;
   }
   td {
-    padding: 11px 10px;
+    padding: 10px;
     border-bottom: 1px solid var(--line);
-    white-space: nowrap;
+    vertical-align: top;
   }
-  th.r, td.r { text-align: right; }
-  tr:last-child td { border-bottom: none; }
-  .sym { font-weight: 500; }
-  .name { color: var(--muted); font-size: 13px; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
   .up { color: var(--up); }
   .down { color: var(--down); }
-  .flat { color: var(--muted); }
-  .num { font-variant-numeric: tabular-nums; }
-
-  /* Insight card */
+  .flat { color: #888; }
   .insight {
-    margin-top: 22px;
     background: var(--card);
     border-left: 2px solid var(--gold);
-    padding: 16px 20px;
+    padding: 14px 18px;
     font-size: 13.5px;
-    color: #33332e;
+    color: #444;
+    margin: 14px 0 8px;
   }
-  .insight .tag {
-    display: inline-block;
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    color: var(--gold);
-    margin-bottom: 6px;
-    font-weight: 500;
-  }
-
-  /* Event list */
-  .event { display: flex; gap: 14px; padding: 13px 2px; border-bottom: 1px solid var(--line); font-size: 14px; }
-  .event:last-child { border-bottom: none; }
-  .event .time { flex: 0 0 76px; font-size: 12.5px; color: var(--muted); padding-top: 2px; }
-  .event .body { flex: 1; }
-  .event .body b { font-weight: 500; }
-  .event .hint { display: block; font-size: 12.5px; color: var(--muted); }
-
-  /* Narrative bullets */
-  .news { list-style: none; }
-  .news li {
-    padding: 10px 2px 10px 18px;
+  .insight strong { color: var(--green); font-weight: 500; }
+  .event-list { list-style: none; }
+  .event-list li {
+    padding: 8px 0 8px 18px;
     position: relative;
     font-size: 14px;
     border-bottom: 1px solid var(--line);
+    color: #333;
   }
-  .news li:last-child { border-bottom: none; }
-  .news li::before {
+  .event-list li::before {
     content: "";
     position: absolute;
-    left: 2px; top: 19px;
-    width: 5px; height: 5px;
+    left: 0; top: 17px;
+    width: 6px; height: 6px;
     border-radius: 50%;
     background: var(--gold);
   }
-  .news .resp { color: var(--muted); font-size: 12.5px; display: block; }
-  .news b { font-weight: 500; }
-
-  /* Grid for signals */
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
-  .bul .tag, .bear .tag { font-size: 11px; letter-spacing: 1.5px; font-weight: 500; margin-bottom: 10px; display: block; }
-  .bul .tag { color: var(--up); }
-  .bear .tag { color: var(--down); }
-  .bul, .bear { background: var(--card); padding: 18px 20px; }
-  .bul ul, .bear ul { list-style: none; }
-  .bul li, .bear li { font-size: 13.5px; padding: 6px 0; border-bottom: 1px solid var(--line); }
-  .bul li:last-child, .bear li:last-child { border-bottom: none; }
-  .bul li::before { content: "＋"; color: var(--up); margin-right: 8px; font-size: 12px; }
-  .bear li::before { content: "－"; color: var(--down); margin-right: 8px; font-size: 12px; }
-
+  .event-list .time {
+    color: #999;
+    font-size: 12.5px;
+    margin-right: 10px;
+    font-variant-numeric: tabular-nums;
+  }
+  .news-list { list-style: none; }
+  .news-list li {
+    padding: 9px 0;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid var(--line);
+  }
+  .news-list li .tag {
+    display: inline-block;
+    font-size: 11px;
+    color: var(--green);
+    border: 1px solid rgba(46,86,79,.35);
+    border-radius: 2px;
+    padding: 0 6px;
+    margin-right: 8px;
+    vertical-align: 1px;
+  }
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 6px;
+  }
+  .card {
+    border: 1px solid var(--line);
+    padding: 18px 20px;
+  }
+  .card h3 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .card.bull h3 { color: var(--down); }
+  .card.bear h3 { color: var(--up); }
+  .card li {
+    font-size: 13px;
+    color: #444;
+    margin-left: 18px;
+    padding: 3px 0;
+  }
+  .risk-note {
+    font-size: 13.5px;
+    color: #555;
+    background: var(--card);
+    padding: 14px 18px;
+    border-left: 2px solid var(--gold);
+  }
   footer {
-    margin-top: 64px;
-    padding-top: 20px;
+    margin-top: 56px;
+    padding-top: 18px;
     border-top: 1px solid var(--line);
     font-size: 12px;
-    color: var(--muted);
+    color: #aaa;
     text-align: center;
+    letter-spacing: 0.5px;
+  }
+  .note { font-size: 12px; color: #aaa; margin-top: -8px; margin-bottom: 18px; }
+  @media (max-width: 640px) {
+    .grid2 { grid-template-columns: 1fr; }
+    .wrap { padding: 36px 18px 60px; }
   }
 </style>
 </head>
 <body>
-<div class="container">
+<div class="wrap">
 
-<header>
-  <div class="title-wrap">
+  <header>
     <h1>美股盘前日报</h1>
-    <div class="sub">2026年8月13日 · 星期四</div>
-  </div>
-  <div class="meta">
-    数据截至 <b>美东 8/13 07:04（北京时间 19:04）</b> · 上一交易日：<b>8/12（周三）</b><br>
-    三大指数与七巨头为 8/12 收盘数据；七巨头盘前价为 8/13 盘前实时报价；商品为 8/13 最新期货价。
-  </div>
-</header>
+    <div class="date">2026年8月20日 · 星期四 · 数据截至美东 07:02</div>
+    <div class="tagline">三大指数口径为 8月19日（周三）收盘 · 个股含盘前动态</div>
+  </header>
 
-<!-- ============ 三大指数 ============ -->
-<section>
-  <h2>📊 三大指数回顾</h2>
-  <div class="sec-sub">2026-08-12（周三）收盘</div>
-  <table>
-    <thead>
-      <tr>
-        <th>指数</th>
-        <th class="r">收盘</th>
-        <th class="r">涨跌额</th>
-        <th class="r">涨跌幅</th>
-        <th class="r">区间</th>
-        <th class="r">52周区间</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="sym">道琼斯</td>
-        <td class="r num">53,770.27</td>
-        <td class="r num down">−21.58</td>
-        <td class="r num down">−0.04%</td>
-        <td class="r num">53,731.96–53,969.36</td>
-        <td class="r num">44,579.03–54,744.33</td>
-      </tr>
-      <tr>
-        <td class="sym">纳斯达克</td>
-        <td class="r num">26,588.49</td>
-        <td class="r num up">＋143.04</td>
-        <td class="r num up">＋0.54%</td>
-        <td class="r num">26,531.93–26,688.24</td>
-        <td class="r num">20,690.25–27,190.21</td>
-      </tr>
-      <tr>
-        <td class="sym">标普500</td>
-        <td class="r num">7,748.50</td>
-        <td class="r num up">＋20.30</td>
-        <td class="r num up">＋0.26%</td>
-        <td class="r num">7,737.95–7,766.01</td>
-        <td class="r num">6,316.91–7,793.68</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="insight">
-    <span class="tag">INSIGHT</span><br>
-    道指小幅收跌、纳指与标普收涨，分化收敛。归因清晰：<b>7月CPI温和（核心同比2.5%，2021年3月以来最低）</b>推动9月暂停加息预期升温，叠加 CoreWeave、超微电脑等 AI 基础设施股财报强劲带动科技板块走高。纳指距 52 周高点 27,190 仅 2.3%，标普距高点 7,793 不足 0.6%，处于高位窄幅震荡区。
-  </div>
-</section>
-
-<!-- ============ 七巨头 ============ -->
-<section>
-  <h2>🏢 七巨头个股分析</h2>
-  <div class="sec-sub">8/12收盘价 · 8/13盘前报价（美东 07:04）</div>
-  <table>
-    <thead>
-      <tr>
-        <th>公司</th>
-        <th class="r">收盘价</th>
-        <th class="r">收盘涨跌</th>
-        <th class="r">盘前价</th>
-        <th class="r">盘前涨跌</th>
-        <th class="r">PE</th>
-        <th class="r">52周区间</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="sym">苹果 AAPL</td>
-        <td class="r num">302.25</td>
-        <td class="r num down">−0.87%</td>
-        <td class="r num">303.15</td>
-        <td class="r num up">＋0.30%</td>
-        <td class="r num">36.4</td>
-        <td class="r num">223.0–344.6</td>
-      </tr>
-      <tr>
-        <td class="sym">微软 MSFT</td>
-        <td class="r num">492.43</td>
-        <td class="r num down">−2.26%</td>
-        <td class="r num">493.31</td>
-        <td class="r num up">＋0.18%</td>
-        <td class="r num">29.2</td>
-        <td class="r num">349.2–551.0</td>
-      </tr>
-      <tr>
-        <td class="sym">亚马逊 AMZN</td>
-        <td class="r num">267.28</td>
-        <td class="r num down">−1.83%</td>
-        <td class="r num">268.04</td>
-        <td class="r num up">＋0.28%</td>
-        <td class="r num">31.5</td>
-        <td class="r num">196.0–287.2</td>
-      </tr>
-      <tr>
-        <td class="sym">英伟达 NVDA</td>
-        <td class="r num">224.09</td>
-        <td class="r num up">＋3.03%</td>
-        <td class="r num">224.18</td>
-        <td class="r num up">＋0.04%</td>
-        <td class="r num">34.1</td>
-        <td class="r num">163.8–236.3</td>
-      </tr>
-      <tr>
-        <td class="sym">Meta META</td>
-        <td class="r num">578.85</td>
-        <td class="r num down">−3.38%</td>
-        <td class="r num">581.25</td>
-        <td class="r num up">＋0.41%</td>
-        <td class="r num">20.7</td>
-        <td class="r num">519.7–794.2</td>
-      </tr>
-      <tr>
-        <td class="sym">谷歌A GOOGL</td>
-        <td class="r num">343.54</td>
-        <td class="r num down">−0.08%</td>
-        <td class="r num">344.73</td>
-        <td class="r num up">＋0.35%</td>
-        <td class="r num">25.9</td>
-        <td class="r num">195.7–408.4</td>
-      </tr>
-      <tr>
-        <td class="sym">谷歌C GOOG</td>
-        <td class="r num">342.37</td>
-        <td class="r num down">−0.18%</td>
-        <td class="r num">343.80</td>
-        <td class="r num up">＋0.42%</td>
-        <td class="r num">25.8</td>
-        <td class="r num">196.6–404.3</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="insight">
-    <span class="tag">INSIGHT</span><br>
-    昨日七巨头分化：<b>NVDA +3.03% 领涨</b>（AI 算力链共振，CoreWeave 营收翻倍、超微电脑业绩指引强），META −3.38% 领跌、MSFT −2.26%、AMZN −1.83% 承压。盘前七巨头<b>全线小幅翻红</b>（+0.04% ~ +0.42%），情绪修复但幅度克制。<b>NVDA 隔夜+盘前合计涨幅约 3.1%</b>，走势最强；微软两周累计涨约 26% 后进入高位消化，半价窗口已关，追涨需谨慎。
-  </div>
-</section>
-
-<!-- ============ 大宗商品 ============ -->
-<section>
-  <h2>🛢️ 大宗商品走势</h2>
-  <div class="sec-sub">8/13 最新期货报价（对比前结算）</div>
-  <table>
-    <thead>
-      <tr>
-        <th>品种</th>
-        <th class="r">现价</th>
-        <th class="r">前结算</th>
-        <th class="r">涨跌</th>
-        <th class="r">涨跌幅</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="sym">WTI原油</td>
-        <td class="r num">81.41 USD/桶</td>
-        <td class="r num">83.27</td>
-        <td class="r num down">−1.86</td>
-        <td class="r num down">−2.23%</td>
-      </tr>
-      <tr>
-        <td class="sym">COMEX黄金</td>
-        <td class="r num">4,446.64 USD/盎司</td>
-        <td class="r num">4,467.50</td>
-        <td class="r num down">−20.86</td>
-        <td class="r num down">−0.47%</td>
-      </tr>
-      <tr>
-        <td class="sym">COMEX白银</td>
-        <td class="r num">65.06 USD/盎司</td>
-        <td class="r num">65.70</td>
-        <td class="r num down">−0.64</td>
-        <td class="r num down">−0.98%</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="insight">
-    <span class="tag">INSIGHT</span><br>
-    油价隔夜曾突破 83 美元/桶（霍尔木兹海峡重新开放希望渺茫），<b>盘前回落至 81.4（−2.23%）</b>，地缘溢价双向摆动，波动加剧。黄金 4,446 美元高位小跌，SPDR 黄金持仓单日 +3.14 吨至 1,025.8 吨，实物资金仍在缓慢流入。白银 65 美元跟随回落。商品整体呈"油价脉冲、贵金属高位盘整"状态，短线方向取决于美伊谈判进展。
-  </div>
-</section>
-
-<!-- ============ 经济数据与事件 ============ -->
-<section>
-  <h2>📰 重要经济数据与事件</h2>
-  <div class="sec-sub">已发布 · 今日待发布</div>
-
-  <table>
-    <thead>
-      <tr>
-        <th>时间（北京）</th>
-        <th>指标 / 事件</th>
-        <th class="r">今值</th>
-        <th class="r">预期</th>
-        <th class="r">结论</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="num">8/12 20:30</td>
-        <td>美国 7月 CPI 同比</td>
-        <td class="r num">3.4%</td>
-        <td class="r num">3.4%</td>
-        <td class="r num up">符合预期</td>
-      </tr>
-      <tr>
-        <td class="num">8/12 20:30</td>
-        <td>美国 7月 核心CPI 同比</td>
-        <td class="r num">2.5%</td>
-        <td class="r num">2.5%</td>
-        <td class="r num up">2021年3月来最低</td>
-      </tr>
-      <tr>
-        <td class="num">8/13 01:00</td>
-        <td>美国 10年期国债拍卖</td>
-        <td class="r num">4.68%</td>
-        <td class="r num">—</td>
-        <td class="r num">投标倍数 2.53</td>
-      </tr>
-      <tr>
-        <td class="num">8/13 02:00</td>
-        <td>美国 政府预算</td>
-        <td class="r num down">−4,320亿</td>
-        <td class="r num">−3,460亿</td>
-        <td class="r num down">赤字超预期</td>
-      </tr>
-      <tr>
-        <td class="num">8/13 06:30</td>
-        <td>SPDR 黄金持仓</td>
-        <td class="r num">1,025.81吨</td>
-        <td class="r num">—</td>
-        <td class="r num up">单日 +3.14吨</td>
-      </tr>
-      <tr>
-        <td class="num">8/13 07:50</td>
-        <td>日本 PPI 同比</td>
-        <td class="r num">7.2%</td>
-        <td class="r num">7.4%</td>
-        <td class="r num">略低于预期</td>
-      </tr>
-      <tr>
-        <td class="num">8/13 14:00</td>
-        <td>英国 GDP 月率</td>
-        <td class="r num up">+0.3%</td>
-        <td class="r num">0.0%</td>
-        <td class="r num up">超预期</td>
-      </tr>
-      <tr>
-        <td class="num">8/13 20:30</td>
-        <td>美国 PPI 同比 / 环比（待发布）</td>
-        <td class="r num">—</td>
-        <td class="r num">4.9% / 0.2%</td>
-        <td class="r num">核心 PPI 预期 4.2% / 0.3%</td>
-      </tr>
-      <tr>
-        <td class="num">8/13 20:30</td>
-        <td>美国 初请失业金（待发布）</td>
-        <td class="r num">—</td>
-        <td class="r num">20.2万</td>
-        <td class="r num">前值关注续请 179.5万</td>
-      </tr>
-      <tr>
-        <td class="num">8/13 盘后</td>
-        <td>应用材料 AMAT 财报（待发布）</td>
-        <td class="r num">—</td>
-        <td class="r num">EPS 3.40</td>
-        <td class="r num">半导体设备风向标</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="sec-sub" style="margin-top:28px;">消息面要点</div>
-  <ul class="news">
-    <li>
-      <b>7月核心CPI温和，9月暂停加息概率升至约60%</b>
-      <span class="resp">FedWatch：维持 3.50%–3.75% 区间概率 60%，一周前仅 45%+；核心 CPI 追平 2021年3月以来最低，能源价格连续第二个月下跌，实际平均时薪同比 −0.2%</span>
-    </li>
-    <li>
-      <b>AI 基础设施股集体爆发：CoreWeave +19%、超微电脑 +19%</b>
-      <span class="resp">CoreWeave Q2 调整后营业利润率 5% 超预期、营收同比翻倍；戴尔 +10%、美光 +5%、思科 +3%、Nebius +34%。华尔街 5000 亿美元押注英伟达 AI 芯片长期保值</span>
-    </li>
-    <li>
-      <b>思科 Q4 全面超预期，盘后股价却承压</b>
-      <span class="resp">EPS 1.22（预期1.17）、营收172.5亿（预期168.2亿）、本季指引 180–182亿远超 168亿；云厂商 AI 订单本季 40亿/全年93亿。年内已涨超 60%，"没有大超预期等于不及预期"——AI 叙事标准已抬高</span>
-    </li>
-    <li>
-      <b>美伊谈判陷入僵局，德黑兰备战地区冲突长期化</b>
-      <span class="resp">周三油价一度突破 83 美元；盘前回落至 81 附近。霍尔木兹海峡重新开放希望渺茫，地缘风险仍是最大变量</span>
-    </li>
-    <li>
-      <b>美债长端压力：30年期发行利率或创25年新高</b>
-      <span class="resp">10年期拍卖中标利率 4.68%、投标倍数 2.53；政府预算赤字 4,320亿超预期，高成本举债或成新常态</span>
-    </li>
-    <li>
-      <b>外围：日央行9月加息预期升温（74%）</b>
-      <span class="resp">日本政府据悉支持央行加快加息；韩国股市10天涨22%、SK海力士7200亿美元扩产；微软两周暴涨26%</span>
-    </li>
-  </ul>
-</section>
-
-<!-- ============ 明日关注 ============ -->
-<section>
-  <h2>🔮 明日关注信号</h2>
-  <div class="sec-sub">8/13（美东周四）盘中与盘后关注点</div>
-  <div class="grid">
-    <div class="bul">
-      <span class="tag">乐观信号</span>
-      <ul>
-        <li>CPI 连续两月降温，9月暂停加息概率升至 60%，利率压力边际缓和</li>
-        <li>AI 资本开支验证：思科 93 亿 AI 订单、CoreWeave 利润率超预期，算力需求链条完整</li>
-        <li>七巨头盘前全线翻红，NVDA 强势；若 PPI 温和，科技股有望延续</li>
-        <li>实物黄金持仓持续流入（SPDR +3.14吨），避险资金未离场</li>
-      </ul>
+  <!-- 三大指数 -->
+  <section>
+    <h2>三大指数回顾</h2>
+    <table>
+      <thead>
+        <tr><th>指数</th><th class="num">收盘点位</th><th class="num">涨跌额</th><th class="num">涨跌幅</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>道琼斯</td><td class="num">53,463.05</td><td class="num up">+119.65</td><td class="num up">+0.22%</td></tr>
+        <tr><td>纳斯达克</td><td class="num">26,331.09</td><td class="num up">+41.38</td><td class="num up">+0.16%</td></tr>
+        <tr><td>标普500</td><td class="num">7,707.98</td><td class="num up">+16.22</td><td class="num up">+0.21%</td></tr>
+      </tbody>
+    </table>
+    <p class="note">数据来源：Sina Finance（美东 8/19 收盘）</p>
+    <div class="insight">
+      <strong>盘面解读：</strong>三大指数温和收涨，幅度收敛（0.16%~0.22%），属于高位缩量企稳格局。标普500距 52 周高点 7,816 仅一步之遥。美债回购计划落地与收益率小幅走高是昨日核心叙事——财政部积极干预长端收益率，短线安抚了估值压力，但中长期效果市场仍有分歧（见"新闻综述"）。
     </div>
-    <div class="bear">
-      <span class="tag">风险信号</span>
-      <ul>
-        <li>20:30 美国 PPI：预期 4.9% 偏高，若超预期将直接打脸"通胀已控"叙事</li>
-        <li>美伊谈判僵局：油价若再度冲上 83+，通胀预期与降息路径同时受挫</li>
-        <li>AI 拥挤交易：思科"超预期仍跌"提示高位股要求的是加速而非达标</li>
-        <li>30年美债发行利率或创新高，长端利率上行压制高估值成长股</li>
-      </ul>
+  </section>
+
+  <!-- 七巨头 -->
+  <section>
+    <h2>七巨头个股分析</h2>
+    <table>
+      <thead>
+        <tr><th>公司</th><th>代码</th><th class="num">收盘价</th><th class="num">涨跌幅</th><th class="num">市盈率</th><th class="num">市值(亿$)</th><th class="num">盘前</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>苹果</td><td>AAPL</td><td class="num">$316.83</td><td class="num up">+2.19%</td><td class="num">38.17</td><td class="num">46,238.7</td><td class="num down">-0.19%</td></tr>
+        <tr><td>微软</td><td>MSFT</td><td class="num">$484.31</td><td class="num up">+0.56%</td><td class="num">28.74</td><td class="num">35,962.7</td><td class="num flat">—</td></tr>
+        <tr><td>亚马逊</td><td>AMZN</td><td class="num">$265.84</td><td class="num up">+2.46%</td><td class="num">31.31</td><td class="num">28,674.3</td><td class="num flat">—</td></tr>
+        <tr><td>英伟达</td><td>NVDA</td><td class="num">$217.56</td><td class="num down">-0.99%</td><td class="num">33.11</td><td class="num">52,695.2</td><td class="num flat">—</td></tr>
+        <tr><td>Meta</td><td>META</td><td class="num">$546.03</td><td class="num up">+0.43%</td><td class="num">19.54</td><td class="num">13,910.2</td><td class="num flat">—</td></tr>
+        <tr><td>谷歌A</td><td>GOOGL</td><td class="num">$344.72</td><td class="num up">+0.15%</td><td class="num">26.02</td><td class="num">42,159.0</td><td class="num flat">—</td></tr>
+        <tr><td>谷歌C</td><td>GOOG</td><td class="num">$341.70</td><td class="num up">+0.12%</td><td class="num">25.79</td><td class="num">41,789.9</td><td class="num flat">—</td></tr>
+      </tbody>
+    </table>
+    <p class="note">盘前仅 AAPL 已报价；其余个股盘前数据尚未更新完全。数据来源：Sina Finance</p>
+    <div class="insight">
+      <strong>个股点评：</strong>七巨头涨多跌少，仅英伟达收跌（-0.99%）。苹果 +2.19% 领涨，市值重回 4.6 万亿上方，盘前小幅回吐（-0.19%）；亚马逊 +2.46% 延续消费旺季走强。英伟达走弱与半导体板块整体承压一致（博通 -4.61%、台积电 -0.32%），盘前有"美股大型科技股盘前多数上涨"的消息，SK海力士盘前涨 4%，内存链情绪回暖。谷歌双类股微涨，估值仍处七巨头中低区。
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ 风险提示 ============ -->
-<section>
-  <h2>⚠️ 风险提示</h2>
-  <div class="insight">
-    <span class="tag">RISK</span><br>
-    1. <b>美联储路径未定</b>：上月 FOMC 已有三位委员支持加息，核心通胀虽回落至 2.5% 但仍高于目标；9月15–16日会议前还有 PPI、PCE 两份关键数据，沃什主席月末杰克逊霍尔讲话可能重定价利率预期。<br>
-    2. <b>地缘变量</b>：霍尔木兹海峡与美伊局势反复，油价每 10 美元/桶的脉冲都可能改变通胀与降息节奏。<br>
-    3. <b>AI 估值拥挤</b>：纳指距高点仅 2.3%，AI 链交易高度集中，财报"达标即利空"风险上升。<br>
-    4. <b>财政与长端利率</b>：赤字超预期叠加国债供给放量，30年期发行利率创25年新高，长端收益率抬升对股市估值的压制正在累积。
-  </div>
-</section>
+  <!-- 大宗商品 -->
+  <section>
+    <h2>大宗商品走势</h2>
+    <table>
+      <thead>
+        <tr><th>品种</th><th class="num">最新价</th><th class="num">涨跌幅</th><th class="num">驱动因素</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>纽约黄金</td><td class="num">$4,543.97/oz</td><td class="num down">-0.03%</td><td>美债回购压制避险需求，高位震荡</td></tr>
+        <tr><td>纽约白银</td><td class="num">$67.65/oz</td><td class="num up">+1.63%</td><td>工业属性跟随铜锌回暖、贵金属轮动</td></tr>
+        <tr><td>WTI原油</td><td class="num">$86.72/bbl</td><td class="num up">+2.77%</td><td>美伊谈判陷入僵局，地缘溢价重燃</td></tr>
+      </tbody>
+    </table>
+    <p class="note">数据来源：Sina Finance 商品期货（hf_ 接口）</p>
+    <div class="insight">
+      <strong>商品解读：</strong>油价是今日最大变量——美伊核谈判陷入僵局，特朗普对伊朗措辞转强硬，油价应声大涨 2.77% 至 86.7 美元；海湾产油国开始寻求原油外运替代渠道，油轮需求飙升，供应链扰动预期升温。黄金微跌、白银续涨 1.63%，贵金属内部呈"金银比修复"轮动，避险资金暂未大幅回流金市。通胀敏感的油价若维持强势，将给美联储"按兵不动"的判断带来压力。
+    </div>
+  </section>
 
-<footer>
-  本报告仅供参考，不构成投资建议 · 数据来源：CNBC / 新浪财经 · 生成时间 2026-08-13 19:04 CST
-</footer>
+  <!-- 经济数据与事件 -->
+  <section>
+    <h2>重要经济数据与事件</h2>
+    <ul class="event-list">
+      <li><span class="time">今夜 20:30</span>美国 当周初请失业金人数（预测 21万）</li>
+      <li><span class="time">今夜 20:30</span>美国 费城联储制造业指数（预测 25）——制造业景气度风向标</li>
+      <li><span class="time">今夜 22:00</span>美国 谘商会领先指标月率（预测 +0.1%）</li>
+      <li><span class="time">今夜 22:30</span>美国 EIA天然气库存变动（预测 190）</li>
+      <li><span class="time">已公布 01:00</span>美国 20年期国债竞拍：收益率 5.2%、投标倍数 2.53</li>
+      <li><span class="time">已公布 06:30</span>SPDR黄金持仓 +9.41 吨至 1,034.65；iShares白银持仓 -67.46</li>
+      <li><span class="time">已公布 09:00</span>中国 LPR：一年期 3.0%、五年期 3.5%（与前值持平）</li>
+      <li><span class="time">已公布 09:30</span>澳大利亚 就业人口变动 -1.58 万（预测 +1.5 万），失业率升至 4.5%</li>
+      <li><span class="time">已公布 14:00</span>德国 PPI 月率 +1.1%（预测 +0.7%），通胀韧性超预期</li>
+    </ul>
+    <div class="insight">
+      <strong>数据提示：</strong>今日美国无 CPI/PPI 等大级别通胀数据，焦点在初请失业金与费城联储制造业。结合昨日美联储官员"对通胀持续处于高位表达愈发强烈担忧"的表态，以及特朗普公开抱怨美联储利率政策，市场对货币政策路径的敏感度正在抬升——任何数据与"通胀黏性"挂钩的解读都可能放大波动。
+    </div>
+  </section>
+
+  <!-- 新闻综述 -->
+  <section>
+    <h2>消息面综述</h2>
+    <ul class="news-list">
+      <li><span class="tag">地缘</span>美伊核谈判陷入僵局，特朗普措辞强硬，油价应声上涨；海湾产油国寻求替代外运渠道，油轮需求飙升</li>
+      <li><span class="tag">财政</span>美国政府债务突破 40 万亿美元，十年翻逾一倍；美债回购计划落地，长期债券 ETF 获创纪录资金流入，收益率小幅走高但难扭转上行大势</li>
+      <li><span class="tag">央行</span>美联储官员对通胀高位表达愈发强烈担忧；特朗普公开抱怨美联储利率政策；民主党议员要求沃什披露与特朗普的通话</li>
+      <li><span class="tag">财报</span>沃尔玛 Q2 营收 1,879.4 亿美元超预期（预估 1,868.7 亿），调整后 EPS 0.81 美元超预期（预估 0.74），但盘前跌超 4%</li>
+      <li><span class="tag">医药</span>Moderna 实验性黑色素瘤疫苗试验成功，股价单日飙升 177%</li>
+      <li><span class="tag">AI</span>英伟达洽谈投资 AI 数据供应商 Mercor（估值 200 亿美元）；Stripe 官宣收购 OpenRouter；迈威尔向谷歌授予最高 122 亿美元股票购买权</li>
+      <li><span class="tag">加密</span>特朗普推动《明晰法案》，比特币逼近 7 万美元，空头单日爆仓创历史新高；HYPE 代币涨 11%</li>
+      <li><span class="tag">亚太</span>韩股收盘大涨近 6%（三星、SK海力士加大股东回报，美债收益率担忧缓解）；日本 40 年期国债收益率跌 10bp 至 4.05%</li>
+      <li><span class="tag">汇率</span>美元指数 98.69（-0.11%），市场认为美元可能是美债回购扩大的最大输家</li>
+    </ul>
+  </section>
+
+  <!-- 明日关注 -->
+  <section>
+    <h2>明日关注信号</h2>
+    <div class="grid2">
+      <div class="card bull">
+        <h3>偏多信号</h3>
+        <ul>
+          <li>美债回购计划落地，长端收益率被压制，估值压力阶段性缓解</li>
+          <li>韩股大涨近 6%、内存链盘前回暖（SK海力士 +4%），科技制造情绪修复</li>
+          <li>标普500 距 52 周高点仅 1.4%，突破在即的技术形态</li>
+          <li>中国 LPR 持平、政策托底预期延续，亚太风险偏好回升</li>
+        </ul>
+      </div>
+      <div class="card bear">
+        <h3>偏空信号</h3>
+        <ul>
+          <li>美伊紧张升温，油价若站稳 87+，通胀预期反扑压制降息想象</li>
+          <li>沃尔玛盘前跌超 4%，消费龙头若走弱将拖累大盘情绪</li>
+          <li>美联储官员密集表态通胀担忧，特朗普施压加剧政策不确定性</li>
+          <li>美政府债务突破 40 万亿，财政可持续性讨论利空美元与长债</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 风险提示 -->
+  <section>
+    <h2>风险提示</h2>
+    <div class="risk-note">
+      1. 加息路径反复：通胀黏性超预期或油价上行，可能推迟降息预期，重估成长股估值。<br>
+      2. 地缘升级：美伊谈判僵局，若冲突扩大，能源、航运、避险资产将剧烈波动。<br>
+      3. 财政风险：美国债务突破 40 万亿，美债供给与回购的矛盾可能推高长端利率。<br>
+      4. 财报季尾部：零售股（沃尔玛等）若指引转弱，消费板块或遭抛压。<br>
+      5. 市场数据来自第三方行情源（Sina Finance），存在延迟或误差可能；盘前数据在美东 04:00–09:30 更新。
+    </div>
+  </section>
+
+  <footer>
+    本报告仅供参考，不构成投资建议 · 生成时间：2026-08-20 北京 19:05
+  </footer>
 
 </div>
 </body>
