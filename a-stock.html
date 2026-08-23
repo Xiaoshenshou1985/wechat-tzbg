@@ -3,164 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>投资日报 · 盘前</title>
+<title>A股盘前日报 · 2026-08-24</title>
 <style>
   :root {
-    --up: #d63031;
-    --down: #00b894;
-    --flat: #999;
-    --ink: #1a1a1a;
-    --muted: #888;
-    --line: #f0ece4;
-    --th-bg: #f5f2ea;
-    --accent: #c9a227;
-    --accent2: #2e564f;
-    --card: #fff;
-    --body-bg: #fafaf8;
+    --up: #d63031; --down: #00b894; --flat: #999;
+    --ink: #1a1a1a; --muted: #888; --line: #f0ece4;
+    --th-bg: #f5f2ea; --accent: #c9a227; --accent2: #2e564f;
+    --card: #fff; --body-bg: #fafaf8;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    background: var(--body-bg);
-    color: var(--ink);
+  body { background: var(--body-bg); color: var(--ink);
     font-family: -apple-system, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
-    font-weight: 350;
-    line-height: 1.8;
-    padding: 0;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ===== 桌面端布局 (>=768px) ===== */
+    font-weight: 350; line-height: 1.8; -webkit-font-smoothing: antialiased; }
   .wrap { max-width: 860px; margin: 0 auto; padding: 48px 32px 80px; }
-
   .header { border-left: 4px solid var(--accent); padding-left: 20px; margin-bottom: 40px; }
   .header h1 { font-size: 30px; font-weight: 400; color: var(--accent2); letter-spacing: 2px; }
   .header .meta { font-size: 13px; color: var(--muted); margin-top: 6px; }
-
-  .sec { margin-bottom: 36px; }
-  .sec-title {
-    font-size: 18px; font-weight: 500; color: var(--accent2);
-    margin-bottom: 16px; padding-left: 12px; border-left: 3px solid var(--accent);
-  }
-  .sec-empty { padding: 24px 0; }
-  .empty { color: var(--muted); font-size: 14px; padding-left: 12px; }
-
+  .section { margin-bottom: 36px; }
+  .sec-title { font-size: 18px; font-weight: 500; color: var(--accent2);
+    margin-bottom: 16px; padding-left: 12px; border-left: 3px solid var(--accent); }
   table { width: 100%; border-collapse: collapse; background: var(--card);
     border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
   th { background: var(--th-bg); color: var(--muted); font-weight: 400;
     font-size: 13px; padding: 12px 16px; text-align: left; }
   td { padding: 12px 16px; border-top: 1px solid var(--line); font-size: 14px; }
   tr:hover td { background: #faf8f3; }
-  .nm { font-weight: 450; }
   .num { text-align: right; font-variant-numeric: tabular-nums; }
-  .up { color: var(--up); }
-  .down { color: var(--down); }
-  .flat { color: var(--flat); }
-
+  .up { color: var(--up); } .down { color: var(--down); } .flat { color: var(--flat); }
+  .card { background: var(--card); border-radius: 8px; padding: 16px 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05); margin-bottom: 16px; }
+  .card-title { font-size: 16px; font-weight: 500; color: var(--accent2); margin-bottom: 8px; }
+  .card-body p { margin-bottom: 8px; }
+  .card-body ul { padding-left: 20px; margin: 8px 0; }
+  .news-card { background: var(--card); border-radius: 8px; padding: 14px 18px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05); margin-bottom: 12px; }
+  .news-title { font-weight: 450; }
+  .news-meta { font-size: 12px; color: var(--muted); margin: 4px 0; }
+  .news-link { color: var(--accent); text-decoration: none; font-size: 13px; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px;
+    margin-right: 6px; }
+  .tag-up { background: #ffe9e9; color: var(--up); }
+  .tag-down { background: #e6f9f2; color: var(--down); }
+  .tag-flat { background: #f0f0f0; color: var(--muted); }
   .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line);
     font-size: 12px; color: var(--muted); text-align: center; line-height: 1.9; }
-
-  /* ===== 移动端布局 (<768px) ===== */
   @media (max-width: 767px) {
     .wrap { padding: 28px 16px 48px; }
     .header h1 { font-size: 24px; }
-    .header .meta { font-size: 12px; }
-
     table, thead, tbody, th, td, tr { display: block; width: 100%; }
-    thead { display: none; }  /* 隐藏表头, 移动端用卡片标签 */
-    tr {
-      background: var(--card); border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-      margin-bottom: 12px; padding: 12px 16px;
-    }
-    td {
-      border: none; padding: 6px 0; display: flex; justify-content: space-between;
-      align-items: center;
-    }
-    td::before {
-      content: attr(data-label);
-      color: var(--muted); font-size: 12px; margin-right: 12px; flex-shrink: 0;
-    }
+    thead { display: none; }
+    tr { background: var(--card); border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      margin-bottom: 12px; padding: 12px 16px; }
+    td { border: none; padding: 6px 0; display: flex; justify-content: space-between;
+      align-items: center; }
+    td::before { content: attr(data-label); color: var(--muted); font-size: 12px; margin-right: 12px; }
     td.nm::before { color: var(--ink); font-weight: 500; }
-    .sec { margin-bottom: 28px; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="header">
-    <h1>投资日报 · 盘前</h1>
-    <div class="meta">2026-08-24 03:57:39</div>
+    <h1>A股盘前日报 · 2026-08-24</h1>
+    <div class="meta">2026-08-24 盘前</div>
   </div>
-<div class='sec'><div class='sec-title'>大盘指数</div><table><thead><tr><th>名称</th><th>最新</th><th>涨跌幅</th><th>涨跌额</th><th>成交额</th></tr></thead><tbody><tr><td class='up' data-label='名称'>3905.20</td><td class='up' data-label='最新'>3905.20</td><td class='up' data-label='涨跌幅'>+0.04%</td><td class='up' data-label='涨跌额'>1.48</td><td class='flat' data-label='成交额'>0.88亿</td></tr>
-<tr><td class='up' data-label='名称'>14094.17</td><td class='up' data-label='最新'>14094.17</td><td class='up' data-label='涨跌幅'>+0.87%</td><td class='up' data-label='涨跌额'>121.39</td><td class='flat' data-label='成交额'>1.00亿</td></tr>
-<tr><td class='up' data-label='名称'>3545.58</td><td class='up' data-label='最新'>3545.58</td><td class='up' data-label='涨跌幅'>+1.43%</td><td class='up' data-label='涨跌额'>49.99</td><td class='flat' data-label='成交额'>0.49亿</td></tr>
-<tr><td class='up' data-label='名称'>2883.55</td><td class='up' data-label='最新'>2883.55</td><td class='up' data-label='涨跌幅'>+0.07%</td><td class='up' data-label='涨跌额'>2.11</td><td class='flat' data-label='成交额'>0.14亿</td></tr>
-<tr><td class='up' data-label='名称'>1653.56</td><td class='up' data-label='最新'>1653.56</td><td class='up' data-label='涨跌幅'>+0.04%</td><td class='up' data-label='涨跌额'>0.59</td><td class='flat' data-label='成交额'>0.08亿</td></tr></tbody></table></div>
-<div class='sec'><div class='sec-title'>行业板块涨幅榜</div><table><thead><tr><th>板块名称</th><th>涨跌幅</th></tr></thead><tbody><tr><td class='flat' data-label='板块名称'>江钨装备</td><td class='up' data-label='涨跌幅'>+10.01%</td></tr>
-<tr><td class='flat' data-label='板块名称'>金瑞矿业</td><td class='up' data-label='涨跌幅'>+5.97%</td></tr>
-<tr><td class='flat' data-label='板块名称'>山西焦煤</td><td class='up' data-label='涨跌幅'>+4.72%</td></tr>
-<tr><td class='flat' data-label='板块名称'>盘江股份</td><td class='up' data-label='涨跌幅'>+4.00%</td></tr>
-<tr><td class='flat' data-label='板块名称'>蓝焰控股</td><td class='up' data-label='涨跌幅'>+2.72%</td></tr>
-<tr><td class='flat' data-label='板块名称'>潞安环能</td><td class='up' data-label='涨跌幅'>+2.65%</td></tr>
-<tr><td class='flat' data-label='板块名称'>上海能源</td><td class='up' data-label='涨跌幅'>+2.04%</td></tr>
-<tr><td class='flat' data-label='板块名称'>新集能源</td><td class='up' data-label='涨跌幅'>+1.71%</td></tr>
-<tr><td class='flat' data-label='板块名称'>平煤股份</td><td class='up' data-label='涨跌幅'>+1.59%</td></tr>
-<tr><td class='flat' data-label='板块名称'>华阳股份</td><td class='up' data-label='涨跌幅'>+0.90%</td></tr></tbody></table></div>
-<div class='sec'><div class='sec-title'>重点个股</div><table><thead><tr><th>名称</th><th>最新</th><th>涨跌幅</th><th>涨跌额</th></tr></thead><tbody><tr><td class='down' data-label='名称'>1272.83</td><td class='down' data-label='最新'>1272.83</td><td class='down' data-label='涨跌幅'>-1.45%</td><td class='down' data-label='涨跌额'>-18.67</td></tr>
-<tr><td class='down' data-label='名称'>71.19</td><td class='down' data-label='最新'>71.19</td><td class='down' data-label='涨跌幅'>-1.25%</td><td class='down' data-label='涨跌额'>-0.90</td></tr>
-<tr><td class='up' data-label='名称'>12.42</td><td class='up' data-label='最新'>12.42</td><td class='up' data-label='涨跌幅'>+0.08%</td><td class='up' data-label='涨跌额'>0.01</td></tr>
-<tr><td class='up' data-label='名称'>38.90</td><td class='up' data-label='最新'>38.90</td><td class='up' data-label='涨跌幅'>+0.10%</td><td class='up' data-label='涨跌额'>0.04</td></tr>
-<tr><td class='down' data-label='名称'>7.77</td><td class='down' data-label='最新'>7.77</td><td class='down' data-label='涨跌幅'>-0.13%</td><td class='down' data-label='涨跌额'>-0.01</td></tr>
-<tr><td class='up' data-label='名称'>391.15</td><td class='up' data-label='最新'>391.15</td><td class='up' data-label='涨跌幅'>+1.60%</td><td class='up' data-label='涨跌额'>6.15</td></tr>
-<tr><td class='down' data-label='名称'>162.86</td><td class='down' data-label='最新'>162.86</td><td class='down' data-label='涨跌幅'>-3.00%</td><td class='down' data-label='涨跌额'>-5.04</td></tr>
-<tr><td class='down' data-label='名称'>47.74</td><td class='down' data-label='最新'>47.74</td><td class='down' data-label='涨跌幅'>-3.56%</td><td class='down' data-label='涨跌额'>-1.76</td></tr>
-<tr><td class='down' data-label='名称'>46.41</td><td class='down' data-label='最新'>46.41</td><td class='down' data-label='涨跌幅'>-0.30%</td><td class='down' data-label='涨跌额'>-0.14</td></tr>
-<tr><td class='up' data-label='名称'>34.74</td><td class='up' data-label='最新'>34.74</td><td class='up' data-label='涨跌幅'>+2.69%</td><td class='up' data-label='涨跌额'>0.91</td></tr>
-<tr><td class='up' data-label='名称'>42.04</td><td class='up' data-label='最新'>42.04</td><td class='up' data-label='涨跌幅'>+1.50%</td><td class='up' data-label='涨跌额'>0.62</td></tr>
-<tr><td class='down' data-label='名称'>73.98</td><td class='down' data-label='最新'>73.98</td><td class='down' data-label='涨跌幅'>-1.57%</td><td class='down' data-label='涨跌额'>-1.18</td></tr>
-<tr><td class='down' data-label='名称'>5.19</td><td class='down' data-label='最新'>5.19</td><td class='down' data-label='涨跌幅'>-1.14%</td><td class='down' data-label='涨跌额'>-0.06</td></tr>
-<tr><td class='up' data-label='名称'>53.35</td><td class='up' data-label='最新'>53.35</td><td class='up' data-label='涨跌幅'>+2.32%</td><td class='up' data-label='涨跌额'>1.21</td></tr>
-<tr><td class='up' data-label='名称'>11.20</td><td class='up' data-label='最新'>11.20</td><td class='up' data-label='涨跌幅'>+1.91%</td><td class='up' data-label='涨跌额'>0.21</td></tr>
-<tr><td class='up' data-label='名称'>27.12</td><td class='up' data-label='最新'>27.12</td><td class='up' data-label='涨跌幅'>+0.30%</td><td class='up' data-label='涨跌额'>0.08</td></tr>
-<tr><td class='up' data-label='名称'>18.91</td><td class='up' data-label='最新'>18.91</td><td class='up' data-label='涨跌幅'>+0.59%</td><td class='up' data-label='涨跌额'>0.11</td></tr>
-<tr><td class='down' data-label='名称'>78.57</td><td class='down' data-label='最新'>78.57</td><td class='down' data-label='涨跌幅'>-1.14%</td><td class='down' data-label='涨跌额'>-0.91</td></tr>
-<tr><td class='up' data-label='名称'>714.43</td><td class='up' data-label='最新'>714.43</td><td class='up' data-label='涨跌幅'>+0.26%</td><td class='up' data-label='涨跌额'>1.88</td></tr>
-<tr><td class='down' data-label='名称'>84.11</td><td class='down' data-label='最新'>84.11</td><td class='down' data-label='涨跌幅'>-0.27%</td><td class='down' data-label='涨跌额'>-0.23</td></tr>
-<tr><td class='up' data-label='名称'>943.00</td><td class='up' data-label='最新'>943.00</td><td class='up' data-label='涨跌幅'>+4.29%</td><td class='up' data-label='涨跌额'>38.80</td></tr>
-<tr><td class='up' data-label='名称'>62.18</td><td class='up' data-label='最新'>62.18</td><td class='up' data-label='涨跌幅'>+0.26%</td><td class='up' data-label='涨跌额'>0.16</td></tr>
-<tr><td class='up' data-label='名称'>63.88</td><td class='up' data-label='最新'>63.88</td><td class='up' data-label='涨跌幅'>+1.16%</td><td class='up' data-label='涨跌额'>0.73</td></tr>
-<tr><td class='up' data-label='名称'>442.00</td><td class='up' data-label='最新'>442.00</td><td class='up' data-label='涨跌幅'>+6.76%</td><td class='up' data-label='涨跌额'>27.98</td></tr>
-<tr><td class='up' data-label='名称'>409.06</td><td class='up' data-label='最新'>409.06</td><td class='up' data-label='涨跌幅'>+1.38%</td><td class='up' data-label='涨跌额'>5.56</td></tr>
-<tr><td class='up' data-label='名称'>36.44</td><td class='up' data-label='最新'>36.44</td><td class='up' data-label='涨跌幅'>+2.19%</td><td class='up' data-label='涨跌额'>0.78</td></tr>
-<tr><td class='up' data-label='名称'>34.40</td><td class='up' data-label='最新'>34.40</td><td class='up' data-label='涨跌幅'>+0.97%</td><td class='up' data-label='涨跌额'>0.33</td></tr>
-<tr><td class='down' data-label='名称'>39.07</td><td class='down' data-label='最新'>39.07</td><td class='down' data-label='涨跌幅'>-1.88%</td><td class='down' data-label='涨跌额'>-0.75</td></tr>
-<tr><td class='down' data-label='名称'>116.55</td><td class='down' data-label='最新'>116.55</td><td class='down' data-label='涨跌幅'>-1.65%</td><td class='down' data-label='涨跌额'>-1.95</td></tr>
-<tr><td class='down' data-label='名称'>85.20</td><td class='down' data-label='最新'>85.20</td><td class='down' data-label='涨跌幅'>-1.06%</td><td class='down' data-label='涨跌额'>-0.91</td></tr>
-<tr><td class='down' data-label='名称'>59.03</td><td class='down' data-label='最新'>59.03</td><td class='down' data-label='涨跌幅'>-0.15%</td><td class='down' data-label='涨跌额'>-0.09</td></tr>
-<tr><td class='up' data-label='名称'>12.43</td><td class='up' data-label='最新'>12.43</td><td class='up' data-label='涨跌幅'>+0.89%</td><td class='up' data-label='涨跌额'>0.11</td></tr>
-<tr><td class='up' data-label='名称'>33.91</td><td class='up' data-label='最新'>33.91</td><td class='up' data-label='涨跌幅'>+1.74%</td><td class='up' data-label='涨跌额'>0.58</td></tr>
-<tr><td class='down' data-label='名称'>23.56</td><td class='down' data-label='最新'>23.56</td><td class='down' data-label='涨跌幅'>-5.15%</td><td class='down' data-label='涨跌额'>-1.28</td></tr>
-<tr><td class='down' data-label='名称'>3.08</td><td class='down' data-label='最新'>3.08</td><td class='down' data-label='涨跌幅'>-1.91%</td><td class='down' data-label='涨跌额'>-0.06</td></tr>
-<tr><td class='down' data-label='名称'>7.46</td><td class='down' data-label='最新'>7.46</td><td class='down' data-label='涨跌幅'>-2.36%</td><td class='down' data-label='涨跌额'>-0.18</td></tr>
-<tr><td class='down' data-label='名称'>17.41</td><td class='down' data-label='最新'>17.41</td><td class='down' data-label='涨跌幅'>-1.14%</td><td class='down' data-label='涨跌额'>-0.20</td></tr>
-<tr><td class='down' data-label='名称'>20.86</td><td class='down' data-label='最新'>20.86</td><td class='down' data-label='涨跌幅'>-0.19%</td><td class='down' data-label='涨跌额'>-0.04</td></tr>
-<tr><td class='down' data-label='名称'>15.03</td><td class='down' data-label='最新'>15.03</td><td class='down' data-label='涨跌幅'>-1.44%</td><td class='down' data-label='涨跌额'>-0.22</td></tr>
-<tr><td class='up' data-label='名称'>16.67</td><td class='up' data-label='最新'>16.67</td><td class='up' data-label='涨跌幅'>+0.91%</td><td class='up' data-label='涨跌额'>0.15</td></tr>
-<tr><td class='up' data-label='名称'>54.65</td><td class='up' data-label='最新'>54.65</td><td class='up' data-label='涨跌幅'>+2.46%</td><td class='up' data-label='涨跌额'>1.31</td></tr>
-<tr><td class='up' data-label='名称'>116.60</td><td class='up' data-label='最新'>116.60</td><td class='up' data-label='涨跌幅'>+0.02%</td><td class='up' data-label='涨跌额'>0.02</td></tr>
-<tr><td class='up' data-label='名称'>1035.00</td><td class='up' data-label='最新'>1035.00</td><td class='up' data-label='涨跌幅'>+2.39%</td><td class='up' data-label='涨跌额'>24.12</td></tr>
-<tr><td class='down' data-label='名称'>362.50</td><td class='down' data-label='最新'>362.50</td><td class='down' data-label='涨跌幅'>-0.82%</td><td class='down' data-label='涨跌额'>-3.00</td></tr>
-<tr><td class='down' data-label='名称'>124.80</td><td class='down' data-label='最新'>124.80</td><td class='down' data-label='涨跌幅'>-0.56%</td><td class='down' data-label='涨跌额'>-0.70</td></tr>
-<tr><td class='up' data-label='名称'>13.79</td><td class='up' data-label='最新'>13.79</td><td class='up' data-label='涨跌幅'>+0.29%</td><td class='up' data-label='涨跌额'>0.04</td></tr>
-<tr><td class='up' data-label='名称'>113.08</td><td class='up' data-label='最新'>113.08</td><td class='up' data-label='涨跌幅'>+1.97%</td><td class='up' data-label='涨跌额'>2.19</td></tr>
-<tr><td class='up' data-label='名称'>54.12</td><td class='up' data-label='最新'>54.12</td><td class='up' data-label='涨跌幅'>+5.56%</td><td class='up' data-label='涨跌额'>2.85</td></tr>
-<tr><td class='flat' data-label='名称'>20.05</td><td class='flat' data-label='最新'>20.05</td><td class='flat' data-label='涨跌幅'>+0.00%</td><td class='flat' data-label='涨跌额'>0.00</td></tr>
-<tr><td class='down' data-label='名称'>4.99</td><td class='down' data-label='最新'>4.99</td><td class='down' data-label='涨跌幅'>-0.80%</td><td class='down' data-label='涨跌额'>-0.04</td></tr>
-<tr><td class='down' data-label='名称'>4.30</td><td class='down' data-label='最新'>4.30</td><td class='down' data-label='涨跌幅'>-1.38%</td><td class='down' data-label='涨跌额'>-0.06</td></tr>
-<tr><td class='down' data-label='名称'>4.39</td><td class='down' data-label='最新'>4.39</td><td class='down' data-label='涨跌幅'>-0.90%</td><td class='down' data-label='涨跌额'>-0.04</td></tr>
-<tr><td class='down' data-label='名称'>8.71</td><td class='down' data-label='最新'>8.71</td><td class='down' data-label='涨跌幅'>-0.23%</td><td class='down' data-label='涨跌额'>-0.02</td></tr>
-<tr><td class='down' data-label='名称'>19.19</td><td class='down' data-label='最新'>19.19</td><td class='down' data-label='涨跌幅'>-3.28%</td><td class='down' data-label='涨跌额'>-0.65</td></tr></tbody></table></div>
-  <div class="footer">本报告仅供参考，不构成投资建议<br>数据来源: 公开行情接口 (腾讯/新浪)</div>
+<div class='sec'><div class='sec-title'>今日关注</div><p>三大指数高开低走, 沪指微涨0.04%, 深成指涨0.87%, 创业板领涨1.43%。市场量能温和, 科技股活跃。今日关注:
+- 半导体/光模块受海外算力需求刺激, 中际旭创、新易盛大涨, 板块情绪高
+- 有色金属(钨、金)领涨, 资源股受涨价逻辑驱动
+- 煤炭(山西焦煤、盘江股份)走强, 周期板块轮动
+- 加美贸易谈判破裂, 出口导向板块需警惕贸易风险</p></div>
+<div class='sec'><div class='sec-title'>指数走势预测</div><p>上证指数: 3905点附近震荡, 上方压力3950, 支撑3880, 量能不足需观察。
+深证成指: 创业板领涨, 成长风格占优, 预计跟随上行。
+创业板指: 科技股活跃, 波动加大, 关注能否站稳3550。
+上证50: 权重股平稳, 预计窄幅震荡。
+科创50: 半导体带动, 弹性较大。</p></div>
+<div class='sec'><div class='sec-title'>大盘指数</div><table><thead><tr><th>名称</th><th>最新</th><th>涨跌幅</th><th>涨跌额</th><th>成交额</th></tr></thead><tbody><tr><td class=''>上证指数</td><td class='num'>3905.20</td><td class='num'>+0.04%</td><td class='num'>1.48</td><td class='num'>0.88亿</td></tr><tr><td class=''>深证成指</td><td class='num'>14094.17</td><td class='num'>+0.87%</td><td class='num'>121.39</td><td class='num'>1.00亿</td></tr><tr><td class=''>创业板指</td><td class='num'>3545.58</td><td class='num'>+1.43%</td><td class='num'>49.99</td><td class='num'>0.49亿</td></tr><tr><td class=''>上证50</td><td class='num'>2883.55</td><td class='num'>+0.07%</td><td class='num'>2.11</td><td class='num'>0.14亿</td></tr><tr><td class=''>科创50</td><td class='num'>1653.56</td><td class='num'>+0.04%</td><td class='num'>0.59</td><td class='num'>0.08亿</td></tr></tbody></table></div>
+<div class='sec'><div class='sec-title'>板块热点与重点股票</div><div class='card'><div class='card-title'><span style='font-weight:500'>半导体/光模块</span></div><div class='card-body'><span class='tag tag-flat'>看好</span><p><p>海外算力需求持续, 中际旭创(+4.29%)、新易盛(+6.76%)大涨, 长鑫科技领涨, 国产替代与AI算力双逻辑。</p></p><p><strong>龙头:</strong> 中际旭创、新易盛、长鑫科技</p><p><strong>短期热点:</strong> 光模块概念、存储芯片</p></div></div><div class='card'><div class='card-title'><span style='font-weight:500'>有色资源(钨/金)</span></div><div class='card-body'><span class='tag tag-flat'>看好</span><p><p>钨价格大涨, 江钨装备涨停10%, 金瑞矿业+5.97%, 资源涨价+供给约束逻辑。</p></p><p><strong>龙头:</strong> 江钨装备、金瑞矿业</p><p><strong>短期热点:</strong> 钨概念、小金属</p></div></div><div class='card'><div class='card-title'><span style='font-weight:500'>煤炭</span></div><div class='card-body'><span class='tag tag-flat'>中性</span><p><p>山西焦煤、盘江股份走强, 周期板块轮动, 但缺乏持续催化。</p></p><p><strong>龙头:</strong> 山西焦煤、盘江股份</p><p><strong>短期热点:</strong> 煤炭开采</p></div></div><div class='card'><div class='card-title'><span style='font-weight:500'>出口制造</span></div><div class='card-body'><span class='tag tag-down'>看空</span><p><p>加美贸易谈判破裂, 全球贸易不确定性上升, 出口导向板块承压。</p></p><p><strong>龙头:</strong> 家电出口、机械设备</p><p><strong>短期热点:</strong> 对美出口链</p></div></div></div>
+<div class='sec'><div class='sec-title'>重大新闻 · 利好利空判断</div><div class='card'><div class='card-title'><div class='news-title'>伊朗官员：若美打经济战 霍尔木兹海峡和波斯湾将再无石油出口</div><div class='news-meta'><span class='tag tag-up'>利好</span> · 新浪财经7x24</div><p><p>原油供应担忧升温, 利好石油石化、油运板块。</p></p><a class='news-link' href='https://finance.sina.com.cn/stock/usstock/c/2026-08-23/doc-inipipwi0368043.shtml' target='_blank'>查看原文 →</a></div><div class='card-body'></div></div><div class='card'><div class='card-title'><div class='news-title'>加美贸易谈判破裂, 原因涉及多项议题</div><div class='news-meta'><span class='tag tag-down'>利空</span> · 新浪财经7x24</div><p><p>全球贸易不确定性上升, 利空出口导向板块, 避险情绪或升温。</p></p><a class='news-link' href='https://finance.sina.com.cn/finance/2026-08-23/doc-inipipwn6629315.shtml' target='_blank'>查看原文 →</a></div><div class='card-body'></div></div><div class='card'><div class='card-title'><div class='news-title'>英国海上贸易行动办公室: 霍尔木兹与曼德海峡航运通行量下降</div><div class='news-meta'><span class='tag tag-up'>利好</span> · 新浪财经7x24</div><p><p>航道受阻利好油运价格, 关注油运板块机会。</p></p><a class='news-link' href='https://finance.sina.com.cn/' target='_blank'>查看原文 →</a></div><div class='card-body'></div></div></div>
+  <div class="footer">本报告仅供参考，不构成投资建议<br>数据来源: 公开行情接口 (腾讯/新浪) · 新闻: 新浪财经</div>
 </div>
 </body>
 </html>
