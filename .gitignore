@@ -1,0 +1,28 @@
+# 本地数据与缓存
+data/
+*.json
+!package.json
+!timestamps.json
+
+# 备份文件
+*.bak
+*.swp
+*~
+
+# 密钥与配置
+.env
+*.key
+*.pem
+credentials*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 系统/编辑器
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
