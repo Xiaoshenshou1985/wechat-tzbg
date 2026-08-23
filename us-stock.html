@@ -3,98 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>投资日报 · 美股</title>
+<title>美股盘前日报</title>
 <style>
   :root {
-    --up: #d63031;
-    --down: #00b894;
-    --flat: #999;
-    --ink: #1a1a1a;
-    --muted: #888;
-    --line: #f0ece4;
-    --th-bg: #f5f2ea;
-    --accent: #c9a227;
-    --accent2: #2e564f;
-    --card: #fff;
-    --body-bg: #fafaf8;
+    --up: #d63031; --down: #00b894; --flat: #999;
+    --ink: #1a1a1a; --muted: #888; --line: #f0ece4;
+    --th-bg: #f5f2ea; --accent: #c9a227; --accent2: #2e564f;
+    --card: #fff; --body-bg: #fafaf8;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    background: var(--body-bg);
-    color: var(--ink);
+  body { background: var(--body-bg); color: var(--ink);
     font-family: -apple-system, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
-    font-weight: 350;
-    line-height: 1.8;
-    padding: 0;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ===== 桌面端布局 (>=768px) ===== */
+    font-weight: 350; line-height: 1.8; -webkit-font-smoothing: antialiased; }
   .wrap { max-width: 860px; margin: 0 auto; padding: 48px 32px 80px; }
-
   .header { border-left: 4px solid var(--accent); padding-left: 20px; margin-bottom: 40px; }
   .header h1 { font-size: 30px; font-weight: 400; color: var(--accent2); letter-spacing: 2px; }
   .header .meta { font-size: 13px; color: var(--muted); margin-top: 6px; }
-
-  .sec { margin-bottom: 36px; }
-  .sec-title {
-    font-size: 18px; font-weight: 500; color: var(--accent2);
-    margin-bottom: 16px; padding-left: 12px; border-left: 3px solid var(--accent);
-  }
-  .sec-empty { padding: 24px 0; }
-  .empty { color: var(--muted); font-size: 14px; padding-left: 12px; }
-
+  .section { margin-bottom: 36px; }
+  .sec-title { font-size: 18px; font-weight: 500; color: var(--accent2);
+    margin-bottom: 16px; padding-left: 12px; border-left: 3px solid var(--accent); }
   table { width: 100%; border-collapse: collapse; background: var(--card);
     border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
   th { background: var(--th-bg); color: var(--muted); font-weight: 400;
     font-size: 13px; padding: 12px 16px; text-align: left; }
   td { padding: 12px 16px; border-top: 1px solid var(--line); font-size: 14px; }
   tr:hover td { background: #faf8f3; }
-  .nm { font-weight: 450; }
   .num { text-align: right; font-variant-numeric: tabular-nums; }
-  .up { color: var(--up); }
-  .down { color: var(--down); }
-  .flat { color: var(--flat); }
-
+  .up { color: var(--up); } .down { color: var(--down); } .flat { color: var(--flat); }
+  .card { background: var(--card); border-radius: 8px; padding: 16px 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05); margin-bottom: 16px; }
+  .card-title { font-size: 16px; font-weight: 500; color: var(--accent2); margin-bottom: 8px; }
+  .card-body p { margin-bottom: 8px; }
+  .card-body ul { padding-left: 20px; margin: 8px 0; }
+  .news-card { background: var(--card); border-radius: 8px; padding: 14px 18px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05); margin-bottom: 12px; }
+  .news-title { font-weight: 450; }
+  .news-meta { font-size: 12px; color: var(--muted); margin: 4px 0; }
+  .news-link { color: var(--accent); text-decoration: none; font-size: 13px; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px;
+    margin-right: 6px; }
+  .tag-up { background: #ffe9e9; color: var(--up); }
+  .tag-down { background: #e6f9f2; color: var(--down); }
+  .tag-flat { background: #f0f0f0; color: var(--muted); }
   .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line);
     font-size: 12px; color: var(--muted); text-align: center; line-height: 1.9; }
-
-  /* ===== 移动端布局 (<768px) ===== */
   @media (max-width: 767px) {
     .wrap { padding: 28px 16px 48px; }
     .header h1 { font-size: 24px; }
-    .header .meta { font-size: 12px; }
-
     table, thead, tbody, th, td, tr { display: block; width: 100%; }
-    thead { display: none; }  /* 隐藏表头, 移动端用卡片标签 */
-    tr {
-      background: var(--card); border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-      margin-bottom: 12px; padding: 12px 16px;
-    }
-    td {
-      border: none; padding: 6px 0; display: flex; justify-content: space-between;
-      align-items: center;
-    }
-    td::before {
-      content: attr(data-label);
-      color: var(--muted); font-size: 12px; margin-right: 12px; flex-shrink: 0;
-    }
+    thead { display: none; }
+    tr { background: var(--card); border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      margin-bottom: 12px; padding: 12px 16px; }
+    td { border: none; padding: 6px 0; display: flex; justify-content: space-between;
+      align-items: center; }
+    td::before { content: attr(data-label); color: var(--muted); font-size: 12px; margin-right: 12px; }
     td.nm::before { color: var(--ink); font-weight: 500; }
-    .sec { margin-bottom: 28px; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="header">
-    <h1>投资日报 · 美股</h1>
-    <div class="meta">2026-08-24 03:57:50</div>
+    <h1>美股盘前日报</h1>
+    <div class="meta">us 20260824</div>
   </div>
-<div class='sec'><div class='sec-title'>美股主要指数</div><table><thead><tr><th>名称</th><th>最新</th><th>涨跌幅</th><th>涨跌额</th><th>成交额</th></tr></thead><tbody><tr><td class='up' data-label='名称'>53277.01</td><td class='up' data-label='最新'>53277.01</td><td class='up' data-label='涨跌幅'>+0.98%</td><td class='up' data-label='涨跌额'>517.80</td><td class='flat' data-label='成交额'>225528.67亿</td></tr>
-<tr><td class='up' data-label='名称'>26180.45</td><td class='up' data-label='最新'>26180.45</td><td class='up' data-label='涨跌幅'>+0.43%</td><td class='up' data-label='涨跌额'>113.28</td><td class='flat' data-label='成交额'>1654270.99亿</td></tr>
-<tr><td class='up' data-label='名称'>7674.37</td><td class='up' data-label='最新'>7674.37</td><td class='up' data-label='涨跌幅'>+0.43%</td><td class='up' data-label='涨跌额'>33.21</td><td class='flat' data-label='成交额'>210075.38亿</td></tr></tbody></table></div>
-  <div class="footer">本报告仅供参考，不构成投资建议<br>数据来源: 公开行情接口 (腾讯/新浪)</div>
+<div class='sec'><div class='sec-title'>今日关注</div><p>隔夜A股三大指数集体收涨，创业板指领涨1.43%，市场风险偏好回暖。但美股盘前焦点集中在三重变量：中东局势急剧升温——伊朗多次放话若美发动经济战将封锁霍尔木兹海峡、波斯湾石油出口或中断，伊朗议会通过海峡服务费法案，布伦特原油风险溢价上升；美加贸易谈判破裂、加元走弱加剧北美贸易摩擦担忧；英伟达远期市盈率降至五年低位，财报前市场对其AI循环融资模式与客户集中度风险高度敏感。综合研判：外围地缘与贸易扰动偏利空风险资产，但能源与防务板块受益，科技股财报前进入观望窗口。</p></div>
+<div class='sec'><div class='sec-title'>指数走势预测</div><p>道指：震荡偏弱，贸易摩擦与地缘风险压制；纳指：财报前高位分化，英伟达业绩成关键变量，预计低开高走或窄幅震荡；标普：受能源上涨与科技承压交织，预计区间震荡；恒指：A股走强叠加情绪修复，预计偏强震荡；日经：受日元及外围扰动，预计震荡整理。</p></div>
+<div class='sec'><div class='sec-title'>美股主要指数</div><table><thead><tr><th>名称</th><th>最新</th><th>涨跌幅</th><th>涨跌额</th></tr></thead><tbody><tr><td class=''>道琼斯</td><td class='num'>53277.01</td><td class='num'>+0.98%</td><td class='num'>517.80</td></tr><tr><td class=''>纳斯达克</td><td class='num'>26180.45</td><td class='num'>+0.43%</td><td class='num'>113.28</td></tr><tr><td class=''>标普500</td><td class='num'>7674.37</td><td class='num'>+0.43%</td><td class='num'>33.21</td></tr></tbody></table></div>
+<div class='sec'><div class='sec-title'>科技八姐妹 (Big Tech)</div><div class='card'><div class='card-title'><div class='news-title'>英伟达 (NVDA)</div><p>最新 118.50 (-0.85%)</p><p><p>远期市盈率降至五年低位，毛利率近75%但市场担忧客户集中度与AI循环融资模式，财报前波动加大，为本周最关键标的。</p></p></div><div class='card-body'></div></div><div class='card'><div class='card-title'><div class='news-title'>苹果 (AAPL)</div><p>最新 226.40 (+0.32%)</p><p><p>基本盘稳健，AI硬件叙事支撑估值，短期跟随大盘震荡。</p></p></div><div class='card-body'></div></div><div class='card'><div class='card-title'><div class='news-title'>微软 (MSFT)</div><p>最新 332.15 (+0.58%)</p><p><p>云与Copilot商业化兑现度高，机构偏好配置方向。</p></p></div><div class='card-body'></div></div><div class='card'><div class='card-title'><div class='news-title'>谷歌 (GOOGL)</div><p>最新 262.80 (-0.20%)</p><p><p>广告与云双主线，监管风险压制弹性，短期中性。</p></p></div><div class='card-body'></div></div><div class='card'><div class='card-title'><div class='news-title'>亚马逊 (AMZN)</div><p>最新 201.90 (+0.45%)</p><p><p>AWS增速与零售利润率为核心看点，整体偏强。</p></p></div><div class='card-body'></div></div><div class='card'><div class='card-title'><div class='news-title'>Meta (META)</div><p>最新 588.30 (+0.71%)</p><p><p>资本开支投入AI，短期利润率承压但长期逻辑顺畅。</p></p></div><div class='card-body'></div></div><div class='card'><div class='card-title'><div class='news-title'>特斯拉 (TSLA)</div><p>最新 258.60 (-1.40%)</p><p><p>估值高度依赖自动驾驶与FSD叙事，波动率偏高，短期承压。</p></p></div><div class='card-body'></div></div></div>
+<div class='sec'><div class='sec-title'>板块热点与重点股票</div><div class='card'><div class='card-title'><div class='news-title'>石油天然气</div><p><p>伊朗封锁霍尔木兹海峡与波斯湾的表态叠加议会通过海峡服务费法案，供给中断风险上升，油价风险溢价走高。</p></p><p><strong>龙头:</strong> 中、国、石、油、、、中、国、海、油、、、中、海、油、服</p><p><strong>短期热点:</strong> 短、线、偏、强、，、地、缘、溢、价、有、望、延、续、，、但、需、警、惕、谈、判、缓、和、回、调、。</p></div><div class='card-body'></div></div><div class='card'><div class='card-title'><div class='news-title'>半导体/AI算力</div><p><p>英伟达远期PE降至五年低位，财报前市场担忧AI循环融资与客户集中度，但长期算力需求逻辑未破。</p></p><p><strong>龙头:</strong> 中、芯、国、际、、、寒、武、纪、、、海、光、信、息</p><p><strong>短期热点:</strong> 财、报、落、地、前、高、位、震、荡、，、业、绩、超、预、期、有、望、打、开、上、行、空、间、。</p></div><div class='card-body'></div></div><div class='card'><div class='card-title'><div class='news-title'>军工/防务</div><p><p>俄乌互射无人机规模升级、以色列空袭黎巴嫩，全球地缘冲突常态化利好防务开支。</p></p><p><strong>龙头:</strong> 中、航、沈、飞、、、航、发、动、力、、、中、无、人、机</p><p><strong>短期热点:</strong> 事、件、驱、动、型、机、会、，、短、线、情、绪、易、被、点、燃、。</p></div><div class='card-body'></div></div><div class='card'><div class='card-title'><div class='news-title'>有色金属/黄金</div><p><p>地缘避险与贸易摩擦升温推动避险资产与工业金属价格重估。</p></p><p><strong>龙头:</strong> 山、东、黄、金、、、紫、金、矿、业、、、洛、阳、钼、业</p><p><strong>短期热点:</strong> 金、价、受、避、险、支、撑、偏、强、，、铜、等、工、业、品、跟、随、风、险、偏、好、修、复、。</p></div><div class='card-body'></div></div></div>
+<div class='sec'><div class='sec-title'>隔夜外围 · 利好利空判断</div><div class='card'><div class='card-title'><div class='news-title'>伊朗官员：若美打经济战 霍尔木兹海峡和波斯湾再无石油出口</div><div class='news-meta'><span class='tag tag-up'>利好</span> · 财联社</div><p><p>伊朗释放强硬信号，中东石油出口通道中断风险上升，利多原油及能源产业链，但加剧全球通胀与避险情绪。</p></p><a class='news-link' href='https://www.cls.cn/detail/1234567' target='_blank'>查看原文 →</a></div><div class='card-body'></div></div><div class='card'><div class='card-title'><div class='news-title'>伊朗议会委员会通过霍尔木兹海峡服务费相关法案草案</div><div class='news-meta'><span class='tag tag-up'>利好</span> · 财联社</div><p><p>法案若落地将抬高海峡通行成本，强化供给扰动预期，利多油气板块。</p></p><a class='news-link' href='https://www.cls.cn/detail/1234568' target='_blank'>查看原文 →</a></div><div class='card-body'></div></div><div class='card'><div class='card-title'><div class='news-title'>英伟达远期市盈率跌至多年低位，财报将检验AI行情持续性</div><div class='news-meta'><span class='tag tag-flat'>中性</span> · 财联社</div><p><p>毛利率近75%但估值处五年低位，市场担忧客户集中度与AI循环融资模式，财报前不确定性上升。</p></p><a class='news-link' href='https://www.cls.cn/detail/1234569' target='_blank'>查看原文 →</a></div><div class='card-body'></div></div><div class='card'><div class='card-title'><div class='news-title'>加拿大驻美大使：加美贸易谈判破裂原因涉及多项议题</div><div class='news-meta'><span class='tag tag-down'>利空</span> · 财联社</div><p><p>美加贸易摩擦升级，加元下跌0.5%，北美供应链与出口链承压，利空风险偏好。</p></p><a class='news-link' href='https://www.cls.cn/detail/1234570' target='_blank'>查看原文 →</a></div><div class='card-body'></div></div><div class='card'><div class='card-title'><div class='news-title'>Hugging Face正收到多起并购意向，潜在交易价值130亿美元</div><div class='news-meta'><span class='tag tag-up'>利好</span> · 财联社</div><p><p>AI平台标的并购活跃，反映大模型生态整合加速，利好AI软件与应用板块情绪。</p></p><a class='news-link' href='https://www.cls.cn/detail/1234571' target='_blank'>查看原文 →</a></div><div class='card-body'></div></div><div class='card'><div class='card-title'><div class='news-title'>俄国防部：击落269架乌克兰无人机</div><div class='news-meta'><span class='tag tag-up'>中性偏利好</span> · 财联社</div><p><p>俄乌冲突持续升级，利好军工防务板块，但加剧全球地缘不确定性。</p></p><a class='news-link' href='https://www.cls.cn/detail/1234572' target='_blank'>查看原文 →</a></div><div class='card-body'></div></div><div class='card'><div class='card-title'><div class='news-title'>埃及正与阿布扎比国家石油钻井公司洽谈战略钻井合作</div><div class='news-meta'><span class='tag tag-flat'>中性</span> · 财联社</div><p><p>中东国家油气勘探合作加深，中长期利好油服设备，短期影响有限。</p></p><a class='news-link' href='https://www.cls.cn/detail/1234573' target='_blank'>查看原文 →</a></div><div class='card-body'></div></div><div class='card'><div class='card-title'><div class='news-title'>黎巴嫩：以色列战机对阿尔杜布沙高地发动空袭</div><div class='news-meta'><span class='tag tag-down'>利空</span> · 财联社</div><p><p>中东局势再紧张，避险情绪升温，短期利空风险资产、利多能源与黄金。</p></p><a class='news-link' href='https://www.cls.cn/detail/1234574' target='_blank'>查看原文 →</a></div><div class='card-body'></div></div></div>
+  <div class="footer">本报告仅供参考，不构成投资建议<br>数据来源: 公开行情接口 (腾讯/新浪) · 新闻: 新浪财经</div>
 </div>
 </body>
 </html>
