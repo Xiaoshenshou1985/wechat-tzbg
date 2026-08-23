@@ -3,125 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>投资日报 · 全市场扫描</title>
+<title>每周全市场总结</title>
 <style>
   :root {
-    --up: #d63031;
-    --down: #00b894;
-    --flat: #999;
-    --ink: #1a1a1a;
-    --muted: #888;
-    --line: #f0ece4;
-    --th-bg: #f5f2ea;
-    --accent: #c9a227;
-    --accent2: #2e564f;
-    --card: #fff;
-    --body-bg: #fafaf8;
+    --up: #d63031; --down: #00b894; --flat: #999;
+    --ink: #1a1a1a; --muted: #888; --line: #f0ece4;
+    --th-bg: #f5f2ea; --accent: #c9a227; --accent2: #2e564f;
+    --card: #fff; --body-bg: #fafaf8;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    background: var(--body-bg);
-    color: var(--ink);
+  body { background: var(--body-bg); color: var(--ink);
     font-family: -apple-system, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
-    font-weight: 350;
-    line-height: 1.8;
-    padding: 0;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ===== 桌面端布局 (>=768px) ===== */
+    font-weight: 350; line-height: 1.8; -webkit-font-smoothing: antialiased; }
   .wrap { max-width: 860px; margin: 0 auto; padding: 48px 32px 80px; }
-
   .header { border-left: 4px solid var(--accent); padding-left: 20px; margin-bottom: 40px; }
   .header h1 { font-size: 30px; font-weight: 400; color: var(--accent2); letter-spacing: 2px; }
   .header .meta { font-size: 13px; color: var(--muted); margin-top: 6px; }
-
-  .sec { margin-bottom: 36px; }
-  .sec-title {
-    font-size: 18px; font-weight: 500; color: var(--accent2);
-    margin-bottom: 16px; padding-left: 12px; border-left: 3px solid var(--accent);
-  }
-  .sec-empty { padding: 24px 0; }
-  .empty { color: var(--muted); font-size: 14px; padding-left: 12px; }
-
+  .section { margin-bottom: 36px; }
+  .sec-title { font-size: 18px; font-weight: 500; color: var(--accent2);
+    margin-bottom: 16px; padding-left: 12px; border-left: 3px solid var(--accent); }
   table { width: 100%; border-collapse: collapse; background: var(--card);
     border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
   th { background: var(--th-bg); color: var(--muted); font-weight: 400;
     font-size: 13px; padding: 12px 16px; text-align: left; }
   td { padding: 12px 16px; border-top: 1px solid var(--line); font-size: 14px; }
   tr:hover td { background: #faf8f3; }
-  .nm { font-weight: 450; }
   .num { text-align: right; font-variant-numeric: tabular-nums; }
-  .up { color: var(--up); }
-  .down { color: var(--down); }
-  .flat { color: var(--flat); }
-
+  .up { color: var(--up); } .down { color: var(--down); } .flat { color: var(--flat); }
+  .card { background: var(--card); border-radius: 8px; padding: 16px 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05); margin-bottom: 16px; }
+  .card-title { font-size: 16px; font-weight: 500; color: var(--accent2); margin-bottom: 8px; }
+  .card-body p { margin-bottom: 8px; }
+  .card-body ul { padding-left: 20px; margin: 8px 0; }
+  .news-card { background: var(--card); border-radius: 8px; padding: 14px 18px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05); margin-bottom: 12px; }
+  .news-title { font-weight: 450; }
+  .news-meta { font-size: 12px; color: var(--muted); margin: 4px 0; }
+  .news-link { color: var(--accent); text-decoration: none; font-size: 13px; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px;
+    margin-right: 6px; }
+  .tag-up { background: #ffe9e9; color: var(--up); }
+  .tag-down { background: #e6f9f2; color: var(--down); }
+  .tag-flat { background: #f0f0f0; color: var(--muted); }
   .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line);
     font-size: 12px; color: var(--muted); text-align: center; line-height: 1.9; }
-
-  /* ===== 移动端布局 (<768px) ===== */
   @media (max-width: 767px) {
     .wrap { padding: 28px 16px 48px; }
     .header h1 { font-size: 24px; }
-    .header .meta { font-size: 12px; }
-
     table, thead, tbody, th, td, tr { display: block; width: 100%; }
-    thead { display: none; }  /* 隐藏表头, 移动端用卡片标签 */
-    tr {
-      background: var(--card); border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-      margin-bottom: 12px; padding: 12px 16px;
-    }
-    td {
-      border: none; padding: 6px 0; display: flex; justify-content: space-between;
-      align-items: center;
-    }
-    td::before {
-      content: attr(data-label);
-      color: var(--muted); font-size: 12px; margin-right: 12px; flex-shrink: 0;
-    }
+    thead { display: none; }
+    tr { background: var(--card); border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      margin-bottom: 12px; padding: 12px 16px; }
+    td { border: none; padding: 6px 0; display: flex; justify-content: space-between;
+      align-items: center; }
+    td::before { content: attr(data-label); color: var(--muted); font-size: 12px; margin-right: 12px; }
     td.nm::before { color: var(--ink); font-weight: 500; }
-    .sec { margin-bottom: 28px; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="header">
-    <h1>投资日报 · 全市场扫描</h1>
-    <div class="meta">2026-08-24 03:57:52</div>
+    <h1>每周全市场总结</h1>
+    <div class="meta">fullscan 20260824</div>
   </div>
-<div class='sec'><div class='sec-title'>涨幅榜 TOP10</div><table><thead><tr><th>名称</th><th>最新</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody><tr><td class='up' data-label='名称'>943.00</td><td class='up' data-label='最新'>943.00</td><td class='up' data-label='涨跌幅'>+4.29%</td><td class='flat' data-label='成交额'>0.03亿</td></tr>
-<tr><td class='up' data-label='名称'>442.00</td><td class='up' data-label='最新'>442.00</td><td class='up' data-label='涨跌幅'>+6.76%</td><td class='flat' data-label='成交额'>0.02亿</td></tr>
-<tr><td class='up' data-label='名称'>58.00</td><td class='up' data-label='最新'>58.00</td><td class='up' data-label='涨跌幅'>+0.75%</td><td class='flat' data-label='成交额'>0.02亿</td></tr>
-<tr><td class='down' data-label='名称'>273.08</td><td class='down' data-label='最新'>273.08</td><td class='down' data-label='涨跌幅'>-1.15%</td><td class='flat' data-label='成交额'>0.01亿</td></tr>
-<tr><td class='up' data-label='名称'>409.06</td><td class='up' data-label='最新'>409.06</td><td class='up' data-label='涨跌幅'>+1.38%</td><td class='flat' data-label='成交额'>0.01亿</td></tr>
-<tr><td class='up' data-label='名称'>1035.00</td><td class='up' data-label='最新'>1035.00</td><td class='up' data-label='涨跌幅'>+2.39%</td><td class='flat' data-label='成交额'>0.01亿</td></tr>
-<tr><td class='up' data-label='名称'>201.08</td><td class='up' data-label='最新'>201.08</td><td class='up' data-label='涨跌幅'>+1.73%</td><td class='flat' data-label='成交额'>0.01亿</td></tr>
-<tr><td class='up' data-label='名称'>34.74</td><td class='up' data-label='最新'>34.74</td><td class='up' data-label='涨跌幅'>+2.69%</td><td class='flat' data-label='成交额'>0.01亿</td></tr>
-<tr><td class='up' data-label='名称'>62.18</td><td class='up' data-label='最新'>62.18</td><td class='up' data-label='涨跌幅'>+0.26%</td><td class='flat' data-label='成交额'>0.01亿</td></tr>
-<tr><td class='down' data-label='名称'>162.86</td><td class='down' data-label='最新'>162.86</td><td class='down' data-label='涨跌幅'>-3.00%</td><td class='flat' data-label='成交额'>0.01亿</td></tr></tbody></table></div>
-<div class='sec'><div class='sec-title'>跌幅榜 TOP10</div><table><thead><tr><th>名称</th><th>最新</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody><tr><td class='flat' data-label='名称'>0.00</td><td class='flat' data-label='最新'>0.00</td><td class='flat' data-label='涨跌幅'>+0.00%</td><td class='flat' data-label='成交额'>-</td></tr>
-<tr><td class='flat' data-label='名称'>12.10</td><td class='flat' data-label='最新'>12.10</td><td class='flat' data-label='涨跌幅'>+0.00%</td><td class='flat' data-label='成交额'>-</td></tr>
-<tr><td class='flat' data-label='名称'>0.00</td><td class='flat' data-label='最新'>0.00</td><td class='flat' data-label='涨跌幅'>+0.00%</td><td class='flat' data-label='成交额'>-</td></tr>
-<tr><td class='flat' data-label='名称'>26.33</td><td class='flat' data-label='最新'>26.33</td><td class='flat' data-label='涨跌幅'>+0.00%</td><td class='flat' data-label='成交额'>-</td></tr>
-<tr><td class='flat' data-label='名称'>56.50</td><td class='flat' data-label='最新'>56.50</td><td class='flat' data-label='涨跌幅'>+0.00%</td><td class='flat' data-label='成交额'>-</td></tr>
-<tr><td class='flat' data-label='名称'>1.08</td><td class='flat' data-label='最新'>1.08</td><td class='flat' data-label='涨跌幅'>+0.00%</td><td class='flat' data-label='成交额'>-</td></tr>
-<tr><td class='flat' data-label='名称'>0.18</td><td class='flat' data-label='最新'>0.18</td><td class='flat' data-label='涨跌幅'>+0.00%</td><td class='flat' data-label='成交额'>-</td></tr>
-<tr><td class='flat' data-label='名称'>7.11</td><td class='flat' data-label='最新'>7.11</td><td class='flat' data-label='涨跌幅'>+0.00%</td><td class='flat' data-label='成交额'>-</td></tr>
-<tr><td class='flat' data-label='名称'>0.89</td><td class='flat' data-label='最新'>0.89</td><td class='flat' data-label='涨跌幅'>+0.00%</td><td class='flat' data-label='成交额'>-</td></tr>
-<tr><td class='flat' data-label='名称'>0.56</td><td class='flat' data-label='最新'>0.56</td><td class='flat' data-label='涨跌幅'>+0.00%</td><td class='flat' data-label='成交额'>-</td></tr></tbody></table></div>
-<div class='sec'><div class='sec-title'>成交额榜 TOP10</div><table><thead><tr><th>名称</th><th>最新</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody><tr><td class='up' data-label='名称'>943.00</td><td class='up' data-label='最新'>943.00</td><td class='up' data-label='涨跌幅'>+4.29%</td><td class='flat' data-label='成交额'>0.03亿</td></tr>
-<tr><td class='up' data-label='名称'>442.00</td><td class='up' data-label='最新'>442.00</td><td class='up' data-label='涨跌幅'>+6.76%</td><td class='flat' data-label='成交额'>0.02亿</td></tr>
-<tr><td class='up' data-label='名称'>58.00</td><td class='up' data-label='最新'>58.00</td><td class='up' data-label='涨跌幅'>+0.75%</td><td class='flat' data-label='成交额'>0.02亿</td></tr>
-<tr><td class='down' data-label='名称'>273.08</td><td class='down' data-label='最新'>273.08</td><td class='down' data-label='涨跌幅'>-1.15%</td><td class='flat' data-label='成交额'>0.01亿</td></tr>
-<tr><td class='up' data-label='名称'>409.06</td><td class='up' data-label='最新'>409.06</td><td class='up' data-label='涨跌幅'>+1.38%</td><td class='flat' data-label='成交额'>0.01亿</td></tr>
-<tr><td class='up' data-label='名称'>1035.00</td><td class='up' data-label='最新'>1035.00</td><td class='up' data-label='涨跌幅'>+2.39%</td><td class='flat' data-label='成交额'>0.01亿</td></tr>
-<tr><td class='up' data-label='名称'>201.08</td><td class='up' data-label='最新'>201.08</td><td class='up' data-label='涨跌幅'>+1.73%</td><td class='flat' data-label='成交额'>0.01亿</td></tr>
-<tr><td class='up' data-label='名称'>34.74</td><td class='up' data-label='最新'>34.74</td><td class='up' data-label='涨跌幅'>+2.69%</td><td class='flat' data-label='成交额'>0.01亿</td></tr>
-<tr><td class='up' data-label='名称'>62.18</td><td class='up' data-label='最新'>62.18</td><td class='up' data-label='涨跌幅'>+0.26%</td><td class='flat' data-label='成交额'>0.01亿</td></tr>
-<tr><td class='down' data-label='名称'>162.86</td><td class='down' data-label='最新'>162.86</td><td class='down' data-label='涨跌幅'>-3.00%</td><td class='flat' data-label='成交额'>0.01亿</td></tr></tbody></table></div>
-  <div class="footer">本报告仅供参考，不构成投资建议<br>数据来源: 公开行情接口 (腾讯/新浪)</div>
+<div class='sec'><div class='sec-title'>本周总结</div><p>本周A股结构性行情特征鲜明，AI算力硬件（光模块、PCB、半导体）持续领涨，成为资金核心共识；黄金、油气受地缘冲突催化走强，CXO板块走弱拖累情绪。全市场成交额高度集中于AI产业链，赚钱效应集中在算力方向，题材轮动加速但主线清晰。外部地缘风险（霍尔木兹海峡、加美贸易、俄乌冲突）升温，为市场增添扰动，但AI主线逻辑未破。</p></div>
+<div class='sec'><div class='sec-title'>A股一周行情回顾</div><p>本周A股AI算力链强势领跑。光模块龙头新易盛涨6.76%、中际旭创涨4.29%，天孚通信微跌1.15%，亨通光电小幅上涨，光通信板块整体维持强势。半导体方面，寒武纪涨2.39%、兆易创新涨1.38%、长鑫科技涨0.75%，存储与AI芯片共振。东山精密涨1.73%（PCB/消费电子）跟随算力。紫金矿业涨2.69%（黄金）受避险情绪提振。药明康德跌3.0%，CXO板块走弱。成交额榜前十几乎被AI硬件包揽，显示增量资金高度聚焦算力方向，市场呈明显结构性特征。</p></div>
+<div class='sec'><div class='sec-title'>美股一周行情回顾</div><p>美股方面，英伟达远期市盈率已跌至五年多来相对自身十年历史区间的低位，市场对客户集中度风险及AI循环融资模式的担忧不断上升，即将发布的财报将检验AI行情持续性。英伟达毛利率仍接近75%，基本面强劲，但估值与预期博弈加剧，AI主线进入业绩验证关键期。</p></div>
+<div class='sec'><div class='sec-title'>资金脉络</div><p>主力资金持续向AI算力硬件集中，光模块（中际旭创、新易盛、天孚通信）、半导体（寒武纪、兆易创新、长鑫科技）、PCB（东山精密）为资金主攻方向，成交高度集中反映主力共识。黄金（紫金矿业）受地缘避险资金青睐。CXO（药明康德）遭资金流出。北向及机构资金倾向超配AI确定性赛道，题材轮动快但主线明确。</p></div>
+<div class='sec'><div class='sec-title'>热点轮换回顾</div><p>本周热点轮动呈现'AI算力主线+地缘主题辅线'格局。光模块/PCB/半导体等AI硬件持续领涨且成交集中，为最强主线；黄金、油气受地缘冲突催化轮动走强；CXO等医药板块走弱。整体看，资金从泛科技向AI算力硬件集中，主线内部光模块领先于半导体，避险与地缘主题（黄金、石油）作为防御性轮动补充。</p></div>
+<div class='sec'><div class='sec-title'>未来事件预判</div><p>重点关注：1）英伟达财报，将检验AI行情持续性，影响全球算力链情绪；2）霍尔木兹海峡/波斯湾地缘风险，伊朗威胁封锁石油出口及议会通过海峡服务费法案，直接牵动油气、黄金及航运板块；3）加美贸易谈判破裂后紧张升温，关注加元汇率及北美贸易链扰动；4）俄乌冲突持续，军工、能源、避险资产或受关注；5）哈萨克斯坦、巴西等大选结果及后续政策走向。建议留意AI算力链业绩兑现与外部地缘事件的共振风险。</p></div>
+<div class='sec'><div class='sec-title'>涨幅榜 TOP10</div><table><thead><tr><th>名称</th><th>最新</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody><tr><td class=''>中际旭创</td><td class='num'>943.00</td><td class='num'>+4.29%</td><td class='num'>0.03亿</td></tr><tr><td class=''>新易盛</td><td class='num'>442.00</td><td class='num'>+6.76%</td><td class='num'>0.02亿</td></tr><tr><td class=''>长鑫科技</td><td class='num'>58.00</td><td class='num'>+0.75%</td><td class='num'>0.02亿</td></tr><tr><td class=''>天孚通信</td><td class='num'>273.08</td><td class='num'>-1.15%</td><td class='num'>0.01亿</td></tr><tr><td class=''>兆易创新</td><td class='num'>409.06</td><td class='num'>+1.38%</td><td class='num'>0.01亿</td></tr><tr><td class=''>寒武纪</td><td class='num'>1035.00</td><td class='num'>+2.39%</td><td class='num'>0.01亿</td></tr><tr><td class=''>东山精密</td><td class='num'>201.08</td><td class='num'>+1.73%</td><td class='num'>0.01亿</td></tr><tr><td class=''>XD紫金矿</td><td class='num'>34.74</td><td class='num'>+2.69%</td><td class='num'>0.01亿</td></tr><tr><td class=''>亨通光电</td><td class='num'>62.18</td><td class='num'>+0.26%</td><td class='num'>0.01亿</td></tr><tr><td class=''>药明康德</td><td class='num'>162.86</td><td class='num'>-3.00%</td><td class='num'>0.01亿</td></tr></tbody></table></div>
+<div class='sec'><div class='sec-title'>跌幅榜 TOP10</div><table><thead><tr><th>名称</th><th>最新</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody><tr><td class=''>洛轴股份</td><td class='num'>0.00</td><td class='num'>+0.00%</td><td class='num'>-</td></tr><tr><td class=''>贝特利</td><td class='num'>12.10</td><td class='num'>+0.00%</td><td class='num'>-</td></tr><tr><td class=''>电科思仪</td><td class='num'>0.00</td><td class='num'>+0.00%</td><td class='num'>-</td></tr><tr><td class=''>格林生物</td><td class='num'>26.33</td><td class='num'>+0.00%</td><td class='num'>-</td></tr><tr><td class=''>蓝盾光电</td><td class='num'>56.50</td><td class='num'>+0.00%</td><td class='num'>-</td></tr><tr><td class=''>左江退</td><td class='num'>1.08</td><td class='num'>+0.00%</td><td class='num'>-</td></tr><tr><td class=''>越博退</td><td class='num'>0.18</td><td class='num'>+0.00%</td><td class='num'>-</td></tr><tr><td class=''>天常股份</td><td class='num'>7.11</td><td class='num'>+0.00%</td><td class='num'>-</td></tr><tr><td class=''>普利退</td><td class='num'>0.89</td><td class='num'>+0.00%</td><td class='num'>-</td></tr><tr><td class=''>中潜退</td><td class='num'>0.56</td><td class='num'>+0.00%</td><td class='num'>-</td></tr></tbody></table></div>
+  <div class="footer">本报告仅供参考，不构成投资建议<br>数据来源: 公开行情接口 (腾讯/新浪) · 新闻: 新浪财经</div>
 </div>
 </body>
 </html>
