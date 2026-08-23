@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>投资日报 · 美股</title>
+<style>
+  :root {
+    --up: #d63031;
+    --down: #00b894;
+    --flat: #999;
+    --ink: #1a1a1a;
+    --muted: #888;
+    --line: #f0ece4;
+    --th-bg: #f5f2ea;
+    --accent: #c9a227;
+    --accent2: #2e564f;
+    --card: #fff;
+    --body-bg: #fafaf8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--body-bg);
+    color: var(--ink);
+    font-family: -apple-system, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+    font-weight: 350;
+    line-height: 1.8;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== 桌面端布局 (>=768px) ===== */
+  .wrap { max-width: 860px; margin: 0 auto; padding: 48px 32px 80px; }
+
+  .header { border-left: 4px solid var(--accent); padding-left: 20px; margin-bottom: 40px; }
+  .header h1 { font-size: 30px; font-weight: 400; color: var(--accent2); letter-spacing: 2px; }
+  .header .meta { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+  .sec { margin-bottom: 36px; }
+  .sec-title {
+    font-size: 18px; font-weight: 500; color: var(--accent2);
+    margin-bottom: 16px; padding-left: 12px; border-left: 3px solid var(--accent);
+  }
+  .sec-empty { padding: 24px 0; }
+  .empty { color: var(--muted); font-size: 14px; padding-left: 12px; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--card);
+    border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+  th { background: var(--th-bg); color: var(--muted); font-weight: 400;
+    font-size: 13px; padding: 12px 16px; text-align: left; }
+  td { padding: 12px 16px; border-top: 1px solid var(--line); font-size: 14px; }
+  tr:hover td { background: #faf8f3; }
+  .nm { font-weight: 450; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .up { color: var(--up); }
+  .down { color: var(--down); }
+  .flat { color: var(--flat); }
+
+  .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line);
+    font-size: 12px; color: var(--muted); text-align: center; line-height: 1.9; }
+
+  /* ===== 移动端布局 (<768px) ===== */
+  @media (max-width: 767px) {
+    .wrap { padding: 28px 16px 48px; }
+    .header h1 { font-size: 24px; }
+    .header .meta { font-size: 12px; }
+
+    table, thead, tbody, th, td, tr { display: block; width: 100%; }
+    thead { display: none; }  /* 隐藏表头, 移动端用卡片标签 */
+    tr {
+      background: var(--card); border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      margin-bottom: 12px; padding: 12px 16px;
+    }
+    td {
+      border: none; padding: 6px 0; display: flex; justify-content: space-between;
+      align-items: center;
+    }
+    td::before {
+      content: attr(data-label);
+      color: var(--muted); font-size: 12px; margin-right: 12px; flex-shrink: 0;
+    }
+    td.nm::before { color: var(--ink); font-weight: 500; }
+    .sec { margin-bottom: 28px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <h1>投资日报 · 美股</h1>
+    <div class="meta">2026-08-24 03:43:26</div>
+  </div>
+<div class='sec'><div class='sec-title'>美股主要指数</div><table><thead><tr><th>名称</th><th>最新</th><th>涨跌幅</th><th>涨跌额</th><th>成交额</th></tr></thead><tbody><tr><td class='up' data-label='名称'>53277.01</td><td class='up' data-label='最新'>53277.01</td><td class='up' data-label='涨跌幅'>+0.98%</td><td class='up' data-label='涨跌额'>517.80</td><td class='flat' data-label='成交额'>225528.67亿</td></tr>
+<tr><td class='up' data-label='名称'>26180.45</td><td class='up' data-label='最新'>26180.45</td><td class='up' data-label='涨跌幅'>+0.43%</td><td class='up' data-label='涨跌额'>113.28</td><td class='flat' data-label='成交额'>1654270.99亿</td></tr>
+<tr><td class='up' data-label='名称'>7674.37</td><td class='up' data-label='最新'>7674.37</td><td class='up' data-label='涨跌幅'>+0.43%</td><td class='up' data-label='涨跌额'>33.21</td><td class='flat' data-label='成交额'>210075.38亿</td></tr></tbody></table></div>
+  <div class="footer">本报告仅供参考，不构成投资建议<br>数据来源: 公开行情接口 (腾讯/新浪)</div>
+</div>
+</body>
+</html>
