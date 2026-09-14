@@ -73,25 +73,25 @@
     <a class="report" href="/a-stock">
       <div class="r-top"><span class="r-title">A股盘前日报</span><span class="r-arrow">→</span></div>
       <div class="r-desc">隔夜外围、指数走势预测、板块热点与重点股票、资金动向、重大新闻利好利空判断。</div>
-      <div class="r-foot"><span class="tag tag-daily">每日</span><span class="r-time" data-ts="a-stock">—</span></div>
+      <div class="r-foot"><span class="tag tag-daily">每日</span><span class="r-time">—</span></div>
     </a>
 
     <a class="report" href="/us-stock">
       <div class="r-top"><span class="r-title">美股盘前日报</span><span class="r-arrow">→</span></div>
       <div class="r-desc">三大指数与科技八姐妹、板块热点、隔夜外围利好利空，以及对 A 股的影响传导。</div>
-      <div class="r-foot"><span class="tag tag-daily">每日</span><span class="r-time" data-ts="us-stock">—</span></div>
+      <div class="r-foot"><span class="tag tag-daily">每日</span><span class="r-time">—</span></div>
     </a>
 
     <a class="report" href="/e-stock-summary">
       <div class="r-top"><span class="r-title">A股盘后总结</span><span class="r-arrow">→</span></div>
       <div class="r-desc">当日收盘后的市场复盘，核对盘前判断与实际走势的偏差。</div>
-      <div class="r-foot"><span class="tag tag-daily">每日</span><span class="r-time" data-ts="e-stock-summary">—</span></div>
+      <div class="r-foot"><span class="tag tag-daily">每日</span><span class="r-time">—</span></div>
     </a>
 
     <a class="report" href="/w-stock-summary">
       <div class="r-top"><span class="r-title">每周全市场总结</span><span class="r-arrow">→</span></div>
       <div class="r-desc">全市场扫描（fullscan），一周维度的板块轮动、主线延续与下周关注。</div>
-      <div class="r-foot"><span class="tag tag-weekly">每周</span><span class="r-time" data-ts="w-stock-summary">—</span></div>
+      <div class="r-foot"><span class="tag tag-weekly">每周</span><span class="r-time">—</span></div>
     </a>
   </div>
 
@@ -104,21 +104,29 @@
 </div>
 
 <script>
-fetch('/timestamps.json', { cache: 'no-store' })
-  .then(function (r) { return r.ok ? r.json() : null; })
-  .then(function (ts) {
-    if (!ts) return;
-    var latest = '';
-    document.querySelectorAll('[data-ts]').forEach(function (el) {
-      var v = ts[el.getAttribute('data-ts')];
-      if (v) {
-        el.textContent = v;
-        if (v > latest) latest = v;
-      }
-    });
-    if (latest) document.getElementById('latest').textContent = latest;
-  })
-  .catch(function () {});
+// 日期直接取各报告 header 里的 .meta，避免与单独的日期文件失同步
+(function () {
+  var cards = [].slice.call(document.querySelectorAll('a.report'));
+  var latest = '';
+
+  cards.forEach(function (card) {
+    var out = card.querySelector('.r-time');
+    fetch(card.getAttribute('href'), { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.text() : null; })
+      .then(function (html) {
+        if (!html) return;
+        var m = html.match(/class=["']?meta["']?\s*>[^<]*?(\d{4})[-\/]?(\d{2})[-\/]?(\d{2})/);
+        if (!m) return;
+        var iso = m[1] + '-' + m[2] + '-' + m[3];
+        out.textContent = iso;
+        if (iso > latest) {
+          latest = iso;
+          document.getElementById('latest').textContent = latest;
+        }
+      })
+      .catch(function () {});
+  });
+})();
 </script>
 </body>
 </html>
