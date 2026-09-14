@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="投资日报 · A股盘前、美股盘前、A股盘后与每周全市场总结">
+<title>投资日报</title>
+<style>
+  :root {
+    --up: #d63031; --down: #00b894; --flat: #999;
+    --ink: #1a1a1a; --muted: #888; --line: #f0ece4;
+    --th-bg: #f5f2ea; --accent: #c9a227; --accent2: #2e564f;
+    --card: #fff; --body-bg: #fafaf8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--body-bg); color: var(--ink);
+    font-family: -apple-system, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+    font-weight: 350; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 48px 32px 80px; }
+
+  .header { border-left: 4px solid var(--accent); padding-left: 20px; margin-bottom: 12px; }
+  .header h1 { font-size: 30px; font-weight: 400; color: var(--accent2); letter-spacing: 2px; }
+  .header .sub { font-size: 13px; color: var(--muted); margin-top: 6px; letter-spacing: 1px; }
+  .stamp { font-size: 13px; color: var(--muted); margin: 0 0 36px 24px; }
+  .stamp b { color: var(--accent2); font-weight: 500; }
+
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  a.report { display: block; background: var(--card); border: 1px solid var(--line);
+    border-radius: 8px; padding: 20px 22px; text-decoration: none; color: inherit;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05); position: relative; overflow: hidden;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+  a.report::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--accent); transform: scaleY(0); transform-origin: top;
+    transition: transform .22s ease; }
+  a.report:hover { transform: translateY(-2px); border-color: #e6ddc8;
+    box-shadow: 0 6px 20px rgba(46,86,79,0.10); }
+  a.report:hover::before { transform: scaleY(1); }
+  .r-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .r-title { font-size: 17px; font-weight: 500; color: var(--accent2); }
+  .r-arrow { color: var(--accent); font-size: 15px; opacity: .45; transition: opacity .18s, transform .18s; }
+  a.report:hover .r-arrow { opacity: 1; transform: translateX(3px); }
+  .r-desc { font-size: 13px; color: var(--muted); margin: 8px 0 14px; line-height: 1.7; }
+  .r-foot { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; }
+  .tag-daily { background: #f5efdc; color: #96771a; }
+  .tag-weekly { background: #e7efec; color: var(--accent2); }
+  .r-time { font-variant-numeric: tabular-nums; }
+
+  .about { margin-top: 40px; background: var(--card); border-radius: 8px; padding: 18px 22px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+  .about-title { font-size: 15px; font-weight: 500; color: var(--accent2); margin-bottom: 8px; }
+  .about p { font-size: 13px; color: var(--muted); line-height: 1.9; }
+  .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line);
+    font-size: 12px; color: var(--muted); text-align: center; line-height: 1.9; }
+
+  @media (max-width: 767px) {
+    .wrap { padding: 28px 16px 48px; }
+    .header h1 { font-size: 24px; }
+    .grid { grid-template-columns: 1fr; gap: 12px; }
+    .stamp { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <h1>投资日报</h1>
+    <div class="sub">A股 · 美股 · 每日盘前盘后与每周全市场总结</div>
+  </div>
+  <div class="stamp">最新一期 <b id="latest">—</b></div>
+
+  <div class="grid">
+    <a class="report" href="/a-stock">
+      <div class="r-top"><span class="r-title">A股盘前日报</span><span class="r-arrow">→</span></div>
+      <div class="r-desc">隔夜外围、指数走势预测、板块热点与重点股票、资金动向、重大新闻利好利空判断。</div>
+      <div class="r-foot"><span class="tag tag-daily">每日</span><span class="r-time" data-ts="a-stock">—</span></div>
+    </a>
+
+    <a class="report" href="/us-stock">
+      <div class="r-top"><span class="r-title">美股盘前日报</span><span class="r-arrow">→</span></div>
+      <div class="r-desc">三大指数与科技八姐妹、板块热点、隔夜外围利好利空，以及对 A 股的影响传导。</div>
+      <div class="r-foot"><span class="tag tag-daily">每日</span><span class="r-time" data-ts="us-stock">—</span></div>
+    </a>
+
+    <a class="report" href="/e-stock-summary">
+      <div class="r-top"><span class="r-title">A股盘后总结</span><span class="r-arrow">→</span></div>
+      <div class="r-desc">当日收盘后的市场复盘，核对盘前判断与实际走势的偏差。</div>
+      <div class="r-foot"><span class="tag tag-daily">每日</span><span class="r-time" data-ts="e-stock-summary">—</span></div>
+    </a>
+
+    <a class="report" href="/w-stock-summary">
+      <div class="r-top"><span class="r-title">每周全市场总结</span><span class="r-arrow">→</span></div>
+      <div class="r-desc">全市场扫描（fullscan），一周维度的板块轮动、主线延续与下周关注。</div>
+      <div class="r-foot"><span class="tag tag-weekly">每周</span><span class="r-time" data-ts="w-stock-summary">—</span></div>
+    </a>
+  </div>
+
+  <div class="about">
+    <div class="about-title">关于本报告</div>
+    <p>每周一至周五定时生成，数据来自公开行情接口（腾讯 / 新浪），新闻取自新浪财经。页面由 Cloudflare Pages 托管，随仓库提交自动更新。</p>
+  </div>
+
+  <div class="footer">本报告仅供参考，不构成投资建议<br>数据来源: 公开行情接口 (腾讯/新浪) · 新闻: 新浪财经</div>
+</div>
+
+<script>
+fetch('/timestamps.json', { cache: 'no-store' })
+  .then(function (r) { return r.ok ? r.json() : null; })
+  .then(function (ts) {
+    if (!ts) return;
+    var latest = '';
+    document.querySelectorAll('[data-ts]').forEach(function (el) {
+      var v = ts[el.getAttribute('data-ts')];
+      if (v) {
+        el.textContent = v;
+        if (v > latest) latest = v;
+      }
+    });
+    if (latest) document.getElementById('latest').textContent = latest;
+  })
+  .catch(function () {});
+</script>
+</body>
+</html>
