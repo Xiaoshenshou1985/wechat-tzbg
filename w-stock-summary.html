@@ -2,80 +2,175 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>每周全市场总结</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --up: #d63031; --down: #00b894; --flat: #999;
-    --ink: #1a1a1a; --muted: #888; --line: #f0ece4;
-    --th-bg: #f5f2ea; --accent: #c9a227; --accent2: #2e564f;
-    --card: #fff; --body-bg: #fafaf8;
+  /* ── 🖋 墨水经典主题 (guizang-ppt-skill · themes.md) ── */
+  :root{
+    --ink:#0a0a0b;   --ink-rgb:10,10,11;
+    --paper:#f1efea; --paper-rgb:241,239,234;
+    --paper-tint:#e8e5de; --ink-tint:#18181a;
+    --muted:rgba(var(--ink-rgb),.55);
+    --hairline:rgba(var(--ink-rgb),.18);
+    --hairline-soft:rgba(var(--ink-rgb),.10);
+    --up:#b83227; --down:#14583f; --flat:rgba(var(--ink-rgb),.45);
+    --serif-en:"Playfair Display",Georgia,serif;
+    --serif-zh:"Noto Serif SC","Songti SC","STSong","SimSun",serif;
+    --sans-zh:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --mono:"IBM Plex Mono","Menlo","Consolas","Courier New",monospace;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--body-bg); color: var(--ink);
-    font-family: -apple-system, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
-    font-weight: 350; line-height: 1.8; -webkit-font-smoothing: antialiased; }
-  .wrap { max-width: 860px; margin: 0 auto; padding: 48px 32px 80px; }
-  .header { border-left: 4px solid var(--accent); padding-left: 20px; margin-bottom: 40px; }
-  .header h1 { font-size: 30px; font-weight: 400; color: var(--accent2); letter-spacing: 2px; }
-  .header .meta { font-size: 13px; color: var(--muted); margin-top: 6px; }
-  .section { margin-bottom: 36px; }
-  .sec-title { font-size: 18px; font-weight: 500; color: var(--accent2);
-    margin-bottom: 16px; padding-left: 12px; border-left: 3px solid var(--accent); }
-  table { width: 100%; border-collapse: collapse; background: var(--card);
-    border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
-  th { background: var(--th-bg); color: var(--muted); font-weight: 400;
-    font-size: 13px; padding: 12px 16px; text-align: left; }
-  td { padding: 12px 16px; border-top: 1px solid var(--line); font-size: 14px; }
-  tr:hover td { background: #faf8f3; }
-  .num { text-align: right; font-variant-numeric: tabular-nums; }
-  .up { color: var(--up); } .down { color: var(--down); } .flat { color: var(--flat); }
-  .card { background: var(--card); border-radius: 8px; padding: 16px 20px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05); margin-bottom: 16px; }
-  .card-title { font-size: 16px; font-weight: 500; color: var(--accent2); margin-bottom: 8px; }
-  .card-body p { margin-bottom: 8px; }
-  .card-body ul { padding-left: 20px; margin: 8px 0; }
-  .news-card { background: var(--card); border-radius: 8px; padding: 14px 18px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05); margin-bottom: 12px; }
-  .news-title { font-weight: 450; }
-  .news-meta { font-size: 12px; color: var(--muted); margin: 4px 0; }
-  .news-link { color: var(--accent); text-decoration: none; font-size: 13px; }
-  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px;
-    margin-right: 6px; }
-  .tag-up { background: #ffe9e9; color: var(--up); }
-  .tag-down { background: #e6f9f2; color: var(--down); }
-  .tag-flat { background: #f0f0f0; color: var(--muted); }
-  .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line);
-    font-size: 12px; color: var(--muted); text-align: center; line-height: 1.9; }
-  @media (max-width: 767px) {
-    .wrap { padding: 28px 16px 48px; }
-    .header h1 { font-size: 24px; }
-    table, thead, tbody, th, td, tr { display: block; width: 100%; }
-    thead { display: none; }
-    tr { background: var(--card); border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-      margin-bottom: 12px; padding: 12px 16px; }
-    td { border: none; padding: 6px 0; display: flex; justify-content: space-between;
-      align-items: center; }
-    td::before { content: attr(data-label); color: var(--muted); font-size: 12px; margin-right: 12px; }
-    td.nm::before { color: var(--ink); font-weight: 500; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:var(--sans-zh);font-weight:400;line-height:1.85;
+    font-size:16px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:clamp(24px,6vw,64px) clamp(16px,5vw,48px) 96px}
+
+  /* ── 报头 masthead ── */
+  .masthead{border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);
+    padding:10px 2px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .masthead .brand{font-family:var(--serif-zh);font-weight:700;font-size:17px;letter-spacing:.12em}
+  .masthead .brand em{font-family:var(--serif-en);font-style:italic;font-weight:500;
+    letter-spacing:.02em;font-size:14px;margin-left:10px;opacity:.6}
+  .masthead .issue{font-family:var(--mono);font-size:11px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);white-space:nowrap}
+
+  /* ── 头版标题区 ── */
+  .headline{margin:clamp(32px,7vw,64px) 0 clamp(24px,5vw,44px)}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:18px}
+  .headline h1{font-family:var(--serif-zh);font-weight:700;
+    font-size:clamp(30px,6.4vw,52px);line-height:1.18;letter-spacing:-.01em}
+  .headline .sub{font-family:var(--serif-zh);font-style:italic;color:var(--muted);
+    font-size:clamp(15px,2.4vw,19px);margin-top:14px;line-height:1.6}
+  .byline{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--muted);
+    border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);
+    padding:10px 2px;margin-top:clamp(20px,4vw,32px);
+    display:flex;flex-wrap:wrap;gap:6px 24px;text-transform:uppercase}
+
+  /* ── 分节 ── */
+  .sec{margin:clamp(40px,7vw,64px) 0}
+  .sec-head{display:flex;align-items:baseline;gap:14px;
+    border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:24px}
+  .sec-no{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.12em;
+    color:var(--muted);flex:none}
+  .sec-title{font-family:var(--serif-zh);font-weight:600;
+    font-size:clamp(20px,3.6vw,27px);line-height:1.3;letter-spacing:.01em}
+  .sec p{margin:0 0 18px}
+  .sec p:last-child{margin-bottom:0}
+  .sec ul{padding-left:22px;margin:10px 0 14px}
+  .sec li{margin-bottom:8px}
+  .sec strong{font-weight:700;font-family:var(--sans-zh)}
+  .sec-lead>p:first-of-type{
+    font-family:var(--serif-zh);font-size:clamp(17px,2.6vw,20px);line-height:1.9;
+    color:rgba(var(--ink-rgb),.88)}
+  .sec-lead>p:first-of-type::first-letter{
+    font-family:var(--serif-en);font-size:2.6em;font-weight:700;line-height:.85;
+    float:left;margin:6px 10px 0 0;color:var(--ink)}
+
+  /* ── 表格 (报纸数据栏: 发丝线 + 等宽数字) ── */
+  .table-wrap{overflow-x:auto;margin:8px 0 4px}
+  table{width:100%;border-collapse:collapse;font-size:14.5px}
+  thead th{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);text-align:left;
+    border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);
+    padding:10px 14px 10px 0;white-space:nowrap}
+  tbody td{padding:11px 14px 11px 0;border-bottom:1px solid var(--hairline-soft);
+    vertical-align:baseline}
+  tbody tr:last-child td{border-bottom:1px solid var(--hairline)}
+  .num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;
+    font-size:13.5px;padding-right:0}
+  th.num{padding-right:0;text-align:right}
+  .up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--flat)}
+
+  /* ── 卡片 (无阴影, 发丝线左边框) ── */
+  .card{border-left:2px solid var(--ink);padding:4px 0 4px 20px;margin:0 0 26px}
+  .card-title{font-family:var(--serif-zh);font-weight:600;font-size:17.5px;
+    line-height:1.45;margin-bottom:8px}
+  .card-body p{margin-bottom:8px;font-size:15px;line-height:1.8;color:rgba(var(--ink-rgb),.85)}
+  .card-body ul{padding-left:20px;margin:6px 0}
+  .card-body li{margin-bottom:4px;font-size:15px;color:rgba(var(--ink-rgb),.85)}
+
+  /* ── 新闻条目 ── */
+  .news-card{border-top:1px solid var(--hairline);padding:16px 2px;margin-bottom:0}
+  .news-card:last-of-type{border-bottom:1px solid var(--hairline)}
+  .news-title{font-family:var(--serif-zh);font-weight:600;font-size:17px;line-height:1.5}
+  .news-meta{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--muted);
+    margin:6px 0 8px;text-transform:uppercase;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .news-link{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;
+    color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);
+    padding-bottom:1px}
+  .news-link:hover{color:var(--up);border-color:var(--up)}
+  .news-reason{font-size:14.5px;color:rgba(var(--ink-rgb),.8);margin-bottom:8px}
+
+  /* ── 判断标签 (等宽描边, 不用圆角色块) ── */
+  .tag{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:600;
+    letter-spacing:.2em;padding:3px 10px;border:1px solid currentColor;line-height:1.4}
+  .tag-up{color:var(--up)} .tag-down{color:var(--down)} .tag-flat{color:rgba(var(--ink-rgb),.65)}
+
+  /* ── 页脚 ── */
+  .footer{margin-top:64px;border-top:3px double var(--ink);padding-top:18px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted);
+    text-align:center;line-height:2;text-transform:uppercase}
+
+  /* ── 移动端适配 ── */
+  @media (max-width:640px){
+    body{font-size:16px;line-height:1.9}
+    .masthead{flex-direction:column;align-items:flex-start;gap:4px}
+    .masthead .brand em{display:block;margin:2px 0 0}
+    .sec-head{gap:10px}
+    .byline{gap:4px 16px}
+    /* 表格转卡片: 表头隐藏, 每行变块, 单元格带字段名 */
+    .table-wrap{overflow:visible}
+    table,thead,tbody,tr,td{display:block;width:100%}
+    thead{display:none}
+    tbody tr{border-top:1px solid var(--hairline);padding:14px 0 15px}
+    tbody tr:last-child td:last-child{border-bottom:none}
+    tbody tr:last-child{border-bottom:1px solid var(--hairline)}
+    td{border:none;padding:6px 0;display:flex;justify-content:space-between;
+      align-items:baseline;gap:16px;font-size:15px}
+    td.num{text-align:right;padding-right:0}
+    td::before{content:attr(data-label);font-family:var(--mono);font-size:10.5px;
+      letter-spacing:.14em;text-transform:uppercase;color:var(--muted);flex-shrink:0}
+  }
+  @media print{
+    body{background:#fff}
+    .sec{break-inside:avoid}
   }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="header">
-    <h1>每周全市场总结</h1>
-    <div class="meta">fullscan 20260920</div>
+  <div class="masthead">
+    <div class="brand">投资日报<em>The Market Daily</em></div>
+    <div class="issue">2026年9月20日 · 每周全市场总结 · WEEKLY REVIEW</div>
   </div>
-<div class='sec'><div class='sec-title'>本周总结</div><p>本周(9/14-9/18)A股走出"先抑后扬"的V形反转:周一到周二上证两度失守3900、探至3842,周四地产链被政策预期点燃(万科A放量涨9.93%逼近涨停),周五算力链全面爆发(科创50单日+2.88%),沪深两市单日成交逼近4.3万亿。全周上证+0.70%收3911.87重新站上3900,创业板+1.52%,科创50一周+5.31%大幅领跑;上证50仅+0.55%,银行白酒煤炭等权重滞涨——小盘成长与主题风格的完胜周。隔夜美股分化(道指-0.18%、纳指+0.39%、标普+0.17%)。下周关键看点:①美伊经卡塔尔/巴基斯坦斡旋接近重启谈判,布伦特原油跌破99美元,地缘缓和交易升温;②欧元区通胀逼近4%、欧央行官员为10月加息铺路,海外流动性边际收紧;③地产政策预期能否落地兑现;④下周一纳斯达克100季度调整生效,SpaceX权重升至2.82%。</p></div>
-<div class='sec'><div class='sec-title'>A股一周行情回顾</div><p>【指数全周】周一9/14:上证-0.07%收3885.33,深证-0.64%,创业板-1.10%,科创50-1.62%;周二9/15:上证-0.54%收3864.28(周初低点区域),深证-0.72%,创业板-1.15%;周三9/16:上证+0.71%收3891.60,深证+1.26%,创业板+1.96%,科创50+4.14%(半导体率先爆发);周四9/17:上证-0.41%收3875.60,缩量整理;周五9/18:上证+0.94%收3911.87,深证+1.72%收13640.87,创业板+2.25%收3372.68,科创50+2.88%收1652.63,上证50+0.58%。【全周涨幅】上证+0.70%、深证成指+0.17%、创业板+1.52%、科创50+5.31%、上证50约+0.55%,小盘成长显著强于权重价值。【量能】沪深两市全周成交约4.31万亿元(上证约3937亿+深证约4682亿,周五上证成交9942亿+深证10829亿创阶段新高)。【领涨个股】地产(万科A周五+9.93%、招商蛇口+6.00%、保利发展+5.56%)、半导体/CPO(长电科技+7.75%、圣邦股份+7.44%、兆易创新+4.95%、新易盛+4.87%、通富微电+5.26%、中际旭创+3.40%、长鑫科技+3.87%、北方华创+3.16%)、光伏(阳光电源+3.80%、隆基+2.18%)、紫金矿业+1.65%。【走弱个股】中国巨石周五-4.52%高位大幅回吐、生益科技-1.44%;贵州茅台-0.78%、工商银行-0.86%、中国神华-0.54%、中国石油-0.56%、宁德时代-0.77%——权重防御方向周五集体失血。</p></div>
-<div class='sec'><div class='sec-title'>美股一周行情回顾</div><p>隔夜美股(周五)分化收盘:道琼斯51682.64(-0.18%)、纳斯达克26522.55(+0.39%)、标普500 7650.50(+0.17%),科技风格重新占优。重要事件:1)SpaceX在下周一生效的纳斯达克100指数季度调整中权重由约1.28%大幅提升至2.82%,追踪资金需被动增配;2)英伟达5名高管9/16集中披露持股变动,黄仁勋45728股系RSU归属代扣缴税、非公开市场出售,CFO套现约765万美元,情绪影响中性;3)美官员披露伊朗战争期间美军实际死亡人数高于公布数据,特朗普对CNN、Politico等媒体实施白宫准入禁令,美国内部政治摩擦升温;4)美国关税与贸易紧张拖累五大湖-圣劳伦斯航道经济,核心港口货运量8月同比暴跌23%。</p></div>
-<div class='sec'><div class='sec-title'>资金脉络</div><p>1)地缘缓和交易:伊朗经卡塔尔、巴基斯坦调解向美方提出结束战争三条件(全面停战、解冻资产、解除海上封锁),伊媒称美方"已准备好谈判";美军司令称霍尔木兹海峡油气运量创六个月新高;布伦特原油暗盘跌破99美元(日内-1%)——避险资金流出原油与黄金,油气股承压(中国石油周五-0.56%),油运逻辑由"抢运"转向"解封后运力重估",需防地缘缓和后航运溢价回吐。2)欧洲流动性警报:欧元区通胀逼近4%、经济好于预期,欧央行官员为10月加息铺路,外资成本抬升对全球风险资产估值不利。3)场内高低切换:周五主力资金从银行、白酒、煤炭、石化等权重防御方向流出(工行-0.86%、神华-0.54%),涌入地产链与算力/半导体;中际旭创单日成交约271亿、兆易创新约158亿、亨通光电约157亿,算力链放量上攻显示机构资金主动回补。4)北向资金:本周每日净流入明细数据暂不可用,以上证50滞涨与地产/科技爆量的结构推断,外资参与度一般、内资主导行情。</p></div>
-<div class='sec'><div class='sec-title'>热点轮换回顾</div><p>本周热点三段式轮动:①周初(周一/周二)防御与调整并存,题材退潮、上证两探3860下方;②周三半导体先行(科创50+4.14%),资金试科技自主方向;③周四地产政策预期发酵(万科A放量+9.93%、保利+5.56%),周五地产+算力双线共振爆发,权重防御(煤炭、白酒、银行、石化)失血成为提款机。上周强势的玻纤(中国巨石)高位放量大跌-4.52%,周期补涨品种被兑现;PCB/覆铜板(生益科技-1.44%)同步退潮——资金从"涨价周期"切换回"政策博弈+科技成长"两条主线。地产链与算力链单日双双爆量,是本周最具指示意义的资金行为;科创50周涨5.31%确认科技自主(存储/先进封装/CPO)成为四季度机构主战场。</p></div>
-<div class='sec'><div class='sec-title'>未来事件预判</div><p>下周关注:1)纳指100季度调整下周一生效,SpaceX权重升至2.82%,被动调仓或扰动相关个股;2)国内8月经济数据(工业增加值、社零、固定资产投资)与9月LPR报价(9/21左右),检验内需成色与货币政策信号;3)地产政策验证期:万科A、保利、蛇口短线涨幅巨大,若无实质政策跟进,谨防高位剧烈回撤;4)地缘:美伊谈判进展直接影响油价、油运、军工、黄金——谈判推进则利好航空、化工等成本受益板块,警惕油气股回落;5)油价破百回落(布伦特<99美元)后的能源通胀预期修正;6)美联储10月议息与欧央行10月可能的加息,发达经济体重新转鹰将压制全球成长股估值;7)特朗普发起的"AI改名"网络投票属噪音,但反映AI议题政治化,留意相关政策表态。风险提示:周五地产+算力双双爆量后,短线获利盘饱满,谨防周一冲高回落、轮动加快的追高回撤风险。</p></div>
-<div class='sec'><div class='sec-title'>涨幅榜 TOP10</div><table><thead><tr><th>名称</th><th>最新</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody><tr><td class=''>中际旭创</td><td class='num'>926.43</td><td class='num'>+3.40%</td><td class='num'>0.03亿</td></tr><tr><td class=''>新易盛</td><td class='num'>445.00</td><td class='num'>+4.87%</td><td class='num'>0.02亿</td></tr><tr><td class=''>中国巨石</td><td class='num'>45.02</td><td class='num'>-4.52%</td><td class='num'>0.02亿</td></tr><tr><td class=''>兆易创新</td><td class='num'>388.18</td><td class='num'>+4.95%</td><td class='num'>0.02亿</td></tr><tr><td class=''>亨通光电</td><td class='num'>69.49</td><td class='num'>+1.46%</td><td class='num'>0.02亿</td></tr><tr><td class=''>长鑫科技</td><td class='num'>55.54</td><td class='num'>+3.87%</td><td class='num'>0.01亿</td></tr><tr><td class=''>东山精密</td><td class='num'>196.15</td><td class='num'>+1.35%</td><td class='num'>0.01亿</td></tr><tr><td class=''>寒武纪</td><td class='num'>1113.14</td><td class='num'>+0.65%</td><td class='num'>0.01亿</td></tr><tr><td class=''>天孚通信</td><td class='num'>284.66</td><td class='num'>+2.52%</td><td class='num'>0.01亿</td></tr><tr><td class=''>生益科技</td><td class='num'>143.93</td><td class='num'>-1.44%</td><td class='num'>0.01亿</td></tr></tbody></table></div>
-<div class='sec'><div class='sec-title'>跌幅榜 TOP10</div><table><thead><tr><th>名称</th><th>最新</th><th>涨跌幅</th><th>成交额</th></tr></thead><tbody><tr><td class=''>鸿富诚</td><td class='num'>76.86</td><td class='num'>+0.00%</td><td class='num'>-</td></tr><tr><td class=''>中塑股份</td><td class='num'>55.28</td><td class='num'>+0.00%</td><td class='num'>-</td></tr><tr><td class=''>粤芯半导体-U</td><td class='num'>0.00</td><td class='num'>+0.00%</td><td class='num'>-</td></tr><tr><td class=''>联亚药业</td><td class='num'>0.00</td><td class='num'>+0.00%</td><td class='num'>-</td></tr><tr><td class=''>*ST元道</td><td class='num'>3.31</td><td class='num'>+0.00%</td><td class='num'>-</td></tr><tr><td class=''>左江退</td><td class='num'>1.08</td><td class='num'>+0.00%</td><td class='num'>-</td></tr><tr><td class=''>越博退</td><td class='num'>0.18</td><td class='num'>+0.00%</td><td class='num'>-</td></tr><tr><td class=''>天常股份</td><td class='num'>7.11</td><td class='num'>+0.00%</td><td class='num'>-</td></tr><tr><td class=''>普利退</td><td class='num'>0.89</td><td class='num'>+0.00%</td><td class='num'>-</td></tr><tr><td class=''>中潜退</td><td class='num'>0.56</td><td class='num'>+0.00%</td><td class='num'>-</td></tr></tbody></table></div>
-  <div class="footer">本报告仅供参考，不构成投资建议<br>数据来源: 公开行情接口 (腾讯/新浪) · 新闻: 新浪财经</div>
+
+  <div class="headline">
+    <div class="kicker">每周全市场总结 · WEEKLY REVIEW</div>
+    <h1>每周全市场总结</h1>
+    <div class="sub">fullscan 20260920</div>
+    <div class="byline"><span>发布于 2026年9月20日</span><span>AI 生成 · 自动排版</span><span>双端响应式 · 杂志版式</span></div>
+  </div>
+
+<section class="sec sec-lead"><header class="sec-head"><span class="sec-no">§ 01</span><h2 class="sec-title">本周总结</h2></header><p>本周(9/14-9/18)A股走出"先抑后扬"的V形反转:周一到周二上证两度失守3900、探至3842,周四地产链被政策预期点燃(万科A放量涨9.93%逼近涨停),周五算力链全面爆发(科创50单日+2.88%),沪深两市单日成交逼近4.3万亿。全周上证+0.70%收3911.87重新站上3900,创业板+1.52%,科创50一周+5.31%大幅领跑;上证50仅+0.55%,银行白酒煤炭等权重滞涨——小盘成长与主题风格的完胜周。隔夜美股分化(道指-0.18%、纳指+0.39%、标普+0.17%)。下周关键看点:①美伊经卡塔尔/巴基斯坦斡旋接近重启谈判,布伦特原油跌破99美元,地缘缓和交易升温;②欧元区通胀逼近4%、欧央行官员为10月加息铺路,海外流动性边际收紧;③地产政策预期能否落地兑现;④下周一纳斯达克100季度调整生效,SpaceX权重升至2.82%。</p></section>
+<section class="sec"><header class="sec-head"><span class="sec-no">§ 02</span><h2 class="sec-title">A股一周行情回顾</h2></header><p>【指数全周】周一9/14:上证-0.07%收3885.33,深证-0.64%,创业板-1.10%,科创50-1.62%;周二9/15:上证-0.54%收3864.28(周初低点区域),深证-0.72%,创业板-1.15%;周三9/16:上证+0.71%收3891.60,深证+1.26%,创业板+1.96%,科创50+4.14%(半导体率先爆发);周四9/17:上证-0.41%收3875.60,缩量整理;周五9/18:上证+0.94%收3911.87,深证+1.72%收13640.87,创业板+2.25%收3372.68,科创50+2.88%收1652.63,上证50+0.58%。【全周涨幅】上证+0.70%、深证成指+0.17%、创业板+1.52%、科创50+5.31%、上证50约+0.55%,小盘成长显著强于权重价值。【量能】沪深两市全周成交约4.31万亿元(上证约3937亿+深证约4682亿,周五上证成交9942亿+深证10829亿创阶段新高)。【领涨个股】地产(万科A周五+9.93%、招商蛇口+6.00%、保利发展+5.56%)、半导体/CPO(长电科技+7.75%、圣邦股份+7.44%、兆易创新+4.95%、新易盛+4.87%、通富微电+5.26%、中际旭创+3.40%、长鑫科技+3.87%、北方华创+3.16%)、光伏(阳光电源+3.80%、隆基+2.18%)、紫金矿业+1.65%。【走弱个股】中国巨石周五-4.52%高位大幅回吐、生益科技-1.44%;贵州茅台-0.78%、工商银行-0.86%、中国神华-0.54%、中国石油-0.56%、宁德时代-0.77%——权重防御方向周五集体失血。</p></section>
+<section class="sec"><header class="sec-head"><span class="sec-no">§ 03</span><h2 class="sec-title">美股一周行情回顾</h2></header><p>隔夜美股(周五)分化收盘:道琼斯51682.64(-0.18%)、纳斯达克26522.55(+0.39%)、标普500 7650.50(+0.17%),科技风格重新占优。重要事件:1)SpaceX在下周一生效的纳斯达克100指数季度调整中权重由约1.28%大幅提升至2.82%,追踪资金需被动增配;2)英伟达5名高管9/16集中披露持股变动,黄仁勋45728股系RSU归属代扣缴税、非公开市场出售,CFO套现约765万美元,情绪影响中性;3)美官员披露伊朗战争期间美军实际死亡人数高于公布数据,特朗普对CNN、Politico等媒体实施白宫准入禁令,美国内部政治摩擦升温;4)美国关税与贸易紧张拖累五大湖-圣劳伦斯航道经济,核心港口货运量8月同比暴跌23%。</p></section>
+<section class="sec"><header class="sec-head"><span class="sec-no">§ 04</span><h2 class="sec-title">资金脉络</h2></header><p>1)地缘缓和交易:伊朗经卡塔尔、巴基斯坦调解向美方提出结束战争三条件(全面停战、解冻资产、解除海上封锁),伊媒称美方"已准备好谈判";美军司令称霍尔木兹海峡油气运量创六个月新高;布伦特原油暗盘跌破99美元(日内-1%)——避险资金流出原油与黄金,油气股承压(中国石油周五-0.56%),油运逻辑由"抢运"转向"解封后运力重估",需防地缘缓和后航运溢价回吐。2)欧洲流动性警报:欧元区通胀逼近4%、经济好于预期,欧央行官员为10月加息铺路,外资成本抬升对全球风险资产估值不利。3)场内高低切换:周五主力资金从银行、白酒、煤炭、石化等权重防御方向流出(工行-0.86%、神华-0.54%),涌入地产链与算力/半导体;中际旭创单日成交约271亿、兆易创新约158亿、亨通光电约157亿,算力链放量上攻显示机构资金主动回补。4)北向资金:本周每日净流入明细数据暂不可用,以上证50滞涨与地产/科技爆量的结构推断,外资参与度一般、内资主导行情。</p></section>
+<section class="sec"><header class="sec-head"><span class="sec-no">§ 05</span><h2 class="sec-title">热点轮换回顾</h2></header><p>本周热点三段式轮动:①周初(周一/周二)防御与调整并存,题材退潮、上证两探3860下方;②周三半导体先行(科创50+4.14%),资金试科技自主方向;③周四地产政策预期发酵(万科A放量+9.93%、保利+5.56%),周五地产+算力双线共振爆发,权重防御(煤炭、白酒、银行、石化)失血成为提款机。上周强势的玻纤(中国巨石)高位放量大跌-4.52%,周期补涨品种被兑现;PCB/覆铜板(生益科技-1.44%)同步退潮——资金从"涨价周期"切换回"政策博弈+科技成长"两条主线。地产链与算力链单日双双爆量,是本周最具指示意义的资金行为;科创50周涨5.31%确认科技自主(存储/先进封装/CPO)成为四季度机构主战场。</p></section>
+<section class="sec"><header class="sec-head"><span class="sec-no">§ 06</span><h2 class="sec-title">未来事件预判</h2></header><p>下周关注:1)纳指100季度调整下周一生效,SpaceX权重升至2.82%,被动调仓或扰动相关个股;2)国内8月经济数据(工业增加值、社零、固定资产投资)与9月LPR报价(9/21左右),检验内需成色与货币政策信号;3)地产政策验证期:万科A、保利、蛇口短线涨幅巨大,若无实质政策跟进,谨防高位剧烈回撤;4)地缘:美伊谈判进展直接影响油价、油运、军工、黄金——谈判推进则利好航空、化工等成本受益板块,警惕油气股回落;5)油价破百回落(布伦特<99美元)后的能源通胀预期修正;6)美联储10月议息与欧央行10月可能的加息,发达经济体重新转鹰将压制全球成长股估值;7)特朗普发起的"AI改名"网络投票属噪音,但反映AI议题政治化,留意相关政策表态。风险提示:周五地产+算力双双爆量后,短线获利盘饱满,谨防周一冲高回落、轮动加快的追高回撤风险。</p></section>
+<section class="sec"><header class="sec-head"><span class="sec-no">§ 07</span><h2 class="sec-title">涨幅榜 TOP10</h2></header><div class="table-wrap"><table><thead><tr><th class="">名称</th><th class="num">最新</th><th class="num">涨跌幅</th><th class="num">成交额</th></tr></thead><tbody><tr><td class="" data-label="名称">中际旭创</td><td class="num" data-label="最新">926.43</td><td class="num" data-label="涨跌幅"><span class="up">+3.40%</span></td><td class="num" data-label="成交额">0.03亿</td></tr><tr><td class="" data-label="名称">新易盛</td><td class="num" data-label="最新">445.00</td><td class="num" data-label="涨跌幅"><span class="up">+4.87%</span></td><td class="num" data-label="成交额">0.02亿</td></tr><tr><td class="" data-label="名称">中国巨石</td><td class="num" data-label="最新">45.02</td><td class="num" data-label="涨跌幅"><span class="down">-4.52%</span></td><td class="num" data-label="成交额">0.02亿</td></tr><tr><td class="" data-label="名称">兆易创新</td><td class="num" data-label="最新">388.18</td><td class="num" data-label="涨跌幅"><span class="up">+4.95%</span></td><td class="num" data-label="成交额">0.02亿</td></tr><tr><td class="" data-label="名称">亨通光电</td><td class="num" data-label="最新">69.49</td><td class="num" data-label="涨跌幅"><span class="up">+1.46%</span></td><td class="num" data-label="成交额">0.02亿</td></tr><tr><td class="" data-label="名称">长鑫科技</td><td class="num" data-label="最新">55.54</td><td class="num" data-label="涨跌幅"><span class="up">+3.87%</span></td><td class="num" data-label="成交额">0.01亿</td></tr><tr><td class="" data-label="名称">东山精密</td><td class="num" data-label="最新">196.15</td><td class="num" data-label="涨跌幅"><span class="up">+1.35%</span></td><td class="num" data-label="成交额">0.01亿</td></tr><tr><td class="" data-label="名称">寒武纪</td><td class="num" data-label="最新">1113.14</td><td class="num" data-label="涨跌幅"><span class="up">+0.65%</span></td><td class="num" data-label="成交额">0.01亿</td></tr><tr><td class="" data-label="名称">天孚通信</td><td class="num" data-label="最新">284.66</td><td class="num" data-label="涨跌幅"><span class="up">+2.52%</span></td><td class="num" data-label="成交额">0.01亿</td></tr><tr><td class="" data-label="名称">生益科技</td><td class="num" data-label="最新">143.93</td><td class="num" data-label="涨跌幅"><span class="down">-1.44%</span></td><td class="num" data-label="成交额">0.01亿</td></tr></tbody></table></div></section>
+<section class="sec"><header class="sec-head"><span class="sec-no">§ 08</span><h2 class="sec-title">跌幅榜 TOP10</h2></header><div class="table-wrap"><table><thead><tr><th class="">名称</th><th class="num">最新</th><th class="num">涨跌幅</th><th class="num">成交额</th></tr></thead><tbody><tr><td class="" data-label="名称">鸿富诚</td><td class="num" data-label="最新">76.86</td><td class="num" data-label="涨跌幅"><span class="flat">+0.00%</span></td><td class="num" data-label="成交额">-</td></tr><tr><td class="" data-label="名称">中塑股份</td><td class="num" data-label="最新">55.28</td><td class="num" data-label="涨跌幅"><span class="flat">+0.00%</span></td><td class="num" data-label="成交额">-</td></tr><tr><td class="" data-label="名称">粤芯半导体-U</td><td class="num" data-label="最新">0.00</td><td class="num" data-label="涨跌幅"><span class="flat">+0.00%</span></td><td class="num" data-label="成交额">-</td></tr><tr><td class="" data-label="名称">联亚药业</td><td class="num" data-label="最新">0.00</td><td class="num" data-label="涨跌幅"><span class="flat">+0.00%</span></td><td class="num" data-label="成交额">-</td></tr><tr><td class="" data-label="名称">*ST元道</td><td class="num" data-label="最新">3.31</td><td class="num" data-label="涨跌幅"><span class="flat">+0.00%</span></td><td class="num" data-label="成交额">-</td></tr><tr><td class="" data-label="名称">左江退</td><td class="num" data-label="最新">1.08</td><td class="num" data-label="涨跌幅"><span class="flat">+0.00%</span></td><td class="num" data-label="成交额">-</td></tr><tr><td class="" data-label="名称">越博退</td><td class="num" data-label="最新">0.18</td><td class="num" data-label="涨跌幅"><span class="flat">+0.00%</span></td><td class="num" data-label="成交额">-</td></tr><tr><td class="" data-label="名称">天常股份</td><td class="num" data-label="最新">7.11</td><td class="num" data-label="涨跌幅"><span class="flat">+0.00%</span></td><td class="num" data-label="成交额">-</td></tr><tr><td class="" data-label="名称">普利退</td><td class="num" data-label="最新">0.89</td><td class="num" data-label="涨跌幅"><span class="flat">+0.00%</span></td><td class="num" data-label="成交额">-</td></tr><tr><td class="" data-label="名称">中潜退</td><td class="num" data-label="最新">0.56</td><td class="num" data-label="涨跌幅"><span class="flat">+0.00%</span></td><td class="num" data-label="成交额">-</td></tr></tbody></table></div></section>
+
+  <div class="footer">
+    本报告由 AI 自动生成 · 仅供参考，不构成任何投资建议<br>
+    数据来源: 公开行情接口 (腾讯/新浪) · 新闻: 新浪财经
+  </div>
 </div>
 </body>
 </html>
