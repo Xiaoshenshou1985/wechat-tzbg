@@ -2,81 +2,199 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>A股盘后总结</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --up: #d63031; --down: #00b894; --flat: #999;
-    --ink: #1a1a1a; --muted: #888; --line: #f0ece4;
-    --th-bg: #f5f2ea; --accent: #c9a227; --accent2: #2e564f;
-    --card: #fff; --body-bg: #fafaf8;
+  /* ── 📜 WSJ × 羊皮纸主题 (原 guizang 墨水经典换肤: 纸色暖化 + 楷体正文) ── */
+  :root{
+    --ink:#292318;   --ink-rgb:41,35,24;
+    --paper:#f4ecd9; --paper-rgb:244,236,217;
+    --paper-tint:#ecdfc4; --ink-tint:#3a3223;
+    --muted:rgba(var(--ink-rgb),.55);
+    --hairline:rgba(var(--ink-rgb),.22);
+    --hairline-soft:rgba(var(--ink-rgb),.12);
+    --up:#a9321d; --down:#174f2c; --flat:rgba(var(--ink-rgb),.45);
+    --serif-en:"Playfair Display",Georgia,serif;
+    --serif-zh:"Noto Serif SC","Songti SC","STSong","SimSun",serif;
+    --sans-zh:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --kaiti-zh:"Kaiti SC","STKaiti","Kaiti TC","KaiTi","TW-Kai","DFKai-SB","BiauKai","AR PL UKai CN",serif;
+    --mono:"IBM Plex Mono","Menlo","Consolas","Courier New",monospace;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--body-bg); color: var(--ink);
-    font-family: -apple-system, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
-    font-weight: 350; line-height: 1.8; -webkit-font-smoothing: antialiased; }
-  .wrap { max-width: 860px; margin: 0 auto; padding: 48px 32px 80px; }
-  .header { border-left: 4px solid var(--accent); padding-left: 20px; margin-bottom: 40px; }
-  .header h1 { font-size: 30px; font-weight: 400; color: var(--accent2); letter-spacing: 2px; }
-  .header .meta { font-size: 13px; color: var(--muted); margin-top: 6px; }
-  .section { margin-bottom: 36px; }
-  .sec-title { font-size: 18px; font-weight: 500; color: var(--accent2);
-    margin-bottom: 16px; padding-left: 12px; border-left: 3px solid var(--accent); }
-  table { width: 100%; border-collapse: collapse; background: var(--card);
-    border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
-  th { background: var(--th-bg); color: var(--muted); font-weight: 400;
-    font-size: 13px; padding: 12px 16px; text-align: left; }
-  td { padding: 12px 16px; border-top: 1px solid var(--line); font-size: 14px; }
-  tr:hover td { background: #faf8f3; }
-  .num { text-align: right; font-variant-numeric: tabular-nums; }
-  .up { color: var(--up); } .down { color: var(--down); } .flat { color: var(--flat); }
-  .card { background: var(--card); border-radius: 8px; padding: 16px 20px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05); margin-bottom: 16px; }
-  .card-title { font-size: 16px; font-weight: 500; color: var(--accent2); margin-bottom: 8px; }
-  .card-body p { margin-bottom: 8px; }
-  .card-body ul { padding-left: 20px; margin: 8px 0; }
-  .news-card { background: var(--card); border-radius: 8px; padding: 14px 18px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05); margin-bottom: 12px; }
-  .news-title { font-weight: 450; }
-  .news-meta { font-size: 12px; color: var(--muted); margin: 4px 0; }
-  .news-link { color: var(--accent); text-decoration: none; font-size: 13px; }
-  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px;
-    margin-right: 6px; }
-  .tag-up { background: #ffe9e9; color: var(--up); }
-  .tag-down { background: #e6f9f2; color: var(--down); }
-  .tag-flat { background: #f0f0f0; color: var(--muted); }
-  .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line);
-    font-size: 12px; color: var(--muted); text-align: center; line-height: 1.9; }
-  @media (max-width: 767px) {
-    .wrap { padding: 28px 16px 48px; }
-    .header h1 { font-size: 24px; }
-    table, thead, tbody, th, td, tr { display: block; width: 100%; }
-    thead { display: none; }
-    tr { background: var(--card); border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-      margin-bottom: 12px; padding: 12px 16px; }
-    td { border: none; padding: 6px 0; display: flex; justify-content: space-between;
-      align-items: center; }
-    td::before { content: attr(data-label); color: var(--muted); font-size: 12px; margin-right: 12px; }
-    td.nm::before { color: var(--ink); font-weight: 500; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:
+      radial-gradient(ellipse 120% 60% at 50% -10%, rgba(255,251,235,.7), transparent 70%),
+      radial-gradient(ellipse 90% 55% at 100% 105%, rgba(146,110,52,.13), transparent 65%),
+      radial-gradient(ellipse 70% 40% at 0% 100%, rgba(146,110,52,.09), transparent 60%),
+      var(--paper);
+    background-attachment:fixed;
+    color:var(--ink);
+    font-family:var(--kaiti-zh);font-weight:400;line-height:1.85;
+    font-size:16px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:clamp(24px,6vw,64px) clamp(16px,5vw,48px) 96px}
+
+  /* ── 报头 masthead ── */
+  .masthead{border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);
+    padding:10px 2px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .masthead .brand{font-family:var(--serif-zh);font-weight:700;font-size:17px;letter-spacing:.12em}
+  .masthead .brand em{font-family:var(--serif-en);font-style:italic;font-weight:500;
+    letter-spacing:.02em;font-size:14px;margin-left:10px;opacity:.6}
+  .masthead .issue{font-family:var(--mono);font-size:11px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);white-space:nowrap}
+
+  /* ── 头版标题区 ── */
+  .headline{margin:clamp(32px,7vw,64px) 0 clamp(24px,5vw,44px)}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:18px}
+  .headline h1{font-family:var(--serif-zh);font-weight:700;
+    font-size:clamp(30px,6.4vw,52px);line-height:1.18;letter-spacing:-.01em}
+  .headline .sub{font-family:var(--serif-zh);font-style:italic;color:var(--muted);
+    font-size:clamp(15px,2.4vw,19px);margin-top:14px;line-height:1.6}
+  .byline{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--muted);
+    border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);
+    padding:10px 2px;margin-top:clamp(20px,4vw,32px);
+    display:flex;flex-wrap:wrap;gap:6px 24px;text-transform:uppercase}
+
+  /* ── 分节 ── */
+  .sec{margin:clamp(40px,7vw,64px) 0}
+  .sec-head{display:flex;align-items:baseline;gap:14px;
+    border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:24px}
+  .sec-no{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.12em;
+    color:var(--muted);flex:none}
+  .sec-title{font-family:var(--serif-zh);font-weight:600;
+    font-size:clamp(20px,3.6vw,27px);line-height:1.3;letter-spacing:.01em}
+  .sec p{margin:0 0 18px}
+  .sec p:last-child{margin-bottom:0}
+  .sec ul{padding-left:22px;margin:10px 0 14px}
+  .sec li{margin-bottom:8px}
+  .sec strong{font-weight:700}
+  .sec-lead>p:first-of-type{
+    font-family:var(--kaiti-zh);font-size:clamp(17px,2.6vw,20px);line-height:1.95;
+    color:rgba(var(--ink-rgb),.88)}
+  .sec-lead>p:first-of-type::first-letter{
+    font-family:var(--serif-en);font-size:2.6em;font-weight:700;line-height:.85;
+    float:left;margin:6px 10px 0 0;color:var(--ink)}
+
+  /* ── 表格 (报纸数据栏: 发丝线 + 等宽数字) ── */
+  .table-wrap{overflow-x:auto;margin:8px 0 4px}
+  table{width:100%;border-collapse:collapse;font-size:14.5px}
+  thead th{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);text-align:left;
+    border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);
+    padding:10px 14px 10px 0;white-space:nowrap}
+  tbody td{padding:11px 14px 11px 0;border-bottom:1px solid var(--hairline-soft);
+    vertical-align:baseline}
+  tbody tr:last-child td{border-bottom:1px solid var(--hairline)}
+  .num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;
+    font-size:13.5px;padding-right:0}
+  th.num{padding-right:0;text-align:right}
+  .up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--flat)}
+
+  /* ── 段落块 (结构化: 小标题 + 正文 + 利多/利空/中性点评) ── */
+  .block{margin:0 0 26px;padding-bottom:22px;border-bottom:1px solid var(--hairline-soft)}
+  .block:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0}
+  .block-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:8px}
+  .block-title{font-family:var(--serif-zh);font-weight:600;font-size:16.5px;line-height:1.5;
+    letter-spacing:.01em}
+  .block-title::before{content:"— ";color:var(--muted)}
+  .block-body{font-size:15px;line-height:1.85;color:rgba(var(--ink-rgb),.85)}
+  .block-body p{margin-bottom:8px}
+  .block-body p:last-child{margin-bottom:0}
+  .block-body ul{padding-left:20px;margin:6px 0}
+  .block-body li{margin-bottom:4px}
+
+  /* ── 卡片 (无阴影, 发丝线左边框) ── */
+  .card{border-left:2px solid var(--ink);padding:4px 0 4px 20px;margin:0 0 26px}
+  .card-title{font-family:var(--serif-zh);font-weight:600;font-size:17.5px;
+    line-height:1.45;margin-bottom:8px}
+  .card-body p{margin-bottom:8px;font-size:15px;line-height:1.8;color:rgba(var(--ink-rgb),.85)}
+  .card-body ul{padding-left:20px;margin:6px 0}
+  .card-body li{margin-bottom:4px;font-size:15px;color:rgba(var(--ink-rgb),.85)}
+
+  /* ── 新闻条目 ── */
+  .news-card{border-top:1px solid var(--hairline);padding:16px 2px;margin-bottom:0}
+  .news-card:last-of-type{border-bottom:1px solid var(--hairline)}
+  .news-title{font-family:var(--serif-zh);font-weight:600;font-size:17px;line-height:1.5}
+  .news-meta{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--muted);
+    margin:6px 0 8px;text-transform:uppercase;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .news-link{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;
+    color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);
+    padding-bottom:1px}
+  .news-link:hover{color:var(--up);border-color:var(--up)}
+  .news-reason{font-size:14.5px;color:rgba(var(--ink-rgb),.8);margin-bottom:8px}
+
+  /* ── 判断标签 (等宽描边, 不用圆角色块) ── */
+  .tag{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:600;
+    letter-spacing:.2em;padding:3px 10px;border:1px solid currentColor;line-height:1.4}
+  .tag-up{color:var(--up)} .tag-down{color:var(--down)} .tag-flat{color:rgba(var(--ink-rgb),.65)}
+
+  /* ── 页脚 ── */
+  .footer{margin-top:64px;border-top:3px double var(--ink);padding-top:18px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted);
+    text-align:center;line-height:2;text-transform:uppercase}
+
+  /* ── 移动端适配 ── */
+  @media (max-width:640px){
+    body{font-size:16.5px;line-height:1.9}
+    .block-body{font-size:15.5px}
+    .block-body, .card-body p, .news-reason{font-weight:500}
+    td.num{font-size:15.5px;font-weight:500}
+    .masthead{flex-direction:column;align-items:flex-start;gap:4px}
+    .masthead .brand em{display:block;margin:2px 0 0}
+    .sec-head{gap:10px}
+    .byline{gap:4px 16px}
+    /* 表格转卡片: 表头隐藏, 每行变块, 单元格带字段名 */
+    .table-wrap{overflow:visible}
+    table,thead,tbody,tr,td{display:block;width:100%}
+    thead{display:none}
+    tbody tr{border-top:1px solid var(--hairline);padding:14px 0 15px}
+    tbody tr:last-child td:last-child{border-bottom:none}
+    tbody tr:last-child{border-bottom:1px solid var(--hairline)}
+    td{border:none;padding:6px 0;display:flex;justify-content:space-between;
+      align-items:baseline;gap:16px;font-size:15px}
+    td.num{text-align:right;padding-right:0}
+    td::before{content:attr(data-label);font-family:var(--mono);font-size:10.5px;
+      letter-spacing:.14em;text-transform:uppercase;color:var(--muted);flex-shrink:0}
+  }
+  @media print{
+    body{background:#fff}
+    .sec{break-inside:avoid}
   }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="header">
-    <h1>A股盘后总结</h1>
-    <div class="meta">20260911</div>
+  <div class="masthead">
+    <div class="brand">投资日报<em>The Market Daily</em></div>
+    <div class="issue">2026年9月20日 · A股盘后总结 · POST-MARKET</div>
   </div>
-<div class='sec'><div class='sec-title'>复盘总结</div><p>今日A股三大指数集体低开低走，缩量回调。上证指数收报3934.40点（-0.43%），深证成指13617.67点（-0.77%），创业板指3338.42点（-0.49%），科创50跌0.69%，上证50相对抗跌仅-0.21%。两市成交约1.6万亿，量能萎缩显示抛压有限。外围承压明显：韩国KOSPI开盘重挫3.3%、日经跌1.52%、纳斯达克跌0.65%，存储芯片三星/SK海力士双双下挫。但结构上亮点突出——光模块（天孚通信+4.25%）、存储（长鑫科技逆势+0.58%，长鑫存储利润率全球第一）逆势走强，AI算力产业链获中信建投 reaffirm 长期看好。</p></div>
-<div class='sec'><div class='sec-title'>盘面复盘</div><ul><li>指数：沪指-0.43%、深成-0.77%、创业板-0.49%，科创50-0.69%，上证50-0.21%（权重蓝筹抗跌）。</li><li>量能：两市成交约1.6万亿（沪市7797亿+深市8675亿），较前期明显萎缩，缩量回调属健康洗盘。</li><li>涨跌结构：头部科技股分化，光模块/存储内部分化，煤炭能源整体走弱，光伏设备局部利好。</li><li>外围：日韩股市大幅低开（KOSPI-3.3%、日经-1.52%），美股隔夜道指-0.60%、纳指-0.65%、标普-0.58%，MSCI亚太指数-1%，外需情绪偏弱。</li></ul></div>
-<div class='sec'><div class='sec-title'>技术面信号</div><ul><li>上证指数：收3934点，跌破短期均线，下方支撑3927（当日低点），上方3951（前收）。量能萎缩，短期看震荡。</li><li>创业板指：3338点，日内低点3308，若守住3300关口则趋势未破，否则回补缺口。</li><li>科创50：1569点，跌0.69%，半导体权重拖累，长鑫科技逆势是支撑。</li><li>量能信号：缩量下跌，MACD若高位死叉需警惕，但权重股（上证50）抗跌显示主力资金未大举出逃。</li><li>关键点位：上证3900整数关、创业板3300点为多空分水岭。</li></ul></div>
-<div class='sec'><div class='sec-title'>资金流向</div><ul><li>主力资金：缩量回调下主力资金呈净流出但幅度有限，上证50抗跌显示资金向权重蓝筹避险。</li><li>板块资金：光模块/CPO逆势流入（天孚通信+4.25%），存储板块分化（长鑫科技+0.58% vs 中际旭创-2.07%、新易盛-0.94%）；煤炭能源资金流出（中煤-1.32%、平煤-1.24%、蓝焰-1.45%），但有色/能源内部轮动（大有能源+4.01%领涨）。</li><li>北向/外资：MSCI亚太指数-1%，外围资金情绪偏谨慎。</li></ul></div>
-<div class='sec'><div class='sec-title'>板块轮换</div><ul><li>资金从：煤炭、传统能源（中煤、平煤、新集能源全线飘绿）流出，部分转向大有能源等细分能源龙头。</li><li>资金流向：光模块/CPO（天孚通信、生益科技）、存储芯片（长鑫科技）、光伏设备（先导智能订单落地）等AI算力与新能源方向逆势吸金。</li><li>轮动特征：高位科技股（光模块龙头中际旭创、华工科技回调）与低位设备/材料（先导智能、水泥涨价）之间高低切换，资金在算力产业链内部做结构调仓。</li></ul></div>
-<div class='sec'><div class='sec-title'>重点股票判断与后市影响</div><ul><li>天孚通信（300394）+4.25%：光模块/CPO龙头，AI算力需求旺盛，中信建投 reaffirm 看好算力产业链，资金持续流入，短期强势。</li><li>长鑫科技（688825）+0.58%：存储芯片国产龙头，长鑫存储Q2息税前利润率82%反超三星/海力士成全球第一，基本面强劲，逆势抗跌。</li><li>中际旭创（300308）-2.07%：光模块绝对龙头回调，与三星/海力士下跌情绪相关，短期洗盘但中期逻辑未破。</li><li>先导智能（30045）：BC串焊机出货破10GW，光伏设备订单落地，关注新能源扩产链。</li><li>大有能源（600403）+4.01%：煤炭细分龙头逆势领涨，能源价格（布伦特原油+1%至109美元）支撑。</li></ul></div>
-<div class='sec'><div class='sec-title'>明日走势预判</div><ul><li>指数方向：预计沪指3900-3950区间震荡，若外围（日韩、隔夜美股）继续走弱则低开概率大，上证50抗跌提供支撑。创业板看3300关口得失。</li><li>关注板块：①AI算力/光模块（天孚通信、中际旭创、新易盛）——英伟达Grace Blackwell出货环比+27%，需求端强劲；②存储芯片（长鑫科技）——利润率全球第一；③水泥/建材（金九银十旺季涨价，西南领跑）；④光伏设备（先导智能订单）。</li></ul></div>
-<div class='sec'><div class='sec-title'>明日关注 · 新闻/数据/国际事件</div><ul><li>美股隔夜：道指-0.60%、纳指-0.65%、标普-0.58%，英伟达Grace Blackwell出货环比+27%反映AI芯片需求旺盛。</li><li>亚洲市场：韩国KOSPI开盘-3.3%、日经-1.52%，韩国10年期国债期货创2022年10月新低，需关注亚洲风险偏好回落对A股情绪传导。</li><li>特朗普：称伊朗战争将在中期选举后结束，若地缘缓和利好油价回落（布伦特原油现109美元）。</li><li>欧佩克：连续第五个月上调2027年全球石油需求增长预期，能源板块情绪偏正面。</li><li>政策：六部门联合印发乡村振兴投入机制方案（2030年资金投入），经济日报强调具身智能「不应重展示轻应用」，人形机器人/具身智能方向或受政策催化。</li></ul></div>
-<div class='sec'><div class='sec-title'>大盘指数</div><table><thead><tr><th>名称</th><th>最新</th><th>涨跌幅</th><th>涨跌额</th></tr></thead><tbody><tr><td class=''>上证指数</td><td class='num'>3934.40</td><td class='num'>-0.43%</td><td class='num'>-17.11</td></tr><tr><td class=''>深证成指</td><td class='num'>13617.67</td><td class='num'>-0.77%</td><td class='num'>-105.65</td></tr><tr><td class=''>创业板指</td><td class='num'>3338.42</td><td class='num'>-0.49%</td><td class='num'>-16.55</td></tr><tr><td class=''>上证50</td><td class='num'>2904.29</td><td class='num'>-0.21%</td><td class='num'>-6.11</td></tr><tr><td class=''>科创50</td><td class='num'>1569.22</td><td class='num'>-0.69%</td><td class='num'>-10.84</td></tr></tbody></table></div>
-  <div class="footer">本报告仅供参考，不构成投资建议<br>数据来源: 公开行情接口 (腾讯/新浪) · 新闻: 新浪财经</div>
+
+  <div class="headline">
+    <div class="kicker">A股盘后总结 · POST-MARKET</div>
+    <h1>A股盘后总结</h1>
+    <div class="sub">20260920</div>
+    <div class="byline"><span>发布于 2026年9月20日</span><span>AI 生成 · 自动排版</span><span>双端响应式 · 杂志版式</span></div>
+  </div>
+
+<section class="sec sec-lead"><header class="sec-head"><span class="sec-no">§ 01</span><h2 class="sec-title">复盘总结</h2></header><ul><li><strong>放量普涨, 沪指重上3900</strong>: 上证 +0.94% (3911.87)、深成 +1.72%、创业板 +2.25%、科创50 +2.88%, 两市合计成交约 2.08 万亿 (沪 9942 亿 + 深 10829 亿), 量价齐升。</li><li><strong>三线共振主线</strong>: 算力光模块 (中际旭创 +3.4% 单日成交近 271 亿居两市之首、新易盛 +4.87%)、存储半导体 (长电科技 +7.75%、兆易创新 +4.95%、长鑫科技 +3.87%)、地产链 (万科A 涨停 +9.93%、招商蛇口 +6.0%、保利 +5.56%)。</li><li><strong>风格明显攻守易位</strong>: 上证50 仅 +0.58% 垫底, 茅台 -0.78%、工行 -0.86%、神华 -0.54%, 防御品种被抽血喂给进攻方向。</li><li><strong>周末消息面偏暖</strong>: 伊朗提出对美谈判三前提、布伦特暗盘跌破 99 美元 (地缘降温), 青岛公积金新政落地 (地产政策接力), 8月并购交易额环比 +84.73%; 利空面为减持公告密集与欧央行转鹰。</li><li><strong>瑕疵信号</strong>: 中国巨石 -4.52% (成交 177 亿)、生益科技 -1.44%, 高位涨价周期股现巨量分歧, 需防兑现盘扩散。</li></ul></section>
+<section class="sec"><header class="sec-head"><span class="sec-no">§ 02</span><h2 class="sec-title">盘面复盘</h2></header><div class="block"><div class="block-head"><h3 class="block-title">指数全线收涨成长领跑</h3><span class="tag tag-up">利多</span></div><div class="block-body"><p>上证指数收 3911.87 点 (+0.94%), 重新站上 3900 关口; 深证成指 +1.72%、创业板指 +2.25%、科创50 +2.88% 为最强, 上证50 +0.58% 垫底。成长风格全面压制权重蓝筹, 指数结构与上周的防御轮动完全反转。</p></div></div><div class="block"><div class="block-head"><h3 class="block-title">两市量能放大至2万亿</h3><span class="tag tag-up">利多</span></div><div class="block-body"><p>沪市成交约 9942 亿元、深市约 10829 亿元, 合计约 2.08 万亿元, 较前一交易日明显放量。普涨 + 放量属健康的进攻量能, 中际旭创单日成交近 271 亿、中国巨石 177 亿居前二, 主力资金在科技与周期高位品种上换手剧烈。</p></div></div><div class="block"><div class="block-head"><h3 class="block-title">领涨领跌结构清晰</h3><span class="tag tag-flat">中性</span></div><div class="block-body"><p>领涨: 地产链 (万科A 涨停、保利 +5.56%)、光模块 (新易盛 +4.87%、天孚通信 +2.52%)、存储封测 (长电科技 +7.75%、通富微电 +5.26%、圣邦股份 +7.44%)。领跌/走弱: 中国巨石 -4.52%、生益科技 -1.44% 的涨价周期股, 以及茅台 -0.78%、工行 -0.86%、中宠 -0.77% 等防御与滞涨品种。</p></div></div></section>
+<section class="sec"><header class="sec-head"><span class="sec-no">§ 03</span><h2 class="sec-title">技术面信号</h2></header><div class="block"><div class="block-head"><h3 class="block-title">上证收复3900形态转好</h3><span class="tag tag-up">利多</span></div><div class="block-body"><p>上证收 3911.87, 日内高点 3919.67, 跳空高开后全天于高位运行, 收复前期失地并重新站上 3900 整数关与短期均线之上。上方压力 3950-3980 前期密集区, 下方支撑 3890 (周五缺口上沿)。放量中阳 + 缺口未回补, 短线上行结构成立。</p></div></div><div class="block"><div class="block-head"><h3 class="block-title">科创50突破最强</h3><span class="tag tag-up">利多</span></div><div class="block-body"><p>科创50 +2.88% 收 1652.63, 长鑫科技上市效应叠加存储涨价逻辑, 板块量价齐升为最强主线, 1630 一线已成新支撑。创业板 +2.25% 收 3372.68, 距 3400 心理关口一步之遥, MACD 金叉放量, 趋势完好。</p></div></div><div class="block"><div class="block-head"><h3 class="block-title">高位周期量价背离</h3><span class="tag tag-down">利空</span></div><div class="block-body"><p>中国巨石单日成交 177 亿、振幅近 10% 收 -4.52%, 高位放巨量长阴是典型的分歧兑现信号; 生益科技同步走弱。若下周玻纤、覆铜板继续补跌, 或拖累指数上行斜率, 属结构性技术警示。</p></div></div></section>
+<section class="sec"><header class="sec-head"><span class="sec-no">§ 04</span><h2 class="sec-title">资金流向</h2></header><div class="block"><div class="block-head"><h3 class="block-title">主力弃防御攻科技地产</h3><span class="tag tag-up">利多</span></div><div class="block-body"><p>主力资金从银行、煤炭、白酒等防御品种流出, 涌入算力 (中际旭创、新易盛)、存储封测 (长电科技 +7.75%、通富微电 +5.26%) 与地产链 (万科A 涨停、招商蛇口 +6.0%)。上证50 显著跑后印证抽血路径, 2 万亿量能下进攻结构流畅。</p></div></div><div class="block"><div class="block-head"><h3 class="block-title">地缘降温触发再平衡</h3><span class="tag tag-flat">中性</span></div><div class="block-body"><p>伊朗提出谈判三前提 + 霍尔木兹海峡运量创六个月新高, 布伦特暗盘跌破 99 美元。油气煤避险持仓撤离 (中国石油 -0.56%、中国神华 -0.54%), 成本改善逻辑流入航空 (南航 +1.44%) 与化工中下游 (万华化学 +1.17%); 紫金矿业 +1.65% 显示贵金属仍有底仓支撑。</p></div></div><div class="block"><div class="block-head"><h3 class="block-title">高位涨价股遭兑现</h3><span class="tag tag-down">利空</span></div><div class="block-body"><p>中国巨石 -4.52%、生益科技 -1.44%, 玻纤、覆铜板等前期涨价周期龙头遭巨量卖出, 部分资金由此切换至刚启动的地产链与低位补涨品种。高低切换特征明显, 留意兑现盘是否向其他高位题材扩散。</p></div></div></section>
+<section class="sec"><header class="sec-head"><span class="sec-no">§ 05</span><h2 class="sec-title">板块轮换</h2></header><div class="block"><div class="block-head"><h3 class="block-title">防御→进攻大切换</h3><span class="tag tag-up">利多</span></div><div class="block-body"><p>资金从红利防御 (工行、神华、茅台) 流出, 转向算力、存储、地产三大进攻方向, 市场风格自上周的防守姿态一步翻多。券商 (中信证券 +1.45%)、东方财富 +1.55% 同步走强, 是风险偏好回升的确认信号。</p></div></div><div class="block"><div class="block-head"><h3 class="block-title">周期内部高低切</h3><span class="tag tag-flat">中性</span></div><div class="block-body"><p>涨价周期 (玻纤、覆铜板) 高位遭兑现, 资金沿地产链向家居、建材等后周期扩散 (海螺水泥 +0.47%、中国建筑 +0.23% 温和跟涨), 同时光伏逆变器 (阳光电源 +3.8%)、锂电设备 (先导智能 +2.07%) 等低位新能源制造获得溢出资金。</p></div></div><div class="block"><div class="block-head"><h3 class="block-title">主线内部轮动加速</h3><span class="tag tag-flat">中性</span></div><div class="block-body"><p>算力主线内部从光模块向存储/封测/模拟芯片扩散: 兆易创新 +4.95%、圣邦股份 +7.44%、长电科技 +7.75%。主线未退潮但轮动加速通常意味着行情进入中后段, 追高性价比下降, 低吸分歧优于追涨。</p></div></div></section>
+<section class="sec"><header class="sec-head"><span class="sec-no">§ 06</span><h2 class="sec-title">重点股票判断与后市影响</h2></header><div class="block"><div class="block-head"><h3 class="block-title">中际旭创巨量领涨算力</h3><span class="tag tag-up">利多</span></div><div class="block-body"><p>中际旭创 +3.4% 收 926.43, 单日成交近 271 亿元居两市之首, 新易盛 +4.87%、天孚通信 +2.52% 跟随。作为两市总龙头, 其量能承接直接决定算力主线情绪, 下周若巨量后不破 5 日线, 主线行情延续; 若放量大阴则警惕主线退潮。</p></div></div><div class="block"><div class="block-head"><h3 class="block-title">存储链长鑫效应发酵</h3><span class="tag tag-up">利多</span></div><div class="block-body"><p>长鑫科技 +3.87% 巨量成交 144 亿, 直接点燃存储链: 兆易创新 +4.95%、长电科技 +7.75%、通富微电 +5.26%、圣邦股份 +7.44%。国产替代 + 涨价双击逻辑最顺, 但部分标的尾盘已加速, 短线追高需控仓, 回调分歧仍是买点。</p></div></div><div class="block"><div class="block-head"><h3 class="block-title">万科A涨停点燃地产</h3><span class="tag tag-up">利多</span></div><div class="block-body"><p>万科A 涨停 +9.93%、招商蛇口 +6.0%、保利发展 +5.56%, 周末青岛公积金新政 (二套按首套认定、装修提取最高 20 万) 火上浇油。板块超跌 + 低估值 + 政策催化, 短线情绪行情; 涨停后首日分歧的低吸机会优于追高, 关注其他城市跟进节奏。</p></div></div><div class="block"><div class="block-head"><h3 class="block-title">巨石巨阴是后视镜</h3><span class="tag tag-down">利空</span></div><div class="block-body"><p>中国巨石 -4.52% 巨量分歧, 生益科技 -1.44%, 高位涨价周期成下周盘面最大变数。持有者留意止盈纪律, 观望者勿急于抄底——周期龙头高位放量转弱往往需要时间消化。</p></div></div></section>
+<section class="sec"><header class="sec-head"><span class="sec-no">§ 07</span><h2 class="sec-title">明日走势预判</h2></header><div class="block"><div class="block-head"><h3 class="block-title">周一惯性偏多防高开分歧</h3><span class="tag tag-up">利多</span></div><div class="block-body"><p>地缘降温 + 周末政策暖风 + 隔夜纳指 +0.39%, 周一高开概率大。但短线获利盘不小, 高开回踩 3890-3900 确认支撑是更健康的路径, 预计上证运行 3885-3940。创业板守 3340、科创50 守 1640 则强势延续。</p></div></div><div class="block"><div class="block-head"><h3 class="block-title">关注三大方向持续性</h3><span class="tag tag-flat">中性</span></div><div class="block-body"><p>①算力/存储: 盯中际旭创、兆易创新巨量后承接; ②地产链: 青岛之后是否有二线城市跟进新政; ③油价受益链: 布伦特若续跌, 航空、物流、化工中下游可做攻守平衡的低吸方向。</p></div></div><div class="block"><div class="block-head"><h3 class="block-title">风险点提示</h3><span class="tag tag-down">利空</span></div><div class="block-body"><p>欧央行最早 10 月加息的全球流动性逆风、周末密集减持 (惠泰医疗、埃夫特、天山生物、四方光电) 对题材股的抛压、以及玻纤覆铜板分歧扩散是周一需盯住的三个下行风险。奥克股份周一因重组停牌, 重组主题情绪仍活跃。</p></div></div></section>
+<section class="sec"><header class="sec-head"><span class="sec-no">§ 08</span><h2 class="sec-title">明日关注 · 新闻/数据/国际事件</h2></header><div class="block"><div class="block-head"><h3 class="block-title">地缘: 伊朗谈判进展</h3><span class="tag tag-up">利多</span></div><div class="block-body"><p>伊朗经卡塔尔、巴基斯坦向美方提出全线停战、解冻资产、解除海上封锁三前提, 等待特朗普答复。谈判若获正面回应, 油价地缘溢价继续回吐、全球风险偏好抬升; 谈崩则油气避险链反抽, 需盯周末至周一的动态。</p></div></div><div class="block"><div class="block-head"><h3 class="block-title">政策: 地产松绑或接力</h3><span class="tag tag-up">利多</span></div><div class="block-body"><p>青岛公积金新政 9月20日落地, 关注其他热点城市跟进; 8月并购交易额环比 +84.73% 结束连跌四个月, 并购重组政策方向持续兑利券商与科创重组主题。上海当日发布外经贸专项资金 (吸引外资) 实施细则。</p></div></div><div class="block"><div class="block-head"><h3 class="block-title">数据与国际事件</h3><span class="tag tag-flat">中性</span></div><div class="block-body"><p>周一关注 LPR 报价预期与国内 9月经济数据前瞻; 美联储官员密集表态扰动外围; 俄乌冲突升级 (俄称击落 1600 余架无人机、莫斯科炼油厂遇袭) 扰动欧洲能源但与中东降温对冲, 油价单边大跌概率降低。日经/恒指周一表现将影响北向情绪。</p></div></div></section>
+<section class="sec"><header class="sec-head"><span class="sec-no">§ 09</span><h2 class="sec-title">大盘指数</h2></header><div class="table-wrap"><table><thead><tr><th class="">名称</th><th class="num">最新</th><th class="num">涨跌幅</th><th class="num">涨跌额</th></tr></thead><tbody><tr><td class="" data-label="名称">上证指数</td><td class="num" data-label="最新">3911.87</td><td class="num" data-label="涨跌幅"><span class="up">+0.94%</span></td><td class="num" data-label="涨跌额"><span class="up">36.27</span></td></tr><tr><td class="" data-label="名称">深证成指</td><td class="num" data-label="最新">13640.87</td><td class="num" data-label="涨跌幅"><span class="up">+1.72%</span></td><td class="num" data-label="涨跌额"><span class="up">230.96</span></td></tr><tr><td class="" data-label="名称">创业板指</td><td class="num" data-label="最新">3372.68</td><td class="num" data-label="涨跌幅"><span class="up">+2.25%</span></td><td class="num" data-label="涨跌额"><span class="up">74.37</span></td></tr><tr><td class="" data-label="名称">上证50</td><td class="num" data-label="最新">2860.77</td><td class="num" data-label="涨跌幅"><span class="up">+0.58%</span></td><td class="num" data-label="涨跌额"><span class="up">16.54</span></td></tr><tr><td class="" data-label="名称">科创50</td><td class="num" data-label="最新">1652.63</td><td class="num" data-label="涨跌幅"><span class="up">+2.88%</span></td><td class="num" data-label="涨跌额"><span class="up">46.34</span></td></tr></tbody></table></div></section>
+
+  <div class="footer">
+    本报告由 AI 自动生成 · 仅供参考，不构成任何投资建议<br>
+    数据来源: 公开行情接口 (腾讯/新浪) · 新闻: 新浪财经
+  </div>
 </div>
 </body>
 </html>

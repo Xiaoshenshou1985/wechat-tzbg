@@ -2,112 +2,171 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="description" content="投资日报 · A股盘前、美股盘前、A股盘后与每周全市场总结">
-<title>投资日报</title>
+<title>投资日报 · The Market Daily</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --up: #d63031; --down: #00b894; --flat: #999;
-    --ink: #1a1a1a; --muted: #888; --line: #f0ece4;
-    --th-bg: #f5f2ea; --accent: #c9a227; --accent2: #2e564f;
-    --card: #fff; --body-bg: #fafaf8;
+  /* ── 📜 WSJ × 羊皮纸主题 (与 render_report.py 同一套 tokens) ── */
+  :root{
+    --ink:#292318;   --ink-rgb:41,35,24;
+    --paper:#f4ecd9; --paper-rgb:244,236,217;
+    --muted:rgba(var(--ink-rgb),.55);
+    --hairline:rgba(var(--ink-rgb),.22);
+    --hairline-soft:rgba(var(--ink-rgb),.12);
+    --up:#a9321d; --down:#174f2c;
+    --serif-en:"Playfair Display",Georgia,serif;
+    --serif-zh:"Noto Serif SC","Songti SC","STSong","SimSun",serif;
+    --kaiti-zh:"Kaiti SC","STKaiti","Kaiti TC","KaiTi","TW-Kai","DFKai-SB","BiauKai","AR PL UKai CN",serif;
+    --mono:"IBM Plex Mono","Menlo","Consolas","Courier New",monospace;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--body-bg); color: var(--ink);
-    font-family: -apple-system, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
-    font-weight: 350; line-height: 1.8; -webkit-font-smoothing: antialiased; }
-  .wrap { max-width: 860px; margin: 0 auto; padding: 48px 32px 80px; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:
+      radial-gradient(ellipse 120% 60% at 50% -10%, rgba(255,251,235,.7), transparent 70%),
+      radial-gradient(ellipse 90% 55% at 100% 105%, rgba(146,110,52,.13), transparent 65%),
+      radial-gradient(ellipse 70% 40% at 0% 100%, rgba(146,110,52,.09), transparent 60%),
+      var(--paper);
+    background-attachment:fixed;
+    color:var(--ink);
+    font-family:var(--kaiti-zh);font-weight:400;line-height:1.85;
+    font-size:16px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:clamp(24px,6vw,64px) clamp(16px,5vw,48px) 96px}
 
-  .header { border-left: 4px solid var(--accent); padding-left: 20px; margin-bottom: 12px; }
-  .header h1 { font-size: 30px; font-weight: 400; color: var(--accent2); letter-spacing: 2px; }
-  .header .sub { font-size: 13px; color: var(--muted); margin-top: 6px; letter-spacing: 1px; }
-  .stamp { font-size: 13px; color: var(--muted); margin: 0 0 36px 24px; }
-  .stamp b { color: var(--accent2); font-weight: 500; }
+  /* ── 报头 masthead (与各报告页同款) ── */
+  .masthead{border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);
+    padding:10px 2px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .masthead .brand{font-family:var(--serif-zh);font-weight:700;font-size:17px;letter-spacing:.12em}
+  .masthead .brand em{font-family:var(--serif-en);font-style:italic;font-weight:500;
+    letter-spacing:.02em;font-size:14px;margin-left:10px;opacity:.6}
+  .masthead .issue{font-family:var(--mono);font-size:11px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);white-space:nowrap}
 
-  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  a.report { display: block; background: var(--card); border: 1px solid var(--line);
-    border-radius: 8px; padding: 20px 22px; text-decoration: none; color: inherit;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05); position: relative; overflow: hidden;
-    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
-  a.report::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
-    background: var(--accent); transform: scaleY(0); transform-origin: top;
-    transition: transform .22s ease; }
-  a.report:hover { transform: translateY(-2px); border-color: #e6ddc8;
-    box-shadow: 0 6px 20px rgba(46,86,79,0.10); }
-  a.report:hover::before { transform: scaleY(1); }
-  .r-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
-  .r-title { font-size: 17px; font-weight: 500; color: var(--accent2); }
-  .r-arrow { color: var(--accent); font-size: 15px; opacity: .45; transition: opacity .18s, transform .18s; }
-  a.report:hover .r-arrow { opacity: 1; transform: translateX(3px); }
-  .r-desc { font-size: 13px; color: var(--muted); margin: 8px 0 14px; line-height: 1.7; }
-  .r-foot { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
-  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; }
-  .tag-daily { background: #f5efdc; color: #96771a; }
-  .tag-weekly { background: #e7efec; color: var(--accent2); }
-  .r-time { font-variant-numeric: tabular-nums; }
+  /* ── 头版区 ── */
+  .headline{margin:clamp(32px,7vw,60px) 0 clamp(24px,5vw,40px)}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:18px}
+  .headline h1{font-family:var(--serif-zh);font-weight:700;
+    font-size:clamp(30px,6.4vw,52px);line-height:1.18;letter-spacing:-.01em}
+  .headline .sub{font-family:var(--kaiti-zh);color:var(--muted);
+    font-size:clamp(15px,2.4vw,18px);margin-top:14px;line-height:1.7}
+  .byline{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--muted);
+    border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);
+    padding:10px 2px;margin-top:clamp(20px,4vw,32px);
+    display:flex;flex-wrap:wrap;gap:6px 24px;text-transform:uppercase}
 
-  .about { margin-top: 40px; background: var(--card); border-radius: 8px; padding: 18px 22px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
-  .about-title { font-size: 15px; font-weight: 500; color: var(--accent2); margin-bottom: 8px; }
-  .about p { font-size: 13px; color: var(--muted); line-height: 1.9; }
-  .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line);
-    font-size: 12px; color: var(--muted); text-align: center; line-height: 1.9; }
+  /* ── 目录分节 ── */
+  .sec-head{display:flex;align-items:baseline;gap:14px;
+    border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:8px}
+  .sec-no{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.12em;
+    color:var(--muted);flex:none}
+  .sec-title{font-family:var(--serif-zh);font-weight:600;
+    font-size:clamp(20px,3.6vw,27px);line-height:1.3;letter-spacing:.01em}
 
-  @media (max-width: 767px) {
-    .wrap { padding: 28px 16px 48px; }
-    .header h1 { font-size: 24px; }
-    .grid { grid-template-columns: 1fr; gap: 12px; }
-    .stamp { margin-left: 0; }
+  /* ── 目录条目: 报纸栏目索引 (发丝线分隔, 无圆角无阴影) ── */
+  a.report{display:block;text-decoration:none;color:inherit;
+    border-bottom:1px solid var(--hairline-soft);padding:22px 2px 20px;position:relative}
+  a.report:first-of-type{border-top:1px solid var(--hairline-soft)}
+  a.report:hover{background:rgba(146,110,52,.05)}
+  .r-top{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+  .r-title{font-family:var(--serif-zh);font-weight:600;font-size:19px;line-height:1.4}
+  .r-title::before{content:"— ";color:var(--muted)}
+  .r-arrow{font-family:var(--mono);color:var(--muted);font-size:14px;flex:none;
+    transition:color .18s,transform .18s}
+  a.report:hover .r-arrow{color:var(--up);transform:translateX(4px)}
+  .r-desc{font-size:14.5px;color:rgba(var(--ink-rgb),.72);margin:6px 0 10px;line-height:1.8}
+  .r-foot{display:flex;align-items:center;gap:12px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+  .tag{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:600;
+    letter-spacing:.2em;padding:3px 10px;border:1px solid currentColor;line-height:1.4}
+  .tag-daily{color:var(--up)} .tag-weekly{color:var(--down)}
+  .r-time{font-variant-numeric:tabular-nums}
+
+  /* ── 关于 ── */
+  .about{margin-top:44px;border-top:1px solid var(--ink);padding-top:14px}
+  .about-title{font-family:var(--serif-zh);font-weight:600;font-size:16px;margin-bottom:8px}
+  .about p{font-size:14px;color:rgba(var(--ink-rgb),.7);line-height:1.9}
+
+  .footer{margin-top:64px;border-top:3px double var(--ink);padding-top:18px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted);
+    text-align:center;line-height:2;text-transform:uppercase}
+
+  @media (max-width:640px){
+    body{font-size:16.5px;line-height:1.9}
+    .masthead{flex-direction:column;align-items:flex-start;gap:4px}
+    .masthead .brand em{display:block;margin:2px 0 0}
+    .r-title{font-size:17.5px}
+    .r-desc{font-size:15px}
   }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="header">
-    <h1>投资日报</h1>
-    <div class="sub">A股 · 美股 · 每日盘前盘后与每周全市场总结</div>
+  <div class="masthead">
+    <div class="brand">投资日报<em>The Market Daily</em></div>
+    <div class="issue">EDITION INDEX</div>
   </div>
-  <div class="stamp">最新一期 <b id="latest">—</b></div>
 
-  <div class="grid">
-    <a class="report" href="/a-stock">
-      <div class="r-top"><span class="r-title">A股盘前日报</span><span class="r-arrow">→</span></div>
-      <div class="r-desc">隔夜外围、指数走势预测、板块热点与重点股票、资金动向、重大新闻利好利空判断。</div>
-      <div class="r-foot"><span class="tag tag-daily">每日</span><span class="r-time">—</span></div>
-    </a>
-
-    <a class="report" href="/us-stock">
-      <div class="r-top"><span class="r-title">美股盘前日报</span><span class="r-arrow">→</span></div>
-      <div class="r-desc">三大指数与科技八姐妹、板块热点、隔夜外围利好利空，以及对 A 股的影响传导。</div>
-      <div class="r-foot"><span class="tag tag-daily">每日</span><span class="r-time">—</span></div>
-    </a>
-
-    <a class="report" href="/e-stock-summary">
-      <div class="r-top"><span class="r-title">A股盘后总结</span><span class="r-arrow">→</span></div>
-      <div class="r-desc">当日收盘后的市场复盘，核对盘前判断与实际走势的偏差。</div>
-      <div class="r-foot"><span class="tag tag-daily">每日</span><span class="r-time">—</span></div>
-    </a>
-
-    <a class="report" href="/w-stock-summary">
-      <div class="r-top"><span class="r-title">每周全市场总结</span><span class="r-arrow">→</span></div>
-      <div class="r-desc">全市场扫描（fullscan），一周维度的板块轮动、主线延续与下周关注。</div>
-      <div class="r-foot"><span class="tag tag-weekly">每周</span><span class="r-time">—</span></div>
-    </a>
+  <div class="headline">
+    <div class="kicker">Contents · 本期目录</div>
+    <h1>今日版面</h1>
+    <div class="sub">A股 · 美股 — 每日盘前盘后与每周全市场总结。AI 抓取公开行情与新闻，逐段给出利多 / 利空 / 中性点评。</div>
+    <div class="byline"><span>最新一期 <span id="latest">—</span></span><span>AI Generated · Auto Layout</span></div>
   </div>
+
+  <div class="sec-head"><span class="sec-no">§00</span><span class="sec-title">版面索引</span></div>
+
+  <a class="report" href="/a-stock">
+    <div class="r-top"><span class="r-title">A股盘前日报</span><span class="r-arrow">→</span></div>
+    <div class="r-desc">隔夜外围、指数走势预测、板块热点与重点股票、资金动向、重大新闻利好利空判断。</div>
+    <div class="r-foot"><span class="tag tag-daily">每日 09:00</span><span class="r-time">—</span></div>
+  </a>
+
+  <a class="report" href="/us-stock">
+    <div class="r-top"><span class="r-title">美股盘前日报</span><span class="r-arrow">→</span></div>
+    <div class="r-desc">三大指数与科技八姐妹、板块热点、隔夜外围利好利空，以及对 A 股的影响传导。</div>
+    <div class="r-foot"><span class="tag tag-daily">每日 08:00</span><span class="r-time">—</span></div>
+  </a>
+
+  <a class="report" href="/e-stock-summary">
+    <div class="r-top"><span class="r-title">A股盘后总结</span><span class="r-arrow">→</span></div>
+    <div class="r-desc">当日收盘后的市场复盘，核对盘前判断与实际走势的偏差。</div>
+    <div class="r-foot"><span class="tag tag-daily">每日 15:30</span><span class="r-time">—</span></div>
+  </a>
+
+  <a class="report" href="/w-stock-summary">
+    <div class="r-top"><span class="r-title">每周全市场总结</span><span class="r-arrow">→</span></div>
+    <div class="r-desc">全市场扫描（fullscan），一周维度的板块轮动、主线延续与下周关注。</div>
+    <div class="r-foot"><span class="tag tag-weekly">每周六 10:00</span><span class="r-time">—</span></div>
+  </a>
 
   <div class="about">
     <div class="about-title">关于本报告</div>
-    <p>每周一至周五定时生成，数据来自公开行情接口（腾讯 / 新浪），新闻取自新浪财经。页面由 Cloudflare Pages 托管，随仓库提交自动更新。</p>
+    <p>每周一至周五定时生成，数据来自公开行情接口（腾讯 / 新浪），新闻取自新浪财经。分析由 AI 生成，每个段落块末尾附利多 / 利空 / 中性点评；页面随仓库提交自动更新。</p>
   </div>
 
-  <div class="footer">本报告仅供参考，不构成投资建议<br>数据来源: 公开行情接口 (腾讯/新浪) · 新闻: 新浪财经</div>
+  <div class="footer">
+    本报告由 AI 自动生成 · 仅供参考，不构成任何投资建议<br>
+    数据来源: 公开行情接口 (腾讯/新浪) · 新闻: 新浪财经
+  </div>
 </div>
 
 <script>
-// 日期直接取各报告 header 里的 .meta，避免与单独的日期文件失同步
+// 日期从各报告页 byline/masthead 里抓 (兼容 "2026年9月20日" / "2026-09-20" / "20260920" 三种写法)
 (function () {
   var cards = [].slice.call(document.querySelectorAll('a.report'));
   var latest = '';
+
+  function show(iso) {
+    if (iso > latest) {
+      latest = iso;
+      document.getElementById('latest').textContent = latest;
+    }
+  }
 
   cards.forEach(function (card) {
     var out = card.querySelector('.r-time');
@@ -115,14 +174,13 @@
       .then(function (r) { return r.ok ? r.text() : null; })
       .then(function (html) {
         if (!html) return;
-        var m = html.match(/class=["']?meta["']?\s*>[^<]*?(\d{4})[-\/]?(\d{2})[-\/]?(\d{2})/);
+        var m = html.match(/(\d{4})年\s*(\d{1,2})月\s*(\d{1,2})日/)
+             || html.match(/(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})/)
+             || html.match(/(\d{4})(\d{2})(\d{2})/);
         if (!m) return;
-        var iso = m[1] + '-' + m[2] + '-' + m[3];
+        var iso = m[1] + '-' + ('0' + m[2]).slice(-2) + '-' + ('0' + m[3]).slice(-2);
         out.textContent = iso;
-        if (iso > latest) {
-          latest = iso;
-          document.getElementById('latest').textContent = latest;
-        }
+        show(iso);
       })
       .catch(function () {});
   });
